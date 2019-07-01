@@ -17,3 +17,8 @@ jobs:
       - run:
           name: package
           command: npm run package
+      - run:
+          name: publish to npm
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+            npm publish dist/js/*
