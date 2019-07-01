@@ -1,5 +1,7 @@
 # cdk-watchful
 
+[![CircleCI](https://circleci.com/gh/eladb/cdk-watchful.svg?style=svg)](https://circleci.com/gh/eladb/cdk-watchful)
+
 > Watching your CDK back since 2019
 
 Watchful is an [AWS CDK](https://github.com/awslabs/aws-cdk) construct library that makes it easy
