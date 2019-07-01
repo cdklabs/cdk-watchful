@@ -26,4 +26,4 @@ jobs:
           name: publish to pypi
           command: |
             python3 -m pip install --user --upgrade twine
-            python3 -m twine dist/python/*
+            python3 -m twine upload dist/python/*
