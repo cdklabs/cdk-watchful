@@ -4,3 +4,10 @@
 # CDK asset staging directory
 .cdk.staging
 cdk.out
+
+
+# Exclude jsii outdir
+dist
+
+# Include .jsii
+!.jsii

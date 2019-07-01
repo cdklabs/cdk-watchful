@@ -1,22 +1,83 @@
 {
   "name": "cdk-watchful",
   "version": "0.1.0",
-  "bin": {
-    "cdk-watchful": "bin/cdk-watchful.js"
-  },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "cdk": "cdk"
+    "build": "jsii",
+    "watch": "jsii -w",
+    "package": "jsii-pacmak",
+    "cdk": "cdk",
+    "test": "jest"
   },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "org.cdkwatchful",
+        "maven": {
+          "groupId": "com.github.eladb",
+          "artifactId": "cdk-watchful"
+        }
+      },
+      "dotnet": {
+        "namespace": "Eladb.CdkWatchful",
+        "packageId": "Eladb.CdkWatchful"
+      },
+      "python": {
+        "distName": "cdk-watchful",
+        "module": "cdk_watchful"
+      }
+    }
+  },
+  "author": {
+    "email": "elad.benisrael@gmail.com",
+    "name": "Elad Ben-Israel",
+    "url": "https://github.com/eladb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eladb/cdk-watchful"
+  },
+  "license": "Apache-2.0",
   "devDependencies": {
+    "@aws-cdk/assert": "^0.36.0",
+    "@types/jest": "^24.0.15",
     "@types/node": "8.10.45",
-    "typescript": "^3.3.3333",
-    "ts-node": "^8.1.0",
-    "aws-cdk": "^0.36.0"
+    "aws-sdk": "^2.485.0",
+    "aws-cdk": "^0.36.0",
+    "jest": "^24.8.0",
+    "jsii": "^0.13.1",
+    "jsii-pacmak": "^0.13.1",
+    "typescript": "^3.3.3333"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ]
   },
   "dependencies": {
-    "@aws-cdk/core": "^0.36.0",
-    "source-map-support": "^0.5.9"
+    "@aws-cdk/aws-apigateway": "^0.36.0",
+    "@aws-cdk/aws-cloudwatch": "^0.36.0",
+    "@aws-cdk/aws-sns": "^0.36.0",
+    "@aws-cdk/aws-sns-subscriptions": "^0.36.0",
+    "@aws-cdk/aws-events": "^0.36.0",
+    "@aws-cdk/aws-events-targets": "0.36.0",
+    "@aws-cdk/aws-cloudwatch-actions": "0.36.0",
+    "@aws-cdk/aws-dynamodb": "^0.36.0",
+    "@aws-cdk/aws-lambda": "^0.36.0",
+    "@aws-cdk/core": "^0.36.0"
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-apigateway": "^0.36.0",
+    "@aws-cdk/aws-sns": "^0.36.0",
+    "@aws-cdk/aws-sns-subscriptions": "^0.36.0",
+    "@aws-cdk/aws-cloudwatch": "^0.36.0",
+    "@aws-cdk/aws-events": "^0.36.0",
+    "@aws-cdk/aws-events-targets": "0.36.0",
+    "@aws-cdk/aws-cloudwatch-actions": "0.36.0",
+    "@aws-cdk/aws-dynamodb": "^0.36.0",
+    "@aws-cdk/aws-lambda": "^0.36.0",
+    "@aws-cdk/core": "^0.36.0"
   }
 }
