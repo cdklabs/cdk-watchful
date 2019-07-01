@@ -20,10 +20,6 @@
           "artifactId": "cdk-watchful"
         }
       },
-      "dotnet": {
-        "namespace": "Eladb.CdkWatchful",
-        "packageId": "Eladb.CdkWatchful"
-      },
       "python": {
         "distName": "cdk-watchful",
         "module": "cdk_watchful"
