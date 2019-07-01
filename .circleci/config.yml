@@ -22,3 +22,8 @@ jobs:
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
             npm publish dist/js/*
+      - run:
+          name: publish to pypi
+          command: |
+            python3 -m pip install --user --upgrade twine
+            python3 -m twine dist/python/*
