@@ -54,7 +54,8 @@ export class WatchLambdaFunction extends Construct {
 
     this.watchful.addSection(props.title, {
       links: [
-        { title: 'AWS Lambda Console', url: linkForLambdaFunction(this.fn) }
+        { title: 'AWS Lambda Console', url: linkForLambdaFunction(this.fn) },
+        { title: 'CloudWatch Logs', url: linkForLambdaLogs(this.fn) }
       ]
     });
 
@@ -134,4 +135,8 @@ export class WatchLambdaFunction extends Construct {
 
 function linkForLambdaFunction(fn: lambda.Function, tab = 'graph') {
   return `https://console.aws.amazon.com/lambda/home?region=${fn.stack.region}#/functions/${fn.functionName}?tab=${tab}`;
+}
+
+function linkForLambdaLogs(fn: lambda.Function) {
+  return `https://console.aws.amazon.com/cloudwatch/home?region=${fn.stack.region}#logEventViewer:group=/aws/lambda/${fn.functionName}`
 }

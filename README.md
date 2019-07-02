@@ -1,6 +1,9 @@
 # cdk-watchful
 
 [![CircleCI](https://circleci.com/gh/eladb/cdk-watchful.svg?style=svg)](https://circleci.com/gh/eladb/cdk-watchful)
+![python](https://img.shields.io/badge/jsii-python-blueviolet.svg)
+![typescript](https://img.shields.io/badge/jsii-typescript-blueviolet.svg)
+![javascript](https://img.shields.io/badge/jsii-javascript-blueviolet.svg)
 
 > Watching your CDK back since 2019
 
