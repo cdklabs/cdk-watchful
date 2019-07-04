@@ -93,7 +93,7 @@ wf.watch_scope(storage_layer)
 See a more complete [example](./example/index.ts), which will result in
 the following dashboard and alarms:
 
-![](./example/sample.png)
+![](https://github.com/eladb/cdk-watchful/raw/master/example/sample.png)
 
 ## License
 
