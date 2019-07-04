@@ -1,5 +1,5 @@
 import { Stack, Construct, StackProps, App, Duration } from '@aws-cdk/core';
-import { Watchful, IWatchable } from '../lib';
+import { Watchful } from '../lib';
 import dynamodb = require('@aws-cdk/aws-dynamodb');
 import events = require('@aws-cdk/aws-events');
 import events_targets = require('@aws-cdk/aws-events-targets');
@@ -34,8 +34,9 @@ class TestStack extends Stack {
     });
 
     watchful.watchDynamoTable('My Cute Little Table', table1);
-    watchful.watch('Write Traffic', writeTraffic);
-    watchful.watch('Read Traffic', readTraffic);
+
+    watchful.watchScope(writeTraffic);
+    watchful.watchScope(readTraffic);
   }
 }
 
@@ -45,7 +46,7 @@ interface TrafficDriverProps {
   write?: boolean;
 }
 
-class TrafficDriver extends Construct implements IWatchable {
+class TrafficDriver extends Construct {
   private readonly fn: lambda.Function;
 
   constructor(scope: Construct, id: string, props: TrafficDriverProps) {
@@ -78,10 +79,6 @@ class TrafficDriver extends Construct implements IWatchable {
       schedule: events.Schedule.rate(Duration.minutes(1)),
       targets: [ new events_targets.LambdaFunction(this.fn) ]
     });
-  }
-
-  public addToWatchful(watchful: Watchful, title: string) {
-    watchful.watchLambdaFunction(title, this.fn);
   }
 }
 

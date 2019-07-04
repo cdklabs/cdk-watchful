@@ -8,6 +8,7 @@ import cloudwatch = require('@aws-cdk/aws-cloudwatch');
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
+import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 
 
 export interface WatchfulProps {
@@ -15,10 +16,6 @@ export interface WatchfulProps {
 }
 
 export class Watchful extends Construct implements IWatchful {
-  public static isWatchable(obj: any): obj is IWatchable {
-    return obj && typeof(obj) === 'object' && 'addToWatchful' in obj;
-  }
-
   private readonly dash: cloudwatch.Dashboard;
   private readonly alarmTopic?: sns.Topic;
 
@@ -56,8 +53,9 @@ export class Watchful extends Construct implements IWatchful {
     this.addWidgets(new cloudwatch.TextWidget({ width: 24, markdown: markdown.join('\n') }));
   }
 
-  public watch(title: string, obj: IWatchable) {
-    obj.addToWatchful(this, title);
+  public watchScope(scope: Construct, options?: WatchfulAspectProps) {
+    const aspect = new WatchfulAspect(this, options);
+    scope.node.applyAspect(aspect);
   }
 
   public watchDynamoTable(title: string, table: dynamodb.Table, options: WatchDynamoTableOptions = {}) {
@@ -75,11 +73,6 @@ export class Watchful extends Construct implements IWatchful {
     });
   }
 }
-
-export interface IWatchable {
-  addToWatchful(watchful: IWatchful, title: string): void;
-}
-
 
 function linkForDashboard(dashboard: cloudwatch.Dashboard) {
   const cfnDashboard = dashboard.node.defaultChild as cloudwatch.CfnDashboard;
