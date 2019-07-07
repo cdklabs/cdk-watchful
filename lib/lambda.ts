@@ -59,7 +59,7 @@ export class WatchLambdaFunction extends Construct {
       ]
     });
 
-    const { errorsMetric,    errorsAlarm    } = this.createErroesMonitor(props.errorsPerMinuteThreshold);
+    const { errorsMetric,    errorsAlarm    } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
     const { throttlesMetric, throttlesAlarm } = this.createThrottlesMonitor(props.throttlesPerMinuteThreshold);
     const { durationMetric,  durationAlarm  } = this.createDurationMonitor(timeoutSec, props.durationThresholdPercent);
 
@@ -90,13 +90,13 @@ export class WatchLambdaFunction extends Construct {
     )
   }
 
-  private createErroesMonitor(errorsPerMinuteThreshold = 0) {
+  private createErrorsMonitor(errorsPerMinuteThreshold = 0) {
     const fn = this.fn;
     const errorsMetric = fn.metricErrors();
     const errorsAlarm = errorsMetric.createAlarm(this, 'ErrorsAlarm', {
       alarmDescription: `Over ${errorsPerMinuteThreshold} errors per minute`,
       threshold: errorsPerMinuteThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
+      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
       period: Duration.minutes(1),
     });
@@ -110,7 +110,7 @@ export class WatchLambdaFunction extends Construct {
     const throttlesAlarm = throttlesMetric.createAlarm(this, 'ThrottlesAlarm', {
       alarmDescription: `Over ${throttlesPerMinuteThreshold} throttles per minute`,
       threshold: throttlesPerMinuteThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
+      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
       period: Duration.minutes(1)
     });
@@ -124,6 +124,7 @@ export class WatchLambdaFunction extends Construct {
     const durationThresholdSec = Math.floor(durationPercentThreshold / 100 * timeoutSec);
     const durationAlarm = durationMetric.createAlarm(this, 'DurationAlarm', {
       alarmDescription: `p99 latency >= ${durationThresholdSec}s (${durationPercentThreshold}%)`,
+      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       threshold: durationThresholdSec * 1000, // milliseconds
       period: Duration.minutes(1),
       evaluationPeriods: 3,
