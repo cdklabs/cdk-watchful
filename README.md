@@ -31,7 +31,7 @@ wf.watch_lambda_function('My Function', my_function)
 
 And...
 
-![](./example/sample.png)
+![](https://raw.githubusercontent.com/eladb/cdk-watchful/master/example/sample.png)
 
 ## Install
 
