@@ -9,11 +9,29 @@
 Watchful is an [AWS CDK](https://github.com/awslabs/aws-cdk) construct library that makes it easy
 to monitor CDK apps.
 
-Watchful can manage a nice central dashboard and automatically configure default alarming for the following AWS resources:
+**TypeScript:**
 
-- Amazon DynamoDB
-- AWS Lambda
-- [Request yours](https://github.com/eladb/cdk-watchful/issues/new)
+```ts
+import { Watchful } from 'cdk-watchful'
+
+const wf = new Watchful(this, 'watchful');
+wf.watchDynamoTable('My Cute Little Table', myTable);
+wf.watchLambdaFunction('My Function', myFunction);
+```
+
+**Python:**
+
+```python
+from cdk_watchful import Watchful
+
+wf = Watchful(self, 'watchful')
+wf.watch_dynamo_table('My Cute Little Table', my_table)
+wf.watch_lambda_function('My Function', my_function)
+```
+
+And...
+
+![](./example/sample.png)
 
 ## Install
 
@@ -34,7 +52,7 @@ $ pip install cdk-watchful
 To get started, just define a `Watchful` construct in your CDK app (code is in
 TypeScript, but python will work too):
 
-TypeScript/JavaScript:
+**TypeScript:**
 
 ```ts
 import Watchful from 'cdk-watchful';
@@ -44,7 +62,7 @@ const wf = new Watchful(this, 'watchful', {
 });
 ```
 
-Python:
+**Python:**
 
 ```python
 from cdk_watchful import Watchful
@@ -54,7 +72,13 @@ wf = Watchful(self, 'watchful', alarm_email='your@amil.com')
 
 ## Add Resources
 
-TypeScript/JavaScript:
+Watchful manages a central dashboard and configures default alarming for:
+
+- Amazon DynamoDB
+- AWS Lambda
+- [Request yours](https://github.com/eladb/cdk-watchful/issues/new)
+
+**TypeScript:**
 
 ```ts
 wf.watchDynamoTable('My Happy Little Table', littleTable);
@@ -62,7 +86,7 @@ wf.watchDynamoTable('My Very Happy Table', veryHappyTable);
 wf.watchLambdaFunction('The Function', fn);
 ```
 
-Python:
+**Python:**
 
 ```python
 wf.watch_dynamo_table('My Happy Little Table', table)
@@ -76,24 +100,22 @@ Watchful can also watch complete CDK construct scopes. It will automatically
 discover all watchable resources within that scope (recursively), add them
 to your dashboard and configure alarms for them.
 
-TypeScript/JavaScript:
+**TypeScript:**
 
 ```ts
 wf.watchScope(storageLayer);
 ```
 
-Python:
+**Python:**
 
 ```python
 wf.watch_scope(storage_layer)
 ```
 
+
 ## Example
 
-See a more complete [example](./example/index.ts), which will result in
-the following dashboard and alarms:
-
-![](https://github.com/eladb/cdk-watchful/raw/master/example/sample.png)
+See a more complete [example](./example/index.ts).
 
 ## License
 
