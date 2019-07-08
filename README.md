@@ -115,8 +115,9 @@ wf.watch_scope(storage_layer)
 
 ## Example
 
-See a more complete [example](./example/index.ts).
+See a more complete [example](https://github.com/eladb/cdk-watchful/blob/master/example/index.ts).
 
 ## License
 
-[Apache 2.0](./LICENSE)
+[Apache 2.0](https://github.com/eladb/cdk-watchful/blob/master/LICENSE)
+
