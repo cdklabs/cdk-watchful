@@ -1,4 +1,5 @@
 import { Construct, CfnOutput } from '@aws-cdk/core';
+import apigw = require('@aws-cdk/aws-apigateway');
 import sns = require('@aws-cdk/aws-sns');
 import sns_subscriptions = require('@aws-cdk/aws-sns-subscriptions');
 import lambda = require('@aws-cdk/aws-lambda');
@@ -9,6 +10,7 @@ import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
+import { WatchApiGatewayRestApiOptions, WatchApiGatewayRestApi } from './api-gateway';
 
 
 export interface WatchfulProps {
@@ -64,6 +66,12 @@ export class Watchful extends Construct implements IWatchful {
       watchful: this,
       table,
       ...options
+    });
+  }
+
+  public watchRestApi(title: string, restApi: apigw.RestApi, options: WatchApiGatewayRestApiOptions = {}) {
+    return new WatchApiGatewayRestApi(this, restApi.node.uniqueId, {
+      title, watchful: this, restApi, ...options
     });
   }
 
