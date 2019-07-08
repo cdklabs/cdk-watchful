@@ -17,6 +17,7 @@ import { Watchful } from 'cdk-watchful'
 const wf = new Watchful(this, 'watchful');
 wf.watchDynamoTable('My Cute Little Table', myTable);
 wf.watchLambdaFunction('My Function', myFunction);
+wf.watchApiGateway('My REST API', myRestApi);
 ```
 
 **Python:**
@@ -27,6 +28,7 @@ from cdk_watchful import Watchful
 wf = Watchful(self, 'watchful')
 wf.watch_dynamo_table('My Cute Little Table', my_table)
 wf.watch_lambda_function('My Function', my_function)
+wf.watch_api_gateway('My REST API', my_rest_api)
 ```
 
 And...
@@ -74,25 +76,10 @@ wf = Watchful(self, 'watchful', alarm_email='your@amil.com')
 
 Watchful manages a central dashboard and configures default alarming for:
 
-- Amazon DynamoDB
-- AWS Lambda
+- Amazon DynamoDB: `watchful.watchDynamoTable`
+- AWS Lambda: `watchful.watchLambdaFunction`
+- Amazon API Gateway: `watchful.watchApiGateway`
 - [Request yours](https://github.com/eladb/cdk-watchful/issues/new)
-
-**TypeScript:**
-
-```ts
-wf.watchDynamoTable('My Happy Little Table', littleTable);
-wf.watchDynamoTable('My Very Happy Table', veryHappyTable);
-wf.watchLambdaFunction('The Function', fn);
-```
-
-**Python:**
-
-```python
-wf.watch_dynamo_table('My Happy Little Table', table)
-wf.watch_lambda_function('Handler1', handler1)
-wf.watch_lambda_function('Handler2', handler2)
-```
 
 ## Watching Scopes
 
