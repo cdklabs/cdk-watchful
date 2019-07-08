@@ -64,14 +64,14 @@ export class WatchDynamoTable extends Construct {
 
   private createDynamoCapacityGraph(type: string, metric: cloudwatch.Metric, provisioned: number, percent: number = DEFAULT_PERCENT) {
     return new cloudwatch.GraphWidget({
-      title: `${type} Capacity`,
+      title: `${type} Capacity Units/${metric.period.toMinutes()}min`,
       width: 12,
       stacked: true,
       left: [ metric ],
       leftAnnotations: [
         {
           label: 'Provisioned',
-          value: provisioned,
+          value: provisioned * metric.period.toSeconds(),
           color: '#58D68D',
         },
         {

@@ -1,4 +1,4 @@
-import { Construct, Duration } from '@aws-cdk/core';
+import { Construct } from '@aws-cdk/core';
 import lambda = require('@aws-cdk/aws-lambda');
 import { IWatchful } from './api';
 import cloudwatch = require('@aws-cdk/aws-cloudwatch');
@@ -62,27 +62,28 @@ export class WatchLambdaFunction extends Construct {
     const { errorsMetric,    errorsAlarm    } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
     const { throttlesMetric, throttlesAlarm } = this.createThrottlesMonitor(props.throttlesPerMinuteThreshold);
     const { durationMetric,  durationAlarm  } = this.createDurationMonitor(timeoutSec, props.durationThresholdPercent);
+    const invocationsMetric = this.fn.metricInvocations();
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
-        title: 'Invocations',
+        title: `Invocations/${invocationsMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ this.fn.metricInvocations() ]
+        left: [ invocationsMetric ]
       }),
       new cloudwatch.GraphWidget({
-        title: 'Errors',
+        title: `Errors/${errorsMetric.period.toMinutes()}min`,
         width: 6,
         left: [ errorsMetric ],
         leftAnnotations: [ errorsAlarm.toAnnotation() ]
       }),
       new cloudwatch.GraphWidget({
-        title: 'Throttles',
+        title: `Throttles/${throttlesMetric.period.toMinutes()}min`,
         width: 6,
         left: [ throttlesMetric ],
         leftAnnotations: [ throttlesAlarm.toAnnotation() ]
       }),
       new cloudwatch.GraphWidget({
-        title: 'Duration',
+        title: `Duration/${durationMetric.period.toMinutes()}min`,
         width: 6,
         left: [ durationMetric ],
         leftAnnotations: [ durationAlarm.toAnnotation() ]
@@ -98,7 +99,6 @@ export class WatchLambdaFunction extends Construct {
       threshold: errorsPerMinuteThreshold,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
-      period: Duration.minutes(1),
     });
     this.watchful.addAlarm(errorsAlarm);
     return { errorsMetric, errorsAlarm };
@@ -112,7 +112,6 @@ export class WatchLambdaFunction extends Construct {
       threshold: throttlesPerMinuteThreshold,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
-      period: Duration.minutes(1)
     });
     this.watchful.addAlarm(throttlesAlarm);
     return { throttlesMetric, throttlesAlarm };
@@ -126,7 +125,6 @@ export class WatchLambdaFunction extends Construct {
       alarmDescription: `p99 latency >= ${durationThresholdSec}s (${durationPercentThreshold}%)`,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       threshold: durationThresholdSec * 1000, // milliseconds
-      period: Duration.minutes(1),
       evaluationPeriods: 3,
     });
     this.watchful.addAlarm(durationAlarm);
