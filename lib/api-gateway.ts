@@ -1,13 +1,13 @@
 import apigw = require('@aws-cdk/aws-apigateway');
-import { Metric, MetricOptions, ComparisonOperator, GraphWidget } from '@aws-cdk/aws-cloudwatch';
+import { Metric, MetricOptions, ComparisonOperator, GraphWidget, HorizontalAnnotation } from '@aws-cdk/aws-cloudwatch';
 import { Construct, Duration } from '@aws-cdk/core';
 import { IWatchful } from './api';
 
-export interface WatchApiGatewayRestApiOptions {
+export interface WatchApiGatewayOptions {
   /**
    * Alarm when 5XX errors reach this threshold over 5 minutes.
    *
-   * @default - no alarm.
+   * @default 1
    */
   readonly serverErrorThreshold?: number;
 
@@ -17,9 +17,16 @@ export interface WatchApiGatewayRestApiOptions {
    * @default - only API-level monitoring is added.
    */
   readonly watchedOperations?: WatchedOperation[];
+
+  /**
+   * Enable rendering of a Cache graph.
+   *
+   * @default false
+   */
+  readonly cacheGraph?: boolean;
 }
 
-export interface WatchApiGatewayRestApiProps extends WatchApiGatewayRestApiOptions {
+export interface WatchApiGatewayProps extends WatchApiGatewayOptions {
   /**
    * The title of this section.
    */
@@ -36,24 +43,25 @@ export interface WatchApiGatewayRestApiProps extends WatchApiGatewayRestApiOptio
   readonly restApi: apigw.RestApi;
 }
 
-export class WatchApiGatewayRestApi extends Construct {
+export class WatchApiGateway extends Construct {
   private readonly api: apigw.CfnRestApi;
   private readonly stage: string;
   private readonly watchful: IWatchful;
 
-  constructor(scope: Construct, id: string, props: WatchApiGatewayRestApiProps) {
+  constructor(scope: Construct, id: string, props: WatchApiGatewayProps) {
     super(scope, id);
 
     this.api = props.restApi.node.findChild('Resource') as apigw.CfnRestApi;
     this.stage = props.restApi.deploymentStage.stageName;
     this.watchful = props.watchful;
 
-    if (props.serverErrorThreshold) {
+    const alarmThreshold = props.serverErrorThreshold == null ? 1 : props.serverErrorThreshold;
+    if (alarmThreshold) {
       this.watchful.addAlarm(
         this.createApiGatewayMetric(ApiGatewayMetric.FiveHundredError)
           .createAlarm(this, '5XXErrorAlarm', {
-            alarmDescription: `at ${props.serverErrorThreshold}`,
-            threshold: props.serverErrorThreshold,
+            alarmDescription: `at ${alarmThreshold}`,
+            threshold: alarmThreshold,
             period: Duration.minutes(5),
             comparisonOperator: ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
             evaluationPeriods: 1,
@@ -67,17 +75,21 @@ export class WatchApiGatewayRestApi extends Construct {
     });
     [undefined, ...props.watchedOperations || []].forEach(operation =>
       this.watchful.addWidgets(
-        this.createCallGraphWidget(operation),
-        this.createCacheGraphWidget(operation),
+        this.createCallGraphWidget(operation, alarmThreshold),
+        ...props.cacheGraph ? [this.createCacheGraphWidget(operation)] : [],
         this.createLatencyGraphWidget(ApiGatewayMetric.Latency, operation),
         this.createLatencyGraphWidget(ApiGatewayMetric.IntegrationLatency, operation),
       )
     );
   }
 
-  private createCallGraphWidget(opts?: WatchedOperation) {
+  private createCallGraphWidget(opts?: WatchedOperation, alarmThreshold?: number) {
+    const leftAnnotations: HorizontalAnnotation[] = alarmThreshold
+      ? [{ value: alarmThreshold, color: '#ff0000', label: '5XX Errors Alarm' }]
+      : [];
+
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Calls`,
+      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Calls/min`,
       width: 12,
       stacked: false,
       left: [
@@ -85,12 +97,13 @@ export class WatchApiGatewayRestApi extends Construct {
         this.createApiGatewayMetric(ApiGatewayMetric.FourHundredError, opts, { label: 'HTTP 4XX', statistic: 'sum', color: '#ff7f0e' }),
         this.createApiGatewayMetric(ApiGatewayMetric.FiveHundredError, opts, { label: 'HTTP 5XX', statistic: 'sum', color: '#d62728' }),
       ],
+      leftAnnotations
     });
   }
 
   private createCacheGraphWidget(opts?: WatchedOperation) {
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Cache`,
+      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Cache/min`,
       width: 12,
       stacked: false,
       left: [
@@ -103,7 +116,7 @@ export class WatchApiGatewayRestApi extends Construct {
 
   private createLatencyGraphWidget(metric: ApiGatewayMetric, opts?: WatchedOperation) {
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} ${metric}`,
+      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} ${metric} (1-minute periods)`,
       width: 12,
       stacked: false,
       left: ['min', 'avg', 'p90', 'p99', 'max'].map(statistic =>
@@ -117,8 +130,6 @@ export class WatchApiGatewayRestApi extends Construct {
     metricOpts?: MetricOptions
   ): Metric {
     return new Metric({
-      metricName,
-      namespace: 'AWS/ApiGateway',
       dimensions: {
         ApiName: this.api.name,
         Stage: this.stage,
@@ -127,6 +138,9 @@ export class WatchApiGatewayRestApi extends Construct {
           Resource: opts.resourcePath,
         },
       },
+      metricName,
+      namespace: 'AWS/ApiGateway',
+      period: Duration.minutes(1),
       ...metricOpts,
     });
   }

@@ -10,7 +10,7 @@ import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
-import { WatchApiGatewayRestApiOptions, WatchApiGatewayRestApi } from './api-gateway';
+import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
 
 
 export interface WatchfulProps {
@@ -69,8 +69,8 @@ export class Watchful extends Construct implements IWatchful {
     });
   }
 
-  public watchRestApi(title: string, restApi: apigw.RestApi, options: WatchApiGatewayRestApiOptions = {}) {
-    return new WatchApiGatewayRestApi(this, restApi.node.uniqueId, {
+  public watchApiGateway(title: string, restApi: apigw.RestApi, options: WatchApiGatewayOptions = {}) {
+    return new WatchApiGateway(this, restApi.node.uniqueId, {
       title, watchful: this, restApi, ...options
     });
   }
