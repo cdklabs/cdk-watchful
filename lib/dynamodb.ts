@@ -77,7 +77,7 @@ export class WatchDynamoTable extends Construct {
         {
           color: '#FF3333',
           label: `Alarm on ${percent}%`,
-          value: calculateUnits(provisioned, percent)
+          value: calculateUnits(provisioned, percent, metric.period)
         }
       ]
     });
@@ -85,10 +85,10 @@ export class WatchDynamoTable extends Construct {
 
   private createDynamoCapacityAlarm(type: string, metric: cloudwatch.Metric, provisioned: number, percent: number = DEFAULT_PERCENT) {
     const periodMinutes = 5;
-    const threshold = calculateUnits(provisioned, percent);
+    const threshold = calculateUnits(provisioned, percent, Duration.minutes(periodMinutes));
     const alarm = metric.createAlarm(this, `CapacityAlarm:${type}`, {
       alarmDescription: `at ${threshold}% of ${type} capacity`,
-      threshold: periodMinutes * 60 * threshold,
+      threshold,
       period: Duration.minutes(periodMinutes),
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
       evaluationPeriods: 1,
@@ -104,8 +104,8 @@ function linkForDynamoTable(table: dynamodb.Table, tab = 'overview') {
   return `https://console.aws.amazon.com/dynamodb/home?region=${table.stack.region}#tables:selected=${table.tableName};tab=${tab}`;
 }
 
-function calculateUnits(provisioned: number, percent?: number) {
-  return provisioned * ((percent === undefined ? 80 : percent) / 100);
+function calculateUnits(provisioned: number, percent: number | undefined, period: Duration) {
+  return provisioned * ((percent === undefined ? 80 : percent) / 100) * period.toSeconds();
 }
 
 
