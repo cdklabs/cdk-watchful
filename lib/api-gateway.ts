@@ -7,7 +7,7 @@ export interface WatchApiGatewayOptions {
   /**
    * Alarm when 5XX errors reach this threshold over 5 minutes.
    *
-   * @default 1
+   * @default 1 any 5xx HTTP response will trigger the alarm
    */
   readonly serverErrorThreshold?: number;
 
@@ -19,7 +19,7 @@ export interface WatchApiGatewayOptions {
   readonly watchedOperations?: WatchedOperation[];
 
   /**
-   * Enable rendering of a Cache graph.
+   * Include a dashboard graph for caching metrics
    *
    * @default false
    */
