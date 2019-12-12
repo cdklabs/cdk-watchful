@@ -1,6 +1,6 @@
 {
   "name": "cdk-watchful",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Watching your CDK apps since 2019",
   "scripts": {
     "build": "jsii",
@@ -9,6 +9,7 @@
     "cdk": "cdk",
     "test": "jest"
   },
+  "keywords": [ "cdk", "cloudwatch", "monitoring" ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "jsii": {
