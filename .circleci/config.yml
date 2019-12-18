@@ -4,6 +4,8 @@ jobs:
     docker:
      - image: jsii/superchain
     steps:
+      - run:
+          command: chmod 600 /root/.ssh/config
       - checkout
       - run:
           name: install
