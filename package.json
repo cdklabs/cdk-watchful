@@ -1,6 +1,6 @@
 {
   "name": "cdk-watchful",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Watching your CDK apps since 2019",
   "scripts": {
     "build": "jsii",
