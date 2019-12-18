@@ -7,16 +7,16 @@ jobs:
       - checkout
       - run:
           name: install
-          command: npm install
+          command: yarn install
       - run:
           name: build
-          command: npm run build
+          command: yarn build
       - run:
           name: test
-          command: npm test
+          command: yarn test
       - run:
           name: package
-          command: npm run package
+          command: yarn package
       - run:
           name: publish to npm
           command: |

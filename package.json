@@ -1,6 +1,6 @@
 {
   "name": "cdk-watchful",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Watching your CDK apps since 2019",
   "scripts": {
     "build": "jsii",
@@ -39,15 +39,15 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@aws-cdk/assert": "^1.0.0",
-    "@types/jest": "^24.0.15",
-    "@types/node": "12.6.2",
-    "aws-cdk": "^1.0.0",
-    "aws-sdk": "^2.492.0",
-    "jest": "^24.8.0",
-    "jsii": "^0.14.0",
-    "jsii-pacmak": "^0.14.0",
-    "typescript": "^3.5.3"
+    "@aws-cdk/assert": "^1.19.0",
+    "@types/jest": "^24.0.23",
+    "@types/node": "12.12.20",
+    "aws-cdk": "^1.19.0",
+    "aws-sdk": "^2.592.0",
+    "jest": "^24.9.0",
+    "jsii": "^0.20.11",
+    "jsii-pacmak": "^0.20.11",
+    "typescript": "^3.7.3"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -55,27 +55,27 @@
     ]
   },
   "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.0.0",
-    "@aws-cdk/aws-cloudwatch": "^1.0.0",
-    "@aws-cdk/aws-sns": "^1.0.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.0.0",
-    "@aws-cdk/aws-events": "^1.0.0",
-    "@aws-cdk/aws-events-targets": "1.0.0",
-    "@aws-cdk/aws-cloudwatch-actions": "1.0.0",
-    "@aws-cdk/aws-dynamodb": "^1.0.0",
-    "@aws-cdk/aws-lambda": "^1.0.0",
-    "@aws-cdk/core": "^1.0.0"
+    "@aws-cdk/aws-apigateway": "^1.19.0",
+    "@aws-cdk/aws-cloudwatch": "^1.19.0",
+    "@aws-cdk/aws-sns": "^1.19.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.19.0",
+    "@aws-cdk/aws-events": "^1.19.0",
+    "@aws-cdk/aws-events-targets": "1.19.0",
+    "@aws-cdk/aws-cloudwatch-actions": "1.19.0",
+    "@aws-cdk/aws-dynamodb": "^1.19.0",
+    "@aws-cdk/aws-lambda": "^1.19.0",
+    "@aws-cdk/core": "^1.19.0"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-apigateway": "^1.0.0",
-    "@aws-cdk/aws-sns": "^1.0.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.0.0",
-    "@aws-cdk/aws-cloudwatch": "^1.0.0",
-    "@aws-cdk/aws-events": "^1.0.0",
-    "@aws-cdk/aws-events-targets": "1.0.0",
-    "@aws-cdk/aws-cloudwatch-actions": "1.0.0",
-    "@aws-cdk/aws-dynamodb": "^1.0.0",
-    "@aws-cdk/aws-lambda": "^1.0.0",
-    "@aws-cdk/core": "^1.0.0"
+    "@aws-cdk/aws-apigateway": "^1.19.0",
+    "@aws-cdk/aws-sns": "^1.19.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.19.0",
+    "@aws-cdk/aws-cloudwatch": "^1.19.0",
+    "@aws-cdk/aws-events": "^1.19.0",
+    "@aws-cdk/aws-events-targets": "1.19.0",
+    "@aws-cdk/aws-cloudwatch-actions": "1.19.0",
+    "@aws-cdk/aws-dynamodb": "^1.19.0",
+    "@aws-cdk/aws-lambda": "^1.19.0",
+    "@aws-cdk/core": "^1.19.0"
   }
 }
