@@ -5,6 +5,7 @@ import sns_subscriptions = require('@aws-cdk/aws-sns-subscriptions');
 import lambda = require('@aws-cdk/aws-lambda');
 import cloudwatch_actions = require('@aws-cdk/aws-cloudwatch-actions');
 import dynamodb = require('@aws-cdk/aws-dynamodb');
+import sqs = require('@aws-cdk/aws-sqs');
 import cloudwatch = require('@aws-cdk/aws-cloudwatch');
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
@@ -12,9 +13,9 @@ import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
 
-
 export interface WatchfulProps {
   readonly alarmEmail?: string;
+  readonly alarmSqs?: string;
 }
 
 export class Watchful extends Construct implements IWatchful {
@@ -24,9 +25,22 @@ export class Watchful extends Construct implements IWatchful {
   constructor(scope: Construct, id: string, props: WatchfulProps = { }) {
     super(scope, id);
 
-    if (props.alarmEmail) {
+    if (props.alarmEmail || props.alarmSqs) {
       this.alarmTopic = new sns.Topic(this, 'AlarmTopic', { displayName: 'Watchful Alarms' });
-      this.alarmTopic.addSubscription(new sns_subscriptions.EmailSubscription(props.alarmEmail));
+    }
+
+    if (props.alarmEmail && this.alarmTopic) {
+      this.alarmTopic.addSubscription(
+        new sns_subscriptions.EmailSubscription(props.alarmEmail)
+      );
+    }
+
+    if (props.alarmSqs && this.alarmTopic) {
+      this.alarmTopic.addSubscription(
+        new sns_subscriptions.SqsSubscription(
+          sqs.Queue.fromQueueArn(this, 'AlarmQueue', props.alarmSqs)
+        )
+      );
     }
 
     this.dash = new cloudwatch.Dashboard(this, 'Dashboard');

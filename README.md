@@ -52,7 +52,7 @@ $ pip install cdk-watchful
 ## Initialize
 
 To get started, just define a `Watchful` construct in your CDK app (code is in
-TypeScript, but python will work too):
+TypeScript, but python will work too). You can initialize using an email address, SQS arn or both:
 
 **TypeScript:**
 
@@ -60,7 +60,8 @@ TypeScript, but python will work too):
 import Watchful from 'cdk-watchful';
 
 const wf = new Watchful(this, 'watchful', {
-  alarmEmail: 'your@email.com'
+  alarmEmail: 'your@email.com',
+  alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue'
 });
 ```
 
@@ -69,7 +70,7 @@ const wf = new Watchful(this, 'watchful', {
 ```python
 from cdk_watchful import Watchful
 
-wf = Watchful(self, 'watchful', alarm_email='your@amil.com')
+wf = Watchful(self, 'watchful', alarm_email='your@amil.com', alarm_sqs='arn:aws:sqs:us-east-1:444455556666:alarm-queue')
 ```
 
 ## Add Resources
