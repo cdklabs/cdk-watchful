@@ -3169,6 +3169,11 @@ jsii-reflect@^0.22.0:
     oo-ascii-tree "^0.22.0"
     yargs "^15.1.0"
 
+jsii-release@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.1.2.tgz#e2fa9f02d0a14caa4333247ef3ffeecd53d675f7"
+  integrity sha512-KD8KQvth0K//N15qWsBi+CUFY75ScjF7EzjczUB+wJdqBAy7FX+nJzCfV3Dl4bamZqb/BUYirVYNkVj34eynvw==
+
 jsii-rosetta@^0.22.0:
   version "0.22.0"
   resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-0.22.0.tgz#41e6353dfa52fc0868f64db97c793c69abdfbccc"

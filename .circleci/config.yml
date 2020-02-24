@@ -4,8 +4,6 @@ jobs:
     docker:
      - image: jsii/superchain
     steps:
-      - run:
-          command: chmod 600 /root/.ssh/config
       - checkout
       - run:
           name: install
@@ -21,11 +19,7 @@ jobs:
           command: npm run package
       - run:
           name: publish to npm
-          command: |
-            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-            npm publish dist/js/*
+          command: npx jsii-release-npm dist/js
       - run:
           name: publish to pypi
-          command: |
-            python3 -m pip install --user --upgrade twine
-            python3 -m twine upload dist/python/*
+          command: npx jsii-release-pypi dist/python

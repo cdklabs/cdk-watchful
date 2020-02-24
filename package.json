@@ -54,20 +54,21 @@
     "jest": "^25.1.0",
     "jsii": "^0.22.0",
     "jsii-pacmak": "^0.22.0",
+    "jsii-release": "^0.1.2",
     "typescript": "^3.8.2"
   },
   "dependencies": {
     "@aws-cdk/aws-apigateway": "^1.25.0",
     "@aws-cdk/aws-cloudwatch": "^1.25.0",
-    "@aws-cdk/aws-sns": "^1.25.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.25.0",
-    "@aws-cdk/aws-events": "^1.25.0",
-    "@aws-cdk/aws-events-targets": "1.25.0",
     "@aws-cdk/aws-cloudwatch-actions": "1.25.0",
     "@aws-cdk/aws-dynamodb": "^1.25.0",
+    "@aws-cdk/aws-events": "^1.25.0",
+    "@aws-cdk/aws-events-targets": "1.25.0",
     "@aws-cdk/aws-lambda": "^1.25.0",
-    "@aws-cdk/core": "^1.25.0",
-    "@aws-cdk/aws-sqs": "^1.25.0"
+    "@aws-cdk/aws-sns": "^1.25.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.25.0",
+    "@aws-cdk/aws-sqs": "^1.25.0",
+    "@aws-cdk/core": "^1.25.0"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -76,15 +77,15 @@
   },
   "peerDependencies": {
     "@aws-cdk/aws-apigateway": "^1.25.0",
-    "@aws-cdk/aws-sns": "^1.25.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.25.0",
     "@aws-cdk/aws-cloudwatch": "^1.25.0",
-    "@aws-cdk/aws-events": "^1.25.0",
-    "@aws-cdk/aws-events-targets": "1.25.0",
     "@aws-cdk/aws-cloudwatch-actions": "1.25.0",
     "@aws-cdk/aws-dynamodb": "^1.25.0",
+    "@aws-cdk/aws-events": "^1.25.0",
+    "@aws-cdk/aws-events-targets": "1.25.0",
     "@aws-cdk/aws-lambda": "^1.25.0",
-    "@aws-cdk/core": "^1.25.0",
-    "@aws-cdk/aws-sqs": "^1.25.0"
+    "@aws-cdk/aws-sns": "^1.25.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.25.0",
+    "@aws-cdk/aws-sqs": "^1.25.0",
+    "@aws-cdk/core": "^1.25.0"
   }
 }
