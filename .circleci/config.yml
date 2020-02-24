@@ -2,8 +2,10 @@ version: 2.0
 jobs:
   build:
     docker:
-     - image: eladb/superchain
+     - image: jsii/superchain
     steps:
+      - run:
+          command: chmod 600 /root/.ssh/config
       - checkout
       - run:
           name: install

@@ -1,7 +1,10 @@
 {
   "name": "cdk-watchful",
-  "version": "0.3.0",
+  "version": "0.4.5",
   "description": "Watching your CDK apps since 2019",
+  "awscdkio": {
+    "twitter": "emeshbi"
+  },
   "scripts": {
     "build": "jsii",
     "watch": "jsii -w",
@@ -9,6 +12,11 @@
     "cdk": "cdk",
     "test": "jest"
   },
+  "keywords": [
+    "cdk",
+    "cloudwatch",
+    "monitoring"
+  ],
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "jsii": {
@@ -38,45 +46,45 @@
   },
   "license": "Apache-2.0",
   "devDependencies": {
-    "@aws-cdk/assert": "^1.0.0",
-    "@types/jest": "^24.0.15",
-    "@types/node": "12.6.2",
-    "aws-cdk": "^1.0.0",
-    "aws-sdk": "^2.492.0",
-    "jest": "^24.8.0",
-    "jsii": "^0.14.0",
-    "jsii-pacmak": "^0.14.0",
-    "typescript": "^3.5.3"
+    "@aws-cdk/assert": "^1.20.0",
+    "@types/jest": "^24.9.0",
+    "@types/node": "13.1.7",
+    "aws-cdk": "^1.20.0",
+    "aws-sdk": "^2.603.0",
+    "jest": "^24.9.0",
+    "jsii": "^0.21.1",
+    "jsii-pacmak": "^0.21.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.20.0",
+    "@aws-cdk/aws-cloudwatch": "^1.20.0",
+    "@aws-cdk/aws-sns": "^1.20.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.20.0",
+    "@aws-cdk/aws-events": "^1.20.0",
+    "@aws-cdk/aws-events-targets": "1.20.0",
+    "@aws-cdk/aws-cloudwatch-actions": "1.20.0",
+    "@aws-cdk/aws-dynamodb": "^1.20.0",
+    "@aws-cdk/aws-lambda": "^1.20.0",
+    "@aws-cdk/core": "^1.20.0",
+    "@aws-cdk/aws-sqs": "^1.20.0"
   },
   "jest": {
     "moduleFileExtensions": [
       "js"
     ]
   },
-  "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.0.0",
-    "@aws-cdk/aws-cloudwatch": "^1.0.0",
-    "@aws-cdk/aws-sns": "^1.0.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.0.0",
-    "@aws-cdk/aws-events": "^1.0.0",
-    "@aws-cdk/aws-events-targets": "1.0.0",
-    "@aws-cdk/aws-cloudwatch-actions": "1.0.0",
-    "@aws-cdk/aws-dynamodb": "^1.0.0",
-    "@aws-cdk/aws-sqs": "^1.0.0",
-    "@aws-cdk/aws-lambda": "^1.0.0",
-    "@aws-cdk/core": "^1.0.0"
-  },
   "peerDependencies": {
-    "@aws-cdk/aws-apigateway": "^1.0.0",
-    "@aws-cdk/aws-sns": "^1.0.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.0.0",
-    "@aws-cdk/aws-cloudwatch": "^1.0.0",
-    "@aws-cdk/aws-events": "^1.0.0",
-    "@aws-cdk/aws-events-targets": "1.0.0",
-    "@aws-cdk/aws-cloudwatch-actions": "1.0.0",
-    "@aws-cdk/aws-dynamodb": "^1.0.0",
-    "@aws-cdk/aws-sqs": "^1.0.0",
-    "@aws-cdk/aws-lambda": "^1.0.0",
-    "@aws-cdk/core": "^1.0.0"
+    "@aws-cdk/aws-apigateway": "^1.20.0",
+    "@aws-cdk/aws-sns": "^1.20.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.20.0",
+    "@aws-cdk/aws-cloudwatch": "^1.20.0",
+    "@aws-cdk/aws-events": "^1.20.0",
+    "@aws-cdk/aws-events-targets": "1.20.0",
+    "@aws-cdk/aws-cloudwatch-actions": "1.20.0",
+    "@aws-cdk/aws-dynamodb": "^1.20.0",
+    "@aws-cdk/aws-lambda": "^1.20.0",
+    "@aws-cdk/core": "^1.20.0",
+    "@aws-cdk/aws-sqs": "^1.20.0"
   }
 }

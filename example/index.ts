@@ -63,8 +63,8 @@ class TrafficDriver extends Construct {
       handler: 'index.handler',
       environment: {
         TABLE_NAME: props.table.tableName,
-        READ: props.read ? 'TRUE' : undefined,
-        WRITE: props.write ? 'TRUE': undefined,
+        READ: props.read ? 'TRUE' : '',
+        WRITE: props.write ? 'TRUE': '',
       }
     });
 
