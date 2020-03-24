@@ -57,7 +57,7 @@ TypeScript, but python will work too). You can initialize using an email address
 **TypeScript:**
 
 ```ts
-import Watchful from 'cdk-watchful';
+import { Watchful } from 'cdk-watchful'
 
 const wf = new Watchful(this, 'watchful', {
   alarmEmail: 'your@email.com',
