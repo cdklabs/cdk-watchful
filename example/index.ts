@@ -31,7 +31,8 @@ class TestStack extends Stack {
 
     const watchful = new Watchful(this, 'watchful', {
       alarmEmail: 'benisrae@amazon.com',
-      alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue'
+      alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue',
+      alarmSns: 'arn:aws:sns:us-east-2:444455556666:MyTopic'
     });
 
     watchful.watchDynamoTable('My Cute Little Table', table1);

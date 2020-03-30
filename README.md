@@ -62,6 +62,7 @@ import Watchful from 'cdk-watchful';
 const wf = new Watchful(this, 'watchful', {
   alarmEmail: 'your@email.com',
   alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue'
+  alarmSns: 'arn:aws:sns:us-east-2:444455556666:MyTopic'
 });
 ```
 
@@ -70,7 +71,12 @@ const wf = new Watchful(this, 'watchful', {
 ```python
 from cdk_watchful import Watchful
 
-wf = Watchful(self, 'watchful', alarm_email='your@amil.com', alarm_sqs='arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+wf = Watchful(
+  self,
+  'watchful',
+  alarm_email='your@amil.com',
+  alarm_sqs='arn:aws:sqs:us-east-1:444455556666:alarm-queue',
+  alarm_sns='arn:aws:sns:us-east-2:444455556666:MyTopic')
 ```
 
 ## Add Resources
@@ -99,7 +105,6 @@ wf.watchScope(storageLayer);
 ```python
 wf.watch_scope(storage_layer)
 ```
-
 
 ## Example
 
