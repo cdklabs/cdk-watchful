@@ -58,11 +58,16 @@ TypeScript, but python will work too). You can initialize using an email address
 
 ```ts
 import Watchful from 'cdk-watchful';
+import sns = require('@aws-cdk/aws-sns');
+import sqs = require('@aws-cdk/aws-sqs');
+
+const alarmSqs = sqs.Queue.fromQueueArn(this, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+const alarmSns = sns.Topic.fromTopicArn(this, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic');
 
 const wf = new Watchful(this, 'watchful', {
   alarmEmail: 'your@email.com',
-  alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue'
-  alarmSns: 'arn:aws:sns:us-east-2:444455556666:MyTopic'
+  alarmSqs,
+  alarmSns,
 });
 ```
 

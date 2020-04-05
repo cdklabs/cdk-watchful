@@ -2,6 +2,8 @@ import { Stack, Construct, StackProps, App, Duration } from '@aws-cdk/core';
 import { Watchful } from '../lib';
 import dynamodb = require('@aws-cdk/aws-dynamodb');
 import events = require('@aws-cdk/aws-events');
+import sns = require('@aws-cdk/aws-sns');
+import sqs = require('@aws-cdk/aws-sqs');
 import events_targets = require('@aws-cdk/aws-events-targets');
 import lambda = require('@aws-cdk/aws-lambda');
 import path = require('path');
@@ -29,10 +31,13 @@ class TestStack extends Stack {
       read: true
     });
 
+    const alarmSqs = sqs.Queue.fromQueueArn(this, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+    const alarmSns = sns.Topic.fromTopicArn(this, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic');
+
     const watchful = new Watchful(this, 'watchful', {
       alarmEmail: 'benisrae@amazon.com',
-      alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue',
-      alarmSns: 'arn:aws:sns:us-east-2:444455556666:MyTopic'
+      alarmSqs,
+      alarmSns,
     });
 
     watchful.watchDynamoTable('My Cute Little Table', table1);
