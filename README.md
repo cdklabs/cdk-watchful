@@ -76,12 +76,15 @@ const wf = new Watchful(this, 'watchful', {
 ```python
 from cdk_watchful import Watchful
 
+alarm_sqs = sqs.Queue.from_queue_arn(self, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+alarm_sns = sns.Topic.from_topic_arn(self, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic')
+
 wf = Watchful(
   self,
   'watchful',
   alarm_email='your@amil.com',
-  alarm_sqs='arn:aws:sqs:us-east-1:444455556666:alarm-queue',
-  alarm_sns='arn:aws:sns:us-east-2:444455556666:MyTopic')
+  alarm_sqs=alarm_sqs,
+  alarm_sns=alarm_sns
 ```
 
 ## Add Resources
