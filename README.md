@@ -58,10 +58,16 @@ TypeScript, but python will work too). You can initialize using an email address
 
 ```ts
 import { Watchful } from 'cdk-watchful'
+import sns = require('@aws-cdk/aws-sns');
+import sqs = require('@aws-cdk/aws-sqs');
+
+const alarmSqs = sqs.Queue.fromQueueArn(this, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+const alarmSns = sns.Topic.fromTopicArn(this, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic');
 
 const wf = new Watchful(this, 'watchful', {
   alarmEmail: 'your@email.com',
-  alarmSqs: 'arn:aws:sqs:us-east-1:444455556666:alarm-queue'
+  alarmSqs,
+  alarmSns,
 });
 ```
 
@@ -70,7 +76,15 @@ const wf = new Watchful(this, 'watchful', {
 ```python
 from cdk_watchful import Watchful
 
-wf = Watchful(self, 'watchful', alarm_email='your@amil.com', alarm_sqs='arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+alarm_sqs = sqs.Queue.from_queue_arn(self, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
+alarm_sns = sns.Topic.from_topic_arn(self, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic')
+
+wf = Watchful(
+  self,
+  'watchful',
+  alarm_email='your@amil.com',
+  alarm_sqs=alarm_sqs,
+  alarm_sns=alarm_sns
 ```
 
 ## Add Resources
@@ -99,7 +113,6 @@ wf.watchScope(storageLayer);
 ```python
 wf.watch_scope(storage_layer)
 ```
-
 
 ## Example
 

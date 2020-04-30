@@ -15,18 +15,23 @@ import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
-  readonly alarmSqs?: string;
+  readonly alarmSqs?: sqs.IQueue;
+  readonly alarmSns?: sns.ITopic;
 }
 
 export class Watchful extends Construct implements IWatchful {
   private readonly dash: cloudwatch.Dashboard;
-  private readonly alarmTopic?: sns.Topic;
+  private readonly alarmTopic?: sns.ITopic;
 
   constructor(scope: Construct, id: string, props: WatchfulProps = { }) {
     super(scope, id);
 
-    if (props.alarmEmail || props.alarmSqs) {
+    if ((props.alarmEmail || props.alarmSqs) && !props.alarmSns) {
       this.alarmTopic = new sns.Topic(this, 'AlarmTopic', { displayName: 'Watchful Alarms' });
+    }
+
+    if (props.alarmSns) {
+      this.alarmTopic = props.alarmSns;
     }
 
     if (props.alarmEmail && this.alarmTopic) {
@@ -38,7 +43,8 @@ export class Watchful extends Construct implements IWatchful {
     if (props.alarmSqs && this.alarmTopic) {
       this.alarmTopic.addSubscription(
         new sns_subscriptions.SqsSubscription(
-          sqs.Queue.fromQueueArn(this, 'AlarmQueue', props.alarmSqs)
+          // sqs.Queue.fromQueueArn(this, 'AlarmQueue', props.alarmSqs)
+          props.alarmSqs
         )
       );
     }
