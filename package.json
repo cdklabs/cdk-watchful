@@ -1,6 +1,6 @@
 {
   "name": "cdk-watchful",
-  "version": "0.4.6",
+  "version": "0.5.0",
   "description": "Watching your CDK apps since 2019",
   "awscdkio": {
     "twitter": "emeshbi"
