@@ -38,6 +38,19 @@ const project = new JsiiProject({
 
   dependencies: CDK_DEPS,
   peerDependencies: CDK_DEPS,
+
+  // jsii publishing
+
+  java: {
+    javaPackage: 'com.github.eladb.watchful',
+    mavenGroupId: 'com.github.eladb',
+    mavenArtifactId: 'cdk-watchful'
+  },
+
+  python: {
+    distName: 'cdk-watchful',
+    module: 'cdk_watchful'
+  }
 });
 
 project.manifest.awscdkio = {
@@ -45,22 +58,3 @@ project.manifest.awscdkio = {
 };
 
 project.synth();
-
-/*
-  "jsii": {
-    "outdir": "dist",
-    "targets": {
-      "java": {
-        "package": "com.github.eladb.watchful",
-        "maven": {
-          "groupId": "com.github.eladb",
-          "artifactId": "cdk-watchful"
-        }
-      },
-      "python": {
-        "distName": "cdk-watchful",
-        "module": "cdk_watchful"
-      }
-    }
-  }
-*/

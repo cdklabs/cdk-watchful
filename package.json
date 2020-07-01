@@ -104,7 +104,19 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "java": {
+        "package": "com.github.eladb.watchful",
+        "maven": {
+          "groupId": "com.github.eladb",
+          "artifactId": "cdk-watchful"
+        }
+      },
+      "python": {
+        "distName": "cdk-watchful",
+        "module": "cdk_watchful"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
