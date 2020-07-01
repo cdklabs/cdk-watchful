@@ -1,12 +1,12 @@
 import { Construct, CfnOutput } from '@aws-cdk/core';
-import apigw = require('@aws-cdk/aws-apigateway');
-import sns = require('@aws-cdk/aws-sns');
-import sns_subscriptions = require('@aws-cdk/aws-sns-subscriptions');
-import lambda = require('@aws-cdk/aws-lambda');
-import cloudwatch_actions = require('@aws-cdk/aws-cloudwatch-actions');
-import dynamodb = require('@aws-cdk/aws-dynamodb');
-import sqs = require('@aws-cdk/aws-sqs');
-import cloudwatch = require('@aws-cdk/aws-cloudwatch');
+import * as apigw from '@aws-cdk/aws-apigateway';
+import * as sns from '@aws-cdk/aws-sns';
+import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
+import * as lambda from '@aws-cdk/aws-lambda';
+import * as cloudwatch_actions from '@aws-cdk/aws-cloudwatch-actions';
+import * as dynamodb from '@aws-cdk/aws-dynamodb';
+import * as sqs from '@aws-cdk/aws-sqs';
+import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
@@ -36,7 +36,7 @@ export class Watchful extends Construct implements IWatchful {
 
     if (props.alarmEmail && this.alarmTopic) {
       this.alarmTopic.addSubscription(
-        new sns_subscriptions.EmailSubscription(props.alarmEmail)
+        new sns_subscriptions.EmailSubscription(props.alarmEmail),
       );
     }
 
@@ -44,15 +44,15 @@ export class Watchful extends Construct implements IWatchful {
       this.alarmTopic.addSubscription(
         new sns_subscriptions.SqsSubscription(
           // sqs.Queue.fromQueueArn(this, 'AlarmQueue', props.alarmSqs)
-          props.alarmSqs
-        )
+          props.alarmSqs,
+        ),
       );
     }
 
     this.dash = new cloudwatch.Dashboard(this, 'Dashboard');
 
     new CfnOutput(this, 'WatchfulDashboard', {
-      value: linkForDashboard(this.dash)
+      value: linkForDashboard(this.dash),
     });
   }
 
@@ -69,7 +69,7 @@ export class Watchful extends Construct implements IWatchful {
   public addSection(title: string, options: SectionOptions = {}){
     const markdown = [
       `# ${title}`,
-      (options.links || []).map(link => `[button:${link.title}](${link.url})`).join(' | ')
+      (options.links || []).map(link => `[button:${link.title}](${link.url})`).join(' | '),
     ];
 
     this.addWidgets(new cloudwatch.TextWidget({ width: 24, markdown: markdown.join('\n') }));
@@ -85,19 +85,19 @@ export class Watchful extends Construct implements IWatchful {
       title,
       watchful: this,
       table,
-      ...options
+      ...options,
     });
   }
 
   public watchApiGateway(title: string, restApi: apigw.RestApi, options: WatchApiGatewayOptions = {}) {
     return new WatchApiGateway(this, restApi.node.uniqueId, {
-      title, watchful: this, restApi, ...options
+      title, watchful: this, restApi, ...options,
     });
   }
 
   public watchLambdaFunction(title: string, fn: lambda.Function, options: WatchLambdaFunctionOptions = {}) {
     return new WatchLambdaFunction(this, fn.node.uniqueId, {
-      title, watchful: this, fn, ...options
+      title, watchful: this, fn, ...options,
     });
   }
 }

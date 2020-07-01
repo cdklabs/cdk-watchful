@@ -1,12 +1,12 @@
 import { Stack, Construct, StackProps, App, Duration } from '@aws-cdk/core';
-import { Watchful } from '../lib';
-import dynamodb = require('@aws-cdk/aws-dynamodb');
-import events = require('@aws-cdk/aws-events');
-import sns = require('@aws-cdk/aws-sns');
-import sqs = require('@aws-cdk/aws-sqs');
-import events_targets = require('@aws-cdk/aws-events-targets');
-import lambda = require('@aws-cdk/aws-lambda');
-import path = require('path');
+import { Watchful } from '../src';
+import * as dynamodb from '@aws-cdk/aws-dynamodb';
+import * as events from '@aws-cdk/aws-events';
+import * as sns from '@aws-cdk/aws-sns';
+import * as sqs from '@aws-cdk/aws-sqs';
+import * as events_targets from '@aws-cdk/aws-events-targets';
+import * as lambda from '@aws-cdk/aws-lambda';
+import * as path from 'path';
 
 class TestStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
@@ -16,19 +16,19 @@ class TestStack extends Stack {
       writeCapacity: 10,
       partitionKey: {
         name: 'ID',
-        type: dynamodb.AttributeType.STRING
+        type: dynamodb.AttributeType.STRING,
       },
     });
 
     const writeTraffic = new TrafficDriver(this, 'WriteTraffic', {
       table: table1,
-      write: true
+      write: true,
     });
 
     const readTraffic = new TrafficDriver(this, 'WriteReadTraffic', {
       table: table1,
       write: true,
-      read: true
+      read: true,
     });
 
     const alarmSqs = sqs.Queue.fromQueueArn(this, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
@@ -60,7 +60,7 @@ class TrafficDriver extends Construct {
     super(scope, id);
 
     if (!props.read && !props.write) {
-      throw new Error(`At least "read" or "write" must be set`);
+      throw new Error('At least "read" or "write" must be set');
     }
 
     this.fn = new lambda.Function(this, 'LambdaFunction', {
@@ -71,7 +71,7 @@ class TrafficDriver extends Construct {
         TABLE_NAME: props.table.tableName,
         READ: props.read ? 'TRUE' : '',
         WRITE: props.write ? 'TRUE': '',
-      }
+      },
     });
 
     if (props.write) {
@@ -84,7 +84,7 @@ class TrafficDriver extends Construct {
 
     new events.Rule(this, 'Tick', {
       schedule: events.Schedule.rate(Duration.minutes(1)),
-      targets: [ new events_targets.LambdaFunction(this.fn) ]
+      targets: [ new events_targets.LambdaFunction(this.fn) ],
     });
   }
 }

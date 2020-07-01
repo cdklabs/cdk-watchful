@@ -1,7 +1,7 @@
 import { Construct } from '@aws-cdk/core';
-import lambda = require('@aws-cdk/aws-lambda');
+import * as lambda from '@aws-cdk/aws-lambda';
 import { IWatchful } from './api';
-import cloudwatch = require('@aws-cdk/aws-cloudwatch');
+import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 
 const DEFAULT_DURATION_THRESHOLD_PERCENT = 80;
 
@@ -55,8 +55,8 @@ export class WatchLambdaFunction extends Construct {
     this.watchful.addSection(props.title, {
       links: [
         { title: 'AWS Lambda Console', url: linkForLambdaFunction(this.fn) },
-        { title: 'CloudWatch Logs', url: linkForLambdaLogs(this.fn) }
-      ]
+        { title: 'CloudWatch Logs', url: linkForLambdaLogs(this.fn) },
+      ],
     });
 
     const { errorsMetric,    errorsAlarm    } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
@@ -68,25 +68,25 @@ export class WatchLambdaFunction extends Construct {
       new cloudwatch.GraphWidget({
         title: `Invocations/${invocationsMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ invocationsMetric ]
+        left: [ invocationsMetric ],
       }),
       new cloudwatch.GraphWidget({
         title: `Errors/${errorsMetric.period.toMinutes()}min`,
         width: 6,
         left: [ errorsMetric ],
-        leftAnnotations: [ errorsAlarm.toAnnotation() ]
+        leftAnnotations: [ errorsAlarm.toAnnotation() ],
       }),
       new cloudwatch.GraphWidget({
         title: `Throttles/${throttlesMetric.period.toMinutes()}min`,
         width: 6,
         left: [ throttlesMetric ],
-        leftAnnotations: [ throttlesAlarm.toAnnotation() ]
+        leftAnnotations: [ throttlesAlarm.toAnnotation() ],
       }),
       new cloudwatch.GraphWidget({
         title: `Duration/${durationMetric.period.toMinutes()}min`,
         width: 6,
         left: [ durationMetric ],
-        leftAnnotations: [ durationAlarm.toAnnotation() ]
+        leftAnnotations: [ durationAlarm.toAnnotation() ],
       }),
     )
   }

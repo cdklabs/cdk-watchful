@@ -1,8 +1,9 @@
-import SDK = require('aws-sdk');
+// eslint-disable-next-line import/no-extraneous-dependencies
+import * as SDK from 'aws-sdk';
 
 const TABLE_NAME = process.env.TABLE_NAME;
 if (!TABLE_NAME) {
-  throw new Error(`Missing TABLE_NAME environment variable`);
+  throw new Error('Missing TABLE_NAME environment variable');
 }
 
 const READ = process.env.READ;
@@ -26,7 +27,7 @@ exports.handler = async (event: any) => {
   if (READ) {
     const req: SDK.DynamoDB.ScanInput = {
       TableName: TABLE_NAME,
-      Limit: 1
+      Limit: 1,
     };
     await dynamo.scan(req).promise();
   }

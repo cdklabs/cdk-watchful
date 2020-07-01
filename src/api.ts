@@ -1,4 +1,4 @@
-import cloudwatch = require('@aws-cdk/aws-cloudwatch');
+import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 
 export interface IWatchful {
   addSection(title: string, options?: SectionOptions): void

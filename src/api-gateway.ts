@@ -1,4 +1,4 @@
-import apigw = require('@aws-cdk/aws-apigateway');
+import * as apigw from '@aws-cdk/aws-apigateway';
 import { Metric, MetricOptions, ComparisonOperator, GraphWidget, HorizontalAnnotation } from '@aws-cdk/aws-cloudwatch';
 import { Construct, Duration } from '@aws-cdk/core';
 import { IWatchful } from './api';
@@ -66,12 +66,12 @@ export class WatchApiGateway extends Construct {
             comparisonOperator: ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
             evaluationPeriods: 1,
             statistic: 'sum',
-          })
+          }),
       );
     }
 
     this.watchful.addSection(props.title, {
-      links: [{ title: 'Amazon API Gateway Console', url: linkForApiGateway(props.restApi) }]
+      links: [{ title: 'Amazon API Gateway Console', url: linkForApiGateway(props.restApi) }],
     });
     [undefined, ...props.watchedOperations || []].forEach(operation =>
       this.watchful.addWidgets(
@@ -79,7 +79,7 @@ export class WatchApiGateway extends Construct {
         ...props.cacheGraph ? [this.createCacheGraphWidget(operation)] : [],
         this.createLatencyGraphWidget(ApiGatewayMetric.Latency, operation),
         this.createLatencyGraphWidget(ApiGatewayMetric.IntegrationLatency, operation),
-      )
+      ),
     );
   }
 
@@ -97,7 +97,7 @@ export class WatchApiGateway extends Construct {
         this.createApiGatewayMetric(ApiGatewayMetric.FourHundredError, opts, { label: 'HTTP 4XX', statistic: 'sum', color: '#ff7f0e' }),
         this.createApiGatewayMetric(ApiGatewayMetric.FiveHundredError, opts, { label: 'HTTP 5XX', statistic: 'sum', color: '#d62728' }),
       ],
-      leftAnnotations
+      leftAnnotations,
     });
   }
 
@@ -127,7 +127,7 @@ export class WatchApiGateway extends Construct {
   private createApiGatewayMetric(
     metricName: ApiGatewayMetric,
     opts?: WatchedOperation,
-    metricOpts?: MetricOptions
+    metricOpts?: MetricOptions,
   ): Metric {
     return new Metric({
       dimensions: {
