@@ -1,6 +1,6 @@
 # cdk-watchful
 
-[![CircleCI](https://circleci.com/gh/eladb/cdk-watchful.svg?style=svg)](https://circleci.com/gh/eladb/cdk-watchful)
+![Release](https://github.com/eladb/cdk-watchful/workflows/Release/badge.svg)
 [![python](https://img.shields.io/badge/jsii-python-blueviolet.svg)](https://pypi.org/project/cdk-watchful/)
 [![typescript](https://img.shields.io/badge/jsii-typescript-blueviolet.svg)](https://www.npmjs.com/package/cdk-watchful)
 
@@ -114,9 +114,42 @@ wf.watchScope(storageLayer);
 wf.watch_scope(storage_layer)
 ```
 
+## API Reference
+
+See [API.md](./API.md).
+
 ## Example
 
 See a more complete [example](https://github.com/eladb/cdk-watchful/blob/master/example/index.ts).
+
+## Contributing
+
+Contributions of all kinds are welcome and celebrated. Raise an issue, submit a PR, do the right thing.
+
+To set up a dev environment:
+
+1. Clone repo
+2. `yarn install`
+
+Development workflow (change code and run tests automatically):
+
+```shell
+yarn test:watch
+```
+
+Build (like CI):
+
+```shell
+yarn build
+```
+
+Release new versions:
+
+```shell
+yarn bump
+```
+
+And then publish as a PR.
 
 ## License
 
