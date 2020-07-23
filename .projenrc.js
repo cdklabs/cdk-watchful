@@ -54,6 +54,8 @@ const project = new JsiiProject({
   }
 });
 
+project.gitignore.exclude('.env','.idea')
+
 project.manifest.awscdkio = {
   twitter: 'emeshbi'
 };
