@@ -7,6 +7,7 @@ Name|Description
 [WatchApiGateway](#cdk-watchful-watchapigateway)|*No description*
 [WatchDynamoTable](#cdk-watchful-watchdynamotable)|*No description*
 [WatchLambdaFunction](#cdk-watchful-watchlambdafunction)|*No description*
+[WatchRdsAurora](#cdk-watchful-watchrdsaurora)|*No description*
 [Watchful](#cdk-watchful-watchful)|*No description*
 [WatchfulAspect](#cdk-watchful-watchfulaspect)|A CDK aspect that can automatically watch all resources within a scope.
 
@@ -23,6 +24,8 @@ Name|Description
 [WatchDynamoTableProps](#cdk-watchful-watchdynamotableprops)|*No description*
 [WatchLambdaFunctionOptions](#cdk-watchful-watchlambdafunctionoptions)|*No description*
 [WatchLambdaFunctionProps](#cdk-watchful-watchlambdafunctionprops)|*No description*
+[WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)|*No description*
+[WatchRdsAuroraProps](#cdk-watchful-watchrdsauroraprops)|*No description*
 [WatchedOperation](#cdk-watchful-watchedoperation)|An operation (path and method) worth monitoring.
 [WatchfulAspectProps](#cdk-watchful-watchfulaspectprops)|*No description*
 [WatchfulProps](#cdk-watchful-watchfulprops)|*No description*
@@ -116,6 +119,37 @@ new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunction
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
   * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
   * **fn** (<code>[Function](#aws-cdk-aws-lambda-function)</code>)  *No description* 
+  * **title** (<code>string</code>)  *No description* 
+  * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
+
+
+
+
+## class WatchRdsAurora  <a id="cdk-watchful-watchrdsaurora"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
+__Extends__: [Construct](#aws-cdk-core-construct)
+
+### Initializer
+
+
+
+
+```ts
+new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
+```
+
+* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[WatchRdsAuroraProps](#cdk-watchful-watchrdsauroraprops)</code>)  *No description*
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **dbBufferCacheMinimumThreshold** (<code>number</code>)  Threshold for the Minimum Db Buffer Cache. __*Default*__: 0.
+  * **dbConnectionsMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Connections. __*Default*__: 0.
+  * **dbReplicaLagMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db ReplicaLag. __*Default*__: 0.
+  * **dbThroughputMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Throughput. __*Default*__: 0.
+  * **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -243,6 +277,26 @@ watchLambdaFunction(title: string, fn: Function, options?: WatchLambdaFunctionOp
 __Returns__:
 * <code>[WatchLambdaFunction](#cdk-watchful-watchlambdafunction)</code>
 
+#### watchRdsAuroraCluster(title, cluster, options?) <a id="cdk-watchful-watchful-watchrdsauroracluster"></a>
+
+
+
+```ts
+watchRdsAuroraCluster(title: string, cluster: DatabaseCluster, options?: WatchRdsAuroraOptions): WatchRdsAurora
+```
+
+* **title** (<code>string</code>)  *No description*
+* **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description*
+* **options** (<code>[WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)</code>)  *No description*
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **dbBufferCacheMinimumThreshold** (<code>number</code>)  Threshold for the Minimum Db Buffer Cache. __*Default*__: 0.
+  * **dbConnectionsMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Connections. __*Default*__: 0.
+  * **dbReplicaLagMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db ReplicaLag. __*Default*__: 0.
+  * **dbThroughputMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Throughput. __*Default*__: 0.
+
+__Returns__:
+* <code>[WatchRdsAurora](#cdk-watchful-watchrdsaurora)</code>
+
 #### watchScope(scope, options?) <a id="cdk-watchful-watchful-watchscope"></a>
 
 
@@ -256,6 +310,7 @@ watchScope(scope: Construct, options?: WatchfulAspectProps): void
   * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
+  * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
 
 
 
@@ -282,6 +337,7 @@ new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
   * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
+  * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
 
 
 ### Methods
@@ -477,6 +533,43 @@ Name | Type | Description
 
 
 
+## struct WatchRdsAuroraOptions  <a id="cdk-watchful-watchrdsauroraoptions"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
+**dbBufferCacheMinimumThreshold**? | <code>number</code> | Threshold for the Minimum Db Buffer Cache.<br/>__*Default*__: 0.
+**dbConnectionsMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Connections.<br/>__*Default*__: 0.
+**dbReplicaLagMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db ReplicaLag.<br/>__*Default*__: 0.
+**dbThroughputMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Throughput.<br/>__*Default*__: 0.
+
+
+
+## struct WatchRdsAuroraProps  <a id="cdk-watchful-watchrdsauroraprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**cluster** | <code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code> | <span></span>
+**title** | <code>string</code> | <span></span>
+**watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
+**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
+**dbBufferCacheMinimumThreshold**? | <code>number</code> | Threshold for the Minimum Db Buffer Cache.<br/>__*Default*__: 0.
+**dbConnectionsMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Connections.<br/>__*Default*__: 0.
+**dbReplicaLagMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db ReplicaLag.<br/>__*Default*__: 0.
+**dbThroughputMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Throughput.<br/>__*Default*__: 0.
+
+
+
 ## struct WatchedOperation  <a id="cdk-watchful-watchedoperation"></a>
 
 
@@ -503,6 +596,7 @@ Name | Type | Description
 **apiGateway**? | <code>boolean</code> | Automatically watch API Gateway APIs in the scope.<br/>__*Default*__: true
 **dynamodb**? | <code>boolean</code> | Automatically watch all Amazon DynamoDB tables in the scope.<br/>__*Default*__: true
 **lambda**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
+**rdsaurora**? | <code>boolean</code> | Automatically watch RDS Aurora clusters in the scope.<br/>__*Default*__: true
 
 
 

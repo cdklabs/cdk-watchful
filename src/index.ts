@@ -5,3 +5,4 @@ export * from './aspect';
 export * from './api-gateway';
 export * from './dynamodb';
 export * from './lambda';
+export * from './rds-aurora';

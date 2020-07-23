@@ -7,11 +7,13 @@ import * as cloudwatch_actions from '@aws-cdk/aws-cloudwatch-actions';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as sqs from '@aws-cdk/aws-sqs';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
+import * as rds from '@aws-cdk/aws-rds';
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
+import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
@@ -98,6 +100,12 @@ export class Watchful extends Construct implements IWatchful {
   public watchLambdaFunction(title: string, fn: lambda.Function, options: WatchLambdaFunctionOptions = {}) {
     return new WatchLambdaFunction(this, fn.node.uniqueId, {
       title, watchful: this, fn, ...options,
+    });
+  }
+
+  public watchRdsAuroraCluster(title: string, cluster: rds.DatabaseCluster, options: WatchRdsAuroraOptions = {}) {
+    return new WatchRdsAurora(this, cluster.node.uniqueId, {
+      title, watchful: this, cluster, ...options,
     });
   }
 }
