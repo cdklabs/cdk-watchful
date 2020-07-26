@@ -1,6 +1,6 @@
 const { JsiiProject, Semver } = require('projen');
 
-const CDK_VERSION = Semver.caret('1.48.0');
+const CDK_VERSION = Semver.caret('1.54.0');
 const CDK_DEPS = {
   "@aws-cdk/aws-apigateway": CDK_VERSION,
   "@aws-cdk/aws-cloudwatch": CDK_VERSION,
@@ -9,6 +9,7 @@ const CDK_DEPS = {
   "@aws-cdk/aws-events": CDK_VERSION,
   "@aws-cdk/aws-events-targets": CDK_VERSION,
   "@aws-cdk/aws-lambda": CDK_VERSION,
+  "@aws-cdk/aws-rds": CDK_VERSION,
   "@aws-cdk/aws-sns": CDK_VERSION,
   "@aws-cdk/aws-sns-subscriptions": CDK_VERSION,
   "@aws-cdk/aws-sqs": CDK_VERSION,
@@ -52,6 +53,8 @@ const project = new JsiiProject({
     module: 'cdk_watchful'
   }
 });
+
+project.gitignore.exclude('.env','.idea')
 
 project.manifest.awscdkio = {
   twitter: 'emeshbi'

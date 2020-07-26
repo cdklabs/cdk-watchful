@@ -2,6 +2,7 @@ import { IAspect, IConstruct } from '@aws-cdk/core';
 import * as apigw from '@aws-cdk/aws-apigateway';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as lambda from '@aws-cdk/aws-lambda';
+import * as rds from '@aws-cdk/aws-rds';
 
 export interface WatchfulAspectProps {
   /**
@@ -21,6 +22,13 @@ export interface WatchfulAspectProps {
    * @default true
    */
   readonly lambda?: boolean;
+
+  /**
+   * Automatically watch RDS Aurora clusters in the scope.
+   * @default true
+   */
+  readonly rdsaurora?: boolean;
+
 }
 
 /**
@@ -40,6 +48,7 @@ export class WatchfulAspect implements IAspect {
     const watchApiGateway = this.props.apiGateway === undefined ? true : this.props.apiGateway;
     const watchDynamo = this.props.dynamodb === undefined ? true : this.props.dynamodb;
     const watchLambda = this.props.lambda === undefined ? true : this.props.lambda;
+    const watchRdsAuroraCluster = this.props.rdsaurora === undefined ? true : this.props.rdsaurora;
 
     if (watchApiGateway && node instanceof apigw.RestApi) {
       this.watchful.watchApiGateway(node.node.path, node);
@@ -51,6 +60,10 @@ export class WatchfulAspect implements IAspect {
 
     if (watchLambda && node instanceof lambda.Function) {
       this.watchful.watchLambdaFunction(node.node.path, node);
+    }
+
+    if (watchRdsAuroraCluster && node instanceof rds.DatabaseCluster) {
+      this.watchful.watchRdsAuroraCluster(node.node.path, node);
     }
   }
 }
