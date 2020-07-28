@@ -6,6 +6,7 @@ Name|Description
 ----|-----------
 [WatchApiGateway](#cdk-watchful-watchapigateway)|*No description*
 [WatchDynamoTable](#cdk-watchful-watchdynamotable)|*No description*
+[WatchEcsService](#cdk-watchful-watchecsservice)|*No description*
 [WatchLambdaFunction](#cdk-watchful-watchlambdafunction)|*No description*
 [WatchRdsAurora](#cdk-watchful-watchrdsaurora)|*No description*
 [Watchful](#cdk-watchful-watchful)|*No description*
@@ -22,6 +23,8 @@ Name|Description
 [WatchApiGatewayProps](#cdk-watchful-watchapigatewayprops)|*No description*
 [WatchDynamoTableOptions](#cdk-watchful-watchdynamotableoptions)|*No description*
 [WatchDynamoTableProps](#cdk-watchful-watchdynamotableprops)|*No description*
+[WatchEcsServiceOptions](#cdk-watchful-watchecsserviceoptions)|*No description*
+[WatchEcsServiceProps](#cdk-watchful-watchecsserviceprops)|*No description*
 [WatchLambdaFunctionOptions](#cdk-watchful-watchlambdafunctionoptions)|*No description*
 [WatchLambdaFunctionProps](#cdk-watchful-watchlambdafunctionprops)|*No description*
 [WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)|*No description*
@@ -92,6 +95,38 @@ new WatchDynamoTable(scope: Construct, id: string, props: WatchDynamoTableProps)
   * **table** (<code>[Table](#aws-cdk-aws-dynamodb-table)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
+
+
+
+
+## class WatchEcsService  <a id="cdk-watchful-watchecsservice"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
+__Extends__: [Construct](#aws-cdk-core-construct)
+
+### Initializer
+
+
+
+
+```ts
+new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
+```
+
+* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[WatchEcsServiceProps](#cdk-watchful-watchecsserviceprops)</code>)  *No description*
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
+  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
+  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
+  * **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description* 
+  * **title** (<code>string</code>)  *No description* 
+  * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
+  * **ec2Service** (<code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code>)  *No description* __*Optional*__
+  * **fargateService** (<code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code>)  *No description* __*Optional*__
 
 
 
@@ -259,6 +294,46 @@ watchDynamoTable(title: string, table: Table, options?: WatchDynamoTableOptions)
 __Returns__:
 * <code>[WatchDynamoTable](#cdk-watchful-watchdynamotable)</code>
 
+#### watchEc2Ecs(title, ec2Service, targetGroup, options?) <a id="cdk-watchful-watchful-watchec2ecs"></a>
+
+
+
+```ts
+watchEc2Ecs(title: string, ec2Service: Ec2Service, targetGroup: ApplicationTargetGroup, options?: WatchEcsServiceOptions): WatchEcsService
+```
+
+* **title** (<code>string</code>)  *No description*
+* **ec2Service** (<code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code>)  *No description*
+* **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
+* **options** (<code>[WatchEcsServiceOptions](#cdk-watchful-watchecsserviceoptions)</code>)  *No description*
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
+  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
+  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
+
+__Returns__:
+* <code>[WatchEcsService](#cdk-watchful-watchecsservice)</code>
+
+#### watchFargateEcs(title, fargateService, targetGroup, options?) <a id="cdk-watchful-watchful-watchfargateecs"></a>
+
+
+
+```ts
+watchFargateEcs(title: string, fargateService: FargateService, targetGroup: ApplicationTargetGroup, options?: WatchEcsServiceOptions): WatchEcsService
+```
+
+* **title** (<code>string</code>)  *No description*
+* **fargateService** (<code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code>)  *No description*
+* **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
+* **options** (<code>[WatchEcsServiceOptions](#cdk-watchful-watchecsserviceoptions)</code>)  *No description*
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
+  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
+  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
+
+__Returns__:
+* <code>[WatchEcsService](#cdk-watchful-watchecsservice)</code>
+
 #### watchLambdaFunction(title, fn, options?) <a id="cdk-watchful-watchful-watchlambdafunction"></a>
 
 
@@ -309,6 +384,8 @@ watchScope(scope: Construct, options?: WatchfulAspectProps): void
 * **options** (<code>[WatchfulAspectProps](#cdk-watchful-watchfulaspectprops)</code>)  *No description*
   * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
+  * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
+  * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
 
@@ -336,6 +413,8 @@ new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
 * **props** (<code>[WatchfulAspectProps](#cdk-watchful-watchfulaspectprops)</code>)  Options.
   * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
+  * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
+  * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
 
@@ -500,6 +579,43 @@ Name | Type | Description
 
 
 
+## struct WatchEcsServiceOptions  <a id="cdk-watchful-watchecsserviceoptions"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
+**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 0.
+**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 0.
+**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 0.
+
+
+
+## struct WatchEcsServiceProps  <a id="cdk-watchful-watchecsserviceprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**targetGroup** | <code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code> | <span></span>
+**title** | <code>string</code> | <span></span>
+**watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
+**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
+**ec2Service**? | <code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code> | __*Optional*__
+**fargateService**? | <code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code> | __*Optional*__
+**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 0.
+**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 0.
+**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 0.
+
+
+
 ## struct WatchLambdaFunctionOptions  <a id="cdk-watchful-watchlambdafunctionoptions"></a>
 
 
@@ -595,6 +711,8 @@ Name | Type | Description
 -----|------|-------------
 **apiGateway**? | <code>boolean</code> | Automatically watch API Gateway APIs in the scope.<br/>__*Default*__: true
 **dynamodb**? | <code>boolean</code> | Automatically watch all Amazon DynamoDB tables in the scope.<br/>__*Default*__: true
+**ec2ecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
+**fargateecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
 **lambda**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
 **rdsaurora**? | <code>boolean</code> | Automatically watch RDS Aurora clusters in the scope.<br/>__*Default*__: true
 

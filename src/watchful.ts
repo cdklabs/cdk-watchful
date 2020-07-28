@@ -8,12 +8,15 @@ import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as sqs from '@aws-cdk/aws-sqs';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as rds from '@aws-cdk/aws-rds';
+import * as ecs from '@aws-cdk/aws-ecs';
+import {ApplicationTargetGroup} from '@aws-cdk/aws-elasticloadbalancingv2';
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { IWatchful, SectionOptions } from './api';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
 import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
+import { WatchEcsServiceOptions, WatchEcsService } from './ecs';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
@@ -106,6 +109,16 @@ export class Watchful extends Construct implements IWatchful {
   public watchRdsAuroraCluster(title: string, cluster: rds.DatabaseCluster, options: WatchRdsAuroraOptions = {}) {
     return new WatchRdsAurora(this, cluster.node.uniqueId, {
       title, watchful: this, cluster, ...options,
+    });
+  }
+  public watchFargateEcs(title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
+    return new WatchEcsService(this, fargateService.node.uniqueId, {
+      title, watchful: this, fargateService, targetGroup, ...options,
+    });
+  }
+  public watchEc2Ecs(title: string, ec2Service: ecs.Ec2Service, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
+    return new WatchEcsService(this, ec2Service.node.uniqueId, {
+      title, watchful: this, ec2Service, targetGroup, ...options,
     });
   }
 }

@@ -3,6 +3,7 @@ import * as apigw from '@aws-cdk/aws-apigateway';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds';
+import * as ecs_patterns from '@aws-cdk/aws-ecs-patterns';
 
 export interface WatchfulAspectProps {
   /**
@@ -29,6 +30,18 @@ export interface WatchfulAspectProps {
    */
   readonly rdsaurora?: boolean;
 
+  /**
+   * Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).
+   * @default true
+   */
+  readonly fargateecs?: boolean;
+
+  /**
+   * Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern).
+   * @default true
+   */
+  readonly ec2ecs?: boolean;
+
 }
 
 /**
@@ -49,6 +62,8 @@ export class WatchfulAspect implements IAspect {
     const watchDynamo = this.props.dynamodb === undefined ? true : this.props.dynamodb;
     const watchLambda = this.props.lambda === undefined ? true : this.props.lambda;
     const watchRdsAuroraCluster = this.props.rdsaurora === undefined ? true : this.props.rdsaurora;
+    const watchFargateEcs = this.props.fargateecs === undefined ? true : this.props.fargateecs;
+    const watchEc2Ecs = this.props.ec2ecs === undefined ? true : this.props.ec2ecs;
 
     if (watchApiGateway && node instanceof apigw.RestApi) {
       this.watchful.watchApiGateway(node.node.path, node);
@@ -64,6 +79,14 @@ export class WatchfulAspect implements IAspect {
 
     if (watchRdsAuroraCluster && node instanceof rds.DatabaseCluster) {
       this.watchful.watchRdsAuroraCluster(node.node.path, node);
+    }
+
+    if (watchFargateEcs && node instanceof ecs_patterns.ApplicationLoadBalancedFargateService) {
+      this.watchful.watchFargateEcs(node.node.path, node.service, node.targetGroup);
+    }
+
+    if (watchEc2Ecs && node instanceof ecs_patterns.ApplicationLoadBalancedEc2Service) {
+      this.watchful.watchEc2Ecs(node.node.path, node.service, node.targetGroup);
     }
   }
 }
