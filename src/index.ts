@@ -6,3 +6,4 @@ export * from './api-gateway';
 export * from './dynamodb';
 export * from './lambda';
 export * from './rds-aurora';
+export * from './ecs';

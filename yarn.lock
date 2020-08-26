@@ -279,7 +279,27 @@
     "@aws-cdk/custom-resources" "1.54.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-ecs@1.54.0":
+"@aws-cdk/aws-ecs-patterns@^1.54.0":
+  version "1.54.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ecs-patterns/-/aws-ecs-patterns-1.54.0.tgz#0d8baf20eaf50d7892488253ac4197621c99d661"
+  integrity sha512-G86psIm0OwUAhGB0/rQDZyZfPQNgR18zT3HWqayuMOWcjIA0ACD79gHB0nFbyLTGiH3rwIajnJ0yJKht+GnLFQ==
+  dependencies:
+    "@aws-cdk/aws-applicationautoscaling" "1.54.0"
+    "@aws-cdk/aws-certificatemanager" "1.54.0"
+    "@aws-cdk/aws-ec2" "1.54.0"
+    "@aws-cdk/aws-ecs" "1.54.0"
+    "@aws-cdk/aws-elasticloadbalancingv2" "1.54.0"
+    "@aws-cdk/aws-events" "1.54.0"
+    "@aws-cdk/aws-events-targets" "1.54.0"
+    "@aws-cdk/aws-iam" "1.54.0"
+    "@aws-cdk/aws-route53" "1.54.0"
+    "@aws-cdk/aws-route53-targets" "1.54.0"
+    "@aws-cdk/aws-servicediscovery" "1.54.0"
+    "@aws-cdk/aws-sqs" "1.54.0"
+    "@aws-cdk/core" "1.54.0"
+    constructs "^3.0.2"
+
+"@aws-cdk/aws-ecs@1.54.0", "@aws-cdk/aws-ecs@^1.54.0":
   version "1.54.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ecs/-/aws-ecs-1.54.0.tgz#2d8af5fc39063346a93120d1a9a6f39082436238"
   integrity sha512-6ZDvebM/V1AclKvHH1GclBGfzqDbxoNN1b6N5M8Q0QbHvMg93Ntb25ESMvePQFYHPt4VpIkaW5S3nPNxpKRwRg==
@@ -329,7 +349,7 @@
     "@aws-cdk/core" "1.54.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-elasticloadbalancingv2@1.54.0":
+"@aws-cdk/aws-elasticloadbalancingv2@1.54.0", "@aws-cdk/aws-elasticloadbalancingv2@^1.54.0":
   version "1.54.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-elasticloadbalancingv2/-/aws-elasticloadbalancingv2-1.54.0.tgz#3728bbe31516397090fc58d8d66886f35271dd07"
   integrity sha512-b/SMpM97C3bQCAAdANW90JfIxfZ1FCZn15v7bwoDyUtoO6M+HmnYfdd8wHCbHnKj/gE0UAq79x83/wwVgf8Ukw==
@@ -344,7 +364,7 @@
     "@aws-cdk/region-info" "1.54.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-events-targets@^1.54.0":
+"@aws-cdk/aws-events-targets@1.54.0", "@aws-cdk/aws-events-targets@^1.54.0":
   version "1.54.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-events-targets/-/aws-events-targets-1.54.0.tgz#4d6fb31297fde7d8d43ff1d109d89894ba9f5319"
   integrity sha512-W665IhXoosY5yahtQh77x4wjcOjj6i2TRwilNqurieMWdJZSKhnnOkmulrXepgNvgWGFs2X2mJeuj2qP/KvOPA==
