@@ -58,9 +58,12 @@ const project = new JsiiProject({
 });
 
 project.gitignore.exclude('.env','.idea')
+project.gitignore.exclude('example/*.js', 'example/*.d.ts');
 
 project.manifest.awscdkio = {
   twitter: 'emeshbi'
 };
+
+
 
 project.synth();
