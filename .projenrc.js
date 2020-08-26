@@ -1,25 +1,6 @@
-const { JsiiProject, Semver } = require('projen');
+const { ConstructLibraryAwsCdk, Semver } = require('projen');
 
-const CDK_VERSION = Semver.caret('1.54.0');
-const CDK_DEPS = {
-  "@aws-cdk/aws-apigateway": CDK_VERSION,
-  "@aws-cdk/aws-cloudwatch": CDK_VERSION,
-  "@aws-cdk/aws-cloudwatch-actions": CDK_VERSION,
-  "@aws-cdk/aws-dynamodb": CDK_VERSION,
-  "@aws-cdk/aws-ecs": CDK_VERSION,
-  "@aws-cdk/aws-ecs-patterns": CDK_VERSION,
-  "@aws-cdk/aws-elasticloadbalancingv2": CDK_VERSION,
-  "@aws-cdk/aws-events": CDK_VERSION,
-  "@aws-cdk/aws-events-targets": CDK_VERSION,
-  "@aws-cdk/aws-lambda": CDK_VERSION,
-  "@aws-cdk/aws-rds": CDK_VERSION,
-  "@aws-cdk/aws-sns": CDK_VERSION,
-  "@aws-cdk/aws-sns-subscriptions": CDK_VERSION,
-  "@aws-cdk/aws-sqs": CDK_VERSION,
-  "@aws-cdk/core": CDK_VERSION
-};
-
-const project = new JsiiProject({
+const project = new ConstructLibraryAwsCdk({
   name: 'cdk-watchful',
   description: 'Watching your CDK apps since 2019',
 
@@ -29,19 +10,36 @@ const project = new JsiiProject({
   authorEmail: 'elad.benisrael@gmail.com',
   repository: 'https://github.com/eladb/cdk-watchful.git',
   keywords: [
-    "cdk",
     "cloudwatch",
     "monitoring"
   ],
 
-  devDependencies: {
-    "@aws-cdk/assert": CDK_VERSION,
-    "aws-cdk": CDK_VERSION,
-    "aws-sdk": Semver.caret("2.708.0")
+  catalog: {
+    twitter: 'emeshbi'
   },
 
-  dependencies: CDK_DEPS,
-  peerDependencies: CDK_DEPS,
+  cdkVersion: '1.54.0',
+  cdkDependencies: [
+    "@aws-cdk/aws-apigateway",
+    "@aws-cdk/aws-cloudwatch",
+    "@aws-cdk/aws-cloudwatch-actions",
+    "@aws-cdk/aws-dynamodb",
+    "@aws-cdk/aws-ecs",
+    "@aws-cdk/aws-ecs-patterns",
+    "@aws-cdk/aws-elasticloadbalancingv2",
+    "@aws-cdk/aws-events",
+    "@aws-cdk/aws-events-targets",
+    "@aws-cdk/aws-lambda",
+    "@aws-cdk/aws-rds",
+    "@aws-cdk/aws-sns",
+    "@aws-cdk/aws-sns-subscriptions",
+    "@aws-cdk/aws-sqs",
+    "@aws-cdk/core"
+  ],
+
+  devDependencies: {
+    "aws-sdk": Semver.caret("2.708.0")
+  },
 
   // jsii publishing
 
@@ -59,11 +57,5 @@ const project = new JsiiProject({
 
 project.gitignore.exclude('.env','.idea')
 project.gitignore.exclude('example/*.js', 'example/*.d.ts');
-
-project.manifest.awscdkio = {
-  twitter: 'emeshbi'
-};
-
-
 
 project.synth();
