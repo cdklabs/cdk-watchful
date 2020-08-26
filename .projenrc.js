@@ -18,6 +18,9 @@ const project = new ConstructLibraryAws({
     twitter: 'emeshbi'
   },
 
+  // creates PRs for projen upgrades
+  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
+
   cdkVersion: '1.54.0',
   cdkDependencies: [
     "@aws-cdk/aws-apigateway",
