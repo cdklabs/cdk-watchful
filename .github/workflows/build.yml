@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: npx projen@0.3.56
+      - run: npx projen@0.3.58
       - name: Anti-tamper check
         run: git diff --exit-code
       - name: Set git identity
