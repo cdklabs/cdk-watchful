@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.17.0
-      - run: npx projen@0.3.62
+      - run: npx projen@0.3.70
       - name: Anti-tamper check
         run: git diff --exit-code
       - run: yarn projen:upgrade
