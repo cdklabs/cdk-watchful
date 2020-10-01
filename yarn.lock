@@ -5295,11 +5295,12 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.3.70:
-  version "0.3.70"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.70.tgz#72238b137f80879bc2c258afe9d3948636c4db24"
-  integrity sha512-WEaV/6iBkHcnBEH//PZQCKj0W4j9MJBOGxSM30jenPv4GnxFpUpyExsPnBSDNNcpI8mZtMUltEAYvgHaTH3TFQ==
+projen@^0.3.78:
+  version "0.3.78"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.78.tgz#6b5d79ecd045e1aa1ba299c4ea0ea3573a096e51"
+  integrity sha512-pRxEYhmQOt8fzl99v3afFHD6LjqEvid06U+ImrsGpLab0brg0pO+9kYuTlf+3tinTiVMmVMZ5IAK9fwhTmtxnA==
   dependencies:
+    chalk "^4.1.0"
     decamelize "^4.0.0"
     fs-extra "^9.0.1"
     glob "^7"
