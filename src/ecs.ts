@@ -1,8 +1,8 @@
-import * as cdk from '@aws-cdk/core';
-import {IWatchful} from './api';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as ecs from '@aws-cdk/aws-ecs';
-import {HttpCodeTarget, ApplicationTargetGroup} from '@aws-cdk/aws-elasticloadbalancingv2';
+import { HttpCodeTarget, ApplicationTargetGroup } from '@aws-cdk/aws-elasticloadbalancingv2';
+import * as cdk from '@aws-cdk/core';
+import { IWatchful } from './api';
 
 
 export interface WatchEcsServiceOptions {
@@ -48,20 +48,20 @@ export class WatchEcsService extends cdk.Construct {
   private readonly watchful: IWatchful;
   private readonly ecsService: any;
   private readonly targetGroup: ApplicationTargetGroup;
-  
+
   constructor(scope: cdk.Construct, id: string, props: WatchEcsServiceProps) {
     super(scope, id);
-  
+
     this.watchful = props.watchful;
-    if (props.ec2Service){
-      this.ecsService = props.ec2Service
+    if (props.ec2Service) {
+      this.ecsService = props.ec2Service;
     }
-    if (props.fargateService){
-      this.ecsService = props.fargateService
+    if (props.fargateService) {
+      this.ecsService = props.fargateService;
     }
 
-    this.targetGroup = props.targetGroup
-        
+    this.targetGroup = props.targetGroup;
+
     this.watchful.addSection(props.title, {
       links: [
         { title: 'ECS Service', url: linkForEcsService(this.ecsService) },
@@ -74,64 +74,64 @@ export class WatchEcsService extends cdk.Construct {
     const { targetResponseTimeMetric, targetResponseTimeAlarm } = this.createTargetResponseTimeMonitor(props.targetResponseTimeThreshold);
     const { healthyHostsMetric, unhealthyHostsMetric } = this.createHostCountMetrics();
 
-    const { requestsMetric, requestsAlarm } = this.createRequestsMonitor(props.requestsThreshold)
+    const { requestsMetric, requestsAlarm } = this.createRequestsMonitor(props.requestsThreshold);
     const { http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric } = this.createHttpRequestsMetrics();
-    const { requestsErrorRateMetric, requestsErrorRateAlarm } =  this.requestsErrorRate(http4xxMetric, http5xxMetric, requestsMetric);
+    const { requestsErrorRateMetric, requestsErrorRateAlarm } = this.requestsErrorRate(http4xxMetric, http5xxMetric, requestsMetric);
 
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
         title: `CPUUtilization/${cpuUtilizationMetric.period.toMinutes()}min`,
         width: 12,
-        left: [ cpuUtilizationMetric ],
-        leftAnnotations: [ cpuUtilizationAlarm.toAnnotation() ],
+        left: [cpuUtilizationMetric],
+        leftAnnotations: [cpuUtilizationAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `MemoryUtilization/${memoryUtilizationMetric.period.toMinutes()}min`,
         width: 12,
-        left: [ memoryUtilizationMetric ],
-        leftAnnotations: [ memoryUtilizationAlarm.toAnnotation() ],
+        left: [memoryUtilizationMetric],
+        leftAnnotations: [memoryUtilizationAlarm.toAnnotation()],
       }),
-    )
+    );
     this.watchful.addWidgets(
       new cloudwatch.SingleValueWidget({
         title: 'Healthy Hosts',
         height: 6,
         width: 6,
-        metrics: [ healthyHostsMetric ],
+        metrics: [healthyHostsMetric],
       }),
       new cloudwatch.SingleValueWidget({
         title: 'UnHealthy Hosts',
         height: 6,
         width: 6,
-        metrics: [ unhealthyHostsMetric ],
+        metrics: [unhealthyHostsMetric],
       }),
       new cloudwatch.GraphWidget({
         title: `TargetResponseTime/${targetResponseTimeMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ targetResponseTimeMetric ],
-        leftAnnotations: [ targetResponseTimeAlarm.toAnnotation() ],
+        left: [targetResponseTimeMetric],
+        leftAnnotations: [targetResponseTimeAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `Requests/${requestsMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ requestsMetric ],
-        leftAnnotations: [ requestsAlarm.toAnnotation() ],
+        left: [requestsMetric],
+        leftAnnotations: [requestsAlarm.toAnnotation()],
       }),
-    )
+    );
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
         title: 'HTTP Requests Overview',
         width: 12,
-        left: [ http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric ],
+        left: [http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric],
       }),
       new cloudwatch.GraphWidget({
         title: `HTTP Requests Error rate/${requestsErrorRateMetric.period.toMinutes()}min`,
         width: 12,
-        left: [ requestsErrorRateMetric ],
-        leftAnnotations: [ requestsErrorRateAlarm.toAnnotation() ],
+        left: [requestsErrorRateMetric],
+        leftAnnotations: [requestsErrorRateAlarm.toAnnotation()],
       }),
-    )
+    );
   }
 
   private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 0) {
@@ -189,10 +189,10 @@ export class WatchEcsService extends cdk.Construct {
 
   private createHttpRequestsMetrics() {
     const targetGroup = this.targetGroup;
-    const http2xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_2XX_COUNT)
-    const http3xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_3XX_COUNT)
-    const http4xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_4XX_COUNT)
-    const http5xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_5XX_COUNT)
+    const http2xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_2XX_COUNT);
+    const http3xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_3XX_COUNT);
+    const http4xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_4XX_COUNT);
+    const http5xxMetric = targetGroup.metricHttpCodeTarget(HttpCodeTarget.TARGET_5XX_COUNT);
     return { http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric };
   }
 
@@ -204,9 +204,9 @@ export class WatchEcsService extends cdk.Construct {
     return { healthyHostsMetric, unhealthyHostsMetric };
   }
 
-  private requestsErrorRate(http4xxMetric: cloudwatch.IMetric, 
-    http5xxMetric: cloudwatch.IMetric, 
-    requestsMetric: cloudwatch.IMetric, 
+  private requestsErrorRate(http4xxMetric: cloudwatch.IMetric,
+    http5xxMetric: cloudwatch.IMetric,
+    requestsMetric: cloudwatch.IMetric,
     requestsErrorRateThreshold = 0) {
     const requestsErrorRateMetric = new cloudwatch.MathExpression({
       expression: 'http4xx + http5xx / requests',
@@ -215,7 +215,7 @@ export class WatchEcsService extends cdk.Construct {
         http5xx: http5xxMetric,
         requests: requestsMetric,
       },
-    })
+    });
     const requestsErrorRateAlarm = requestsErrorRateMetric.createAlarm(this, 'requestsErrorRateAlarm', {
       alarmDescription: 'requestsErrorRateAlarm',
       threshold: requestsErrorRateThreshold,
@@ -232,6 +232,5 @@ export class WatchEcsService extends cdk.Construct {
 function linkForEcsService(ecsService: any) {
   return `https://console.aws.amazon.com/ecs/home?region=${ecsService.stack.region}#/clusters/${ecsService.cluster.clusterName}/services/${ecsService.serviceName}/details`;
 }
-
 
 

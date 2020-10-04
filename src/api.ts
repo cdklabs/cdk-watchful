@@ -1,7 +1,7 @@
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 
 export interface IWatchful {
-  addSection(title: string, options?: SectionOptions): void
+  addSection(title: string, options?: SectionOptions): void;
   addAlarm(alarm: cloudwatch.Alarm): void;
   addWidgets(...widgets: cloudwatch.IWidget[]): void;
 }

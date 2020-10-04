@@ -1,7 +1,7 @@
+import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import { Construct, Duration } from '@aws-cdk/core';
 import { IWatchful } from './api';
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 
 const DEFAULT_PERCENT = 80;
 
@@ -53,7 +53,7 @@ export class WatchDynamoTable extends Construct {
     this.watchful.addAlarm(this.createDynamoCapacityAlarm('write', writeCapacityMetric, throughput.writeCapacityUnits, props.writeCapacityThresholdPercent));
 
     this.watchful.addSection(props.title, {
-      links: [ { title: 'Amazon DynamoDB Console', url: linkForDynamoTable(table) } ],
+      links: [{ title: 'Amazon DynamoDB Console', url: linkForDynamoTable(table) }],
     });
 
     this.watchful.addWidgets(
@@ -67,7 +67,7 @@ export class WatchDynamoTable extends Construct {
       title: `${type} Capacity Units/${metric.period.toMinutes()}min`,
       width: 12,
       stacked: true,
-      left: [ metric ],
+      left: [metric],
       leftAnnotations: [
         {
           label: 'Provisioned',
@@ -97,7 +97,6 @@ export class WatchDynamoTable extends Construct {
     return alarm;
   }
 }
-
 
 
 function linkForDynamoTable(table: dynamodb.Table, tab = 'overview') {

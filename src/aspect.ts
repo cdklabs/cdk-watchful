@@ -1,9 +1,9 @@
-import { IAspect, IConstruct } from '@aws-cdk/core';
 import * as apigw from '@aws-cdk/aws-apigateway';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
+import * as ecs_patterns from '@aws-cdk/aws-ecs-patterns';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds';
-import * as ecs_patterns from '@aws-cdk/aws-ecs-patterns';
+import { IAspect, IConstruct } from '@aws-cdk/core';
 
 export interface WatchfulAspectProps {
   /**

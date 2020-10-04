@@ -1,7 +1,7 @@
-import { Construct } from '@aws-cdk/core';
-import * as lambda from '@aws-cdk/aws-lambda';
-import { IWatchful } from './api';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
+import * as lambda from '@aws-cdk/aws-lambda';
+import { Construct } from '@aws-cdk/core';
+import { IWatchful } from './api';
 
 const DEFAULT_DURATION_THRESHOLD_PERCENT = 80;
 
@@ -59,36 +59,36 @@ export class WatchLambdaFunction extends Construct {
       ],
     });
 
-    const { errorsMetric,    errorsAlarm    } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
+    const { errorsMetric, errorsAlarm } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
     const { throttlesMetric, throttlesAlarm } = this.createThrottlesMonitor(props.throttlesPerMinuteThreshold);
-    const { durationMetric,  durationAlarm  } = this.createDurationMonitor(timeoutSec, props.durationThresholdPercent);
+    const { durationMetric, durationAlarm } = this.createDurationMonitor(timeoutSec, props.durationThresholdPercent);
     const invocationsMetric = this.fn.metricInvocations();
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
         title: `Invocations/${invocationsMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ invocationsMetric ],
+        left: [invocationsMetric],
       }),
       new cloudwatch.GraphWidget({
         title: `Errors/${errorsMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ errorsMetric ],
-        leftAnnotations: [ errorsAlarm.toAnnotation() ],
+        left: [errorsMetric],
+        leftAnnotations: [errorsAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `Throttles/${throttlesMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ throttlesMetric ],
-        leftAnnotations: [ throttlesAlarm.toAnnotation() ],
+        left: [throttlesMetric],
+        leftAnnotations: [throttlesAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `Duration/${durationMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ durationMetric ],
-        leftAnnotations: [ durationAlarm.toAnnotation() ],
+        left: [durationMetric],
+        leftAnnotations: [durationAlarm.toAnnotation()],
       }),
-    )
+    );
   }
 
   private createErrorsMonitor(errorsPerMinuteThreshold = 0) {
@@ -137,5 +137,5 @@ function linkForLambdaFunction(fn: lambda.Function, tab = 'graph') {
 }
 
 function linkForLambdaLogs(fn: lambda.Function) {
-  return `https://console.aws.amazon.com/cloudwatch/home?region=${fn.stack.region}#logEventViewer:group=/aws/lambda/${fn.functionName}`
+  return `https://console.aws.amazon.com/cloudwatch/home?region=${fn.stack.region}#logEventViewer:group=/aws/lambda/${fn.functionName}`;
 }

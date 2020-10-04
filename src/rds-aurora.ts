@@ -1,7 +1,7 @@
-import * as cdk from '@aws-cdk/core';
-import * as rds from '@aws-cdk/aws-rds';
-import { IWatchful } from './api';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
+import * as rds from '@aws-cdk/aws-rds';
+import * as cdk from '@aws-cdk/core';
+import { IWatchful } from './api';
 
 export interface WatchRdsAuroraOptions {
   /**
@@ -51,13 +51,13 @@ export class WatchRdsAurora extends cdk.Construct {
 
   private readonly watchful: IWatchful;
   private readonly cluster: rds.DatabaseCluster;
-  
+
   constructor(scope: cdk.Construct, id: string, props: WatchRdsAuroraProps) {
     super(scope, id);
-  
+
     this.watchful = props.watchful;
-    this.cluster = props.cluster
-        
+    this.cluster = props.cluster;
+
     this.watchful.addSection(props.title, {
       links: [
         { title: 'AWS RDS Cluster', url: linkForRDS(this.cluster) },
@@ -70,41 +70,41 @@ export class WatchRdsAurora extends cdk.Construct {
     const { dbBufferCacheHitRatioMetric, dbBufferCacheHitRatioAlarm } = this.createDbBufferCacheMonitor(props.dbBufferCacheMinimumThreshold);
 
     const { dbInsertThroughputMetric, dbUpdateThroughputMetric, dbSelectThroughputMetric, dbDeleteThroughputMetric } =
-        this.createDbDmlThroughputMonitor(props.dbThroughputMaximumThreshold)
-      
+        this.createDbDmlThroughputMonitor(props.dbThroughputMaximumThreshold);
+
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
         title: `CPUUtilization/${cpuUtilizationMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ cpuUtilizationMetric ],
-        leftAnnotations: [ cpuUtilizationAlarm.toAnnotation() ],
+        left: [cpuUtilizationMetric],
+        leftAnnotations: [cpuUtilizationAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `DB Connections/${dbConnectionsMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ dbConnectionsMetric ],
-        leftAnnotations: [ dbConnectionsAlarm.toAnnotation() ],
+        left: [dbConnectionsMetric],
+        leftAnnotations: [dbConnectionsAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `DB Replica Lag/${dbReplicaLagMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ dbReplicaLagMetric ],
-        leftAnnotations: [ dbReplicaLagAlarm.toAnnotation() ],
+        left: [dbReplicaLagMetric],
+        leftAnnotations: [dbReplicaLagAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: `DB BufferCache Hit Ratio/${dbBufferCacheHitRatioMetric.period.toMinutes()}min`,
         width: 6,
-        left: [ dbBufferCacheHitRatioMetric ],
-        leftAnnotations: [ dbBufferCacheHitRatioAlarm.toAnnotation() ],
+        left: [dbBufferCacheHitRatioMetric],
+        leftAnnotations: [dbBufferCacheHitRatioAlarm.toAnnotation()],
       }),
-    )
+    );
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
         title: 'RDS DML Overview',
         width: 24,
-        left: [ dbInsertThroughputMetric, dbUpdateThroughputMetric, dbSelectThroughputMetric, dbDeleteThroughputMetric ],
+        left: [dbInsertThroughputMetric, dbUpdateThroughputMetric, dbSelectThroughputMetric, dbDeleteThroughputMetric],
       }),
-    )
+    );
   }
 
   private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 80) {
@@ -122,7 +122,7 @@ export class WatchRdsAurora extends cdk.Construct {
       threshold: cpuMaximumThresholdPercent,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
-    })
+    });
     return { cpuUtilizationMetric, cpuUtilizationAlarm };
   }
 
@@ -141,7 +141,7 @@ export class WatchRdsAurora extends cdk.Construct {
       threshold: dbConnectionsMaximumThreshold,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
-    })
+    });
     return { dbConnectionsMetric, dbConnectionsAlarm };
   }
 
@@ -160,7 +160,7 @@ export class WatchRdsAurora extends cdk.Construct {
       threshold: dbReplicaLagMaximumThreshold,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
-    })
+    });
     return { dbReplicaLagMetric, dbReplicaLagAlarm };
   }
 
@@ -179,12 +179,12 @@ export class WatchRdsAurora extends cdk.Construct {
       threshold: dbBufferCacheMinimumThreshold,
       comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
       evaluationPeriods: 3,
-    })
+    });
     return { dbBufferCacheHitRatioMetric, dbBufferCacheHitRatioAlarm };
   }
   private createDbDmlThroughputMonitor(dbThroughputMaximumThreshold = 0) {
     // @ts-ignore
-    const AlarmThreshold = dbThroughputMaximumThreshold
+    const AlarmThreshold = dbThroughputMaximumThreshold;
     const dbInsertThroughputMetric = new cloudwatch.Metric({
       metricName: 'InsertThroughput',
       namespace: 'AWS/RDS',
@@ -221,14 +221,17 @@ export class WatchRdsAurora extends cdk.Construct {
         DBClusterIdentifier: this.cluster.clusterIdentifier,
       },
     });
-    return { dbInsertThroughputMetric, dbUpdateThroughputMetric,
-      dbSelectThroughputMetric, dbDeleteThroughputMetric };
+    return {
+      dbInsertThroughputMetric,
+      dbUpdateThroughputMetric,
+      dbSelectThroughputMetric,
+      dbDeleteThroughputMetric,
+    };
   }
 }
 
 function linkForRDS(cluster: rds.DatabaseCluster) {
   return `https://console.aws.amazon.com/rds/home?region=${cluster.stack.region}#database:id=${cluster.clusterIdentifier};is-cluster=true`;
 }
-
 
 

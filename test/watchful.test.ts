@@ -1,6 +1,6 @@
+import { expect as cdk_expect, haveResource } from '@aws-cdk/assert';
 import { Stack } from '@aws-cdk/core';
 import { Watchful } from '../src';
-import { expect as cdk_expect, haveResource } from '@aws-cdk/assert';
 
 test('creates an empty dashboard', () => {
   // GIVEN

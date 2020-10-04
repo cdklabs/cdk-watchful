@@ -1,22 +1,22 @@
-import { Construct, CfnOutput } from '@aws-cdk/core';
 import * as apigw from '@aws-cdk/aws-apigateway';
-import * as sns from '@aws-cdk/aws-sns';
-import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
-import * as lambda from '@aws-cdk/aws-lambda';
+import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as cloudwatch_actions from '@aws-cdk/aws-cloudwatch-actions';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import * as sqs from '@aws-cdk/aws-sqs';
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as rds from '@aws-cdk/aws-rds';
 import * as ecs from '@aws-cdk/aws-ecs';
-import {ApplicationTargetGroup} from '@aws-cdk/aws-elasticloadbalancingv2';
-import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
+import { ApplicationTargetGroup } from '@aws-cdk/aws-elasticloadbalancingv2';
+import * as lambda from '@aws-cdk/aws-lambda';
+import * as rds from '@aws-cdk/aws-rds';
+import * as sns from '@aws-cdk/aws-sns';
+import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
+import * as sqs from '@aws-cdk/aws-sqs';
+import { Construct, CfnOutput } from '@aws-cdk/core';
 import { IWatchful, SectionOptions } from './api';
-import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
-import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
-import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
+import { WatchfulAspect, WatchfulAspectProps } from './aspect';
+import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { WatchEcsServiceOptions, WatchEcsService } from './ecs';
+import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
+import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
@@ -71,7 +71,7 @@ export class Watchful extends Construct implements IWatchful {
     }
   }
 
-  public addSection(title: string, options: SectionOptions = {}){
+  public addSection(title: string, options: SectionOptions = {}) {
     const markdown = [
       `# ${title}`,
       (options.links || []).map(link => `[button:${link.title}](${link.url})`).join(' | '),
@@ -111,7 +111,9 @@ export class Watchful extends Construct implements IWatchful {
       title, watchful: this, cluster, ...options,
     });
   }
-  public watchFargateEcs(title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
+  public watchFargateEcs(title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup,
+    options: WatchEcsServiceOptions = {}) {
+
     return new WatchEcsService(this, fargateService.node.uniqueId, {
       title, watchful: this, fargateService, targetGroup, ...options,
     });
