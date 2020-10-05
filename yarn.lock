@@ -938,6 +938,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@iarna/toml@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.5.tgz#b32366c89b43c6f8cefbdefac778b9c828e3ba8c"
+  integrity sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz#10602de5570baea82f8afbfa2630b24e7a8cfe5b"
@@ -5420,11 +5425,12 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.3.82:
-  version "0.3.82"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.82.tgz#6f7afb70436ba4eb96ebc05b8b940ced2347815e"
-  integrity sha512-+faVMqFsG/YyweNkbWI88wElFVoaPdGWl/N1ibRRjzK+HBSqiIld287YU2SoSrOt+Y8RPjxSOolvvAgYABQUPQ==
+projen@^0.3.92:
+  version "0.3.92"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.3.92.tgz#f0e831bd43624509150ccbd6c269e6cbb289c14c"
+  integrity sha512-YGljU2Vzfys3TG4vMIS++lr3ZTYFe1kE9fzFytMSMErpYbS6Dn5//rjFEFzvubwJlBDW8wYK66OKK7BW0Fei+w==
   dependencies:
+    "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
     decamelize "^4.0.0"
     fs-extra "^9.0.1"
