@@ -48,7 +48,7 @@
     "jsii-pacmak": "^1.7.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.117",
+    "projen": "^0.3.118",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
