@@ -55,6 +55,7 @@ example/*.d.ts
 !/.mergify.yml
 !/.github/dependabot.yml
 !/.github/workflows/projenupgrade.yml
+!/.github/pull_request_template.md
 !/src
 !/tsconfig.jest.json
 !/test
