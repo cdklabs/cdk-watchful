@@ -1,7 +1,7 @@
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import { Construct, Duration } from '@aws-cdk/core';
-import { IWatchful } from './api';
+import {Construct, Duration} from '@aws-cdk/core';
+import {IWatchful} from './api';
 
 const DEFAULT_PERCENT = 80;
 
@@ -35,7 +35,29 @@ export class WatchDynamoTable extends Construct {
     this.watchful = props.watchful;
 
     const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
-    const throughput = cfnTable.provisionedThroughput as dynamodb.CfnTable.ProvisionedThroughputProperty;
+    const billingMode = cfnTable.billingMode as dynamodb.BillingMode;
+
+    switch (billingMode) {
+      case dynamodb.BillingMode.PAY_PER_REQUEST:
+        this.createWidgetsForPayPerRequestTable(props.title, table);
+        break;
+
+      case dynamodb.BillingMode.PROVISIONED:
+        this.createWidgetsForProvisionedTable(props.title,
+            table,
+            props.readCapacityThresholdPercent,
+            props.writeCapacityThresholdPercent
+        );
+        break;
+    }
+  }
+
+  /**
+   * Create widgets for tables with billingMode=PROVISIONED
+   * Include alarms when capacity is over 80% of the provisioned value
+   */
+  private createWidgetsForProvisionedTable(title: string, table: dynamodb.Table, readCapacityThresholdPercent?: number, writeCapacityThresholdPercent?: number){
+    const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
 
     const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
       label: 'Consumed',
@@ -48,17 +70,44 @@ export class WatchDynamoTable extends Construct {
       period: Duration.minutes(1),
       statistic: 'sum',
     });
+    const throughput = cfnTable.provisionedThroughput as dynamodb.CfnTable.ProvisionedThroughputProperty;
 
-    this.watchful.addAlarm(this.createDynamoCapacityAlarm('read', readCapacityMetric, throughput.readCapacityUnits, props.readCapacityThresholdPercent));
-    this.watchful.addAlarm(this.createDynamoCapacityAlarm('write', writeCapacityMetric, throughput.writeCapacityUnits, props.writeCapacityThresholdPercent));
+    this.watchful.addAlarm(this.createDynamoCapacityAlarm('read', readCapacityMetric, throughput.readCapacityUnits, readCapacityThresholdPercent));
+    this.watchful.addAlarm(this.createDynamoCapacityAlarm('write', writeCapacityMetric, throughput.writeCapacityUnits, writeCapacityThresholdPercent));
 
-    this.watchful.addSection(props.title, {
+    this.watchful.addSection(title, {
       links: [{ title: 'Amazon DynamoDB Console', url: linkForDynamoTable(table) }],
     });
 
     this.watchful.addWidgets(
-      this.createDynamoCapacityGraph('Read', readCapacityMetric, throughput.readCapacityUnits, props.readCapacityThresholdPercent),
-      this.createDynamoCapacityGraph('Write', writeCapacityMetric, throughput.writeCapacityUnits, props.writeCapacityThresholdPercent),
+        this.createDynamoCapacityGraph('Read', readCapacityMetric, throughput.readCapacityUnits, readCapacityThresholdPercent),
+        this.createDynamoCapacityGraph('Write', writeCapacityMetric, throughput.writeCapacityUnits, writeCapacityThresholdPercent),
+    );
+  }
+
+  /**
+   * Create widgets for tables with billingMode=PAY_PER_REQUEST
+   * Include consumed capacity metrics
+   */
+  private createWidgetsForPayPerRequestTable(title: string, table: dynamodb.Table){
+    const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
+      label: 'Consumed',
+      period: Duration.minutes(1),
+      statistic: 'sum',
+    });
+
+    const writeCapacityMetric = metricForDynamoTable(table, 'ConsumedWriteCapacityUnits', {
+      label: 'Consumed',
+      period: Duration.minutes(1),
+      statistic: 'sum',
+    });
+    this.watchful.addSection(title, {
+      links: [{ title: 'Amazon DynamoDB Console', url: linkForDynamoTable(table) }],
+    });
+
+    this.watchful.addWidgets(
+        this.createDynamoPPRGraph('Read', readCapacityMetric),
+        this.createDynamoPPRGraph('Write', writeCapacityMetric),
     );
   }
 
@@ -80,6 +129,15 @@ export class WatchDynamoTable extends Construct {
           value: calculateUnits(provisioned, percent, metric.period),
         },
       ],
+    });
+  }
+
+  private createDynamoPPRGraph(type: string, metric: cloudwatch.Metric) {
+    return new cloudwatch.GraphWidget({
+      title: `${type} Capacity Units/${metric.period.toMinutes()}min`,
+      width: 12,
+      stacked: true,
+      left: [metric],
     });
   }
 
