@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.5.45 (2020-11-12)
+
+
+### Bug Fixes
+
+* **dynamodb:** add support for pay_per_request tables ([#152](https://github.com/eladb/cdk-watchful/issues/152)) ([1debc6b](https://github.com/eladb/cdk-watchful/commit/1debc6b6e37715ddef582802d7125b30dc8c14d6)), closes [#2](https://github.com/eladb/cdk-watchful/issues/2)
+
 ### [0.5.44](https://github.com/eladb/cdk-watchful/compare/v0.5.43...v0.5.44) (2020-11-12)
 
 
