@@ -1,7 +1,7 @@
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import {Construct, Duration} from '@aws-cdk/core';
-import {IWatchful} from './api';
+import { Construct, Duration } from '@aws-cdk/core';
+import { IWatchful } from './api';
 
 const DEFAULT_PERCENT = 80;
 
@@ -44,9 +44,9 @@ export class WatchDynamoTable extends Construct {
 
       case dynamodb.BillingMode.PROVISIONED:
         this.createWidgetsForProvisionedTable(props.title,
-            table,
-            props.readCapacityThresholdPercent,
-            props.writeCapacityThresholdPercent
+          table,
+          props.readCapacityThresholdPercent,
+          props.writeCapacityThresholdPercent,
         );
         break;
     }
@@ -56,7 +56,10 @@ export class WatchDynamoTable extends Construct {
    * Create widgets for tables with billingMode=PROVISIONED
    * Include alarms when capacity is over 80% of the provisioned value
    */
-  private createWidgetsForProvisionedTable(title: string, table: dynamodb.Table, readCapacityThresholdPercent?: number, writeCapacityThresholdPercent?: number){
+  private createWidgetsForProvisionedTable(title: string,
+                                           table: dynamodb.Table,
+                                           readCapacityThresholdPercent?: number,
+                                           writeCapacityThresholdPercent?: number) {
     const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
 
     const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
@@ -80,8 +83,8 @@ export class WatchDynamoTable extends Construct {
     });
 
     this.watchful.addWidgets(
-        this.createDynamoCapacityGraph('Read', readCapacityMetric, throughput.readCapacityUnits, readCapacityThresholdPercent),
-        this.createDynamoCapacityGraph('Write', writeCapacityMetric, throughput.writeCapacityUnits, writeCapacityThresholdPercent),
+      this.createDynamoCapacityGraph('Read', readCapacityMetric, throughput.readCapacityUnits, readCapacityThresholdPercent),
+      this.createDynamoCapacityGraph('Write', writeCapacityMetric, throughput.writeCapacityUnits, writeCapacityThresholdPercent),
     );
   }
 
@@ -89,7 +92,7 @@ export class WatchDynamoTable extends Construct {
    * Create widgets for tables with billingMode=PAY_PER_REQUEST
    * Include consumed capacity metrics
    */
-  private createWidgetsForPayPerRequestTable(title: string, table: dynamodb.Table){
+  private createWidgetsForPayPerRequestTable(title: string, table: dynamodb.Table) {
     const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
       label: 'Consumed',
       period: Duration.minutes(1),
@@ -106,8 +109,8 @@ export class WatchDynamoTable extends Construct {
     });
 
     this.watchful.addWidgets(
-        this.createDynamoPPRGraph('Read', readCapacityMetric),
-        this.createDynamoPPRGraph('Write', writeCapacityMetric),
+      this.createDynamoPPRGraph('Read', readCapacityMetric),
+      this.createDynamoPPRGraph('Write', writeCapacityMetric),
     );
   }
 
