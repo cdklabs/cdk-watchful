@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.44](https://github.com/eladb/cdk-watchful/compare/v0.5.43...v0.5.44) (2020-11-12)
+
+
+### Bug Fixes
+
+* add support for pay_per_request tables ([72602f6](https://github.com/eladb/cdk-watchful/commit/72602f65bee1416cfc29fd5195897d96059f1b19))
+
 ### 0.5.43 (2020-11-10)
 
 ### 0.5.42 (2020-11-09)
