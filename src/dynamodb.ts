@@ -57,9 +57,9 @@ export class WatchDynamoTable extends Construct {
    * Include alarms when capacity is over 80% of the provisioned value
    */
   private createWidgetsForProvisionedTable(title: string,
-                                           table: dynamodb.Table,
-                                           readCapacityThresholdPercent?: number,
-                                           writeCapacityThresholdPercent?: number) {
+    table: dynamodb.Table,
+    readCapacityThresholdPercent?: number,
+    writeCapacityThresholdPercent?: number) {
     const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
 
     const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
