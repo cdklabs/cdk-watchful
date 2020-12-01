@@ -42,13 +42,14 @@
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.20.2",
     "jest": "^26.4.2",
+    "jest-junit": "^12",
     "jsii": "^1.7.0",
     "jsii-diff": "^1.7.0",
     "jsii-docgen": "^1.3.2",
     "jsii-pacmak": "^1.7.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
-    "projen": "^0.3.162",
+    "projen": "^0.5.6",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -69,7 +70,7 @@
     "@aws-cdk/aws-sns-subscriptions": "^1.54.0",
     "@aws-cdk/aws-sqs": "^1.54.0",
     "@aws-cdk/core": "^1.54.0",
-    "constructs": "^3.0.4"
+    "constructs": "^3.2.27"
   },
   "dependencies": {
     "@aws-cdk/aws-apigateway": "^1.54.0",
@@ -94,9 +95,6 @@
     "cloudwatch",
     "monitoring"
   ],
-  "engines": {
-    "node": ">= 10.17.0"
-  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "start": {
@@ -184,6 +182,15 @@
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",
       "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "outputDirectory": "test-reports"
+        }
+      ]
     ],
     "preset": "ts-jest",
     "globals": {
