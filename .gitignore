@@ -35,6 +35,9 @@ jspm_packages/
 .yarn-integrity
 # parcel-bundler cache (https://parceljs.org/)
 .cache
+# jest-junit artifacts
+/test-reports/
+junit.xml
 /coverage
 /lib
 /dist
@@ -44,6 +47,7 @@ tsconfig.json
 .idea
 example/*.js
 example/*.d.ts
+!/.projen/tasks.json
 !/package.json
 !/.npmignore
 !/LICENSE

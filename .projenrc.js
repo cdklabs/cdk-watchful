@@ -4,8 +4,6 @@ const project = new ConstructLibraryAws({
   name: 'cdk-watchful',
   description: 'Watching your CDK apps since 2019',
 
-  jsiiVersion: Semver.caret('1.7.0'),
-
   authorName: 'Elad Ben-Israel',
   authorEmail: 'elad.benisrael@gmail.com',
   repository: 'https://github.com/eladb/cdk-watchful.git',
@@ -21,7 +19,7 @@ const project = new ConstructLibraryAws({
   // creates PRs for projen upgrades
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
-  cdkVersion: '1.54.0',
+  cdkVersion: '1.75.0',
   cdkDependencies: [
     "@aws-cdk/aws-apigateway",
     "@aws-cdk/aws-cloudwatch",
@@ -40,9 +38,9 @@ const project = new ConstructLibraryAws({
     "@aws-cdk/core"
   ],
 
-  devDependencies: {
-    "aws-sdk": Semver.caret("2.708.0")
-  },
+  devDeps: [
+    "aws-sdk",
+  ],
 
   // jsii publishing
 
