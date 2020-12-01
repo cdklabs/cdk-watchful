@@ -12,6 +12,7 @@
       "es2018"
     ],
     "module": "CommonJS",
+    "newLine": "lf",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -23,7 +24,7 @@
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "stripInternal": true,
+    "stripInternal": false,
     "target": "ES2018"
   },
   "include": [
