@@ -11,20 +11,27 @@ jobs:
     env:
       CI: "true"
     steps:
-      - uses: actions/checkout@v2
-      - run: yarn install --check-files --frozen-lockfile
-      - run: npx projen
-      - run: git diff --exit-code
-        name: Anti-tamper check
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --check-files --frozen-lockfile
+      - name: Synthesize project files
+        run: npx projen
+      - name: Anti-tamper check
+        run: git diff --exit-code
       - name: Set git identity
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
       - run: npx projen bump
-      - run: npx projen build
+      - name: Build
+        run: npx projen build
       - name: Anti-tamper check
         run: git diff --exit-code
-      - run: git push --follow-tags origin $GITHUB_REF
+      - name: Push changes
+        run: git push --follow-tags origin $BRANCH
+        env:
+          BRANCH: ${{ github.ref }}
       - name: Upload artifact
         uses: actions/upload-artifact@v2.1.1
         with:

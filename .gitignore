@@ -61,6 +61,7 @@ example/*.d.ts
 !/.github/dependabot.yml
 !/.github/workflows/projenupgrade.yml
 !/.github/pull_request_template.md
+!/.github/workflows/rebuild-bot.yml
 !/src
 !/tsconfig.jest.json
 !/.eslintrc.json

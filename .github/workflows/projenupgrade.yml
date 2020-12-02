@@ -8,13 +8,15 @@ jobs:
   upgrade:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: yarn install --check-files --frozen-lockfile
-      - run: npx projen
-      - run: git diff --exit-code
-        name: Anti-tamper check
-      - run: npx projen projen:upgrade
-      - name: Create Pull Request
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install --check-files --frozen-lockfile
+      - name: Synthesize project files
+        run: npx projen
+      - name: Upgrade projen
+        run: npx projen projen:upgrade
+      - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.PROJEN_GITHUB_TOKEN }}
