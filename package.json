@@ -14,7 +14,6 @@
     "build": "npx projen build",
     "bump": "npx projen bump",
     "release": "npx projen release",
-    "bootstrap": "npx projen bootstrap",
     "test:watch": "npx projen test:watch",
     "test:update": "npx projen test:update",
     "projen:upgrade": "npx projen projen:upgrade",
@@ -48,7 +47,7 @@
     "jsii-pacmak": "^1.7.0",
     "jsii-release": "^0.2.3",
     "json-schema": "^0.2.5",
-    "projen": "^0.5.8",
+    "projen": "^0.6.0",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
