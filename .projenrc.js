@@ -8,12 +8,12 @@ const project = new ConstructLibraryAws({
   authorEmail: 'elad.benisrael@gmail.com',
   repository: 'https://github.com/eladb/cdk-watchful.git',
   keywords: [
-    "cloudwatch",
-    "monitoring"
+    'cloudwatch',
+    'monitoring',
   ],
 
   catalog: {
-    twitter: 'emeshbi'
+    twitter: 'emeshbi',
   },
 
   // creates PRs for projen upgrades
@@ -21,25 +21,25 @@ const project = new ConstructLibraryAws({
 
   cdkVersion: '1.75.0',
   cdkDependencies: [
-    "@aws-cdk/aws-apigateway",
-    "@aws-cdk/aws-cloudwatch",
-    "@aws-cdk/aws-cloudwatch-actions",
-    "@aws-cdk/aws-dynamodb",
-    "@aws-cdk/aws-ecs",
-    "@aws-cdk/aws-ecs-patterns",
-    "@aws-cdk/aws-elasticloadbalancingv2",
-    "@aws-cdk/aws-events",
-    "@aws-cdk/aws-events-targets",
-    "@aws-cdk/aws-lambda",
-    "@aws-cdk/aws-rds",
-    "@aws-cdk/aws-sns",
-    "@aws-cdk/aws-sns-subscriptions",
-    "@aws-cdk/aws-sqs",
-    "@aws-cdk/core"
+    '@aws-cdk/aws-apigateway',
+    '@aws-cdk/aws-cloudwatch',
+    '@aws-cdk/aws-cloudwatch-actions',
+    '@aws-cdk/aws-dynamodb',
+    '@aws-cdk/aws-ecs',
+    '@aws-cdk/aws-ecs-patterns',
+    '@aws-cdk/aws-elasticloadbalancingv2',
+    '@aws-cdk/aws-events',
+    '@aws-cdk/aws-events-targets',
+    '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-rds',
+    '@aws-cdk/aws-sns',
+    '@aws-cdk/aws-sns-subscriptions',
+    '@aws-cdk/aws-sqs',
+    '@aws-cdk/core',
   ],
 
   devDeps: [
-    "aws-sdk",
+    'aws-sdk',
   ],
 
   // jsii publishing
@@ -47,16 +47,16 @@ const project = new ConstructLibraryAws({
   java: {
     javaPackage: 'com.github.eladb.watchful',
     mavenGroupId: 'com.github.eladb',
-    mavenArtifactId: 'cdk-watchful'
+    mavenArtifactId: 'cdk-watchful',
   },
 
   python: {
     distName: 'cdk-watchful',
-    module: 'cdk_watchful'
-  }
+    module: 'cdk_watchful',
+  },
 });
 
-project.gitignore.exclude('.env','.idea')
+project.gitignore.exclude('.env', '.idea');
 project.gitignore.exclude('example/*.js', 'example/*.d.ts');
 
 project.synth();
