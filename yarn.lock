@@ -4407,10 +4407,10 @@ jsii-reflect@^1.15.0, jsii-reflect@^1.9.0:
     oo-ascii-tree "^1.15.0"
     yargs "^16.1.1"
 
-jsii-release@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.3.tgz#64b034fed39a878d3a7f7904eec2e9f19760ad10"
-  integrity sha512-/3AxbWISPUXcTLUHxctmdM34mzA7GH7vI/KjIIHlBa1eU7aivln3B18dmSCIZ26glyoS6OQ7qFgw13Eiu87Q8Q==
+jsii-release@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.4.tgz#1f07d91f0d111e9fc82190e60e0a4f0e43435c4c"
+  integrity sha512-/Eq4n+PSX6gLu3kwmyI2gdgXQIJbr7+O8F9Q9yZgzkbaeL8qlhSnMo7Plj/1dzOT47aKCIGZDQUZGL0YamZK9w==
 
 jsii-rosetta@^1.15.0:
   version "1.15.0"
