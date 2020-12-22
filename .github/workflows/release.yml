@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 1000
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Synthesize project files
@@ -23,7 +25,8 @@ jobs:
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
-      - run: npx projen bump
+      - name: Bump to next version
+        run: npx projen bump
       - name: Build
         run: npx projen build
       - name: Anti-tamper check
