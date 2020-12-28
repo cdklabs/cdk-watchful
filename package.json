@@ -11,6 +11,7 @@
     "start": "npx projen start",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
+    "test:compile": "npx projen test:compile",
     "test": "npx projen test",
     "build": "npx projen build",
     "bump": "npx projen bump",
@@ -48,7 +49,7 @@
     "jsii-pacmak": "^1.7.0",
     "jsii-release": "^0.2.7",
     "json-schema": "^0.2.5",
-    "projen": "^0.9.1",
+    "projen": "^0.9.2",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
