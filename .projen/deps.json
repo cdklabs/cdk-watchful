@@ -1,0 +1,256 @@
+{
+  "dependencies": [
+    {
+      "name": "@aws-cdk/assert",
+      "version": "^1.75.0",
+      "type": "build"
+    },
+    {
+      "name": "@types/jest",
+      "type": "build"
+    },
+    {
+      "name": "@types/node",
+      "version": "^10.17.0",
+      "type": "build"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "version": "^4.3.0",
+      "type": "build"
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "version": "^4.3.0",
+      "type": "build"
+    },
+    {
+      "name": "aws-sdk",
+      "type": "build"
+    },
+    {
+      "name": "eslint",
+      "type": "build"
+    },
+    {
+      "name": "eslint-import-resolver-node",
+      "type": "build"
+    },
+    {
+      "name": "eslint-import-resolver-typescript",
+      "type": "build"
+    },
+    {
+      "name": "eslint-plugin-import",
+      "type": "build"
+    },
+    {
+      "name": "jest",
+      "type": "build"
+    },
+    {
+      "name": "jest-junit",
+      "version": "^12",
+      "type": "build"
+    },
+    {
+      "name": "jsii",
+      "type": "build"
+    },
+    {
+      "name": "jsii-diff",
+      "type": "build"
+    },
+    {
+      "name": "jsii-docgen",
+      "type": "build"
+    },
+    {
+      "name": "jsii-pacmak",
+      "type": "build"
+    },
+    {
+      "name": "jsii-release",
+      "type": "build"
+    },
+    {
+      "name": "json-schema",
+      "type": "build"
+    },
+    {
+      "name": "projen",
+      "version": "^0.12.2",
+      "type": "build"
+    },
+    {
+      "name": "standard-version",
+      "version": "^9.0.0",
+      "type": "build"
+    },
+    {
+      "name": "ts-jest",
+      "type": "build"
+    },
+    {
+      "name": "typescript",
+      "version": "^3.9.5",
+      "type": "build"
+    },
+    {
+      "name": "@aws-cdk/aws-apigateway",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-cloudwatch-actions",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-cloudwatch",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-dynamodb",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs-patterns",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-elasticloadbalancingv2",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-events-targets",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-events",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-rds",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-sns-subscriptions",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-sns",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-sqs",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/core",
+      "version": "^1.75.0",
+      "type": "peer"
+    },
+    {
+      "name": "constructs",
+      "version": "^3.2.27",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-apigateway",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-cloudwatch-actions",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-cloudwatch",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-dynamodb",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs-patterns",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-elasticloadbalancingv2",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-events-targets",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-events",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-rds",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-sns-subscriptions",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-sns",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-sqs",
+      "version": "^1.75.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/core",
+      "version": "^1.75.0",
+      "type": "runtime"
+    }
+  ],
+  "//": "~~ Generated by projen. To modify, edit .projenrc.js and run \"npx projen\"."
+}
