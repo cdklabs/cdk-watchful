@@ -48,7 +48,7 @@
     "jsii-pacmak": "^1.7.0",
     "jsii-release": "^0.2.7",
     "json-schema": "^0.2.5",
-    "projen": "^0.12.12",
+    "projen": "^0.13.6",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -98,6 +98,10 @@
   "license": "Apache-2.0",
   "version": "0.5.76",
   "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
     "clearMocks": true,
     "collectCoverage": true,
     "coverageDirectory": "coverage",
@@ -106,10 +110,6 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/"
-    ],
-    "testMatch": [
-      "**/__tests__/**/*.ts?(x)",
-      "**/?(*.)+(spec|test).ts?(x)"
     ],
     "reporters": [
       "default",
