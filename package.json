@@ -48,7 +48,7 @@
     "jsii-pacmak": "^1.7.0",
     "jsii-release": "^0.2.7",
     "json-schema": "^0.2.5",
-    "projen": "^0.13.6",
+    "projen": "^0.13.8",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
@@ -104,11 +104,20 @@
     ],
     "clearMocks": true,
     "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "clover",
+      "text"
+    ],
     "coverageDirectory": "coverage",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
     "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "watchPathIgnorePatterns": [
       "/node_modules/"
     ],
     "reporters": [
