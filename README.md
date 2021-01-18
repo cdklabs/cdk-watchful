@@ -128,8 +128,8 @@ Contributions of all kinds are welcome and celebrated. Raise an issue, submit a 
 
 To set up a dev environment:
 
-1. Clone repo
-2. `yarn install`
+1. Clone this repo
+2. `yarn`
 
 Development workflow (change code and run tests automatically):
 
