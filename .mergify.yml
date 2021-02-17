@@ -29,5 +29,7 @@ pull_request_rules:
       - status-success=build
     actions:
       merge:
-        method: merge
+        method: squash
         commit_message: title+body
+        strict: smart
+        strict_method: merge
