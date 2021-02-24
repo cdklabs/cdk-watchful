@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.91](https://github.com/eladb/cdk-watchful/compare/v0.5.90...v0.5.91) (2021-02-24)
+
 ### [0.5.90](https://github.com/eladb/cdk-watchful/compare/v0.5.89...v0.5.90) (2021-02-23)
 
 ### [0.5.89](https://github.com/eladb/cdk-watchful/compare/v0.5.88...v0.5.89) (2021-02-22)
