@@ -1,6 +1,6 @@
-const { ConstructLibraryAws, Semver } = require('projen');
+const { AwsCdkConstructLibrary } = require('projen');
 
-const project = new ConstructLibraryAws({
+const project = new AwsCdkConstructLibrary({
   name: 'cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
@@ -21,7 +21,7 @@ const project = new ConstructLibraryAws({
   // creates PRs for projen upgrades
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
-  cdkVersion: '1.75.0',
+  cdkVersion: '1.91.0',
   cdkDependencies: [
     '@aws-cdk/aws-apigateway',
     '@aws-cdk/aws-cloudwatch',
