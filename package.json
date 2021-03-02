@@ -95,7 +95,7 @@
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
-  "version": "0.5.107",
+  "version": "0.5.108",
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.ts?(x)",
