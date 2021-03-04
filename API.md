@@ -213,6 +213,7 @@ new Watchful(scope: Construct, id: string, props?: WatchfulProps)
   * **alarmEmail** (<code>string</code>)  *No description* __*Optional*__
   * **alarmSns** (<code>[ITopic](#aws-cdk-aws-sns-itopic)</code>)  *No description* __*Optional*__
   * **alarmSqs** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  *No description* __*Optional*__
+  * **dashboardName** (<code>string</code>)  *No description* __*Optional*__
 
 
 ### Methods
@@ -730,6 +731,7 @@ Name | Type | Description
 **alarmEmail**? | <code>string</code> | __*Optional*__
 **alarmSns**? | <code>[ITopic](#aws-cdk-aws-sns-itopic)</code> | __*Optional*__
 **alarmSqs**? | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | __*Optional*__
+**dashboardName**? | <code>string</code> | __*Optional*__
 
 
 

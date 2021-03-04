@@ -55,7 +55,7 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', {dashboardName: props.dashboardName });
+    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
 
     new CfnOutput(this, 'WatchfulDashboard', {
       value: linkForDashboard(this.dash),
