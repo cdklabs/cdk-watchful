@@ -26,12 +26,11 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": false,
-    "target": "ES2018",
-    "composite": false,
-    "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo"
+    "target": "ES2018"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "lib/**/*.ts"
   ],
   "exclude": [
     "node_modules"
