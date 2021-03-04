@@ -6,7 +6,6 @@
     "charset": "utf8",
     "declaration": true,
     "experimentalDecorators": true,
-    "incremental": true,
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
