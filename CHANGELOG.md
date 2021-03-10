@@ -2,7 +2,71 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.5.94](https://github.com/eladb/cdk-watchful/compare/v0.5.91...v0.5.94) (2021-03-03)
+### [0.5.126](https://github.com/eladb/cdk-watchful/compare/v0.5.125...v0.5.126) (2021-03-09)
+
+### [0.5.125](https://github.com/eladb/cdk-watchful/compare/v0.5.124...v0.5.125) (2021-03-07)
+
+### [0.5.124](https://github.com/eladb/cdk-watchful/compare/v0.5.123...v0.5.124) (2021-03-06)
+
+### [0.5.123](https://github.com/eladb/cdk-watchful/compare/v0.5.122...v0.5.123) (2021-03-05)
+
+### [0.5.122](https://github.com/eladb/cdk-watchful/compare/v0.5.121...v0.5.122) (2021-03-05)
+
+### [0.5.121](https://github.com/eladb/cdk-watchful/compare/v0.5.120...v0.5.121) (2021-03-04)
+
+### [0.5.120](https://github.com/eladb/cdk-watchful/compare/v0.5.119...v0.5.120) (2021-03-04)
+
+### [0.5.119](https://github.com/eladb/cdk-watchful/compare/v0.5.118...v0.5.119) (2021-03-04)
+
+### [0.5.118](https://github.com/eladb/cdk-watchful/compare/v0.5.117...v0.5.118) (2021-03-04)
+
+### [0.5.117](https://github.com/eladb/cdk-watchful/compare/v0.5.116...v0.5.117) (2021-03-04)
+
+### [0.5.116](https://github.com/eladb/cdk-watchful/compare/v0.5.115...v0.5.116) (2021-03-04)
+
+### [0.5.115](https://github.com/eladb/cdk-watchful/compare/v0.5.114...v0.5.115) (2021-03-03)
+
+### [0.5.114](https://github.com/eladb/cdk-watchful/compare/v0.5.113...v0.5.114) (2021-03-03)
+
+### [0.5.113](https://github.com/eladb/cdk-watchful/compare/v0.5.112...v0.5.113) (2021-03-02)
+
+### [0.5.112](https://github.com/eladb/cdk-watchful/compare/v0.5.111...v0.5.112) (2021-03-02)
+
+### [0.5.111](https://github.com/eladb/cdk-watchful/compare/v0.5.110...v0.5.111) (2021-03-02)
+
+### [0.5.110](https://github.com/eladb/cdk-watchful/compare/v0.5.109...v0.5.110) (2021-03-02)
+
+### [0.5.109](https://github.com/eladb/cdk-watchful/compare/v0.5.108...v0.5.109) (2021-03-02)
+
+### [0.5.108](https://github.com/eladb/cdk-watchful/compare/v0.5.107...v0.5.108) (2021-03-02)
+
+### [0.5.107](https://github.com/eladb/cdk-watchful/compare/v0.5.106...v0.5.107) (2021-03-02)
+
+### [0.5.106](https://github.com/eladb/cdk-watchful/compare/v0.5.105...v0.5.106) (2021-02-28)
+
+### [0.5.105](https://github.com/eladb/cdk-watchful/compare/v0.5.104...v0.5.105) (2021-02-28)
+
+### [0.5.104](https://github.com/eladb/cdk-watchful/compare/v0.5.103...v0.5.104) (2021-02-28)
+
+### [0.5.103](https://github.com/eladb/cdk-watchful/compare/v0.5.102...v0.5.103) (2021-02-28)
+
+### [0.5.102](https://github.com/eladb/cdk-watchful/compare/v0.5.101...v0.5.102) (2021-02-28)
+
+### [0.5.101](https://github.com/eladb/cdk-watchful/compare/v0.5.100...v0.5.101) (2021-02-28)
+
+### [0.5.100](https://github.com/eladb/cdk-watchful/compare/v0.5.99...v0.5.100) (2021-02-28)
+
+### [0.5.99](https://github.com/eladb/cdk-watchful/compare/v0.5.98...v0.5.99) (2021-02-28)
+
+### [0.5.98](https://github.com/eladb/cdk-watchful/compare/v0.5.97...v0.5.98) (2021-02-28)
+
+### [0.5.97](https://github.com/eladb/cdk-watchful/compare/v0.5.96...v0.5.97) (2021-02-28)
+
+### [0.5.96](https://github.com/eladb/cdk-watchful/compare/v0.5.95...v0.5.96) (2021-02-28)
+
+### [0.5.95](https://github.com/eladb/cdk-watchful/compare/v0.5.94...v0.5.95) (2021-02-28)
+
+### [0.5.94](https://github.com/eladb/cdk-watchful/compare/v0.5.93...v0.5.94) (2021-02-27)
 
 ### [0.5.93](https://github.com/eladb/cdk-watchful/compare/v0.5.92...v0.5.93) (2021-02-26)
 

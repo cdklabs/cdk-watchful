@@ -22,6 +22,7 @@ export interface WatchfulProps {
   readonly alarmEmail?: string;
   readonly alarmSqs?: sqs.IQueue;
   readonly alarmSns?: sns.ITopic;
+  readonly dashboardName?: string;
 }
 
 export class Watchful extends Construct implements IWatchful {
@@ -54,7 +55,7 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    this.dash = new cloudwatch.Dashboard(this, 'Dashboard');
+    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
 
     new CfnOutput(this, 'WatchfulDashboard', {
       value: linkForDashboard(this.dash),
