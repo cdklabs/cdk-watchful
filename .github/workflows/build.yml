@@ -12,19 +12,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Synthesize project files
         run: npx projen
-      - name: Anti-tamper check
-        run: git diff --exit-code
       - name: Set git identity
         run: |-
           git config user.name "Auto-bump"
           git config user.email "github-actions@github.com"
       - name: Build
         run: npx projen build
-      - name: Anti-tamper check
-        run: git diff --exit-code
+      - name: Commit and push changes (if any)
+        run: 'git diff --exit-code || (git commit -am "chore: self mutation" && git push
+          origin HEAD:${{ github.event.pull_request.head.ref }})'
     container:
       image: jsii/superchain
