@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`metricConsumedCapacityUnitsSum 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "ConsumedReadCapacityUnits",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricConsumedCapacityUnitsSum 2`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "ConsumedWriteCapacityUnits",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricMaxProvisionedTableCapacityUtilizationAverage 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "MaxProvisionedTableReadCapacityUtilization",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`metricMaxProvisionedTableCapacityUtilizationAverage 2`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "MaxProvisionedTableWriteCapacityUtilization",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`metricProvisionedCapacityUnitsMaximum 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "ProvisionedReadCapacityUnits",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricProvisionedCapacityUnitsMaximum 2`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "ProvisionedWriteCapacityUnits",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricSearchSuccessfulRequestLatencyAverage 1`] = `
+MathExpression {
+  "color": undefined,
+  "expression": "SEARCH('{AWS/DynamoDB,TableName,Operation} TableName=\\"DummyTable\\" Operation MetricName=\\"SuccessfulRequestLatency\\"', 'Average', 60)",
+  "label": " ",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "usingMetrics": Object {},
+}
+`;
+
+exports[`metricSearchSystemErrorsSum 1`] = `
+MathExpression {
+  "color": undefined,
+  "expression": "SEARCH('{AWS/DynamoDB,TableName,Operation} TableName=\\"DummyTable\\" Operation MetricName=\\"SystemErrors\\"', 'Sum', 60)",
+  "label": " ",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "usingMetrics": Object {},
+}
+`;
+
+exports[`metricSuccessfulRequestLatencyAverage 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "Operation": "GetItem",
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "SuccessfulRequestLatency",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`metricSystemErrorsSum 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "Operation": "GetItem",
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "SystemErrors",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricThrottleEventsSum 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "ThrottledRequests",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricThrottleEventsSum 2`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "ReadThrottleEvents",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`metricThrottleEventsSum 3`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TableName": "DummyTable",
+  },
+  "label": undefined,
+  "metricName": "WriteThrottleEvents",
+  "namespace": "AWS/DynamoDB",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;

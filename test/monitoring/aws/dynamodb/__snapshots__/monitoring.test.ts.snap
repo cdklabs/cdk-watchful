@@ -1,0 +1,2213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot: on-demand table 1`] = `
+Array [
+  SectionWidget {
+    "height": 2,
+    "markdown": "# DynamoDB Table **\${Token[TOKEN.78]}**
+
+[button:Items](https://eu-west-1.console.aws.amazon.com/dynamodbv2/home?region=eu-west-1#table?name=\${Token[TOKEN.78]}&tab=items) [button:Capacity](https://eu-west-1.console.aws.amazon.com/dynamodbv2/home?region=eu-west-1#table?name=\${Token[TOKEN.78]}&tab=settings)",
+    "width": 24,
+  },
+  Row {
+    "height": 5,
+    "offsets": Array [
+      Object {
+        "x": 0,
+        "y": 0,
+      },
+      Object {
+        "x": 6,
+        "y": 0,
+      },
+      Object {
+        "x": 12,
+        "y": 0,
+      },
+      Object {
+        "x": 18,
+        "y": 0,
+      },
+    ],
+    "widgets": Array [
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchGetItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Scan",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Query",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetRecords",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "PutItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "DeleteItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "UpdateItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchWriteItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchGetItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Scan",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Query",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetRecords",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "PutItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "DeleteItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "UpdateItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchWriteItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+          ],
+          "title": "Latency",
+          "width": 6,
+        },
+        "rightMetrics": Array [],
+        "width": 6,
+      },
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "ProvisionedReadCapacityUnits",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Maximum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "ConsumedReadCapacityUnits",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "ProvisionedReadCapacityUnits",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Maximum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "ConsumedReadCapacityUnits",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+          ],
+          "right": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "MaxProvisionedTableReadCapacityUtilization",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+          ],
+          "title": "Read Capacity",
+          "width": 6,
+        },
+        "rightMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "MaxProvisionedTableReadCapacityUtilization",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+        ],
+        "width": 6,
+      },
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "ProvisionedWriteCapacityUnits",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Maximum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "ConsumedWriteCapacityUnits",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "ProvisionedWriteCapacityUnits",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Maximum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "ConsumedWriteCapacityUnits",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+          ],
+          "right": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "MaxProvisionedTableWriteCapacityUtilization",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+          ],
+          "title": "Write Capacity",
+          "width": 6,
+        },
+        "rightMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "MaxProvisionedTableWriteCapacityUtilization",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+        ],
+        "width": 6,
+      },
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchGetItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Scan",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Query",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetRecords",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "PutItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "DeleteItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "UpdateItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchWriteItem",
+              "TableName": "\${Token[TOKEN.78]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchGetItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Scan",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Query",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetRecords",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "PutItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "DeleteItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "UpdateItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchWriteItem",
+                "TableName": "\${Token[TOKEN.78]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+          ],
+          "title": "System Errors",
+          "width": 6,
+        },
+        "rightMetrics": Array [],
+        "width": 6,
+      },
+    ],
+    "width": 24,
+  },
+]
+`;
+
+exports[`snapshot: provisioned table 1`] = `
+Array [
+  SectionWidget {
+    "height": 2,
+    "markdown": "# DynamoDB Table **\${Token[TOKEN.70]}**
+
+[button:Items](https://eu-west-1.console.aws.amazon.com/dynamodbv2/home?region=eu-west-1#table?name=\${Token[TOKEN.70]}&tab=items) [button:Capacity](https://eu-west-1.console.aws.amazon.com/dynamodbv2/home?region=eu-west-1#table?name=\${Token[TOKEN.70]}&tab=settings)",
+    "width": 24,
+  },
+  Row {
+    "height": 5,
+    "offsets": Array [
+      Object {
+        "x": 0,
+        "y": 0,
+      },
+      Object {
+        "x": 6,
+        "y": 0,
+      },
+      Object {
+        "x": 12,
+        "y": 0,
+      },
+      Object {
+        "x": 18,
+        "y": 0,
+      },
+    ],
+    "widgets": Array [
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchGetItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Scan",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Query",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetRecords",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "PutItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "DeleteItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "UpdateItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchWriteItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SuccessfulRequestLatency",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchGetItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Scan",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Query",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetRecords",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "PutItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "DeleteItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "UpdateItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchWriteItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SuccessfulRequestLatency",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+          ],
+          "title": "Latency",
+          "width": 6,
+        },
+        "rightMetrics": Array [],
+        "width": 6,
+      },
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "ConsumedReadCapacityUnits",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "ConsumedReadCapacityUnits",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+          ],
+          "leftAnnotations": Array [
+            Object {
+              "label": "Provisioned",
+              "value": 100,
+            },
+          ],
+          "right": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "MaxProvisionedTableReadCapacityUtilization",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+          ],
+          "title": "Read Capacity",
+          "width": 6,
+        },
+        "rightMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "MaxProvisionedTableReadCapacityUtilization",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+        ],
+        "width": 6,
+      },
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "ConsumedWriteCapacityUnits",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "ConsumedWriteCapacityUnits",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+          ],
+          "leftAnnotations": Array [
+            Object {
+              "label": "Provisioned",
+              "value": 200,
+            },
+          ],
+          "right": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "MaxProvisionedTableWriteCapacityUtilization",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Average",
+              "unit": undefined,
+            },
+          ],
+          "title": "Write Capacity",
+          "width": 6,
+        },
+        "rightMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "MaxProvisionedTableWriteCapacityUtilization",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Average",
+            "unit": undefined,
+          },
+        ],
+        "width": 6,
+      },
+      GraphWidget {
+        "height": 5,
+        "leftMetrics": Array [
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchGetItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Scan",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "Query",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "GetRecords",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "PutItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "DeleteItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "UpdateItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+          Metric {
+            "account": undefined,
+            "color": undefined,
+            "dimensions": Object {
+              "Operation": "BatchWriteItem",
+              "TableName": "\${Token[TOKEN.70]}",
+            },
+            "label": undefined,
+            "metricName": "SystemErrors",
+            "namespace": "AWS/DynamoDB",
+            "period": Duration {
+              "amount": 1,
+              "unit": TimeUnit {
+                "inMillis": 60000,
+                "isoLabel": "M",
+                "label": "minutes",
+              },
+            },
+            "region": undefined,
+            "statistic": "Sum",
+            "unit": undefined,
+          },
+        ],
+        "props": Object {
+          "height": 5,
+          "left": Array [
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchGetItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Scan",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "Query",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "GetRecords",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "PutItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "DeleteItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "UpdateItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+            Metric {
+              "account": undefined,
+              "color": undefined,
+              "dimensions": Object {
+                "Operation": "BatchWriteItem",
+                "TableName": "\${Token[TOKEN.70]}",
+              },
+              "label": undefined,
+              "metricName": "SystemErrors",
+              "namespace": "AWS/DynamoDB",
+              "period": Duration {
+                "amount": 1,
+                "unit": TimeUnit {
+                  "inMillis": 60000,
+                  "isoLabel": "M",
+                  "label": "minutes",
+                },
+              },
+              "region": undefined,
+              "statistic": "Sum",
+              "unit": undefined,
+            },
+          ],
+          "title": "System Errors",
+          "width": 6,
+        },
+        "rightMetrics": Array [],
+        "width": 6,
+      },
+    ],
+    "width": 24,
+  },
+]
+`;

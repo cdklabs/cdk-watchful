@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`metric math unwrapped 1`] = `
+MathExpression {
+  "color": "DummyColor",
+  "expression": "metric1 / metric2",
+  "label": "DummyLabel",
+  "period": Duration {
+    "amount": 3,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "usingMetrics": Object {
+    "metric1": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": undefined,
+      "label": undefined,
+      "metricName": "DummyMetric1",
+      "namespace": "DummyNamespace",
+      "period": Duration {
+        "amount": 3,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Average",
+      "unit": undefined,
+    },
+    "metric2": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": undefined,
+      "label": undefined,
+      "metricName": "DummyMetric2",
+      "namespace": "DummyNamespace",
+      "period": Duration {
+        "amount": 3,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Average",
+      "unit": undefined,
+    },
+  },
+}
+`;
+
+exports[`search metric unwrapped 1`] = `
+MathExpression {
+  "color": undefined,
+  "expression": "SEARCH('{DummyNamespace,A,B} A=\\"a\\" B=\\"b\\" DummyQuery', 'p99', 180)",
+  "label": " ",
+  "period": Duration {
+    "amount": 3,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "usingMetrics": Object {},
+}
+`;
+
+exports[`simple metric unwrapped 1`] = `
+Metric {
+  "account": undefined,
+  "color": "DummyColor",
+  "dimensions": Object {
+    "A": "a",
+    "B": "b",
+  },
+  "label": "DummyLabel",
+  "metricName": "DummyMetricName",
+  "namespace": "DummyNamespace",
+  "period": Duration {
+    "amount": 3,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "p99",
+  "unit": undefined,
+}
+`;
