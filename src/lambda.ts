@@ -35,13 +35,13 @@ export interface WatchLambdaFunctionOptions {
 export interface WatchLambdaFunctionProps extends WatchLambdaFunctionOptions {
   readonly title: string;
   readonly watchful: IWatchful;
-  readonly fn: lambda.Function;
+  readonly fn: lambda.IFunction;
 }
 
 export class WatchLambdaFunction extends Construct {
 
   private readonly watchful: IWatchful;
-  private readonly fn: lambda.Function;
+  private readonly fn: lambda.IFunction;
 
   constructor(scope: Construct, id: string, props: WatchLambdaFunctionProps) {
     super(scope, id);
@@ -132,10 +132,10 @@ export class WatchLambdaFunction extends Construct {
   }
 }
 
-function linkForLambdaFunction(fn: lambda.Function, tab = 'graph') {
+function linkForLambdaFunction(fn: lambda.IFunction, tab = 'graph') {
   return `https://console.aws.amazon.com/lambda/home?region=${fn.stack.region}#/functions/${fn.functionName}?tab=${tab}`;
 }
 
-function linkForLambdaLogs(fn: lambda.Function) {
+function linkForLambdaLogs(fn: lambda.IFunction) {
   return `https://console.aws.amazon.com/cloudwatch/home?region=${fn.stack.region}#logEventViewer:group=/aws/lambda/${fn.functionName}`;
 }

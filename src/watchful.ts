@@ -4,17 +4,19 @@ import * as cloudwatch_actions from '@aws-cdk/aws-cloudwatch-actions';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as ecs from '@aws-cdk/aws-ecs';
 import { ApplicationTargetGroup } from '@aws-cdk/aws-elasticloadbalancingv2';
+import * as firehose from '@aws-cdk/aws-kinesisfirehose';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
 import * as sqs from '@aws-cdk/aws-sqs';
-import { Construct, CfnOutput } from '@aws-cdk/core';
+import { Construct, CfnOutput, Aspects } from '@aws-cdk/core';
 import { IWatchful, SectionOptions } from './api';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { WatchEcsServiceOptions, WatchEcsService } from './ecs';
+import { WatchFirehoseServiceOptions, WatchFirehoseService } from './firehose';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
 
@@ -29,7 +31,7 @@ export class Watchful extends Construct implements IWatchful {
   private readonly dash: cloudwatch.Dashboard;
   private readonly alarmTopic?: sns.ITopic;
 
-  constructor(scope: Construct, id: string, props: WatchfulProps = { }) {
+  constructor(scope: Construct, id: string, props: WatchfulProps = {}) {
     super(scope, id);
 
     if ((props.alarmEmail || props.alarmSqs) && !props.alarmSns) {
@@ -41,9 +43,7 @@ export class Watchful extends Construct implements IWatchful {
     }
 
     if (props.alarmEmail && this.alarmTopic) {
-      this.alarmTopic.addSubscription(
-        new sns_subscriptions.EmailSubscription(props.alarmEmail),
-      );
+      this.alarmTopic.addSubscription(new sns_subscriptions.EmailSubscription(props.alarmEmail));
     }
 
     if (props.alarmSqs && this.alarmTopic) {
@@ -55,7 +55,11 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
+    if (props.dashboardName) {
+      this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
+    } else {
+      this.dash = new cloudwatch.Dashboard(this, 'Dashboard');
+    }
 
     new CfnOutput(this, 'WatchfulDashboard', {
       value: linkForDashboard(this.dash),
@@ -75,7 +79,7 @@ export class Watchful extends Construct implements IWatchful {
   public addSection(title: string, options: SectionOptions = {}) {
     const markdown = [
       `# ${title}`,
-      (options.links || []).map(link => `[button:${link.title}](${link.url})`).join(' | '),
+      (options.links || []).map((link) => `[button:${link.title}](${link.url})`).join(' | '),
     ];
 
     this.addWidgets(new cloudwatch.TextWidget({ width: 24, markdown: markdown.join('\n') }));
@@ -83,11 +87,11 @@ export class Watchful extends Construct implements IWatchful {
 
   public watchScope(scope: Construct, options?: WatchfulAspectProps) {
     const aspect = new WatchfulAspect(this, options);
-    scope.node.applyAspect(aspect);
+    Aspects.of(scope).add(aspect);
   }
 
   public watchDynamoTable(title: string, table: dynamodb.Table, options: WatchDynamoTableOptions = {}) {
-    return new WatchDynamoTable(this, table.node.uniqueId, {
+    return new WatchDynamoTable(this, table.node.addr, {
       title,
       watchful: this,
       table,
@@ -96,32 +100,66 @@ export class Watchful extends Construct implements IWatchful {
   }
 
   public watchApiGateway(title: string, restApi: apigw.RestApi, options: WatchApiGatewayOptions = {}) {
-    return new WatchApiGateway(this, restApi.node.uniqueId, {
-      title, watchful: this, restApi, ...options,
+    return new WatchApiGateway(this, restApi.node.addr, {
+      title,
+      watchful: this,
+      restApi,
+      ...options,
     });
   }
 
-  public watchLambdaFunction(title: string, fn: lambda.Function, options: WatchLambdaFunctionOptions = {}) {
-    return new WatchLambdaFunction(this, fn.node.uniqueId, {
-      title, watchful: this, fn, ...options,
+  public watchFirehose(title: string, fh: firehose.CfnDeliveryStream, options: WatchFirehoseServiceOptions = {}) {
+    return new WatchFirehoseService(this, fh.node.addr, {
+      title,
+      watchful: this,
+      fh,
+      ...options,
+    });
+  }
+
+  public watchLambdaFunction(title: string, fn: lambda.IFunction, options: WatchLambdaFunctionOptions = {}) {
+    return new WatchLambdaFunction(this, fn.node.addr, {
+      title,
+      watchful: this,
+      fn,
+      ...options,
     });
   }
 
   public watchRdsAuroraCluster(title: string, cluster: rds.DatabaseCluster, options: WatchRdsAuroraOptions = {}) {
-    return new WatchRdsAurora(this, cluster.node.uniqueId, {
-      title, watchful: this, cluster, ...options,
+    return new WatchRdsAurora(this, cluster.node.addr, {
+      title,
+      watchful: this,
+      cluster,
+      ...options,
     });
   }
-  public watchFargateEcs(title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup,
-    options: WatchEcsServiceOptions = {}) {
-
-    return new WatchEcsService(this, fargateService.node.uniqueId, {
-      title, watchful: this, fargateService, targetGroup, ...options,
+  public watchFargateEcs(
+    title: string,
+    fargateService: ecs.FargateService,
+    targetGroup: ApplicationTargetGroup,
+    options: WatchEcsServiceOptions = {},
+  ) {
+    return new WatchEcsService(this, fargateService.node.addr, {
+      title,
+      watchful: this,
+      fargateService,
+      targetGroup,
+      ...options,
     });
   }
-  public watchEc2Ecs(title: string, ec2Service: ecs.Ec2Service, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
-    return new WatchEcsService(this, ec2Service.node.uniqueId, {
-      title, watchful: this, ec2Service, targetGroup, ...options,
+  public watchEc2Ecs(
+    title: string,
+    ec2Service: ecs.Ec2Service,
+    targetGroup: ApplicationTargetGroup,
+    options: WatchEcsServiceOptions = {},
+  ) {
+    return new WatchEcsService(this, ec2Service.node.addr, {
+      title,
+      watchful: this,
+      ec2Service,
+      targetGroup,
+      ...options,
     });
   }
 }
