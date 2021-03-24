@@ -135,6 +135,11 @@
       "type": "peer"
     },
     {
+      "name": "@aws-cdk/aws-kinesisfirehose",
+      "version": "^1.94.1",
+      "type": "peer"
+    },
+    {
       "name": "@aws-cdk/aws-lambda",
       "version": "^1.94.1",
       "type": "peer"
@@ -211,6 +216,11 @@
     },
     {
       "name": "@aws-cdk/aws-events",
+      "version": "^1.94.1",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-kinesisfirehose",
       "version": "^1.94.1",
       "type": "runtime"
     },

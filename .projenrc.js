@@ -28,6 +28,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-elasticloadbalancingv2',
     '@aws-cdk/aws-events',
     '@aws-cdk/aws-events-targets',
+    '@aws-cdk/aws-kinesisfirehose',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-rds',
     '@aws-cdk/aws-sns',
