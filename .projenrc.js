@@ -1,22 +1,18 @@
 const { AwsCdkConstructLibrary } = require('projen');
 
 const project = new AwsCdkConstructLibrary({
-  name: 'cdk-watchful',
+  name: '@myhelix/cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
 
 
-  authorName: 'Elad Ben-Israel',
-  authorEmail: 'elad.benisrael@gmail.com',
-  repository: 'https://github.com/eladb/cdk-watchful.git',
+  authorName: 'Elad Ben-Israel (maintained by myhelix)',
+  authorEmail: 'ops@helix.com',
+  repository: 'https://github.com/myhelix/cdk-watchful.git',
   keywords: [
     'cloudwatch',
     'monitoring',
   ],
-
-  catalog: {
-    twitter: 'emeshbi',
-  },
 
   // creates PRs for projen upgrades
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
@@ -44,18 +40,6 @@ const project = new AwsCdkConstructLibrary({
     'aws-sdk',
   ],
 
-  // jsii publishing
-
-  publishToMaven: {
-    javaPackage: 'com.github.eladb.watchful',
-    mavenGroupId: 'com.github.eladb',
-    mavenArtifactId: 'cdk-watchful',
-  },
-
-  publishToPypi: {
-    distName: 'cdk-watchful',
-    module: 'cdk_watchful',
-  },
 });
 
 project.gitignore.exclude('.env', '.idea');
