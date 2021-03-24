@@ -55,6 +55,9 @@ export class WatchFirehoseService extends cdk.Construct {
       namespace: 'AWS/Firehose',
       period: cdk.Duration.minutes(1),
       statistic: 'sum',
+      dimensions: {
+        DeliveryStreamName: this.fh.deliveryStreamName,
+      },
     });
 
     return { deliveryToRedshiftSuccessMetric };
@@ -65,6 +68,9 @@ export class WatchFirehoseService extends cdk.Construct {
       namespace: 'AWS/Firehose',
       period: cdk.Duration.minutes(1),
       statistic: 'sum',
+      dimensions: {
+        DeliveryStreamName: this.fh.deliveryStreamName,
+      },
     });
     return { deliveryToRedshiftRecordsMetric };
   }
