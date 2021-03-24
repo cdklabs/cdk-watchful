@@ -7,6 +7,7 @@ Name|Description
 [WatchApiGateway](#cdk-watchful-watchapigateway)|*No description*
 [WatchDynamoTable](#cdk-watchful-watchdynamotable)|*No description*
 [WatchEcsService](#cdk-watchful-watchecsservice)|*No description*
+[WatchFirehoseService](#cdk-watchful-watchfirehoseservice)|*No description*
 [WatchLambdaFunction](#cdk-watchful-watchlambdafunction)|*No description*
 [WatchRdsAurora](#cdk-watchful-watchrdsaurora)|*No description*
 [Watchful](#cdk-watchful-watchful)|*No description*
@@ -25,6 +26,8 @@ Name|Description
 [WatchDynamoTableProps](#cdk-watchful-watchdynamotableprops)|*No description*
 [WatchEcsServiceOptions](#cdk-watchful-watchecsserviceoptions)|*No description*
 [WatchEcsServiceProps](#cdk-watchful-watchecsserviceprops)|*No description*
+[WatchFirehoseServiceOptions](#cdk-watchful-watchfirehoseserviceoptions)|*No description*
+[WatchFirehoseServiceProps](#cdk-watchful-watchfirehoseserviceprops)|*No description*
 [WatchLambdaFunctionOptions](#cdk-watchful-watchlambdafunctionoptions)|*No description*
 [WatchLambdaFunctionProps](#cdk-watchful-watchlambdafunctionprops)|*No description*
 [WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)|*No description*
@@ -131,6 +134,32 @@ new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
 
 
 
+## class WatchFirehoseService  <a id="cdk-watchful-watchfirehoseservice"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
+__Extends__: [Construct](#aws-cdk-core-construct)
+
+### Initializer
+
+
+
+
+```ts
+new WatchFirehoseService(scope: Construct, id: string, props: WatchFirehoseServiceProps)
+```
+
+* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[WatchFirehoseServiceProps](#cdk-watchful-watchfirehoseserviceprops)</code>)  *No description*
+  * **fh** (<code>[CfnDeliveryStream](#aws-cdk-aws-kinesisfirehose-cfndeliverystream)</code>)  *No description* 
+  * **title** (<code>string</code>)  *No description* 
+  * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
+
+
+
+
 ## class WatchLambdaFunction  <a id="cdk-watchful-watchlambdafunction"></a>
 
 
@@ -153,7 +182,7 @@ new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunction
   * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
   * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
-  * **fn** (<code>[Function](#aws-cdk-aws-lambda-function)</code>)  *No description* 
+  * **fn** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -335,16 +364,31 @@ watchFargateEcs(title: string, fargateService: FargateService, targetGroup: Appl
 __Returns__:
 * <code>[WatchEcsService](#cdk-watchful-watchecsservice)</code>
 
+#### watchFirehose(title, fh, options?) <a id="cdk-watchful-watchful-watchfirehose"></a>
+
+
+
+```ts
+watchFirehose(title: string, fh: CfnDeliveryStream, options?: WatchFirehoseServiceOptions): WatchFirehoseService
+```
+
+* **title** (<code>string</code>)  *No description*
+* **fh** (<code>[CfnDeliveryStream](#aws-cdk-aws-kinesisfirehose-cfndeliverystream)</code>)  *No description*
+* **options** (<code>[WatchFirehoseServiceOptions](#cdk-watchful-watchfirehoseserviceoptions)</code>)  *No description*
+
+__Returns__:
+* <code>[WatchFirehoseService](#cdk-watchful-watchfirehoseservice)</code>
+
 #### watchLambdaFunction(title, fn, options?) <a id="cdk-watchful-watchful-watchlambdafunction"></a>
 
 
 
 ```ts
-watchLambdaFunction(title: string, fn: Function, options?: WatchLambdaFunctionOptions): WatchLambdaFunction
+watchLambdaFunction(title: string, fn: IFunction, options?: WatchLambdaFunctionOptions): WatchLambdaFunction
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **fn** (<code>[Function](#aws-cdk-aws-lambda-function)</code>)  *No description*
+* **fn** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  *No description*
 * **options** (<code>[WatchLambdaFunctionOptions](#cdk-watchful-watchlambdafunctionoptions)</code>)  *No description*
   * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
@@ -387,7 +431,8 @@ watchScope(scope: Construct, options?: WatchfulAspectProps): void
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
   * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
-  * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
+  * **firehose** (<code>boolean</code>)  Automatically watch AWS firehose in the scope. __*Default*__: true
+  * **lambdaFn** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
 
 
@@ -416,7 +461,8 @@ new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
   * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
-  * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
+  * **firehose** (<code>boolean</code>)  Automatically watch AWS firehose in the scope. __*Default*__: true
+  * **lambdaFn** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
 
 
@@ -617,6 +663,27 @@ Name | Type | Description
 
 
 
+## struct WatchFirehoseServiceOptions  <a id="cdk-watchful-watchfirehoseserviceoptions"></a>
+
+
+
+
+
+## struct WatchFirehoseServiceProps  <a id="cdk-watchful-watchfirehoseserviceprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**fh** | <code>[CfnDeliveryStream](#aws-cdk-aws-kinesisfirehose-cfndeliverystream)</code> | <span></span>
+**title** | <code>string</code> | <span></span>
+**watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
+
+
+
 ## struct WatchLambdaFunctionOptions  <a id="cdk-watchful-watchlambdafunctionoptions"></a>
 
 
@@ -641,7 +708,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**fn** | <code>[Function](#aws-cdk-aws-lambda-function)</code> | <span></span>
+**fn** | <code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code> | <span></span>
 **title** | <code>string</code> | <span></span>
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
 **durationThresholdPercent**? | <code>number</code> | Threshold for the duration alarm as percentage of the function's timeout value.<br/>__*Default*__: 80
@@ -714,7 +781,8 @@ Name | Type | Description
 **dynamodb**? | <code>boolean</code> | Automatically watch all Amazon DynamoDB tables in the scope.<br/>__*Default*__: true
 **ec2ecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
 **fargateecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
-**lambda**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
+**firehose**? | <code>boolean</code> | Automatically watch AWS firehose in the scope.<br/>__*Default*__: true
+**lambdaFn**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
 **rdsaurora**? | <code>boolean</code> | Automatically watch RDS Aurora clusters in the scope.<br/>__*Default*__: true
 
 
