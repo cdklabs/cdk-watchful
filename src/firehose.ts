@@ -27,7 +27,7 @@ export class WatchFirehoseService extends cdk.Construct {
     });
 
     const {
-      deliveryToRedshiftSuccessMetric,
+      deliveryToRedshiftSuccessMetric, deliveryToRedshiftSuccessAlarm,
     } = this.createDeliveryToRedshiftSuccessMonitor();
     const {
       deliveryToRedshiftRecordsMetric,
@@ -39,6 +39,7 @@ export class WatchFirehoseService extends cdk.Construct {
         title: 'Delivery to Redshift success',
         width: 12,
         left: [deliveryToRedshiftSuccessMetric],
+        leftAnnotations: [deliveryToRedshiftSuccessAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
         title: 'Records delivered to Redshift (Sum)',
@@ -59,8 +60,16 @@ export class WatchFirehoseService extends cdk.Construct {
         DeliveryStreamName: this.fh.deliveryStreamName,
       },
     });
-
-    return { deliveryToRedshiftSuccessMetric };
+    const deliveryToRedshiftSuccessAlarm = new cloudwatch.Alarm(this, 'deliveryToRedshiftAlarm', {
+      comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
+      metric: deliveryToRedshiftSuccessMetric,
+      threshold: 1,
+      period: cdk.Duration.minutes(1),
+      evaluationPeriods: 1,
+      treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING,
+    });
+    this.watchful.addAlarm(deliveryToRedshiftSuccessAlarm);
+    return { deliveryToRedshiftSuccessMetric, deliveryToRedshiftSuccessAlarm };
   }
   private createDeliveryToRedshiftRecordsMonitor() {
     const deliveryToRedshiftRecordsMetric = new cloudwatch.Metric({
