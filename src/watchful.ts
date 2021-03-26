@@ -117,8 +117,7 @@ export class Watchful extends Construct implements IWatchful {
   }
 
   public watchFargateEcs( title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup,
-    options: WatchEcsServiceOptions = {},
-  ) {
+    options: WatchEcsServiceOptions = {}) {
     return new WatchEcsService(this, fargateService.node.addr, {
       title, watchful: this, fargateService, targetGroup, ...options,
     });
