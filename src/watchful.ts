@@ -55,11 +55,7 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    if (props.dashboardName) {
-      this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
-    } else {
-      this.dash = new cloudwatch.Dashboard(this, 'Dashboard');
-    }
+    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
 
     new CfnOutput(this, 'WatchfulDashboard', {
       value: linkForDashboard(this.dash),
@@ -92,74 +88,44 @@ export class Watchful extends Construct implements IWatchful {
 
   public watchDynamoTable(title: string, table: dynamodb.Table, options: WatchDynamoTableOptions = {}) {
     return new WatchDynamoTable(this, table.node.addr, {
-      title,
-      watchful: this,
-      table,
-      ...options,
+      title, watchful: this, table, ...options,
     });
   }
 
   public watchApiGateway(title: string, restApi: apigw.RestApi, options: WatchApiGatewayOptions = {}) {
     return new WatchApiGateway(this, restApi.node.addr, {
-      title,
-      watchful: this,
-      restApi,
-      ...options,
+      title, watchful: this, restApi, ...options,
     });
   }
 
   public watchFirehose(title: string, fh: firehose.CfnDeliveryStream, options: WatchFirehoseServiceOptions = {}) {
     return new WatchFirehoseService(this, fh.node.addr, {
-      title,
-      watchful: this,
-      fh,
-      ...options,
+      title, watchful: this, fh, ...options,
     });
   }
 
   public watchLambdaFunction(title: string, fn: lambda.IFunction, options: WatchLambdaFunctionOptions = {}) {
     return new WatchLambdaFunction(this, fn.node.addr, {
-      title,
-      watchful: this,
-      fn,
-      ...options,
+      title, watchful: this, fn, ...options,
     });
   }
 
   public watchRdsAuroraCluster(title: string, cluster: rds.DatabaseCluster, options: WatchRdsAuroraOptions = {}) {
     return new WatchRdsAurora(this, cluster.node.addr, {
-      title,
-      watchful: this,
-      cluster,
-      ...options,
+      title, watchful: this, cluster, ...options,
     });
   }
-  public watchFargateEcs(
-    title: string,
-    fargateService: ecs.FargateService,
-    targetGroup: ApplicationTargetGroup,
-    options: WatchEcsServiceOptions = {},
-  ) {
+
+  public watchFargateEcs( title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup,
+    options: WatchEcsServiceOptions = {}) {
     return new WatchEcsService(this, fargateService.node.addr, {
-      title,
-      watchful: this,
-      fargateService,
-      targetGroup,
-      ...options,
+      title, watchful: this, fargateService, targetGroup, ...options,
     });
   }
-  public watchEc2Ecs(
-    title: string,
-    ec2Service: ecs.Ec2Service,
-    targetGroup: ApplicationTargetGroup,
-    options: WatchEcsServiceOptions = {},
-  ) {
+
+  public watchEc2Ecs(title: string, ec2Service: ecs.Ec2Service, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
     return new WatchEcsService(this, ec2Service.node.addr, {
-      title,
-      watchful: this,
-      ec2Service,
-      targetGroup,
-      ...options,
+      title, watchful: this, ec2Service, targetGroup, ...options,
     });
   }
 }
