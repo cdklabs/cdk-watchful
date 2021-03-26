@@ -4425,13 +4425,13 @@ jsesc@^2.5.1:
   integrity sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==
 
 jsii-diff@^1.7.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.25.0.tgz#410c05422427291c7b19e2d410090b6945eda142"
-  integrity sha512-rW4mpldvQrUDgDY+9Bvglew6nwXPWyVaePgeYTTB/4+9NEoAE7vecQAYhDokTBRdcOVCaEt5ffucwwawMu2ctQ==
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/jsii-diff/-/jsii-diff-1.26.0.tgz#41ba434b298771b7542a3a2eb18241ba6cf82a73"
+  integrity sha512-RWu1AFYE8+U+75yZMSKrn5JFj6G21yiKR2Won+XbggD+DveHDGNbopWi9lDHuB5ec04kfiUB7og0yXkanIO4wg==
   dependencies:
-    "@jsii/spec" "^1.25.0"
+    "@jsii/spec" "^1.26.0"
     fs-extra "^9.1.0"
-    jsii-reflect "^1.25.0"
+    jsii-reflect "^1.26.0"
     log4js "^6.3.0"
     typescript "~3.9.9"
     yargs "^16.2.0"
