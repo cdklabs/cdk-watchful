@@ -15,11 +15,7 @@ export class WatchFirehoseService extends cdk.Construct {
   private readonly watchful: IWatchful;
   private readonly fh: firehose.CfnDeliveryStream;
 
-  constructor(
-    scope: cdk.Construct,
-    id: string,
-    props: WatchFirehoseServiceProps,
-  ) {
+  constructor( scope: cdk.Construct, id: string, props: WatchFirehoseServiceProps) {
     super(scope, id);
 
     this.watchful = props.watchful;
@@ -31,13 +27,8 @@ export class WatchFirehoseService extends cdk.Construct {
       ],
     });
 
-    const {
-      deliveryToRedshiftSuccessMetric,
-      deliveryToRedshiftSuccessAlarm,
-    } = this.createDeliveryToRedshiftSuccessMonitor();
-    const {
-      deliveryToRedshiftRecordsMetric,
-    } = this.createDeliveryToRedshiftRecordsMonitor();
+    const { deliveryToRedshiftSuccessMetric, deliveryToRedshiftSuccessAlarm } = this.createDeliveryToRedshiftSuccessMonitor();
+    const { deliveryToRedshiftRecordsMetric } = this.createDeliveryToRedshiftRecordsMonitor();
 
     // add all the widgets
     this.watchful.addWidgets(
