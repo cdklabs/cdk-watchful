@@ -1,7 +1,7 @@
-import * as cloudwatch from "@aws-cdk/aws-cloudwatch";
-import * as firehose from "@aws-cdk/aws-kinesisfirehose";
-import * as cdk from "@aws-cdk/core";
-import { IWatchful } from "./api";
+import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
+import * as firehose from '@aws-cdk/aws-kinesisfirehose';
+import * as cdk from '@aws-cdk/core';
+import { IWatchful } from './api';
 
 export interface WatchFirehoseServiceOptions {}
 
@@ -18,7 +18,7 @@ export class WatchFirehoseService extends cdk.Construct {
   constructor(
     scope: cdk.Construct,
     id: string,
-    props: WatchFirehoseServiceProps
+    props: WatchFirehoseServiceProps,
   ) {
     super(scope, id);
 
@@ -27,7 +27,7 @@ export class WatchFirehoseService extends cdk.Construct {
 
     this.watchful.addSection(props.title, {
       links: [
-        { title: "Firehose Console", url: linkForFirehoseService(this.fh) },
+        { title: 'Firehose Console', url: linkForFirehoseService(this.fh) },
       ],
     });
 
@@ -42,16 +42,16 @@ export class WatchFirehoseService extends cdk.Construct {
     // add all the widgets
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
-        title: "Delivery to Redshift success",
+        title: 'Delivery to Redshift success',
         width: 12,
         left: [deliveryToRedshiftSuccessMetric],
         leftAnnotations: [deliveryToRedshiftSuccessAlarm.toAnnotation()],
       }),
       new cloudwatch.GraphWidget({
-        title: "Records delivered to Redshift (Sum)",
+        title: 'Records delivered to Redshift (Sum)',
         width: 12,
         left: [deliveryToRedshiftRecordsMetric],
-      })
+      }),
     );
   } // constructor
 
@@ -59,16 +59,16 @@ export class WatchFirehoseService extends cdk.Construct {
   private createDeliveryToRedshiftSuccessMonitor() {
     const deliveryToRedshiftSuccessMetric = new cloudwatch.Metric({
       metricName: FirehoseGatewayMetric.DeliveryToRedshiftSuccess,
-      namespace: "AWS/Firehose",
+      namespace: 'AWS/Firehose',
       period: cdk.Duration.minutes(1),
-      statistic: "sum",
+      statistic: 'sum',
       dimensions: {
         DeliveryStreamName: this.fh.deliveryStreamName,
       },
     });
     const deliveryToRedshiftSuccessAlarm = new cloudwatch.Alarm(
       this,
-      "deliveryToRedshiftAlarm",
+      'deliveryToRedshiftAlarm',
       {
         comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
         metric: deliveryToRedshiftSuccessMetric,
@@ -76,7 +76,7 @@ export class WatchFirehoseService extends cdk.Construct {
         period: cdk.Duration.minutes(1),
         evaluationPeriods: 1,
         treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING,
-      }
+      },
     );
     this.watchful.addAlarm(deliveryToRedshiftSuccessAlarm);
     return { deliveryToRedshiftSuccessMetric, deliveryToRedshiftSuccessAlarm };
@@ -84,9 +84,9 @@ export class WatchFirehoseService extends cdk.Construct {
   private createDeliveryToRedshiftRecordsMonitor() {
     const deliveryToRedshiftRecordsMetric = new cloudwatch.Metric({
       metricName: FirehoseGatewayMetric.DeliveryToRedshiftRecords,
-      namespace: "AWS/Firehose",
+      namespace: 'AWS/Firehose',
       period: cdk.Duration.minutes(1),
-      statistic: "sum",
+      statistic: 'sum',
       dimensions: {
         DeliveryStreamName: this.fh.deliveryStreamName,
       },
@@ -97,8 +97,8 @@ export class WatchFirehoseService extends cdk.Construct {
 
 // TODO extend to monitor all the things
 const enum FirehoseGatewayMetric {
-  DeliveryToRedshiftSuccess = "DeliveryToRedshift.Success",
-  DeliveryToRedshiftRecords = "DeliveryToRedshift.Records",
+  DeliveryToRedshiftSuccess = 'DeliveryToRedshift.Success',
+  DeliveryToRedshiftRecords = 'DeliveryToRedshift.Records',
 }
 
 function linkForFirehoseService(fh: firehose.CfnDeliveryStream) {
