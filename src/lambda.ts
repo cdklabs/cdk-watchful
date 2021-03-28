@@ -47,7 +47,7 @@ export class WatchLambdaFunction extends Construct {
     super(scope, id);
 
     const cfnFunction = props.fn.node.defaultChild as lambda.CfnFunction;
-    const timeoutSec = cfnFunction.timeout || 3;
+    const timeoutSec = cfnFunction? cfnFunction.timeout : 3;
 
     this.watchful = props.watchful;
     this.fn = props.fn;
@@ -61,7 +61,7 @@ export class WatchLambdaFunction extends Construct {
 
     const { errorsMetric, errorsAlarm } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
     const { throttlesMetric, throttlesAlarm } = this.createThrottlesMonitor(props.throttlesPerMinuteThreshold);
-    const { durationMetric, durationAlarm } = this.createDurationMonitor(timeoutSec, props.durationThresholdPercent);
+    const { durationMetric, durationAlarm } = this.createDurationMonitor(timeoutSec!, props.durationThresholdPercent);
     const invocationsMetric = this.fn.metricInvocations();
 
     this.watchful.addWidgets(
