@@ -2,6 +2,7 @@ import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as rds from '@aws-cdk/aws-rds';
 import * as cdk from '@aws-cdk/core';
 import { IWatchful } from './api';
+import { RdsAuroraMetricFactory } from './monitoring/aws/rds/metrics';
 
 export interface WatchRdsAuroraOptions {
   /**
@@ -51,12 +52,14 @@ export class WatchRdsAurora extends cdk.Construct {
 
   private readonly watchful: IWatchful;
   private readonly cluster: rds.DatabaseCluster;
+  private readonly metrics: RdsAuroraMetricFactory;
 
   constructor(scope: cdk.Construct, id: string, props: WatchRdsAuroraProps) {
     super(scope, id);
 
     this.watchful = props.watchful;
     this.cluster = props.cluster;
+    this.metrics = new RdsAuroraMetricFactory();
 
     this.watchful.addSection(props.title, {
       links: [
@@ -108,15 +111,7 @@ export class WatchRdsAurora extends cdk.Construct {
   }
 
   private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 80) {
-    const cpuUtilizationMetric = new cloudwatch.Metric({
-      metricName: 'CPUUtilization',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
+    const cpuUtilizationMetric = this.metrics.metricCpuUtilization(this.cluster.clusterIdentifier);
     const cpuUtilizationAlarm = cpuUtilizationMetric.createAlarm(this, 'CpuUtilizationAlarm', {
       alarmDescription: 'cpuUtilizationAlarm',
       threshold: cpuMaximumThresholdPercent,
@@ -127,15 +122,7 @@ export class WatchRdsAurora extends cdk.Construct {
   }
 
   private createDbConnectionsMonitor(dbConnectionsMaximumThreshold = 0) {
-    const dbConnectionsMetric = new cloudwatch.Metric({
-      metricName: 'DatabaseConnections',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
+    const dbConnectionsMetric = this.metrics.metricDbConnections(this.cluster.clusterIdentifier);
     const dbConnectionsAlarm = dbConnectionsMetric.createAlarm(this, 'DbConnectionsAlarm', {
       alarmDescription: 'dbConnectionsAlarm',
       threshold: dbConnectionsMaximumThreshold,
@@ -146,15 +133,7 @@ export class WatchRdsAurora extends cdk.Construct {
   }
 
   private createDbReplicaLagMonitor(dbReplicaLagMaximumThreshold = 0) {
-    const dbReplicaLagMetric = new cloudwatch.Metric({
-      metricName: 'AuroraReplicaLag',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
+    const dbReplicaLagMetric = this.metrics.metricReplicaLag(this.cluster.clusterIdentifier);
     const dbReplicaLagAlarm = dbReplicaLagMetric.createAlarm(this, 'DbReplicaLagAlarm', {
       alarmDescription: 'dbConnectionsAlarm',
       threshold: dbReplicaLagMaximumThreshold,
@@ -165,15 +144,7 @@ export class WatchRdsAurora extends cdk.Construct {
   }
 
   private createDbBufferCacheMonitor(dbBufferCacheMinimumThreshold = 0) {
-    const dbBufferCacheHitRatioMetric = new cloudwatch.Metric({
-      metricName: 'BufferCacheHitRatio',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
+    const dbBufferCacheHitRatioMetric = this.metrics.metricBufferCacheHitRatio(this.cluster.clusterIdentifier);
     const dbBufferCacheHitRatioAlarm = dbBufferCacheHitRatioMetric.createAlarm(this, 'DbBufferCacheHitRatioAlarm', {
       alarmDescription: 'dbConnectionsAlarm',
       threshold: dbBufferCacheMinimumThreshold,
@@ -185,48 +156,7 @@ export class WatchRdsAurora extends cdk.Construct {
   private createDbDmlThroughputMonitor(dbThroughputMaximumThreshold = 0) {
     // @ts-ignore
     const AlarmThreshold = dbThroughputMaximumThreshold;
-    const dbInsertThroughputMetric = new cloudwatch.Metric({
-      metricName: 'InsertThroughput',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
-    const dbUpdateThroughputMetric = new cloudwatch.Metric({
-      metricName: 'UpdateThroughput',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
-    const dbSelectThroughputMetric = new cloudwatch.Metric({
-      metricName: 'SelectThroughput',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
-    const dbDeleteThroughputMetric = new cloudwatch.Metric({
-      metricName: 'DeleteThroughput',
-      namespace: 'AWS/RDS',
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: this.cluster.clusterIdentifier,
-      },
-    });
-    return {
-      dbInsertThroughputMetric,
-      dbUpdateThroughputMetric,
-      dbSelectThroughputMetric,
-      dbDeleteThroughputMetric,
-    };
+    return this.metrics.metricDmlThroughput(this.cluster.clusterIdentifier);
   }
 }
 
