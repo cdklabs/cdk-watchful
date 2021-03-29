@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.136](https://github.com/myhelix/cdk-watchful/compare/v0.5.135...v0.5.136) (2021-03-29)
+
 ### [0.5.135](https://github.com/myhelix/cdk-watchful/compare/v0.5.134...v0.5.135) (2021-03-28)
 
 ### [0.5.134](https://github.com/myhelix/cdk-watchful/compare/v0.5.133...v0.5.134) (2021-03-28)
