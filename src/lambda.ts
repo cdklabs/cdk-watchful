@@ -2,6 +2,7 @@ import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as lambda from '@aws-cdk/aws-lambda';
 import { Construct } from '@aws-cdk/core';
 import { IWatchful } from './api';
+import { LambdaMetricFactory } from './monitoring/aws/lambda/metrics';
 
 const DEFAULT_DURATION_THRESHOLD_PERCENT = 80;
 
@@ -42,6 +43,7 @@ export class WatchLambdaFunction extends Construct {
 
   private readonly watchful: IWatchful;
   private readonly fn: lambda.Function;
+  private readonly metrics: LambdaMetricFactory;
 
   constructor(scope: Construct, id: string, props: WatchLambdaFunctionProps) {
     super(scope, id);
@@ -51,6 +53,7 @@ export class WatchLambdaFunction extends Construct {
 
     this.watchful = props.watchful;
     this.fn = props.fn;
+    this.metrics = new LambdaMetricFactory();
 
     this.watchful.addSection(props.title, {
       links: [
@@ -62,7 +65,7 @@ export class WatchLambdaFunction extends Construct {
     const { errorsMetric, errorsAlarm } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
     const { throttlesMetric, throttlesAlarm } = this.createThrottlesMonitor(props.throttlesPerMinuteThreshold);
     const { durationMetric, durationAlarm } = this.createDurationMonitor(timeoutSec, props.durationThresholdPercent);
-    const invocationsMetric = this.fn.metricInvocations();
+    const invocationsMetric = this.metrics.metricInvocations(this.fn.functionName);
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
@@ -93,7 +96,7 @@ export class WatchLambdaFunction extends Construct {
 
   private createErrorsMonitor(errorsPerMinuteThreshold = 0) {
     const fn = this.fn;
-    const errorsMetric = fn.metricErrors();
+    const errorsMetric = this.metrics.metricErrors(fn.functionName);
     const errorsAlarm = errorsMetric.createAlarm(this, 'ErrorsAlarm', {
       alarmDescription: `Over ${errorsPerMinuteThreshold} errors per minute`,
       threshold: errorsPerMinuteThreshold,
@@ -106,7 +109,7 @@ export class WatchLambdaFunction extends Construct {
 
   private createThrottlesMonitor(throttlesPerMinuteThreshold = 0) {
     const fn = this.fn;
-    const throttlesMetric = fn.metricThrottles();
+    const throttlesMetric = this.metrics.metricThrottles(fn.functionName);
     const throttlesAlarm = throttlesMetric.createAlarm(this, 'ThrottlesAlarm', {
       alarmDescription: `Over ${throttlesPerMinuteThreshold} throttles per minute`,
       threshold: throttlesPerMinuteThreshold,
@@ -119,7 +122,7 @@ export class WatchLambdaFunction extends Construct {
 
   private createDurationMonitor(timeoutSec: number, durationPercentThreshold: number = DEFAULT_DURATION_THRESHOLD_PERCENT) {
     const fn = this.fn;
-    const durationMetric = fn.metricDuration();
+    const durationMetric = this.metrics.metricDuration(fn.functionName).p99;
     const durationThresholdSec = Math.floor(durationPercentThreshold / 100 * timeoutSec);
     const durationAlarm = durationMetric.createAlarm(this, 'DurationAlarm', {
       alarmDescription: `p99 latency >= ${durationThresholdSec}s (${durationPercentThreshold}%)`,
