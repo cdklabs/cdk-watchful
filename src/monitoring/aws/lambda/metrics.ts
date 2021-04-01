@@ -17,19 +17,27 @@ export class LambdaMetricFactory {
   }
 
   metricDuration(functionName: string) {
-    const avg = new Metric({
-      metricName: 'Duration',
-      namespace: LambdaMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        FunctionName: functionName,
-      },
-    });
-    const p50 = avg.with({ statistic: 'p50' });
-    const p90 = avg.with({ statistic: 'p90' });
-    const p99 = avg.with({ statistic: 'p99' });
-    return { avg, p50, p90, p99 };
+    function metric(statistic: string) {
+      return new Metric({
+        metricName: 'Duration',
+        label: statistic,
+        namespace: LambdaMetricFactory.Namespace,
+        period: cdk.Duration.minutes(5),
+        statistic,
+        dimensions: {
+          FunctionName: functionName,
+        },
+      });
+    }
+
+    return {
+      min: metric('Minimum'),
+      avg: metric('Average'),
+      p50: metric('p50'),
+      p90: metric('p90'),
+      p99: metric('p99'),
+      max: metric('Maximum'),
+    };
   }
 
   metricErrors(functionName: string) {
