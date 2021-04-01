@@ -2,6 +2,7 @@ import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import { Construct, Duration } from '@aws-cdk/core';
 import { IWatchful } from './api';
+import { DynamoDbMetricFactory } from './monitoring/aws/dynamodb/metrics';
 
 const DEFAULT_PERCENT = 80;
 
@@ -27,12 +28,14 @@ export interface WatchDynamoTableProps extends WatchDynamoTableOptions{
 
 export class WatchDynamoTable extends Construct {
   private readonly watchful: IWatchful;
+  private readonly metrics: DynamoDbMetricFactory;
 
   constructor(scope: Construct, id: string, props: WatchDynamoTableProps) {
     super(scope, id);
 
     const table = props.table;
     this.watchful = props.watchful;
+    this.metrics = new DynamoDbMetricFactory();
 
     const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
     const billingMode = cfnTable.billingMode as dynamodb.BillingMode;
@@ -62,17 +65,9 @@ export class WatchDynamoTable extends Construct {
     writeCapacityThresholdPercent?: number) {
     const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
 
-    const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
-      label: 'Consumed',
-      period: Duration.minutes(1),
-      statistic: 'sum',
-    });
-
-    const writeCapacityMetric = metricForDynamoTable(table, 'ConsumedWriteCapacityUnits', {
-      label: 'Consumed',
-      period: Duration.minutes(1),
-      statistic: 'sum',
-    });
+    const metrics = this.metrics.metricConsumedCapacityUnits(table.tableName);
+    const readCapacityMetric = metrics.read;
+    const writeCapacityMetric = metrics.write;
     const throughput = cfnTable.provisionedThroughput as dynamodb.CfnTable.ProvisionedThroughputProperty;
 
     this.watchful.addAlarm(this.createDynamoCapacityAlarm('read', readCapacityMetric, throughput.readCapacityUnits, readCapacityThresholdPercent));
@@ -93,17 +88,10 @@ export class WatchDynamoTable extends Construct {
    * Include consumed capacity metrics
    */
   private createWidgetsForPayPerRequestTable(title: string, table: dynamodb.Table) {
-    const readCapacityMetric = metricForDynamoTable(table, 'ConsumedReadCapacityUnits', {
-      label: 'Consumed',
-      period: Duration.minutes(1),
-      statistic: 'sum',
-    });
+    const metrics = this.metrics.metricConsumedCapacityUnits(table.tableName);
+    const readCapacityMetric = metrics.read;
+    const writeCapacityMetric = metrics.write;
 
-    const writeCapacityMetric = metricForDynamoTable(table, 'ConsumedWriteCapacityUnits', {
-      label: 'Consumed',
-      period: Duration.minutes(1),
-      statistic: 'sum',
-    });
     this.watchful.addSection(title, {
       links: [{ title: 'Amazon DynamoDB Console', url: linkForDynamoTable(table) }],
     });
@@ -165,19 +153,6 @@ function linkForDynamoTable(table: dynamodb.Table, tab = 'overview') {
 }
 
 function calculateUnits(provisioned: number, percent: number | undefined, period: Duration) {
-  return provisioned * ((percent === undefined ? 80 : percent) / 100) * period.toSeconds();
+  return provisioned * ((percent === undefined ? DEFAULT_PERCENT : percent) / 100) * period.toSeconds();
 }
 
-
-function metricForDynamoTable(table: dynamodb.Table, metricName: string, options: cloudwatch.MetricOptions = { }): cloudwatch.Metric {
-  return new cloudwatch.Metric({
-    metricName,
-    namespace: 'AWS/DynamoDB',
-    dimensions: {
-      TableName: table.tableName,
-    },
-    unit: cloudwatch.Unit.COUNT,
-    label: metricName,
-    ...options,
-  });
-}
