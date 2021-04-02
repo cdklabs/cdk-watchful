@@ -63,7 +63,7 @@ export class WatchApiGateway extends Construct {
     const alarmThreshold = props.serverErrorThreshold == null ? 1 : props.serverErrorThreshold;
     if (alarmThreshold) {
       this.watchful.addAlarm(
-        this.metrics.metricErrors(this.apiName, this.stage).errors5XX
+        this.metrics.metricErrors(this.apiName, this.stage).count5XX
           .createAlarm(this, '5XXErrorAlarm', {
             alarmDescription: `at ${alarmThreshold}`,
             threshold: alarmThreshold,
@@ -99,8 +99,8 @@ export class WatchApiGateway extends Construct {
       stacked: false,
       left: [
         this.metrics.metricCalls(this.apiName, this.stage, opts),
-        this.metrics.metricErrors(this.apiName, this.stage, opts).errors4XX,
-        this.metrics.metricErrors(this.apiName, this.stage, opts).errors5XX,
+        this.metrics.metricErrors(this.apiName, this.stage, opts).count4XX,
+        this.metrics.metricErrors(this.apiName, this.stage, opts).count5XX,
       ],
       leftAnnotations,
     });
