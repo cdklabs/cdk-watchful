@@ -1,7 +1,8 @@
 import * as apigw from '@aws-cdk/aws-apigateway';
-import { Metric, MetricOptions, ComparisonOperator, GraphWidget, HorizontalAnnotation } from '@aws-cdk/aws-cloudwatch';
+import { ComparisonOperator, GraphWidget, HorizontalAnnotation } from '@aws-cdk/aws-cloudwatch';
 import { Construct, Duration } from '@aws-cdk/core';
 import { IWatchful } from './api';
+import { ApiGatewayMetricFactory } from './monitoring/aws/api-gateway/metrics';
 
 export interface WatchApiGatewayOptions {
   /**
@@ -45,20 +46,24 @@ export interface WatchApiGatewayProps extends WatchApiGatewayOptions {
 
 export class WatchApiGateway extends Construct {
   private readonly api: apigw.CfnRestApi;
+  private readonly apiName: string;
   private readonly stage: string;
   private readonly watchful: IWatchful;
+  private readonly metrics: ApiGatewayMetricFactory;
 
   constructor(scope: Construct, id: string, props: WatchApiGatewayProps) {
     super(scope, id);
 
     this.api = props.restApi.node.findChild('Resource') as apigw.CfnRestApi;
+    this.apiName = this.api.name!;
     this.stage = props.restApi.deploymentStage.stageName;
     this.watchful = props.watchful;
+    this.metrics = new ApiGatewayMetricFactory();
 
     const alarmThreshold = props.serverErrorThreshold == null ? 1 : props.serverErrorThreshold;
     if (alarmThreshold) {
       this.watchful.addAlarm(
-        this.createApiGatewayMetric(ApiGatewayMetric.FiveHundredError)
+        this.metrics.metricErrors(this.apiName, this.stage).errors5XX
           .createAlarm(this, '5XXErrorAlarm', {
             alarmDescription: `at ${alarmThreshold}`,
             threshold: alarmThreshold,
@@ -77,8 +82,8 @@ export class WatchApiGateway extends Construct {
       this.watchful.addWidgets(
         this.createCallGraphWidget(operation, alarmThreshold),
         ...props.cacheGraph ? [this.createCacheGraphWidget(operation)] : [],
-        this.createLatencyGraphWidget(ApiGatewayMetric.Latency, operation),
-        this.createLatencyGraphWidget(ApiGatewayMetric.IntegrationLatency, operation),
+        this.createLatencyGraphWidget(operation),
+        this.createIntegrationLatencyGraphWidget(operation),
       ),
     );
   }
@@ -93,9 +98,9 @@ export class WatchApiGateway extends Construct {
       width: 12,
       stacked: false,
       left: [
-        this.createApiGatewayMetric(ApiGatewayMetric.Count, opts, { label: 'Calls', statistic: 'sum', color: '#1f77b4' }),
-        this.createApiGatewayMetric(ApiGatewayMetric.FourHundredError, opts, { label: 'HTTP 4XX', statistic: 'sum', color: '#ff7f0e' }),
-        this.createApiGatewayMetric(ApiGatewayMetric.FiveHundredError, opts, { label: 'HTTP 5XX', statistic: 'sum', color: '#d62728' }),
+        this.metrics.metricCalls(this.apiName, this.stage, opts),
+        this.metrics.metricErrors(this.apiName, this.stage, opts).errors4XX,
+        this.metrics.metricErrors(this.apiName, this.stage, opts).errors5XX,
       ],
       leftAnnotations,
     });
@@ -107,41 +112,28 @@ export class WatchApiGateway extends Construct {
       width: 12,
       stacked: false,
       left: [
-        this.createApiGatewayMetric(ApiGatewayMetric.Count, opts, { label: 'Calls', statistic: 'sum', color: '#1f77b4' }),
-        this.createApiGatewayMetric(ApiGatewayMetric.CacheHitCount, opts, { label: 'Cache Hit', statistic: 'sum', color: '#2ca02c' }),
-        this.createApiGatewayMetric(ApiGatewayMetric.CacheMissCount, opts, { label: 'Cache Miss', statistic: 'sum', color: '#d62728' }),
+        this.metrics.metricCalls(this.apiName, this.stage, opts),
+        this.metrics.metricCache(this.apiName, this.stage, opts).hits,
+        this.metrics.metricCache(this.apiName, this.stage, opts).misses,
       ],
     });
   }
 
-  private createLatencyGraphWidget(metric: ApiGatewayMetric, opts?: WatchedOperation) {
+  private createLatencyGraphWidget(opts?: WatchedOperation) {
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} ${metric} (1-minute periods)`,
+      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} (1-minute periods)`,
       width: 12,
       stacked: false,
-      left: ['min', 'avg', 'p90', 'p99', 'max'].map(statistic =>
-        this.createApiGatewayMetric(metric, opts, { label: statistic, statistic })),
+      left: Object.values(this.metrics.metricLatency(this.apiName, this.stage, opts)),
     });
   }
 
-  private createApiGatewayMetric(
-    metricName: ApiGatewayMetric,
-    opts?: WatchedOperation,
-    metricOpts?: MetricOptions,
-  ): Metric {
-    return new Metric({
-      dimensions: {
-        ApiName: this.api.name,
-        Stage: this.stage,
-        ...opts && {
-          Method: opts.httpMethod,
-          Resource: opts.resourcePath,
-        },
-      },
-      metricName,
-      namespace: 'AWS/ApiGateway',
-      period: Duration.minutes(1),
-      ...metricOpts,
+  private createIntegrationLatencyGraphWidget(opts?: WatchedOperation) {
+    return new GraphWidget({
+      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Integration (1-minute periods)`,
+      width: 12,
+      stacked: false,
+      left: Object.values(this.metrics.metricIntegrationLatency(this.apiName, this.stage, opts)),
     });
   }
 }
@@ -159,16 +151,6 @@ export interface WatchedOperation {
    * The REST API path for this operation (/, /resource/{id}, ...)
    */
   readonly resourcePath: string;
-}
-
-const enum ApiGatewayMetric {
-  FourHundredError = '4XXError',
-  FiveHundredError = '5XXError',
-  CacheHitCount = 'CacheHitCount',
-  CacheMissCount = 'CacheMissCount',
-  Count = 'Count',
-  IntegrationLatency = 'IntegrationLatency',
-  Latency = 'Latency',
 }
 
 function linkForApiGateway(api: apigw.IRestApi) {
