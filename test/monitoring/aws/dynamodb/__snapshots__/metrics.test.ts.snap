@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricConsumedCapacityUnits 1`] = `
+Object {
+  "read": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "TableName": "DummyTableName",
+    },
+    "label": "Consumed (Read)",
+    "metricName": "ConsumedReadCapacityUnits",
+    "namespace": "AWS/DynamoDB",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "write": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "TableName": "DummyTableName",
+    },
+    "label": "Consumed (Write)",
+    "metricName": "ConsumedWriteCapacityUnits",
+    "namespace": "AWS/DynamoDB",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
