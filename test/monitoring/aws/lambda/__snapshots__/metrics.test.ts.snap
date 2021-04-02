@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricDuration 1`] = `
+Object {
+  "avg": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "FunctionName": "DummyFunctionName",
+    },
+    "label": "Average",
+    "metricName": "Duration",
+    "namespace": "AWS/Lambda",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "max": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "FunctionName": "DummyFunctionName",
+    },
+    "label": "Maximum",
+    "metricName": "Duration",
+    "namespace": "AWS/Lambda",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+  "min": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "FunctionName": "DummyFunctionName",
+    },
+    "label": "Minimum",
+    "metricName": "Duration",
+    "namespace": "AWS/Lambda",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Minimum",
+    "unit": undefined,
+  },
+  "p50": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "FunctionName": "DummyFunctionName",
+    },
+    "label": "p50",
+    "metricName": "Duration",
+    "namespace": "AWS/Lambda",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "p50",
+    "unit": undefined,
+  },
+  "p90": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "FunctionName": "DummyFunctionName",
+    },
+    "label": "p90",
+    "metricName": "Duration",
+    "namespace": "AWS/Lambda",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "p90",
+    "unit": undefined,
+  },
+  "p99": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "FunctionName": "DummyFunctionName",
+    },
+    "label": "p99",
+    "metricName": "Duration",
+    "namespace": "AWS/Lambda",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "p99",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricErrors 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "FunctionName": "DummyFunctionName",
+  },
+  "label": undefined,
+  "metricName": "Errors",
+  "namespace": "AWS/Lambda",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricInvocations 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "FunctionName": "DummyFunctionName",
+  },
+  "label": undefined,
+  "metricName": "Invocations",
+  "namespace": "AWS/Lambda",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricThrottles 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "FunctionName": "DummyFunctionName",
+  },
+  "label": undefined,
+  "metricName": "Throttles",
+  "namespace": "AWS/Lambda",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
