@@ -17,6 +17,7 @@ import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { WatchEcsServiceOptions, WatchEcsService } from './ecs';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
+import { SectionWidget } from './widget/section';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
@@ -73,12 +74,11 @@ export class Watchful extends Construct implements IWatchful {
   }
 
   public addSection(title: string, options: SectionOptions = {}) {
-    const markdown = [
-      `# ${title}`,
-      (options.links || []).map(link => `[button:${link.title}](${link.url})`).join(' | '),
-    ];
-
-    this.addWidgets(new cloudwatch.TextWidget({ width: 24, markdown: markdown.join('\n') }));
+    this.addWidgets(new SectionWidget({
+      titleLevel: 1,
+      titleMarkdown: title,
+      quicklinks: options.links,
+    }));
   }
 
   public watchScope(scope: Construct, options?: WatchfulAspectProps) {
