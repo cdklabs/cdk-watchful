@@ -1,17 +1,22 @@
-import { Metric } from '@aws-cdk/aws-cloudwatch';
+import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
 import { Duration } from '@aws-cdk/core';
 
-export class DynamoDbMetricFactory {
-  static readonly Namespace = 'AWS/DynamoDB';
+const enum Metrics {
+  ConsumedReadCapacityUnits = 'ConsumedReadCapacityUnits',
+  ConsumedWriteCapacityUnits = 'ConsumedWriteCapacityUnits',
+}
 
+const Namespace = 'AWS/DynamoDB';
+
+export class DynamoDbMetricFactory {
   metricConsumedCapacityUnits(tableName: string) {
-    function metric(metricName: string, label: string) {
+    function metric(metricName: Metrics, label: string) {
       return new Metric({
         metricName,
         label,
-        namespace: DynamoDbMetricFactory.Namespace,
+        namespace: Namespace,
         period: Duration.minutes(1),
-        statistic: 'Sum',
+        statistic: Statistic.SUM,
         dimensions: {
           TableName: tableName,
         },
@@ -19,8 +24,8 @@ export class DynamoDbMetricFactory {
     }
 
     return {
-      read: metric('ConsumedReadCapacityUnits', 'Consumed (Read)'),
-      write: metric('ConsumedWriteCapacityUnits', 'Consumed (Write)'),
+      read: metric(Metrics.ConsumedReadCapacityUnits, 'Consumed (Read)'),
+      write: metric(Metrics.ConsumedWriteCapacityUnits, 'Consumed (Write)'),
     };
   }
 }

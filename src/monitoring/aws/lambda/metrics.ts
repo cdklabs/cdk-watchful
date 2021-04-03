@@ -1,15 +1,22 @@
-import { Metric } from '@aws-cdk/aws-cloudwatch';
+import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
 import * as cdk from '@aws-cdk/core';
 
-export class LambdaMetricFactory {
-  static readonly Namespace = 'AWS/Lambda';
+const enum Metrics {
+  Invocations = 'Invocations',
+  Duration = 'Duration',
+  Errors = 'Errors',
+  Throttles = 'Throttles'
+}
 
+const Namespace = 'AWS/Lambda';
+
+export class LambdaMetricFactory {
   metricInvocations(functionName: string) {
     return new Metric({
-      metricName: 'Invocations',
-      namespace: LambdaMetricFactory.Namespace,
+      metricName: Metrics.Invocations,
+      namespace: Namespace,
       period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
+      statistic: Statistic.SUM,
       dimensions: {
         FunctionName: functionName,
       },
@@ -19,9 +26,9 @@ export class LambdaMetricFactory {
   metricDuration(functionName: string) {
     function metric(statistic: string) {
       return new Metric({
-        metricName: 'Duration',
+        metricName: Metrics.Duration,
         label: statistic,
-        namespace: LambdaMetricFactory.Namespace,
+        namespace: Namespace,
         period: cdk.Duration.minutes(5),
         statistic,
         dimensions: {
@@ -31,21 +38,21 @@ export class LambdaMetricFactory {
     }
 
     return {
-      min: metric('Minimum'),
-      avg: metric('Average'),
+      min: metric(Statistic.MINIMUM),
+      avg: metric(Statistic.AVERAGE),
       p50: metric('p50'),
       p90: metric('p90'),
       p99: metric('p99'),
-      max: metric('Maximum'),
+      max: metric(Statistic.MAXIMUM),
     };
   }
 
   metricErrors(functionName: string) {
     return new Metric({
-      metricName: 'Errors',
-      namespace: LambdaMetricFactory.Namespace,
+      metricName: Metrics.Errors,
+      namespace: Namespace,
       period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
+      statistic: Statistic.SUM,
       dimensions: {
         FunctionName: functionName,
       },
@@ -54,10 +61,10 @@ export class LambdaMetricFactory {
 
   metricThrottles(functionName: string) {
     return new Metric({
-      metricName: 'Throttles',
-      namespace: LambdaMetricFactory.Namespace,
+      metricName: Metrics.Throttles,
+      namespace: Namespace,
       period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
+      statistic: Statistic.SUM,
       dimensions: {
         FunctionName: functionName,
       },
