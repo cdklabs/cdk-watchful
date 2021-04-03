@@ -1,0 +1,445 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricCpuUtilizationAverage 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClusterName": "DummyClusterName",
+    "ServiceName": "DummyServiceName",
+  },
+  "label": undefined,
+  "metricName": "CPUUtilization",
+  "namespace": "AWS/ECS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricHttpErrorStatusCodeRate 1`] = `
+MathExpression {
+  "color": undefined,
+  "expression": "http4xx + http5xx / requests",
+  "label": undefined,
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "usingMetrics": Object {
+    "http4xx": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": Object {
+        "LoadBalancer": "DummyLoadBalancer",
+        "TargetGroup": "DummyTargetGroup",
+      },
+      "label": undefined,
+      "metricName": "HTTPCode_Target_4XX_Count",
+      "namespace": "AWS/ApplicationELB",
+      "period": Duration {
+        "amount": 5,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Sum",
+      "unit": undefined,
+    },
+    "http5xx": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": Object {
+        "LoadBalancer": "DummyLoadBalancer",
+        "TargetGroup": "DummyTargetGroup",
+      },
+      "label": undefined,
+      "metricName": "HTTPCode_Target_5XX_Count",
+      "namespace": "AWS/ApplicationELB",
+      "period": Duration {
+        "amount": 5,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Sum",
+      "unit": undefined,
+    },
+    "requests": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": Object {
+        "LoadBalancer": "DummyLoadBalancer",
+        "TargetGroup": "DummyTargetGroup",
+      },
+      "label": undefined,
+      "metricName": "RequestCount",
+      "namespace": "AWS/ApplicationELB",
+      "period": Duration {
+        "amount": 5,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Sum",
+      "unit": undefined,
+    },
+  },
+}
+`;
+
+exports[`snapshot test: metricHttpStatusCodeCount 1`] = `
+Object {
+  "count2XX": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "HTTPCode_Target_2XX_Count",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "count3XX": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "HTTPCode_Target_3XX_Count",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "count4XX": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "HTTPCode_Target_4XX_Count",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "count5XX": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "HTTPCode_Target_5XX_Count",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricMaxUnhealthyHostCount 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "LoadBalancer": "DummyLoadBalancer",
+    "TargetGroup": "DummyTargetGroup",
+  },
+  "label": undefined,
+  "metricName": "UnHealthyHostCount",
+  "namespace": "AWS/ApplicationELB",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricMemoryUtilizationAverage 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClusterName": "DummyClusterName",
+    "ServiceName": "DummyServiceName",
+  },
+  "label": undefined,
+  "metricName": "MemoryUtilization",
+  "namespace": "AWS/ECS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricMinHealthyHostCount 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "LoadBalancer": "DummyLoadBalancer",
+    "TargetGroup": "DummyTargetGroup",
+  },
+  "label": undefined,
+  "metricName": "HealthyHostCount",
+  "namespace": "AWS/ApplicationELB",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Minimum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricRequestCount 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "LoadBalancer": "DummyLoadBalancer",
+    "TargetGroup": "DummyTargetGroup",
+  },
+  "label": undefined,
+  "metricName": "RequestCount",
+  "namespace": "AWS/ApplicationELB",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricTargetResponseTime 1`] = `
+Object {
+  "avg": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "TargetResponseTime",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "max": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "TargetResponseTime",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+  "min": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "TargetResponseTime",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Minimum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricTargetResponseTime 2`] = `
+Object {
+  "avg": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "TargetResponseTime",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "max": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "TargetResponseTime",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+  "min": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "LoadBalancer": "DummyLoadBalancer",
+      "TargetGroup": "DummyTargetGroup",
+    },
+    "label": undefined,
+    "metricName": "TargetResponseTime",
+    "namespace": "AWS/ApplicationELB",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Minimum",
+    "unit": undefined,
+  },
+}
+`;
