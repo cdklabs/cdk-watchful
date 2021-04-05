@@ -14,7 +14,6 @@ const enum Metrics {
 
 const Namespace = 'AWS/RDS';
 
-
 /**
  * Metrics for RDS Aurora.
  */
