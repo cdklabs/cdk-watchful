@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricBufferCacheHitRatio 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "BufferCacheHitRatio",
+  "namespace": "AWS/RDS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricCpuUtilization 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "CPUUtilization",
+  "namespace": "AWS/RDS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricDbConnections 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "DatabaseConnections",
+  "namespace": "AWS/RDS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricDmlThroughput 1`] = `
+Object {
+  "dbDeleteThroughputMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+    },
+    "label": undefined,
+    "metricName": "DeleteThroughput",
+    "namespace": "AWS/RDS",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "dbInsertThroughputMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+    },
+    "label": undefined,
+    "metricName": "InsertThroughput",
+    "namespace": "AWS/RDS",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "dbSelectThroughputMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+    },
+    "label": undefined,
+    "metricName": "SelectThroughput",
+    "namespace": "AWS/RDS",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "dbUpdateThroughputMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+    },
+    "label": undefined,
+    "metricName": "UpdateThroughput",
+    "namespace": "AWS/RDS",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricReplicaLag 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "AuroraReplicaLag",
+  "namespace": "AWS/RDS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
