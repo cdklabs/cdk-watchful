@@ -12,59 +12,35 @@ const Namespace = 'AWS/Lambda';
 
 export class LambdaMetricFactory {
   metricInvocations(functionName: string) {
-    return new Metric({
-      metricName: Metrics.Invocations,
-      namespace: Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: Statistic.SUM,
-      dimensions: {
-        FunctionName: functionName,
-      },
-    });
+    return this.metric(Metrics.Invocations, functionName).with({ statistic: Statistic.SUM });
   }
 
   metricDuration(functionName: string) {
-    function metric(statistic: string) {
-      return new Metric({
-        metricName: Metrics.Duration,
-        label: statistic,
-        namespace: Namespace,
-        period: cdk.Duration.minutes(5),
-        statistic,
-        dimensions: {
-          FunctionName: functionName,
-        },
-      });
-    }
+    const baseMetric = this.metric(Metrics.Duration, functionName);
 
     return {
-      min: metric(Statistic.MINIMUM),
-      avg: metric(Statistic.AVERAGE),
-      p50: metric('p50'),
-      p90: metric('p90'),
-      p99: metric('p99'),
-      max: metric(Statistic.MAXIMUM),
+      min: baseMetric.with({ statistic: Statistic.MINIMUM, label: Statistic.MINIMUM }),
+      avg: baseMetric.with({ statistic: Statistic.AVERAGE, label: Statistic.AVERAGE }),
+      p50: baseMetric.with({ statistic: 'p50', label: 'p50' }),
+      p90: baseMetric.with({ statistic: 'p90', label: 'p90' }),
+      p99: baseMetric.with({ statistic: 'p99', label: 'p99' }),
+      max: baseMetric.with({ statistic: Statistic.MAXIMUM, label: Statistic.MAXIMUM }),
     };
   }
 
   metricErrors(functionName: string) {
-    return new Metric({
-      metricName: Metrics.Errors,
-      namespace: Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: Statistic.SUM,
-      dimensions: {
-        FunctionName: functionName,
-      },
-    });
+    return this.metric(Metrics.Errors, functionName).with({ statistic: Statistic.SUM });
   }
 
   metricThrottles(functionName: string) {
+    return this.metric(Metrics.Throttles, functionName).with({ statistic: Statistic.SUM });
+  }
+
+  protected metric(metric: Metrics, functionName: string) {
     return new Metric({
-      metricName: Metrics.Throttles,
+      metricName: metric,
       namespace: Namespace,
       period: cdk.Duration.minutes(5),
-      statistic: Statistic.SUM,
       dimensions: {
         FunctionName: functionName,
       },
