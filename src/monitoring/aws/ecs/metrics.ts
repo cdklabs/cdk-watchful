@@ -56,10 +56,12 @@ export class EcsMetricFactory {
   }
 
   metricTargetResponseTime(targetGroup: string, loadBalancer: string) {
+    const baseMetric = this.albMetric(ApplicationELBMetrics.TargetResponseTime, targetGroup, loadBalancer);
+
     return {
-      min: this.albMetric(ApplicationELBMetrics.TargetResponseTime, targetGroup, loadBalancer).with({ statistic: Statistic.MINIMUM }),
-      max: this.albMetric(ApplicationELBMetrics.TargetResponseTime, targetGroup, loadBalancer).with({ statistic: Statistic.MAXIMUM }),
-      avg: this.albMetric(ApplicationELBMetrics.TargetResponseTime, targetGroup, loadBalancer).with({ statistic: Statistic.AVERAGE }),
+      min: baseMetric.with({ statistic: Statistic.MINIMUM }),
+      max: baseMetric.with({ statistic: Statistic.MAXIMUM }),
+      avg: baseMetric.with({ statistic: Statistic.AVERAGE }),
     };
   }
 

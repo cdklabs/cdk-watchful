@@ -37,24 +37,28 @@ export class ApiGatewayMetricFactory {
   }
 
   metricIntegrationLatency(apiName: string, stage: string, op?: WatchedOperation) {
+    const baseMetric = this.metric(Metrics.IntegrationLatency, apiName, stage, op);
+
     return {
-      min: this.metric(Metrics.IntegrationLatency, apiName, stage, op).with({ label: 'min', statistic: Statistic.MINIMUM }),
-      avg: this.metric(Metrics.IntegrationLatency, apiName, stage, op).with({ label: 'avg', statistic: Statistic.AVERAGE }),
-      p90: this.metric(Metrics.IntegrationLatency, apiName, stage, op).with({ label: 'p90', statistic: StatisticP90 }),
-      p95: this.metric(Metrics.IntegrationLatency, apiName, stage, op).with({ label: 'p95', statistic: StatisticP95 }),
-      p99: this.metric(Metrics.IntegrationLatency, apiName, stage, op).with({ label: 'p99', statistic: StatisticP99 }),
-      max: this.metric(Metrics.IntegrationLatency, apiName, stage, op).with({ label: 'max', statistic: Statistic.MAXIMUM }),
+      min: baseMetric.with({ label: 'min', statistic: Statistic.MINIMUM }),
+      avg: baseMetric.with({ label: 'avg', statistic: Statistic.AVERAGE }),
+      p90: baseMetric.with({ label: 'p90', statistic: StatisticP90 }),
+      p95: baseMetric.with({ label: 'p95', statistic: StatisticP95 }),
+      p99: baseMetric.with({ label: 'p99', statistic: StatisticP99 }),
+      max: baseMetric.with({ label: 'max', statistic: Statistic.MAXIMUM }),
     };
   }
 
   metricLatency(apiName: string, stage: string, op?: WatchedOperation) {
+    const baseMetric = this.metric(Metrics.Latency, apiName, stage, op);
+
     return {
-      min: this.metric(Metrics.Latency, apiName, stage, op).with({ label: 'min', statistic: Statistic.MINIMUM }),
-      avg: this.metric(Metrics.Latency, apiName, stage, op).with({ label: 'avg', statistic: Statistic.AVERAGE }),
-      p90: this.metric(Metrics.Latency, apiName, stage, op).with({ label: 'p90', statistic: StatisticP90 }),
-      p95: this.metric(Metrics.Latency, apiName, stage, op).with({ label: 'p95', statistic: StatisticP95 }),
-      p99: this.metric(Metrics.Latency, apiName, stage, op).with({ label: 'p99', statistic: StatisticP99 }),
-      max: this.metric(Metrics.Latency, apiName, stage, op).with({ label: 'max', statistic: Statistic.MAXIMUM }),
+      min: baseMetric.with({ label: 'min', statistic: Statistic.MINIMUM }),
+      avg: baseMetric.with({ label: 'avg', statistic: Statistic.AVERAGE }),
+      p90: baseMetric.with({ label: 'p90', statistic: StatisticP90 }),
+      p95: baseMetric.with({ label: 'p95', statistic: StatisticP95 }),
+      p99: baseMetric.with({ label: 'p99', statistic: StatisticP99 }),
+      max: baseMetric.with({ label: 'max', statistic: Statistic.MAXIMUM }),
     };
   }
 

@@ -10,22 +10,21 @@ const Namespace = 'AWS/DynamoDB';
 
 export class DynamoDbMetricFactory {
   metricConsumedCapacityUnits(tableName: string) {
-    function metric(metricName: Metrics, label: string) {
-      return new Metric({
-        metricName,
-        label,
-        namespace: Namespace,
-        period: Duration.minutes(1),
-        statistic: Statistic.SUM,
-        dimensions: {
-          TableName: tableName,
-        },
-      });
-    }
-
     return {
-      read: metric(Metrics.ConsumedReadCapacityUnits, 'Consumed (Read)'),
-      write: metric(Metrics.ConsumedWriteCapacityUnits, 'Consumed (Write)'),
+      read: this.metric(Metrics.ConsumedReadCapacityUnits, tableName).with({ label: 'Consumed (Read)' }),
+      write: this.metric(Metrics.ConsumedWriteCapacityUnits, tableName).with({ label: 'Consumed (Write)' }),
     };
+  }
+
+  protected metric(metric: Metrics, tableName: string) {
+    return new Metric({
+      metricName: metric,
+      namespace: Namespace,
+      period: Duration.minutes(1),
+      statistic: Statistic.SUM,
+      dimensions: {
+        TableName: tableName,
+      },
+    });
   }
 }

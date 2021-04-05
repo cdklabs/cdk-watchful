@@ -1,99 +1,55 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as cdk from '@aws-cdk/core';
+import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
+import { Duration } from '@aws-cdk/core';
+
+const enum Metrics {
+  SelectThroughput = 'SelectThroughput',
+  InsertThroughput = 'InsertThroughput',
+  UpdateThroughput = 'UpdateThroughput',
+  DeleteThroughput = 'DeleteThroughput',
+  BufferCacheHitRatio = 'BufferCacheHitRatio',
+  DatabaseConnections = 'DatabaseConnections',
+  AuroraReplicaLag = 'AuroraReplicaLag',
+  CPUUtilization = 'CPUUtilization'
+}
+
+const Namespace = 'AWS/RDS';
+
 
 /**
  * Metrics for RDS Aurora.
  */
 export class RdsAuroraMetricFactory {
-  static readonly Namespace = 'AWS/RDS';
-
   metricDmlThroughput(clusterIdentifier: string) {
-    const dbInsertThroughputMetric = new cloudwatch.Metric({
-      metricName: 'InsertThroughput',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
-    const dbUpdateThroughputMetric = new cloudwatch.Metric({
-      metricName: 'UpdateThroughput',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
-    const dbSelectThroughputMetric = new cloudwatch.Metric({
-      metricName: 'SelectThroughput',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
-    const dbDeleteThroughputMetric = new cloudwatch.Metric({
-      metricName: 'DeleteThroughput',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Sum',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
     return {
-      dbInsertThroughputMetric,
-      dbUpdateThroughputMetric,
-      dbSelectThroughputMetric,
-      dbDeleteThroughputMetric,
+      dbInsertThroughputMetric: this.metric(Metrics.InsertThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
+      dbUpdateThroughputMetric: this.metric(Metrics.UpdateThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
+      dbSelectThroughputMetric: this.metric(Metrics.SelectThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
+      dbDeleteThroughputMetric: this.metric(Metrics.DeleteThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
     };
   }
 
   metricBufferCacheHitRatio(clusterIdentifier: string) {
-    return new cloudwatch.Metric({
-      metricName: 'BufferCacheHitRatio',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
+    return this.metric(Metrics.BufferCacheHitRatio, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
   }
 
   metricDbConnections(clusterIdentifier: string) {
-    return new cloudwatch.Metric({
-      metricName: 'DatabaseConnections',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
+    return this.metric(Metrics.DatabaseConnections, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
   }
 
   metricReplicaLag(clusterIdentifier: string) {
-    return new cloudwatch.Metric({
-      metricName: 'AuroraReplicaLag',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
-      dimensions: {
-        DBClusterIdentifier: clusterIdentifier,
-      },
-    });
+    return this.metric(Metrics.AuroraReplicaLag, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
   }
 
   metricCpuUtilization(clusterIdentifier: string) {
-    return new cloudwatch.Metric({
-      metricName: 'CPUUtilization',
-      namespace: RdsAuroraMetricFactory.Namespace,
-      period: cdk.Duration.minutes(5),
-      statistic: 'Average',
+    return this.metric(Metrics.CPUUtilization, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
+  }
+
+  protected metric(metric: Metrics, clusterIdentifier: string) {
+    return new Metric({
+      metricName: metric,
+      namespace: Namespace,
+      period: Duration.minutes(5),
+      statistic: Statistic.SUM,
       dimensions: {
         DBClusterIdentifier: clusterIdentifier,
       },
