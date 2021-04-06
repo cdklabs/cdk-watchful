@@ -5433,10 +5433,10 @@ progress@^2.0.0:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.17.20:
-  version "0.17.20"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.17.20.tgz#32b1e096c5d9c4a5e848bd04ff305f40ccaf3493"
-  integrity sha512-RRtFKcKOedlHSbSjn+SCqXfYnOtJZg2UWk4W/unQwpgAcrKlHwoeK0djr14rStHwLUlji5qtus+X2NIcSTPCYg==
+projen@^0.17.25:
+  version "0.17.25"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.17.25.tgz#4c52894686b62e6bfbdb8dd18a13092a6448bc43"
+  integrity sha512-HYmeNNc+1EnPfpDdo5ow2EpdAM2M4wmzwfXyL8+pXeqmv3FDCEjHW1ruNW54fO6K0dFA0M72sdFDJuugOP1e6Q==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.0"
