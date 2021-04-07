@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricAgeOfOldestMessageInSeconds 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "QueueName": "DummyQueueName",
+  },
+  "label": undefined,
+  "metricName": "ApproximateAgeOfOldestMessage",
+  "namespace": "AWS/SQS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricApproximateVisibleMessages 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "QueueName": "DummyQueueName",
+  },
+  "label": undefined,
+  "metricName": "ApproximateNumberOfMessagesVisible",
+  "namespace": "AWS/SQS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricAverageMessageSizeInBytes 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "QueueName": "DummyQueueName",
+  },
+  "label": undefined,
+  "metricName": "SentMessageSize",
+  "namespace": "AWS/SQS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricIncomingMessages 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "QueueName": "DummyQueueName",
+  },
+  "label": undefined,
+  "metricName": "NumberOfMessagesSent",
+  "namespace": "AWS/SQS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;

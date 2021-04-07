@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricAverageMessageSizeInBytes 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TopicName": "DummyTopicName",
+  },
+  "label": undefined,
+  "metricName": "PublishSize",
+  "namespace": "AWS/SNS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricAverageMessageSizeInBytes 2`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TopicName": "DummyTopicName",
+  },
+  "label": undefined,
+  "metricName": "PublishSize",
+  "namespace": "AWS/SNS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricNumberOfMessagesDelivered 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TopicName": "DummyTopicName",
+  },
+  "label": undefined,
+  "metricName": "NumberOfNotificationsDelivered",
+  "namespace": "AWS/SNS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricNumberOfMessagesPublished 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "TopicName": "DummyTopicName",
+  },
+  "label": undefined,
+  "metricName": "NumberOfMessagesPublished",
+  "namespace": "AWS/SNS",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
