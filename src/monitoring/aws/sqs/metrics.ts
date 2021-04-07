@@ -11,29 +11,29 @@ const enum Metrics {
 const Namespace = 'AWS/SQS';
 
 export class SqsMetricFactory {
-  metricApproximateVisibleMessages(topicName: string) {
-    return this.metric(Metrics.ApproximateNumberOfMessagesVisible, topicName).with({ statistic: Statistic.MAXIMUM });
+  metricApproximateVisibleMessages(queueName: string) {
+    return this.metric(Metrics.ApproximateNumberOfMessagesVisible, queueName).with({ statistic: Statistic.MAXIMUM });
   }
 
-  metricIncomingMessages(topicName: string) {
-    return this.metric(Metrics.NumberOfMessagesSent, topicName).with({ statistic: Statistic.SUM });
+  metricIncomingMessages(queueName: string) {
+    return this.metric(Metrics.NumberOfMessagesSent, queueName).with({ statistic: Statistic.SUM });
   }
 
-  metricAgeOfOldestMessageInSeconds(topicName: string) {
-    return this.metric(Metrics.ApproximateAgeOfOldestMessage, topicName).with({ statistic: Statistic.MAXIMUM });
+  metricAgeOfOldestMessageInSeconds(queueName: string) {
+    return this.metric(Metrics.ApproximateAgeOfOldestMessage, queueName).with({ statistic: Statistic.MAXIMUM });
   }
 
-  metricAverageMessageSizeInBytes(topicName: string) {
-    return this.metric(Metrics.SentMessageSize, topicName).with({ statistic: Statistic.AVERAGE });
+  metricAverageMessageSizeInBytes(queueName: string) {
+    return this.metric(Metrics.SentMessageSize, queueName).with({ statistic: Statistic.AVERAGE });
   }
 
-  protected metric(metric: Metrics, topicName: string) {
+  protected metric(metric: Metrics, queueName: string) {
     return new Metric({
       metricName: metric,
       namespace: Namespace,
       period: Duration.minutes(5),
       dimensions: {
-        TopicName: topicName,
+        QueueName: queueName,
       },
     });
   }
