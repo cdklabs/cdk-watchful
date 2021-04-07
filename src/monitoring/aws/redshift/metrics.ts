@@ -5,7 +5,7 @@ const enum Metrics {
   DatabaseConnections = 'DatabaseConnections',
   PercentageDiskSpaceUsed = 'PercentageDiskSpaceUsed',
   CPUUtilization = 'CPUUtilization',
-  Enabled = 'Enabled',
+  MaintenanceMode = 'MaintenanceMode',
   ReadLatency = 'ReadLatency',
   WriteLatency = 'WriteLatency',
   QueryDuration = 'QueryDuration'
@@ -42,7 +42,7 @@ export class RedshiftMetricFactory {
   }
 
   metricMaintenanceModeEnabled(clusterIdentifier: string) {
-    return this.metric(Metrics.Enabled, clusterIdentifier).with({ statistic: Statistic.MAXIMUM });
+    return this.metric(Metrics.MaintenanceMode, clusterIdentifier).with({ statistic: Statistic.MAXIMUM });
   }
 
   private metricQueryDuration(latency: string, clusterIdentifier: string) {
