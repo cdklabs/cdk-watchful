@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+Array [
+  Object {
+    "height": 2,
+    "markdown": Object {
+      "Fn::Join": Array [
+        "",
+        Array [
+          "# SQS Queue **",
+          Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+          "**
+
+[button:Overview](https://",
+          Object {
+            "Ref": "AWS::Region",
+          },
+          ".console.aws.amazon.com/sqs/v2/home?region=",
+          Object {
+            "Ref": "AWS::Region",
+          },
+          "#/queues/",
+          Object {
+            "Ref": "Queue4A7E3555",
+          },
+          ")",
+        ],
+      ],
+    },
+    "width": 24,
+  },
+  Object {
+    "height": 5,
+    "leftMetrics": Array [
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "ApproximateNumberOfMessagesVisible",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Maximum",
+      },
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "NumberOfMessagesSent",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Sum",
+      },
+    ],
+    "props": Object {
+      "height": 5,
+      "left": Array [
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "ApproximateNumberOfMessagesVisible",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Maximum",
+        },
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "NumberOfMessagesSent",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Sum",
+        },
+      ],
+      "leftAnnotations": Array [],
+      "leftYAxis": Object {
+        "min": 0,
+        "showUnits": false,
+      },
+      "title": "Message Count",
+      "width": 8,
+    },
+    "rightMetrics": Array [],
+    "width": 8,
+  },
+  Object {
+    "height": 5,
+    "leftMetrics": Array [
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "ApproximateAgeOfOldestMessage",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Maximum",
+      },
+    ],
+    "props": Object {
+      "height": 5,
+      "left": Array [
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "ApproximateAgeOfOldestMessage",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Maximum",
+        },
+      ],
+      "leftAnnotations": Array [],
+      "leftYAxis": Object {
+        "label": "sec",
+        "min": 0,
+        "showUnits": false,
+      },
+      "title": "Oldest Message Age",
+      "width": 8,
+    },
+    "rightMetrics": Array [],
+    "width": 8,
+  },
+  Object {
+    "height": 5,
+    "leftMetrics": Array [
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "SentMessageSize",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Average",
+      },
+    ],
+    "props": Object {
+      "height": 5,
+      "left": Array [
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "SentMessageSize",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Average",
+        },
+      ],
+      "leftYAxis": Object {
+        "label": "bytes",
+        "min": 0,
+        "showUnits": false,
+      },
+      "title": "Message Size",
+      "width": 8,
+    },
+    "rightMetrics": Array [],
+    "width": 8,
+  },
+]
+`;
