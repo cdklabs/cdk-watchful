@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricAverageConnectionCount 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "DatabaseConnections",
+  "namespace": "AWS/Redshift",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricAverageCpuUsageInPercent 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "CPUUtilization",
+  "namespace": "AWS/Redshift",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricAverageDiskSpaceUsageInPercent 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "PercentageDiskSpaceUsed",
+  "namespace": "AWS/Redshift",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricAverageLatencyInSeconds 1`] = `
+Object {
+  "read": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+    },
+    "label": undefined,
+    "metricName": "ReadLatency",
+    "namespace": "AWS/Redshift",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "write": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+    },
+    "label": undefined,
+    "metricName": "WriteLatency",
+    "namespace": "AWS/Redshift",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricAverageQueryDurationInMicros 1`] = `
+Object {
+  "longQueries": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+      "latency": "long",
+    },
+    "label": undefined,
+    "metricName": "QueryDuration",
+    "namespace": "AWS/Redshift",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "mediumQueries": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+      "latency": "medium",
+    },
+    "label": undefined,
+    "metricName": "QueryDuration",
+    "namespace": "AWS/Redshift",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "shortQueries": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "DBClusterIdentifier": "DummyClusterId",
+      "latency": "short",
+    },
+    "label": undefined,
+    "metricName": "QueryDuration",
+    "namespace": "AWS/Redshift",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricMaintenanceModeEnabled 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "DBClusterIdentifier": "DummyClusterId",
+  },
+  "label": undefined,
+  "metricName": "MaintenanceMode",
+  "namespace": "AWS/Redshift",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
