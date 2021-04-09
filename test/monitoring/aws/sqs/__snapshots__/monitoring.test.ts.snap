@@ -1,6 +1,377 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot test 1`] = `
+exports[`snapshot test: widgets and resources, all alarms 1`] = `
+Array [
+  Object {
+    "height": 2,
+    "markdown": Object {
+      "Fn::Join": Array [
+        "",
+        Array [
+          "# SQS Queue **",
+          Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+          "**
+
+[button:Overview](https://",
+          Object {
+            "Ref": "AWS::Region",
+          },
+          ".console.aws.amazon.com/sqs/v2/home?region=",
+          Object {
+            "Ref": "AWS::Region",
+          },
+          "#/queues/",
+          Object {
+            "Ref": "Queue4A7E3555",
+          },
+          ")",
+        ],
+      ],
+    },
+    "width": 24,
+  },
+  Object {
+    "height": 5,
+    "leftMetrics": Array [
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "ApproximateNumberOfMessagesVisible",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Maximum",
+      },
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "NumberOfMessagesSent",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Sum",
+      },
+    ],
+    "props": Object {
+      "height": 5,
+      "left": Array [
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "ApproximateNumberOfMessagesVisible",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Maximum",
+        },
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "NumberOfMessagesSent",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Sum",
+        },
+      ],
+      "leftAnnotations": Array [
+        Object {
+          "label": "ApproximateNumberOfMessagesVisible < 20 for 1 datapoints within 5 minutes",
+          "value": 20,
+        },
+        Object {
+          "label": "ApproximateNumberOfMessagesVisible > 30 for 1 datapoints within 5 minutes",
+          "value": 30,
+        },
+      ],
+      "leftYAxis": Object {
+        "min": 0,
+        "showUnits": false,
+      },
+      "title": "Message Count",
+      "width": 8,
+    },
+    "rightMetrics": Array [],
+    "width": 8,
+  },
+  Object {
+    "height": 5,
+    "leftMetrics": Array [
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "ApproximateAgeOfOldestMessage",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Maximum",
+      },
+    ],
+    "props": Object {
+      "height": 5,
+      "left": Array [
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "ApproximateAgeOfOldestMessage",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Maximum",
+        },
+      ],
+      "leftAnnotations": Array [
+        Object {
+          "label": "ApproximateAgeOfOldestMessage > 10 for 1 datapoints within 5 minutes",
+          "value": 10,
+        },
+      ],
+      "leftYAxis": Object {
+        "label": "sec",
+        "min": 0,
+        "showUnits": false,
+      },
+      "title": "Oldest Message Age",
+      "width": 8,
+    },
+    "rightMetrics": Array [],
+    "width": 8,
+  },
+  Object {
+    "height": 5,
+    "leftMetrics": Array [
+      Object {
+        "dimensions": Object {
+          "QueueName": Object {
+            "Fn::GetAtt": Array [
+              "Queue4A7E3555",
+              "QueueName",
+            ],
+          },
+        },
+        "metricName": "SentMessageSize",
+        "namespace": "AWS/SQS",
+        "period": Object {
+          "amount": 5,
+          "unit": Object {
+            "inMillis": 60000,
+            "isoLabel": "M",
+            "label": "minutes",
+          },
+        },
+        "statistic": "Average",
+      },
+    ],
+    "props": Object {
+      "height": 5,
+      "left": Array [
+        Object {
+          "dimensions": Object {
+            "QueueName": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+          "metricName": "SentMessageSize",
+          "namespace": "AWS/SQS",
+          "period": Object {
+            "amount": 5,
+            "unit": Object {
+              "inMillis": 60000,
+              "isoLabel": "M",
+              "label": "minutes",
+            },
+          },
+          "statistic": "Average",
+        },
+      ],
+      "leftYAxis": Object {
+        "label": "bytes",
+        "min": 0,
+        "showUnits": false,
+      },
+      "title": "Message Size",
+      "width": 8,
+    },
+    "rightMetrics": Array [],
+    "width": 8,
+  },
+]
+`;
+
+exports[`snapshot test: widgets and resources, all alarms 2`] = `
+Object {
+  "Resources": Object {
+    "AlarmsTestQueueOldestMessageAgeHighDummyDB161447": Object {
+      "Properties": Object {
+        "ActionsEnabled": true,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "DatapointsToAlarm": 1,
+        "Dimensions": Array [
+          Object {
+            "Name": "QueueName",
+            "Value": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "ApproximateAgeOfOldestMessage",
+        "Namespace": "AWS/SQS",
+        "Period": 300,
+        "Statistic": "Maximum",
+        "Threshold": 10,
+        "TreatMissingData": "missing",
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "AlarmsTestQueueSizeHighDummy0A9FF5B6": Object {
+      "Properties": Object {
+        "ActionsEnabled": true,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "DatapointsToAlarm": 1,
+        "Dimensions": Array [
+          Object {
+            "Name": "QueueName",
+            "Value": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "ApproximateNumberOfMessagesVisible",
+        "Namespace": "AWS/SQS",
+        "Period": 300,
+        "Statistic": "Maximum",
+        "Threshold": 30,
+        "TreatMissingData": "missing",
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "AlarmsTestQueueSizeLowDummyE12D05BB": Object {
+      "Properties": Object {
+        "ActionsEnabled": true,
+        "ComparisonOperator": "LessThanThreshold",
+        "DatapointsToAlarm": 1,
+        "Dimensions": Array [
+          Object {
+            "Name": "QueueName",
+            "Value": Object {
+              "Fn::GetAtt": Array [
+                "Queue4A7E3555",
+                "QueueName",
+              ],
+            },
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "ApproximateNumberOfMessagesVisible",
+        "Namespace": "AWS/SQS",
+        "Period": 300,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+        "TreatMissingData": "missing",
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "Queue4A7E3555": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "QueueName": "DummyQueueName",
+      },
+      "Type": "AWS::SQS::Queue",
+      "UpdateReplacePolicy": "Delete",
+    },
+  },
+}
+`;
+
+exports[`snapshot test: widgets and resources, no alarms 1`] = `
 Array [
   Object {
     "height": 2,
@@ -262,4 +633,19 @@ Array [
     "width": 8,
   },
 ]
+`;
+
+exports[`snapshot test: widgets and resources, no alarms 2`] = `
+Object {
+  "Resources": Object {
+    "Queue4A7E3555": Object {
+      "DeletionPolicy": "Delete",
+      "Properties": Object {
+        "QueueName": "DummyQueueName",
+      },
+      "Type": "AWS::SQS::Queue",
+      "UpdateReplacePolicy": "Delete",
+    },
+  },
+}
 `;
