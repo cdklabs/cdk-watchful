@@ -48,6 +48,7 @@
     "jsii-pacmak": "^1.7.0",
     "json-schema": "^0.2.5",
     "projen": "^0.17.39",
+    "projen-automate-it": "^0.0.8",
     "standard-version": "^9",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.5"
