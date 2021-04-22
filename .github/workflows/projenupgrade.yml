@@ -13,8 +13,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
-      - name: Synthesize project files
-        run: npx projen
       - name: Upgrade projen
         run: npx projen projen:upgrade
       - name: Create pull request
