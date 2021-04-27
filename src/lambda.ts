@@ -7,6 +7,13 @@ const DEFAULT_DURATION_THRESHOLD_PERCENT = 80;
 
 export interface WatchLambdaFunctionOptions {
   /**
+   * Flag to disable alerting on errors
+   *
+   * @default false
+   */
+  readonly errorsDisableAlerts?: boolean;
+
+  /**
    * Number of allowed errors per minute. If there are more errors than that, an alarm will trigger.
    *
    * @default 0
@@ -69,10 +76,25 @@ export class WatchLambdaFunction extends Construct {
       ],
     });
 
-    const { errorsMetric, errorsAlarm } = this.createErrorsMonitor(props.errorsPerMinuteThreshold);
+    const { errorsMetric, errorsAlarm } = this.createErrorsMonitor(props.errorsDisableAlerts, props.errorsPerMinuteThreshold);
     const { throttlesMetric, throttlesAlarm } = this.createThrottlesMonitor(props.throttlesPerMinuteThreshold);
     const { durationMetric, durationAlarm } = this.createDurationMonitor(timeoutSec!, props.durationThresholdPercent);
     const invocationsMetric = this.fn.metricInvocations();
+
+    let errorWidget: cloudwatch.IWidget;
+    if (props.errorsDisableAlerts) {
+      errorWidget = new cloudwatch.GraphWidget({
+        title: `Errors/${errorsMetric.period.toMinutes()}min`,
+        width: 6,
+        left: [errorsMetric],
+      });
+    } else {
+      errorWidget = new cloudwatch.AlarmWidget({
+        title: `Errors/${errorsMetric.period.toMinutes()}min`,
+        alarm: errorsAlarm,
+        width: 6,
+      });
+    }
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
@@ -80,12 +102,7 @@ export class WatchLambdaFunction extends Construct {
         width: 6,
         left: [invocationsMetric],
       }),
-      new cloudwatch.GraphWidget({
-        title: `Errors/${errorsMetric.period.toMinutes()}min`,
-        width: 6,
-        left: [errorsMetric],
-        leftAnnotations: [errorsAlarm.toAnnotation()],
-      }),
+      errorWidget,
       new cloudwatch.GraphWidget({
         title: `Throttles/${throttlesMetric.period.toMinutes()}min`,
         width: 6,
@@ -101,7 +118,7 @@ export class WatchLambdaFunction extends Construct {
     );
   }
 
-  private createErrorsMonitor(errorsPerMinuteThreshold = 0) {
+  private createErrorsMonitor(errorsDisableAlerts = false, errorsPerMinuteThreshold = 0) {
     const fn = this.fn;
     const errorsMetric = fn.metricErrors();
     const errorsAlarm = errorsMetric.createAlarm(this, 'ErrorsAlarm', {
@@ -110,7 +127,9 @@ export class WatchLambdaFunction extends Construct {
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
     });
-    this.watchful.addAlarm(errorsAlarm);
+    if (!errorsDisableAlerts) {
+      this.watchful.addAlarm(errorsAlarm);
+    }
     return { errorsMetric, errorsAlarm };
   }
 

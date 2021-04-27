@@ -181,6 +181,7 @@ new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunction
 * **props** (<code>[WatchLambdaFunctionProps](#myhelix-cdk-watchful-watchlambdafunctionprops)</code>)  *No description*
   * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
   * **durationTimeoutSec** (<code>number</code>)  Override duration timeout threshold. __*Default*__: 3
+  * **errorsDisableAlerts** (<code>boolean</code>)  Flag to disable alerting on errors. __*Default*__: false
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
   * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
   * **fn** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  *No description* 
@@ -393,6 +394,7 @@ watchLambdaFunction(title: string, fn: IFunction, options?: WatchLambdaFunctionO
 * **options** (<code>[WatchLambdaFunctionOptions](#myhelix-cdk-watchful-watchlambdafunctionoptions)</code>)  *No description*
   * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
   * **durationTimeoutSec** (<code>number</code>)  Override duration timeout threshold. __*Default*__: 3
+  * **errorsDisableAlerts** (<code>boolean</code>)  Flag to disable alerting on errors. __*Default*__: false
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
   * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
 
@@ -697,6 +699,7 @@ Name | Type | Description
 -----|------|-------------
 **durationThresholdPercent**? | <code>number</code> | Threshold for the duration alarm as percentage of the function's timeout value.<br/>__*Default*__: 80
 **durationTimeoutSec**? | <code>number</code> | Override duration timeout threshold.<br/>__*Default*__: 3
+**errorsDisableAlerts**? | <code>boolean</code> | Flag to disable alerting on errors.<br/>__*Default*__: false
 **errorsPerMinuteThreshold**? | <code>number</code> | Number of allowed errors per minute.<br/>__*Default*__: 0
 **throttlesPerMinuteThreshold**? | <code>number</code> | Number of allowed throttles per minute.<br/>__*Default*__: 0
 
@@ -716,6 +719,7 @@ Name | Type | Description
 **watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | <span></span>
 **durationThresholdPercent**? | <code>number</code> | Threshold for the duration alarm as percentage of the function's timeout value.<br/>__*Default*__: 80
 **durationTimeoutSec**? | <code>number</code> | Override duration timeout threshold.<br/>__*Default*__: 3
+**errorsDisableAlerts**? | <code>boolean</code> | Flag to disable alerting on errors.<br/>__*Default*__: false
 **errorsPerMinuteThreshold**? | <code>number</code> | Number of allowed errors per minute.<br/>__*Default*__: 0
 **throttlesPerMinuteThreshold**? | <code>number</code> | Number of allowed throttles per minute.<br/>__*Default*__: 0
 
