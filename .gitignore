@@ -36,6 +36,7 @@ tsconfig.json
 yarn-debug.log*
 yarn-error.log*
 !/.eslintrc.json
+!/.gitattributes
 !/.github/dependabot.yml
 !/.github/pull_request_template.md
 !/.github/workflows/build.yml
