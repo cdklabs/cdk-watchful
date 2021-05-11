@@ -250,15 +250,16 @@ new Watchful(scope: Construct, id: string, props?: WatchfulProps)
 ### Methods
 
 
-#### addAlarm(alarm) <a id="myhelix-cdk-watchful-watchful-addalarm"></a>
+#### addAlarm(alarm, autoResolveEvents?) <a id="myhelix-cdk-watchful-watchful-addalarm"></a>
 
 
 
 ```ts
-addAlarm(alarm: Alarm): void
+addAlarm(alarm: Alarm, autoResolveEvents?: boolean): void
 ```
 
 * **alarm** (<code>[Alarm](#aws-cdk-aws-cloudwatch-alarm)</code>)  *No description*
+* **autoResolveEvents** (<code>boolean</code>)  *No description*
 
 
 
@@ -496,15 +497,16 @@ __Implemented by__: [Watchful](#myhelix-cdk-watchful-watchful)
 ### Methods
 
 
-#### addAlarm(alarm) <a id="myhelix-cdk-watchful-iwatchful-addalarm"></a>
+#### addAlarm(alarm, autoResolveEvents?) <a id="myhelix-cdk-watchful-iwatchful-addalarm"></a>
 
 
 
 ```ts
-addAlarm(alarm: Alarm): void
+addAlarm(alarm: Alarm, autoResolveEvents?: boolean): void
 ```
 
 * **alarm** (<code>[Alarm](#aws-cdk-aws-cloudwatch-alarm)</code>)  *No description*
+* **autoResolveEvents** (<code>boolean</code>)  *No description*
 
 
 

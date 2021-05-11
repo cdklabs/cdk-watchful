@@ -2,7 +2,7 @@ import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 
 export interface IWatchful {
   addSection(title: string, options?: SectionOptions): void;
-  addAlarm(alarm: cloudwatch.Alarm): void;
+  addAlarm(alarm: cloudwatch.Alarm, autoResolveEvents?: boolean): void;
   addWidgets(...widgets: cloudwatch.IWidget[]): void;
 }
 

@@ -68,7 +68,7 @@ export class WatchFirehoseService extends cdk.Construct {
       evaluationPeriods: 1,
       treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING,
     });
-    this.watchful.addAlarm(deliveryToRedshiftSuccessAlarm);
+    this.watchful.addAlarm(deliveryToRedshiftSuccessAlarm, false);
     return { deliveryToRedshiftSuccessMetric, deliveryToRedshiftSuccessAlarm };
   }
   private createDeliveryToRedshiftRecordsMonitor() {

@@ -66,10 +66,12 @@ export class Watchful extends Construct implements IWatchful {
     this.dash.addWidgets(...widgets);
   }
 
-  public addAlarm(alarm: cloudwatch.Alarm) {
+  public addAlarm(alarm: cloudwatch.Alarm, autoResolveEvents=true) {
     if (this.alarmTopic) {
       alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
-      alarm.addOkAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
+      if (autoResolveEvents) {
+        alarm.addOkAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
+      }
     }
   }
 
