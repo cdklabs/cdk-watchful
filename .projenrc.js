@@ -21,7 +21,7 @@ const project = new AwsCdkConstructLibrary({
     twitter: 'emeshbi',
   },
 
-  cdkVersion: '1.94.1',
+  cdkVersion: '1.95.2',
   cdkDependencies: [
     '@aws-cdk/aws-apigateway',
     '@aws-cdk/aws-cloudwatch',
