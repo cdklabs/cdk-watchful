@@ -6,7 +6,7 @@ const project = new AwsCdkConstructLibrary({
   name: 'cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
-
+  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
   authorName: 'Elad Ben-Israel',
   authorEmail: 'elad.benisrael@gmail.com',
