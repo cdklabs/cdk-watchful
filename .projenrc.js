@@ -1,5 +1,4 @@
 const { AwsCdkConstructLibrary } = require('projen');
-const { Automation } = require('projen-automate-it');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -42,7 +41,6 @@ const project = new AwsCdkConstructLibrary({
 
   devDeps: [
     'aws-sdk',
-    'projen-automate-it',
   ],
 
   // jsii publishing
@@ -58,13 +56,6 @@ const project = new AwsCdkConstructLibrary({
     module: 'cdk_watchful',
   },
 });
-
-const automation = new Automation(project, {
-  automationToken: AUTOMATION_TOKEN,
-});
-
-automation.projenYarnUpgrade();
-automation.autoApprove();
 
 project.gitignore.exclude('.env', '.idea');
 project.gitignore.exclude('example/*.js', 'example/*.d.ts');

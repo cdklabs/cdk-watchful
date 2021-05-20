@@ -141,16 +141,37 @@
         }
       ]
     },
-    "projen:upgrade": {
-      "name": "projen:upgrade",
-      "category": "30.maintain",
-      "description": "upgrades projen to the latest version",
+    "upgrade-dependencies": {
+      "name": "upgrade-dependencies",
+      "env": {
+        "CI": "0"
+      },
       "steps": [
         {
-          "exec": "yarn upgrade -L projen"
+          "exec": "npm-check-updates --upgrade --target=minor --reject='projen'"
         },
         {
-          "exec": "CI=\"\" yarn projen"
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "npx projen"
+        }
+      ]
+    },
+    "upgrade-projen": {
+      "name": "upgrade-projen",
+      "env": {
+        "CI": "0"
+      },
+      "steps": [
+        {
+          "exec": "npm-check-updates --upgrade --target=minor --filter='projen'"
+        },
+        {
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "npx projen"
         }
       ]
     },
