@@ -68,6 +68,7 @@ const wf = new Watchful(this, 'watchful', {
   alarmEmail: 'your@email.com',
   alarmSqs,
   alarmSns,
+  alarmActionArns: [ 'arn:aws:sqs:us-east-1:444455556666:alarm-queue' ]
 });
 ```
 
@@ -85,6 +86,7 @@ wf = Watchful(
   alarm_email='your@amil.com',
   alarm_sqs=alarm_sqs,
   alarm_sns=alarm_sns
+  alarm_action_arns=['arn:aws:sqs:us-east-1:444455556666:alarm-queue']
 ```
 
 ## Add Resources

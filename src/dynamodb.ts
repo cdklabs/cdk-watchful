@@ -38,7 +38,7 @@ export class WatchDynamoTable extends Construct {
     this.metrics = new DynamoDbMetricFactory();
 
     const cfnTable = table.node.defaultChild as dynamodb.CfnTable;
-    const billingMode = cfnTable.billingMode as dynamodb.BillingMode;
+    const billingMode = cfnTable.billingMode as dynamodb.BillingMode ?? dynamodb.BillingMode.PROVISIONED;
 
     switch (billingMode) {
       case dynamodb.BillingMode.PAY_PER_REQUEST:
