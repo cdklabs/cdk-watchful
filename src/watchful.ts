@@ -9,7 +9,7 @@ import * as rds from '@aws-cdk/aws-rds';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
 import * as sqs from '@aws-cdk/aws-sqs';
-import { Construct, CfnOutput } from '@aws-cdk/core';
+import { Construct, CfnOutput, Aspects } from '@aws-cdk/core';
 import { IWatchful, SectionOptions } from './api';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
 import { WatchfulAspect, WatchfulAspectProps } from './aspect';
@@ -117,7 +117,7 @@ export class Watchful extends Construct implements IWatchful {
 
   public watchScope(scope: Construct, options?: WatchfulAspectProps) {
     const aspect = new WatchfulAspect(this, options);
-    scope.node.applyAspect(aspect);
+    Aspects.of(scope).add(aspect);
   }
 
   public watchDynamoTable(title: string, table: dynamodb.Table, options: WatchDynamoTableOptions = {}) {
