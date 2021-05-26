@@ -17,7 +17,7 @@ const project = new AwsCdkConstructLibrary({
   // creates PRs for projen upgrades
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
-  cdkVersion: '1.106.0',
+  cdkVersion: '1.106.1',
   cdkVersionPinning: true,
   cdkDependencies: [
     '@aws-cdk/aws-apigateway',
