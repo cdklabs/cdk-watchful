@@ -46,7 +46,6 @@ yarn-error.log*
 !/.projen/deps.json
 !/.projen/tasks.json
 !/.projenrc.js
-!/.versionrc.json
 !/API.md
 !/LICENSE
 !/package.json
