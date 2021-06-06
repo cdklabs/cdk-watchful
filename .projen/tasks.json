@@ -120,14 +120,11 @@
       "description": "Bumps version based on latest git tag and generates a changelog entry",
       "env": {
         "OUTFILE": "package.json",
-        "INITIAL_VERSION": "v0.1.0"
+        "CHANGELOG": ".changelog.tmp.md"
       },
       "steps": [
         {
-          "builtin": "release/resolve-version"
-        },
-        {
-          "exec": "npx standard-version@^9"
+          "builtin": "release/bump-version"
         }
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
@@ -137,7 +134,8 @@
       "category": "20.release",
       "description": "Restores version to 0.0.0",
       "env": {
-        "OUTFILE": "package.json"
+        "OUTFILE": "package.json",
+        "CHANGELOG": ".changelog.tmp.md"
       },
       "steps": [
         {
@@ -159,6 +157,9 @@
           "exec": "yarn install --check-files"
         },
         {
+          "exec": "yarn upgrade @aws-cdk/assert @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk eslint eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import jest jest-junit jsii jsii-diff jsii-docgen jsii-pacmak json-schema npm-check-updates npm-check-updates standard-version ts-jest typescript @aws-cdk/aws-apigateway @aws-cdk/aws-cloudwatch-actions @aws-cdk/aws-cloudwatch @aws-cdk/aws-dynamodb @aws-cdk/aws-ecs-patterns @aws-cdk/aws-ecs @aws-cdk/aws-elasticloadbalancingv2 @aws-cdk/aws-events-targets @aws-cdk/aws-events @aws-cdk/aws-lambda @aws-cdk/aws-rds @aws-cdk/aws-sns-subscriptions @aws-cdk/aws-sns @aws-cdk/aws-sqs @aws-cdk/core constructs @aws-cdk/aws-apigateway @aws-cdk/aws-cloudwatch-actions @aws-cdk/aws-cloudwatch @aws-cdk/aws-dynamodb @aws-cdk/aws-ecs-patterns @aws-cdk/aws-ecs @aws-cdk/aws-elasticloadbalancingv2 @aws-cdk/aws-events-targets @aws-cdk/aws-events @aws-cdk/aws-lambda @aws-cdk/aws-rds @aws-cdk/aws-sns-subscriptions @aws-cdk/aws-sns @aws-cdk/aws-sqs @aws-cdk/core"
+        },
+        {
           "exec": "npx projen"
         }
       ]
@@ -175,6 +176,9 @@
         },
         {
           "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "yarn upgrade projen"
         },
         {
           "exec": "npx projen"
