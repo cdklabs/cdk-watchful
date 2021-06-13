@@ -55,6 +55,11 @@ const project = new AwsCdkConstructLibrary({
     distName: 'cdk-watchful',
     module: 'cdk_watchful',
   },
+  autoApproveOptions: {
+    allowedUsernames: ['aws-cdk-automation'],
+    secret: 'GITHUB_TOKEN',
+  },
+  autoApproveUpgrades: true,
 });
 
 project.gitignore.exclude('.env', '.idea');
