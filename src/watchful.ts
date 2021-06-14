@@ -51,6 +51,13 @@ export interface WatchfulProps {
    * @default []
    */
   readonly alarmActionArns?: string[];
+
+  /**
+   * If set to true then no cloudwatch dashboards are generated
+   *
+   * @default false
+   */
+  readonly noDashboard?: boolean;
 }
 
 export class Watchful extends Construct implements IWatchful {
@@ -86,15 +93,18 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
+    if (!props.noDashboard){
+      this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
 
-    new CfnOutput(this, 'WatchfulDashboard', {
-      value: linkForDashboard(this.dash),
-    });
+      new CfnOutput(this, 'WatchfulDashboard', {
+        value: linkForDashboard(this.dash),
+      });
+    }
+
   }
 
   public addWidgets(...widgets: cloudwatch.IWidget[]) {
-    this.dash.addWidgets(...widgets);
+    this.dash?.addWidgets(...widgets);
   }
 
   public addAlarm(alarm: cloudwatch.Alarm) {
