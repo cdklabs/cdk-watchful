@@ -53,11 +53,11 @@ export interface WatchfulProps {
   readonly alarmActionArns?: string[];
 
   /**
-   * If set to true then no cloudwatch dashboards are generated
+   * Whether to generate CloudWatch dashboards
    *
-   * @default false
+   * @default true
    */
-  readonly noDashboard?: boolean;
+  readonly dashboard?: boolean;
 }
 
 export class Watchful extends Construct implements IWatchful {
