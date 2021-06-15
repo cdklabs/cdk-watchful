@@ -95,8 +95,10 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    const dashboard = props.dashboard ?? true;
-    if (dashboard || props.dashboardName){
+    if (props.dashboard === false && props.dashboardName) {
+      throw new Error('Dashboard name is provided but dashboard creation is disabled');
+    }
+    if (props.dashboard !== false) {
       this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
 
       new CfnOutput(this, 'WatchfulDashboard', {
