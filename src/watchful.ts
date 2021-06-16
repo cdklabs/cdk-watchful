@@ -51,10 +51,16 @@ export interface WatchfulProps {
    * @default []
    */
   readonly alarmActionArns?: string[];
+
+  /**
+   * Whether to generate CloudWatch dashboards
+   * @default true
+   */
+  readonly dashboard?: boolean;
 }
 
 export class Watchful extends Construct implements IWatchful {
-  private readonly dash: cloudwatch.Dashboard;
+  private readonly dash?: cloudwatch.Dashboard;
   private readonly alarmTopic?: sns.ITopic;
   private readonly alarmActionArns: string[];
 
@@ -86,15 +92,21 @@ export class Watchful extends Construct implements IWatchful {
       );
     }
 
-    this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
+    if (props.dashboard === false && props.dashboardName) {
+      throw new Error('Dashboard name is provided but dashboard creation is disabled');
+    }
+    if (props.dashboard !== false) {
+      this.dash = new cloudwatch.Dashboard(this, 'Dashboard', { dashboardName: props.dashboardName });
 
-    new CfnOutput(this, 'WatchfulDashboard', {
-      value: linkForDashboard(this.dash),
-    });
+      new CfnOutput(this, 'WatchfulDashboard', {
+        value: linkForDashboard(this.dash),
+      });
+    }
+
   }
 
   public addWidgets(...widgets: cloudwatch.IWidget[]) {
-    this.dash.addWidgets(...widgets);
+    this.dash?.addWidgets(...widgets);
   }
 
   public addAlarm(alarm: cloudwatch.Alarm) {
