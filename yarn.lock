@@ -1847,10 +1847,10 @@ available-typed-arrays@^1.0.2:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.4.tgz#9e0ae84ecff20caae6a94a1c3bc39b955649b7a9"
   integrity sha512-SA5mXJWrId1TaQjfxUYghbqQ/hYioKmLJvPJyDuYRtXXenFNMjj4hSSt1Cf1xsuXSXrtxrVC5Ot4eU6cOtBDdA==
 
-aws-sdk@^2.928.0:
-  version "2.928.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.928.0.tgz#006b393dbcf435072f4a2298884b293b3d848964"
-  integrity sha512-1s2Vr+nfR+vSxXj6/cGvguwYWBLm+whGFMCSkzG8T3KyDN60YQn7Ljq3ry1bCqXV6Z9LSFDuKnkGEhtUJnaRHg==
+aws-sdk@^2.929.0:
+  version "2.929.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.929.0.tgz#fa0bfc0e97f0b38b2086f83eb1546d946b6215c9"
+  integrity sha512-rJ36UbkGhB8qhR4eH0D+TgNPA6wwwKh4885fN/v9uToNd8/Fz8HdgNLw9uy0QYOFOgqK99eWfpMGQyOR6DL+Bg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2435,9 +2435,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^3.3.69:
-  version "3.3.80"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.80.tgz#13fe66724d14cfd914b01b50bddfe6d318ed277b"
-  integrity sha512-mfVOD1CuuyAVtf8oaa0LzSSqsP0dsWokH9Wq+R2h0RI2zPwIAUHNwyDYGu16oRpJfMZNutmntALwDJlXg4aIfw==
+  version "3.3.81"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.81.tgz#c7a83e384ce77d504fb18f247001c33666ff0a00"
+  integrity sha512-ZRzJYcSgjWgR1Uz7Kx2lB3r7KJ1Opx/Wb/KNcmGBGvQZ+UARjGivGmPiQgstmNyt7rnJ0m0DYkZY8ffJ6REe8w==
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.12"
@@ -4968,10 +4968,10 @@ jsii-diff@^1.30.0:
     typescript "~3.9.9"
     yargs "^16.2.0"
 
-jsii-docgen@^1.8.96:
-  version "1.8.96"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.96.tgz#e8684288b5116868a9e4c9e1c9743eeb4f31c102"
-  integrity sha512-5FqDTBR/Bu5RUZ3/EIuD8ElaBuy9WXp0AbNP3tyi46HaLwRCYMlkz1myesVLMp66TD+uqUjeF9XrqQG2UkByxA==
+jsii-docgen@^1.8.97:
+  version "1.8.97"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.97.tgz#009777b621b0b31639363d9f9a70cb3cc196c66f"
+  integrity sha512-vA6Yja3t+o/3iS+rkSCMPLg7gf9CxjuuA4F7fyqwE1ODqYbe5nv7YpUqRDGWge0eU6S4nVnwMiDBAAOSRc2D5w==
   dependencies:
     "@jsii/spec" "^1.30.0"
     fs-extra "^9.1.0"
@@ -5820,9 +5820,9 @@ npm-normalize-package-bin@^1.0.1:
   integrity sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==
 
 npm-package-arg@^8.0.0, npm-package-arg@^8.0.1, npm-package-arg@^8.1.2:
-  version "8.1.4"
-  resolved "https://registry.yarnpkg.com/npm-package-arg/-/npm-package-arg-8.1.4.tgz#8001cdbc4363997b8ef6c6cf7aaf543c5805879d"
-  integrity sha512-xLokoCFqj/rPdr3LvcdDL6Kj6ipXGEDHD/QGpzwU6/pibYUOXmp5DBmg76yukFyx4ZDbrXNOTn+BPyd8TD4Jlw==
+  version "8.1.5"
+  resolved "https://registry.yarnpkg.com/npm-package-arg/-/npm-package-arg-8.1.5.tgz#3369b2d5fe8fdc674baa7f1786514ddc15466e44"
+  integrity sha512-LhgZrg0n0VgvzVdSm1oiZworPbTxYHUJCgtsJW8mGvlDpxTM1vSJc3m5QZeUkhAHIzbz3VCHd/R4osi1L1Tg/Q==
   dependencies:
     hosted-git-info "^4.0.1"
     semver "^7.3.4"
