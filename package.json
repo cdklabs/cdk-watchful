@@ -36,7 +36,7 @@
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
-    "aws-sdk": "^2.929.0",
+    "aws-sdk": "^2.930.0",
     "eslint": "^6.8.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.4.0",
@@ -45,14 +45,14 @@
     "jest-junit": "^12",
     "jsii": "^1.30.0",
     "jsii-diff": "^1.30.0",
-    "jsii-docgen": "^1.8.97",
+    "jsii-docgen": "^1.8.98",
     "jsii-pacmak": "^1.30.0",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
-    "projen": "^0.24.7",
+    "projen": "^0.24.8",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
-    "typescript": "^3.9.9"
+    "typescript": "^3.9.10"
   },
   "peerDependencies": {
     "@aws-cdk/aws-apigateway": "^1.94.1",
