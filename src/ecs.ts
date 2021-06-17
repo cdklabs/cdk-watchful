@@ -16,23 +16,30 @@ export interface WatchEcsServiceOptions {
   /**
    * Threshold for the Memory Maximum utilization.
    *
-   * @default - 0.
+   * @default 80
    */
   readonly memoryMaximumThresholdPercent?: number;
 
   /**
    * Threshold for the Target Response Time.
    *
-   * @default - 0.
+   * @default 1
    */
   readonly targetResponseTimeThreshold?: number;
 
   /**
    * Threshold for the Number of Requests.
    *
-   * @default - 0.
+   * @default 1000
    */
   readonly requestsThreshold?: number;
+
+  /**
+   * Threshold for the Request Error rate
+   *
+   * @default 0
+   */
+  readonly requestsErrorRateThreshold?: number;
 }
 
 export interface WatchEcsServiceProps extends WatchEcsServiceOptions {
@@ -134,7 +141,7 @@ export class WatchEcsService extends cdk.Construct {
     );
   }
 
-  private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 0) {
+  private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 80) {
     const ecsService = this.ecsService;
     const cpuUtilizationMetric = ecsService.metricCpuUtilization();
     const cpuUtilizationAlarm = cpuUtilizationMetric.createAlarm(this, 'cpuUtilizationAlarm', {
@@ -147,7 +154,7 @@ export class WatchEcsService extends cdk.Construct {
     return { cpuUtilizationMetric, cpuUtilizationAlarm };
   }
 
-  private createMemoryUtilizationMonitor(memoryMaximumThresholdPercent = 0) {
+  private createMemoryUtilizationMonitor(memoryMaximumThresholdPercent = 80) {
     const ecsService = this.ecsService;
     const memoryUtilizationMetric = ecsService.metricMemoryUtilization();
     const memoryUtilizationAlarm = memoryUtilizationMetric.createAlarm(this, 'memoryUtilizationAlarm', {
@@ -160,7 +167,7 @@ export class WatchEcsService extends cdk.Construct {
     return { memoryUtilizationMetric, memoryUtilizationAlarm };
   }
 
-  private createTargetResponseTimeMonitor(targetResponseTimeThreshold = 0) {
+  private createTargetResponseTimeMonitor(targetResponseTimeThreshold = 1) {
     const targetGroup = this.targetGroup;
     const targetResponseTimeMetric = targetGroup.metricTargetResponseTime();
     const targetResponseTimeAlarm = targetResponseTimeMetric.createAlarm(this, 'targetResponseTimeAlarm', {
@@ -173,7 +180,7 @@ export class WatchEcsService extends cdk.Construct {
     return { targetResponseTimeMetric, targetResponseTimeAlarm };
   }
 
-  private createRequestsMonitor(requestsThreshold = 0) {
+  private createRequestsMonitor(requestsThreshold = 1000) {
     const targetGroup = this.targetGroup;
     const requestsMetric = targetGroup.metricRequestCount();
     const requestsAlarm = requestsMetric.createAlarm(this, 'requestsAlarm', {
@@ -185,7 +192,6 @@ export class WatchEcsService extends cdk.Construct {
     this.watchful.addAlarm(requestsAlarm);
     return { requestsMetric, requestsAlarm };
   }
-
 
   private createHttpRequestsMetrics() {
     const targetGroup = this.targetGroup;
@@ -225,9 +231,7 @@ export class WatchEcsService extends cdk.Construct {
     this.watchful.addAlarm(requestsErrorRateAlarm);
     return { requestsErrorRateMetric, requestsErrorRateAlarm };
   }
-
 }
-
 
 function linkForEcsService(ecsService: any) {
   return `https://console.aws.amazon.com/ecs/home?region=${ecsService.stack.region}#/clusters/${ecsService.cluster.clusterName}/services/${ecsService.serviceName}/details`;

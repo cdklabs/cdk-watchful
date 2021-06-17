@@ -122,9 +122,10 @@ new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchEcsServiceProps](#myhelix-cdk-watchful-watchecsserviceprops)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
-  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
-  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
+  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 80
+  * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Request Error rate. __*Default*__: 0
+  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 1000
+  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 1
   * **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  *No description* 
@@ -340,9 +341,10 @@ watchEc2Ecs(title: string, ec2Service: Ec2Service, targetGroup: ApplicationTarge
 * **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
 * **options** (<code>[WatchEcsServiceOptions](#myhelix-cdk-watchful-watchecsserviceoptions)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
-  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
-  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
+  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 80
+  * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Request Error rate. __*Default*__: 0
+  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 1000
+  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 1
 
 __Returns__:
 * <code>[WatchEcsService](#myhelix-cdk-watchful-watchecsservice)</code>
@@ -360,9 +362,10 @@ watchFargateEcs(title: string, fargateService: FargateService, targetGroup: Appl
 * **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
 * **options** (<code>[WatchEcsServiceOptions](#myhelix-cdk-watchful-watchecsserviceoptions)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
-  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
-  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
+  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 80
+  * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Request Error rate. __*Default*__: 0
+  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 1000
+  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 1
 
 __Returns__:
 * <code>[WatchEcsService](#myhelix-cdk-watchful-watchecsservice)</code>
@@ -642,9 +645,10 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
-**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 0.
-**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 0.
-**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 0.
+**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 80
+**requestsErrorRateThreshold**? | <code>number</code> | Threshold for the Request Error rate.<br/>__*Default*__: 0
+**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 1000
+**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 1
 
 
 
@@ -663,9 +667,10 @@ Name | Type | Description
 **cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
 **ec2Service**? | <code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code> | __*Optional*__
 **fargateService**? | <code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code> | __*Optional*__
-**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 0.
-**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 0.
-**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 0.
+**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 80
+**requestsErrorRateThreshold**? | <code>number</code> | Threshold for the Request Error rate.<br/>__*Default*__: 0
+**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 1000
+**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 1
 
 
 
