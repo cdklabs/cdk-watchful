@@ -83,7 +83,8 @@ export class WatchEcsService extends cdk.Construct {
 
     const { requestsMetric, requestsAlarm } = this.createRequestsMonitor(props.requestsThreshold);
     const { http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric } = this.createHttpRequestsMetrics();
-    const { requestsErrorRateMetric, requestsErrorRateAlarm } = this.requestsErrorRate(http4xxMetric, http5xxMetric, requestsMetric);
+    const { requestsErrorRateMetric, requestsErrorRateAlarm } = this.requestsErrorRate(
+      http4xxMetric, http5xxMetric, requestsMetric, props.requestsErrorRateThreshold);
 
 
     this.watchful.addWidgets(
