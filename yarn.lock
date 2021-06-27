@@ -2165,9 +2165,9 @@ camelcase@^6.0.0, camelcase@^6.2.0:
   integrity sha512-c7wVvbw3f37nuobQNtgsgG9POC9qMbNuMQmTCqZv23b6MIz0fcYpBiOlv9gEN/hdLdnZTDQhg6e9Dq5M1vKvfg==
 
 caniuse-lite@^1.0.30001219:
-  version "1.0.30001239"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001239.tgz#66e8669985bb2cb84ccb10f68c25ce6dd3e4d2b8"
-  integrity sha512-cyBkXJDMeI4wthy8xJ2FvDU6+0dtcZSJW3voUF8+e9f1bBeuvyZfc3PNbkOETyhbR+dGCPzn9E7MA3iwzusOhQ==
+  version "1.0.30001240"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001240.tgz#ec15d125b590602c8731545c5351ff054ad2d52f"
+  integrity sha512-nb8mDzfMdxBDN7ZKx8chWafAdBp5DAAlpWvNyUGe5tcDWd838zpzDN3Rah9cjCqhfOKkrvx40G2SDtP0qiWX/w==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -2446,9 +2446,9 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
 
 constructs@^3.3.69:
-  version "3.3.89"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.89.tgz#f115cf3c89af60ac3181166a154865f2ab47511e"
-  integrity sha512-pBKrwjOPYl4NUyIB1DFX6XEAXvkK5bWXynyFYx+K15UjpBbpWwKaIZShKhZxlKPxt1EK1VQvu43kRXjn310OEg==
+  version "3.3.90"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.90.tgz#0f606e60e814af46aaf7a3a2e5a6a85825885180"
+  integrity sha512-SRgNfU0cINLIDEWSqSOS5g1uhhvwA++6ohNEN1ZbItHo8x6f9HPbIppewAcxawop8PS+dIKPuTAo8lBKnZ/PMw==
 
 conventional-changelog-angular@^5.0.12:
   version "5.0.12"
@@ -4979,10 +4979,10 @@ jsii-diff@^1.30.0:
     typescript "~3.9.9"
     yargs "^16.2.0"
 
-jsii-docgen@^1.8.105:
-  version "1.8.105"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.105.tgz#26dfefeee91eff592d4f7c6d391d01ae0a87cdf6"
-  integrity sha512-n9VhecmdVGNACHBKUhDcjOCZ0c818a7cfurDVK7jMB6BCCxYnWgf8iQYMHzETX46eDOzxRhMJ16g2TbfXmtS7g==
+jsii-docgen@^1.8.106:
+  version "1.8.106"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.8.106.tgz#1005454bfd55474a06ef9db4c13d245c5a053d5f"
+  integrity sha512-St4IfKLI8YdopJLXpGt3B1iLYGG0j1hjLjWZD09hv4GnIyqC9krkP8j4p63fuZ5YmFNkzYrTY9GGae0ula6SHg==
   dependencies:
     "@jsii/spec" "^1.30.0"
     fs-extra "^9.1.0"
