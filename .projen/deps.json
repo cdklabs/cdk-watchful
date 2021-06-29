@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "build"
     },
     {
@@ -101,82 +101,82 @@
     },
     {
       "name": "@aws-cdk/aws-apigateway",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-cloudwatch-actions",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-cloudwatch",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-dynamodb",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-ecs-patterns",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-ecs",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-elasticloadbalancingv2",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-events-targets",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-events",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-kinesisfirehose",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-rds",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sqs",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "peer"
     },
     {
@@ -186,82 +186,82 @@
     },
     {
       "name": "@aws-cdk/aws-apigateway",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-cloudwatch-actions",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-cloudwatch",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-dynamodb",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ecs-patterns",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ecs",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-elasticloadbalancingv2",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-events-targets",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-events",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-kinesisfirehose",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-rds",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sqs",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "1.110.0",
+      "version": "1.110.1",
       "type": "runtime"
     }
   ],
