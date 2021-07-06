@@ -1,5 +1,4 @@
 const { AwsCdkConstructLibrary } = require('projen');
-const { Automation } = require('projen-automate-it');
 
 const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
 
@@ -7,7 +6,7 @@ const project = new AwsCdkConstructLibrary({
   name: 'cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
-
+  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
   authorName: 'Elad Ben-Israel',
   authorEmail: 'elad.benisrael@gmail.com',
@@ -42,7 +41,6 @@ const project = new AwsCdkConstructLibrary({
 
   devDeps: [
     'aws-sdk',
-    'projen-automate-it',
   ],
 
   // jsii publishing
@@ -57,14 +55,12 @@ const project = new AwsCdkConstructLibrary({
     distName: 'cdk-watchful',
     module: 'cdk_watchful',
   },
+  autoApproveOptions: {
+    allowedUsernames: ['aws-cdk-automation'],
+    secret: 'GITHUB_TOKEN',
+  },
+  autoApproveUpgrades: true,
 });
-
-const automation = new Automation(project, {
-  automationToken: AUTOMATION_TOKEN,
-});
-
-automation.projenYarnUpgrade();
-automation.autoApprove();
 
 project.gitignore.exclude('.env', '.idea');
 project.gitignore.exclude('example/*.js', 'example/*.d.ts');
