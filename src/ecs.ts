@@ -37,7 +37,7 @@ export interface WatchEcsServiceOptions {
 
   /**
    * Threshold for the Number of Request Errors.
-   * 
+   *
    * @default - 0.
    */
   readonly requestsErrorRateThreshold?: number;
