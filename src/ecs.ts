@@ -34,6 +34,13 @@ export interface WatchEcsServiceOptions {
    * @default - 0.
    */
   readonly requestsThreshold?: number;
+
+  /**
+   * Threshold for the Number of Request Errors.
+   *
+   * @default - 0.
+   */
+  readonly requestsErrorRateThreshold?: number;
 }
 
 export interface WatchEcsServiceProps extends WatchEcsServiceOptions {
@@ -90,7 +97,7 @@ export class WatchEcsService extends cdk.Construct {
 
     const { requestsMetric, requestsAlarm } = this.createRequestsMonitor(props.requestsThreshold);
     const { http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric } = this.createHttpRequestsMetrics();
-    const { requestsErrorRateMetric, requestsErrorRateAlarm } = this.requestsErrorRate();
+    const { requestsErrorRateMetric, requestsErrorRateAlarm } = this.requestsErrorRate(props.requestsErrorRateThreshold);
 
 
     this.watchful.addWidgets(
