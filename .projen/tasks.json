@@ -33,33 +33,6 @@
       ],
       "condition": "git diff --exit-code > /dev/null"
     },
-    "bump": {
-      "name": "bump",
-      "category": "20.release",
-      "description": "Bumps version based on latest git tag and generates a changelog entry",
-      "steps": [
-        {
-          "exec": "git -c \"versionsort.suffix=-\" tag --sort=\"-version:refname\" --list \"v*\" | head -n1 > .version.tmp.json"
-        },
-        {
-          "exec": "if [ \"$(cat .version.tmp.json)\" = \"\" ]; then echo \"v0.1.0\" > .version.tmp.json; fi"
-        },
-        {
-          "exec": "standard-version"
-        }
-      ],
-      "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
-    },
-    "unbump": {
-      "name": "unbump",
-      "category": "20.release",
-      "description": "Restores version to 0.0.0",
-      "steps": [
-        {
-          "exec": "standard-version -r 0.0.0"
-        }
-      ]
-    },
     "compile": {
       "name": "compile",
       "category": "00.build",
@@ -141,16 +114,53 @@
         }
       ]
     },
-    "projen:upgrade": {
-      "name": "projen:upgrade",
-      "category": "30.maintain",
-      "description": "upgrades projen to the latest version",
+    "bump": {
+      "name": "bump",
+      "category": "20.release",
+      "description": "Bumps version based on latest git tag and generates a changelog entry",
+      "env": {
+        "OUTFILE": "package.json",
+        "CHANGELOG": ".changelog.tmp.md"
+      },
       "steps": [
         {
-          "exec": "yarn upgrade -L projen"
+          "builtin": "release/bump-version"
+        }
+      ],
+      "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
+    },
+    "unbump": {
+      "name": "unbump",
+      "category": "20.release",
+      "description": "Restores version to 0.0.0",
+      "env": {
+        "OUTFILE": "package.json",
+        "CHANGELOG": ".changelog.tmp.md"
+      },
+      "steps": [
+        {
+          "builtin": "release/reset-version"
+        }
+      ]
+    },
+    "upgrade-dependencies": {
+      "name": "upgrade-dependencies",
+      "description": "upgrade dependencies",
+      "env": {
+        "CI": "0"
+      },
+      "steps": [
+        {
+          "exec": "npm-check-updates --upgrade --target=minor"
         },
         {
-          "exec": "CI=\"\" yarn projen"
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "yarn upgrade"
+        },
+        {
+          "exec": "npx projen"
         }
       ]
     },
