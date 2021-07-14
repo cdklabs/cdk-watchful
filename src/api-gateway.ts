@@ -172,5 +172,5 @@ const enum ApiGatewayMetric {
 }
 
 function linkForApiGateway(api: apigw.IRestApi) {
-  return `https://console.aws.amazon.com/apigateway/home?region=${api.stack.region}#/apis/${api.restApiId}`;
+  return `https://console.aws.amazon.com/apigateway/home?region=${api.stack.region}#/apis/${api.restApiId}/resources`;
 }
