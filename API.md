@@ -211,7 +211,7 @@ new Watchful(scope: Construct, id: string, props?: WatchfulProps)
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchfulProps](#cdk-watchful-watchfulprops)</code>)  *No description*
-  * **alarmActionArns** (<code>Array<string></code>)  ARNs of actions to perform when alarms go off. __*Default*__: []
+  * **alarmActionArns** (<code>Array<string></code>)  ARNs of actions to perform when alarms go off. __*Default*__: []  You can use `alarmActions` instead as a strongly-typed alternative.
   * **alarmActions** (<code>Array<[IAlarmAction](#aws-cdk-aws-cloudwatch-ialarmaction)></code>)  CloudWatch alarm actions to perform when alarms go off. __*Optional*__
   * **alarmEmail** (<code>string</code>)  Email address to send alarms to. __*Default*__: alarms are not sent to an email recipient.
   * **alarmSns** (<code>[ITopic](#aws-cdk-aws-sns-itopic)</code>)  SNS topic to send alarms to. __*Default*__: alarms are not sent to an SNS Topic.
@@ -736,7 +736,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**alarmActionArns**?⚠️ | <code>Array<string></code> | ARNs of actions to perform when alarms go off.<br/>__*Default*__: []
+**alarmActionArns**? | <code>Array<string></code> | ARNs of actions to perform when alarms go off.<br/>__*Default*__: []  You can use `alarmActions` instead as a strongly-typed alternative.
 **alarmActions**? | <code>Array<[IAlarmAction](#aws-cdk-aws-cloudwatch-ialarmaction)></code> | CloudWatch alarm actions to perform when alarms go off.<br/>__*Optional*__
 **alarmEmail**? | <code>string</code> | Email address to send alarms to.<br/>__*Default*__: alarms are not sent to an email recipient.
 **alarmSns**? | <code>[ITopic](#aws-cdk-aws-sns-itopic)</code> | SNS topic to send alarms to.<br/>__*Default*__: alarms are not sent to an SNS Topic.
