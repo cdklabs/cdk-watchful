@@ -50,7 +50,7 @@ export interface WatchfulProps {
    *
    * @default []
    *
-   * @deprecated use `alarmActions` instead
+   * You can use `alarmActions` instead as a strongly-typed alternative.
    */
   readonly alarmActionArns?: string[];
 
