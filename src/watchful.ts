@@ -49,8 +49,16 @@ export interface WatchfulProps {
    * addition to email/sqs/sns.
    *
    * @default []
+   *
+   * You can use `alarmActions` instead as a strongly-typed alternative.
    */
   readonly alarmActionArns?: string[];
+
+  /**
+   * CloudWatch alarm actions to perform when alarms go off. These actions are
+   * in addition to email/sqs/sns.
+   */
+  readonly alarmActions?: cloudwatch.IAlarmAction[];
 
   /**
    * Whether to generate CloudWatch dashboards
@@ -62,12 +70,15 @@ export interface WatchfulProps {
 export class Watchful extends Construct implements IWatchful {
   private readonly dash?: cloudwatch.Dashboard;
   private readonly alarmTopic?: sns.ITopic;
-  private readonly alarmActionArns: string[];
+  private readonly alarmActions: cloudwatch.IAlarmAction[];
 
   constructor(scope: Construct, id: string, props: WatchfulProps = { }) {
     super(scope, id);
 
-    this.alarmActionArns = props.alarmActionArns ?? [];
+    this.alarmActions = [
+      ...(props.alarmActionArns ?? []).map((alarmActionArn) => ({ bind: () => ({ alarmActionArn }) })),
+      ...(props.alarmActions ?? []),
+    ];
 
     if ((props.alarmEmail || props.alarmSqs) && !props.alarmSns) {
       this.alarmTopic = new sns.Topic(this, 'AlarmTopic', { displayName: 'Watchful Alarms' });
@@ -114,9 +125,7 @@ export class Watchful extends Construct implements IWatchful {
       alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
     }
 
-    // create a list of IAlarmAction from ARNs
-    const alarmActionForArn: (arn: string) => cloudwatch.IAlarmAction = alarmActionArn => ({ bind: () => ({ alarmActionArn }) });
-    alarm.addAlarmAction(...this.alarmActionArns.map(alarmActionForArn));
+    alarm.addAlarmAction(...this.alarmActions);
   }
 
   public addSection(title: string, options: SectionOptions = {}) {
