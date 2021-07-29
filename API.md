@@ -1,820 +1,1380 @@
-# API Reference
+# API Reference <a name="API Reference"></a>
 
-**Classes**
+## Constructs <a name="Constructs"></a>
 
-Name|Description
-----|-----------
-[WatchApiGateway](#myhelix-cdk-watchful-watchapigateway)|*No description*
-[WatchDynamoTable](#myhelix-cdk-watchful-watchdynamotable)|*No description*
-[WatchEcsService](#myhelix-cdk-watchful-watchecsservice)|*No description*
-[WatchFirehoseService](#myhelix-cdk-watchful-watchfirehoseservice)|*No description*
-[WatchLambdaFunction](#myhelix-cdk-watchful-watchlambdafunction)|*No description*
-[WatchRdsAurora](#myhelix-cdk-watchful-watchrdsaurora)|*No description*
-[Watchful](#myhelix-cdk-watchful-watchful)|*No description*
-[WatchfulAspect](#myhelix-cdk-watchful-watchfulaspect)|A CDK aspect that can automatically watch all resources within a scope.
+### WatchApiGateway <a name="@myhelix/cdk-watchful.WatchApiGateway"></a>
 
+#### Initializer <a name="@myhelix/cdk-watchful.WatchApiGateway.Initializer"></a>
 
-**Structs**
+```typescript
+import { WatchApiGateway } from '@myhelix/cdk-watchful'
 
-Name|Description
-----|-----------
-[QuickLink](#myhelix-cdk-watchful-quicklink)|*No description*
-[SectionOptions](#myhelix-cdk-watchful-sectionoptions)|*No description*
-[WatchApiGatewayOptions](#myhelix-cdk-watchful-watchapigatewayoptions)|*No description*
-[WatchApiGatewayProps](#myhelix-cdk-watchful-watchapigatewayprops)|*No description*
-[WatchDynamoTableOptions](#myhelix-cdk-watchful-watchdynamotableoptions)|*No description*
-[WatchDynamoTableProps](#myhelix-cdk-watchful-watchdynamotableprops)|*No description*
-[WatchEcsServiceOptions](#myhelix-cdk-watchful-watchecsserviceoptions)|*No description*
-[WatchEcsServiceProps](#myhelix-cdk-watchful-watchecsserviceprops)|*No description*
-[WatchFirehoseServiceOptions](#myhelix-cdk-watchful-watchfirehoseserviceoptions)|*No description*
-[WatchFirehoseServiceProps](#myhelix-cdk-watchful-watchfirehoseserviceprops)|*No description*
-[WatchLambdaFunctionOptions](#myhelix-cdk-watchful-watchlambdafunctionoptions)|*No description*
-[WatchLambdaFunctionProps](#myhelix-cdk-watchful-watchlambdafunctionprops)|*No description*
-[WatchRdsAuroraOptions](#myhelix-cdk-watchful-watchrdsauroraoptions)|*No description*
-[WatchRdsAuroraProps](#myhelix-cdk-watchful-watchrdsauroraprops)|*No description*
-[WatchedOperation](#myhelix-cdk-watchful-watchedoperation)|An operation (path and method) worth monitoring.
-[WatchfulAspectProps](#myhelix-cdk-watchful-watchfulaspectprops)|*No description*
-[WatchfulProps](#myhelix-cdk-watchful-watchfulprops)|*No description*
-
-
-**Interfaces**
-
-Name|Description
-----|-----------
-[IWatchful](#myhelix-cdk-watchful-iwatchful)|*No description*
-
-
-
-## class WatchApiGateway  <a id="myhelix-cdk-watchful-watchapigateway"></a>
-
-
-
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
-
-### Initializer
-
-
-
-
-```ts
 new WatchApiGateway(scope: Construct, id: string, props: WatchApiGatewayProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchApiGatewayProps](#myhelix-cdk-watchful-watchapigatewayprops)</code>)  *No description*
-  * **cacheGraph** (<code>boolean</code>)  Include a dashboard graph for caching metrics. __*Default*__: false
-  * **serverErrorThreshold** (<code>number</code>)  Alarm when 5XX errors reach this threshold over 5 minutes. __*Default*__: 1 any 5xx HTTP response will trigger the alarm
-  * **watchedOperations** (<code>Array<[WatchedOperation](#myhelix-cdk-watchful-watchedoperation)></code>)  A list of operations to monitor separately. __*Default*__: only API-level monitoring is added.
-  * **restApi** (<code>[RestApi](#aws-cdk-aws-apigateway-restapi)</code>)  The API Gateway REST API that is being watched. 
-  * **title** (<code>string</code>)  The title of this section. 
-  * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  The Watchful instance to add widgets into. 
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchApiGateway.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchApiGateway.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchApiGateway.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchApiGatewayProps`](#@myhelix/cdk-watchful.WatchApiGatewayProps)
+
+---
 
 
 
 
-## class WatchDynamoTable  <a id="myhelix-cdk-watchful-watchdynamotable"></a>
 
+### WatchDynamoTable <a name="@myhelix/cdk-watchful.WatchDynamoTable"></a>
 
+#### Initializer <a name="@myhelix/cdk-watchful.WatchDynamoTable.Initializer"></a>
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+```typescript
+import { WatchDynamoTable } from '@myhelix/cdk-watchful'
 
-### Initializer
-
-
-
-
-```ts
 new WatchDynamoTable(scope: Construct, id: string, props: WatchDynamoTableProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchDynamoTableProps](#myhelix-cdk-watchful-watchdynamotableprops)</code>)  *No description*
-  * **readCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
-  * **writeCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
-  * **table** (<code>[Table](#aws-cdk-aws-dynamodb-table)</code>)  *No description* 
-  * **title** (<code>string</code>)  *No description* 
-  * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  *No description* 
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTable.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTable.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTable.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchDynamoTableProps`](#@myhelix/cdk-watchful.WatchDynamoTableProps)
+
+---
 
 
 
 
-## class WatchEcsService  <a id="myhelix-cdk-watchful-watchecsservice"></a>
 
+### WatchEcsService <a name="@myhelix/cdk-watchful.WatchEcsService"></a>
 
+#### Initializer <a name="@myhelix/cdk-watchful.WatchEcsService.Initializer"></a>
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+```typescript
+import { WatchEcsService } from '@myhelix/cdk-watchful'
 
-### Initializer
-
-
-
-
-```ts
 new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchEcsServiceProps](#myhelix-cdk-watchful-watchecsserviceprops)</code>)  *No description*
-  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 80
-  * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Request Error rate. __*Default*__: 0
-  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 1000
-  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 1
-  * **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description* 
-  * **title** (<code>string</code>)  *No description* 
-  * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  *No description* 
-  * **ec2Service** (<code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code>)  *No description* __*Optional*__
-  * **fargateService** (<code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code>)  *No description* __*Optional*__
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchEcsService.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchEcsService.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchEcsService.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchEcsServiceProps`](#@myhelix/cdk-watchful.WatchEcsServiceProps)
+
+---
 
 
 
 
-## class WatchFirehoseService  <a id="myhelix-cdk-watchful-watchfirehoseservice"></a>
 
+### WatchFirehoseService <a name="@myhelix/cdk-watchful.WatchFirehoseService"></a>
 
+#### Initializer <a name="@myhelix/cdk-watchful.WatchFirehoseService.Initializer"></a>
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+```typescript
+import { WatchFirehoseService } from '@myhelix/cdk-watchful'
 
-### Initializer
-
-
-
-
-```ts
 new WatchFirehoseService(scope: Construct, id: string, props: WatchFirehoseServiceProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchFirehoseServiceProps](#myhelix-cdk-watchful-watchfirehoseserviceprops)</code>)  *No description*
-  * **fh** (<code>[CfnDeliveryStream](#aws-cdk-aws-kinesisfirehose-cfndeliverystream)</code>)  *No description* 
-  * **title** (<code>string</code>)  *No description* 
-  * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  *No description* 
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseService.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseService.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseService.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchFirehoseServiceProps`](#@myhelix/cdk-watchful.WatchFirehoseServiceProps)
+
+---
 
 
 
 
-## class WatchLambdaFunction  <a id="myhelix-cdk-watchful-watchlambdafunction"></a>
 
+### Watchful <a name="@myhelix/cdk-watchful.Watchful"></a>
 
+- *Implements:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+#### Initializer <a name="@myhelix/cdk-watchful.Watchful.Initializer"></a>
 
-### Initializer
+```typescript
+import { Watchful } from '@myhelix/cdk-watchful'
 
-
-
-
-```ts
-new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunctionProps)
-```
-
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchLambdaFunctionProps](#myhelix-cdk-watchful-watchlambdafunctionprops)</code>)  *No description*
-  * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
-  * **durationTimeoutSec** (<code>number</code>)  Override duration timeout threshold. __*Default*__: 3
-  * **errorsDisableAlerts** (<code>boolean</code>)  Flag to disable alerting on errors. __*Default*__: false
-  * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
-  * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
-  * **fn** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  *No description* 
-  * **title** (<code>string</code>)  *No description* 
-  * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  *No description* 
-
-
-
-
-## class WatchRdsAurora  <a id="myhelix-cdk-watchful-watchrdsaurora"></a>
-
-
-
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
-
-### Initializer
-
-
-
-
-```ts
-new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
-```
-
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchRdsAuroraProps](#myhelix-cdk-watchful-watchrdsauroraprops)</code>)  *No description*
-  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **dbBufferCacheMinimumThreshold** (<code>number</code>)  Threshold for the Minimum Db Buffer Cache. __*Default*__: 0.
-  * **dbConnectionsMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Connections. __*Default*__: 0.
-  * **dbReplicaLagMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db ReplicaLag. __*Default*__: 0.
-  * **dbThroughputMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Throughput. __*Default*__: 0.
-  * **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description* 
-  * **title** (<code>string</code>)  *No description* 
-  * **watchful** (<code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code>)  *No description* 
-
-
-
-
-## class Watchful  <a id="myhelix-cdk-watchful-watchful"></a>
-
-
-
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable), [IWatchful](#myhelix-cdk-watchful-iwatchful)
-__Extends__: [Construct](#aws-cdk-core-construct)
-
-### Initializer
-
-
-
-
-```ts
 new Watchful(scope: Construct, id: string, props?: WatchfulProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **id** (<code>string</code>)  *No description*
-* **props** (<code>[WatchfulProps](#myhelix-cdk-watchful-watchfulprops)</code>)  *No description*
-  * **alarmEmail** (<code>string</code>)  *No description* __*Optional*__
-  * **alarmSns** (<code>[ITopic](#aws-cdk-aws-sns-itopic)</code>)  *No description* __*Optional*__
-  * **alarmSqs** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  *No description* __*Optional*__
-  * **dashboardName** (<code>string</code>)  *No description* __*Optional*__
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.scope"></a>
 
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
 
-### Methods
+---
 
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.id"></a>
 
-#### addAlarm(alarm, autoResolveEvents?) <a id="myhelix-cdk-watchful-watchful-addalarm"></a>
+- *Type:* `string`
 
+---
 
+##### `props`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.props"></a>
 
-```ts
-addAlarm(alarm: Alarm, autoResolveEvents?: boolean): void
+- *Type:* [`@myhelix/cdk-watchful.WatchfulProps`](#@myhelix/cdk-watchful.WatchfulProps)
+
+---
+
+#### Methods <a name="Methods"></a>
+
+##### `addAlarm` <a name="@myhelix/cdk-watchful.Watchful.addAlarm"></a>
+
+```typescript
+public addAlarm(alarm: Alarm, autoResolveEvents?: boolean)
 ```
 
-* **alarm** (<code>[Alarm](#aws-cdk-aws-cloudwatch-alarm)</code>)  *No description*
-* **autoResolveEvents** (<code>boolean</code>)  *No description*
+###### `alarm`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.alarm"></a>
 
+- *Type:* [`@aws-cdk/aws-cloudwatch.Alarm`](#@aws-cdk/aws-cloudwatch.Alarm)
 
+---
 
+###### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.autoResolveEvents"></a>
 
-#### addSection(title, options?) <a id="myhelix-cdk-watchful-watchful-addsection"></a>
+- *Type:* `boolean`
 
+---
 
+##### `addSection` <a name="@myhelix/cdk-watchful.Watchful.addSection"></a>
 
-```ts
-addSection(title: string, options?: SectionOptions): void
+```typescript
+public addSection(title: string, options?: SectionOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **options** (<code>[SectionOptions](#myhelix-cdk-watchful-sectionoptions)</code>)  *No description*
-  * **links** (<code>Array<[QuickLink](#myhelix-cdk-watchful-quicklink)></code>)  *No description* __*Optional*__
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
+- *Type:* `string`
 
+---
 
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
 
-#### addWidgets(...widgets) <a id="myhelix-cdk-watchful-watchful-addwidgets"></a>
+- *Type:* [`@myhelix/cdk-watchful.SectionOptions`](#@myhelix/cdk-watchful.SectionOptions)
 
+---
 
+##### `addWidgets` <a name="@myhelix/cdk-watchful.Watchful.addWidgets"></a>
 
-```ts
-addWidgets(...widgets: IWidget[]): void
+```typescript
+public addWidgets(widgets: IWidget)
 ```
 
-* **widgets** (<code>[IWidget](#aws-cdk-aws-cloudwatch-iwidget)</code>)  *No description*
+###### `widgets`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.widgets"></a>
 
+- *Type:* [`@aws-cdk/aws-cloudwatch.IWidget`](#@aws-cdk/aws-cloudwatch.IWidget)
 
+---
 
+##### `watchApiGateway` <a name="@myhelix/cdk-watchful.Watchful.watchApiGateway"></a>
 
-#### watchApiGateway(title, restApi, options?) <a id="myhelix-cdk-watchful-watchful-watchapigateway"></a>
-
-
-
-```ts
-watchApiGateway(title: string, restApi: RestApi, options?: WatchApiGatewayOptions): WatchApiGateway
+```typescript
+public watchApiGateway(title: string, restApi: RestApi, options?: WatchApiGatewayOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **restApi** (<code>[RestApi](#aws-cdk-aws-apigateway-restapi)</code>)  *No description*
-* **options** (<code>[WatchApiGatewayOptions](#myhelix-cdk-watchful-watchapigatewayoptions)</code>)  *No description*
-  * **cacheGraph** (<code>boolean</code>)  Include a dashboard graph for caching metrics. __*Default*__: false
-  * **serverErrorThreshold** (<code>number</code>)  Alarm when 5XX errors reach this threshold over 5 minutes. __*Default*__: 1 any 5xx HTTP response will trigger the alarm
-  * **watchedOperations** (<code>Array<[WatchedOperation](#myhelix-cdk-watchful-watchedoperation)></code>)  A list of operations to monitor separately. __*Default*__: only API-level monitoring is added.
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchApiGateway](#myhelix-cdk-watchful-watchapigateway)</code>
+- *Type:* `string`
 
-#### watchDynamoTable(title, table, options?) <a id="myhelix-cdk-watchful-watchful-watchdynamotable"></a>
+---
 
+###### `restApi`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.restApi"></a>
 
+- *Type:* [`@aws-cdk/aws-apigateway.RestApi`](#@aws-cdk/aws-apigateway.RestApi)
 
-```ts
-watchDynamoTable(title: string, table: Table, options?: WatchDynamoTableOptions): WatchDynamoTable
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchApiGatewayOptions`](#@myhelix/cdk-watchful.WatchApiGatewayOptions)
+
+---
+
+##### `watchDynamoTable` <a name="@myhelix/cdk-watchful.Watchful.watchDynamoTable"></a>
+
+```typescript
+public watchDynamoTable(title: string, table: Table, options?: WatchDynamoTableOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **table** (<code>[Table](#aws-cdk-aws-dynamodb-table)</code>)  *No description*
-* **options** (<code>[WatchDynamoTableOptions](#myhelix-cdk-watchful-watchdynamotableoptions)</code>)  *No description*
-  * **readCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
-  * **writeCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchDynamoTable](#myhelix-cdk-watchful-watchdynamotable)</code>
+- *Type:* `string`
 
-#### watchEc2Ecs(title, ec2Service, targetGroup, options?) <a id="myhelix-cdk-watchful-watchful-watchec2ecs"></a>
+---
 
+###### `table`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.table"></a>
 
+- *Type:* [`@aws-cdk/aws-dynamodb.Table`](#@aws-cdk/aws-dynamodb.Table)
 
-```ts
-watchEc2Ecs(title: string, ec2Service: Ec2Service, targetGroup: ApplicationTargetGroup, options?: WatchEcsServiceOptions): WatchEcsService
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchDynamoTableOptions`](#@myhelix/cdk-watchful.WatchDynamoTableOptions)
+
+---
+
+##### `watchEc2Ecs` <a name="@myhelix/cdk-watchful.Watchful.watchEc2Ecs"></a>
+
+```typescript
+public watchEc2Ecs(title: string, ec2Service: Ec2Service, targetGroup: ApplicationTargetGroup, options?: WatchEcsServiceOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **ec2Service** (<code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code>)  *No description*
-* **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
-* **options** (<code>[WatchEcsServiceOptions](#myhelix-cdk-watchful-watchecsserviceoptions)</code>)  *No description*
-  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 80
-  * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Request Error rate. __*Default*__: 0
-  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 1000
-  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 1
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchEcsService](#myhelix-cdk-watchful-watchecsservice)</code>
+- *Type:* `string`
 
-#### watchFargateEcs(title, fargateService, targetGroup, options?) <a id="myhelix-cdk-watchful-watchful-watchfargateecs"></a>
+---
 
+###### `ec2Service`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.ec2Service"></a>
 
+- *Type:* [`@aws-cdk/aws-ecs.Ec2Service`](#@aws-cdk/aws-ecs.Ec2Service)
 
-```ts
-watchFargateEcs(title: string, fargateService: FargateService, targetGroup: ApplicationTargetGroup, options?: WatchEcsServiceOptions): WatchEcsService
+---
+
+###### `targetGroup`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.targetGroup"></a>
+
+- *Type:* [`@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup`](#@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup)
+
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchEcsServiceOptions`](#@myhelix/cdk-watchful.WatchEcsServiceOptions)
+
+---
+
+##### `watchFargateEcs` <a name="@myhelix/cdk-watchful.Watchful.watchFargateEcs"></a>
+
+```typescript
+public watchFargateEcs(title: string, fargateService: FargateService, targetGroup: ApplicationTargetGroup, options?: WatchEcsServiceOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **fargateService** (<code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code>)  *No description*
-* **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
-* **options** (<code>[WatchEcsServiceOptions](#myhelix-cdk-watchful-watchecsserviceoptions)</code>)  *No description*
-  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 80
-  * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Request Error rate. __*Default*__: 0
-  * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 1000
-  * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 1
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchEcsService](#myhelix-cdk-watchful-watchecsservice)</code>
+- *Type:* `string`
 
-#### watchFirehose(title, fh, options?) <a id="myhelix-cdk-watchful-watchful-watchfirehose"></a>
+---
 
+###### `fargateService`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.fargateService"></a>
 
+- *Type:* [`@aws-cdk/aws-ecs.FargateService`](#@aws-cdk/aws-ecs.FargateService)
 
-```ts
-watchFirehose(title: string, fh: CfnDeliveryStream, options?: WatchFirehoseServiceOptions): WatchFirehoseService
+---
+
+###### `targetGroup`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.targetGroup"></a>
+
+- *Type:* [`@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup`](#@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup)
+
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchEcsServiceOptions`](#@myhelix/cdk-watchful.WatchEcsServiceOptions)
+
+---
+
+##### `watchFirehose` <a name="@myhelix/cdk-watchful.Watchful.watchFirehose"></a>
+
+```typescript
+public watchFirehose(title: string, fh: CfnDeliveryStream, options?: WatchFirehoseServiceOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **fh** (<code>[CfnDeliveryStream](#aws-cdk-aws-kinesisfirehose-cfndeliverystream)</code>)  *No description*
-* **options** (<code>[WatchFirehoseServiceOptions](#myhelix-cdk-watchful-watchfirehoseserviceoptions)</code>)  *No description*
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchFirehoseService](#myhelix-cdk-watchful-watchfirehoseservice)</code>
+- *Type:* `string`
 
-#### watchLambdaFunction(title, fn, options?) <a id="myhelix-cdk-watchful-watchful-watchlambdafunction"></a>
+---
 
+###### `fh`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.fh"></a>
 
+- *Type:* [`@aws-cdk/aws-kinesisfirehose.CfnDeliveryStream`](#@aws-cdk/aws-kinesisfirehose.CfnDeliveryStream)
 
-```ts
-watchLambdaFunction(title: string, fn: IFunction, options?: WatchLambdaFunctionOptions): WatchLambdaFunction
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchFirehoseServiceOptions`](#@myhelix/cdk-watchful.WatchFirehoseServiceOptions)
+
+---
+
+##### `watchLambdaFunction` <a name="@myhelix/cdk-watchful.Watchful.watchLambdaFunction"></a>
+
+```typescript
+public watchLambdaFunction(title: string, fn: IFunction, options?: WatchLambdaFunctionOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **fn** (<code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code>)  *No description*
-* **options** (<code>[WatchLambdaFunctionOptions](#myhelix-cdk-watchful-watchlambdafunctionoptions)</code>)  *No description*
-  * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
-  * **durationTimeoutSec** (<code>number</code>)  Override duration timeout threshold. __*Default*__: 3
-  * **errorsDisableAlerts** (<code>boolean</code>)  Flag to disable alerting on errors. __*Default*__: false
-  * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
-  * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchLambdaFunction](#myhelix-cdk-watchful-watchlambdafunction)</code>
+- *Type:* `string`
 
-#### watchRdsAuroraCluster(title, cluster, options?) <a id="myhelix-cdk-watchful-watchful-watchrdsauroracluster"></a>
+---
 
+###### `fn`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.fn"></a>
 
+- *Type:* [`@aws-cdk/aws-lambda.IFunction`](#@aws-cdk/aws-lambda.IFunction)
 
-```ts
-watchRdsAuroraCluster(title: string, cluster: DatabaseCluster, options?: WatchRdsAuroraOptions): WatchRdsAurora
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchLambdaFunctionOptions`](#@myhelix/cdk-watchful.WatchLambdaFunctionOptions)
+
+---
+
+##### `watchRdsAuroraCluster` <a name="@myhelix/cdk-watchful.Watchful.watchRdsAuroraCluster"></a>
+
+```typescript
+public watchRdsAuroraCluster(title: string, cluster: DatabaseCluster, options?: WatchRdsAuroraOptions)
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description*
-* **options** (<code>[WatchRdsAuroraOptions](#myhelix-cdk-watchful-watchrdsauroraoptions)</code>)  *No description*
-  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
-  * **dbBufferCacheMinimumThreshold** (<code>number</code>)  Threshold for the Minimum Db Buffer Cache. __*Default*__: 0.
-  * **dbConnectionsMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Connections. __*Default*__: 0.
-  * **dbReplicaLagMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db ReplicaLag. __*Default*__: 0.
-  * **dbThroughputMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Throughput. __*Default*__: 0.
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
 
-__Returns__:
-* <code>[WatchRdsAurora](#myhelix-cdk-watchful-watchrdsaurora)</code>
+- *Type:* `string`
 
-#### watchScope(scope, options?) <a id="myhelix-cdk-watchful-watchful-watchscope"></a>
+---
 
+###### `cluster`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.cluster"></a>
 
+- *Type:* [`@aws-cdk/aws-rds.DatabaseCluster`](#@aws-cdk/aws-rds.DatabaseCluster)
 
-```ts
-watchScope(scope: Construct, options?: WatchfulAspectProps): void
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchRdsAuroraOptions`](#@myhelix/cdk-watchful.WatchRdsAuroraOptions)
+
+---
+
+##### `watchScope` <a name="@myhelix/cdk-watchful.Watchful.watchScope"></a>
+
+```typescript
+public watchScope(scope: Construct, options?: WatchfulAspectProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
-* **options** (<code>[WatchfulAspectProps](#myhelix-cdk-watchful-watchfulaspectprops)</code>)  *No description*
-  * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
-  * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
-  * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
-  * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
-  * **firehose** (<code>boolean</code>)  Automatically watch AWS firehose in the scope. __*Default*__: true
-  * **lambdaFn** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
-  * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
+###### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchfulAspectProps`](#@myhelix/cdk-watchful.WatchfulAspectProps)
+
+---
 
 
 
 
+### WatchLambdaFunction <a name="@myhelix/cdk-watchful.WatchLambdaFunction"></a>
 
+#### Initializer <a name="@myhelix/cdk-watchful.WatchLambdaFunction.Initializer"></a>
 
-## class WatchfulAspect  <a id="myhelix-cdk-watchful-watchfulaspect"></a>
+```typescript
+import { WatchLambdaFunction } from '@myhelix/cdk-watchful'
 
-A CDK aspect that can automatically watch all resources within a scope.
-
-__Implements__: [IAspect](#aws-cdk-core-iaspect)
-
-### Initializer
-
-
-Defines a watchful aspect.
-
-```ts
-new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
+new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunctionProps)
 ```
 
-* **watchful** (<code>[Watchful](#myhelix-cdk-watchful-watchful)</code>)  The watchful to add those resources to.
-* **props** (<code>[WatchfulAspectProps](#myhelix-cdk-watchful-watchfulaspectprops)</code>)  Options.
-  * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
-  * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
-  * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
-  * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
-  * **firehose** (<code>boolean</code>)  Automatically watch AWS firehose in the scope. __*Default*__: true
-  * **lambdaFn** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
-  * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunction.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunction.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunction.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchLambdaFunctionProps`](#@myhelix/cdk-watchful.WatchLambdaFunctionProps)
+
+---
 
 
-### Methods
 
 
-#### visit(node) <a id="myhelix-cdk-watchful-watchfulaspect-visit"></a>
 
-All aspects can visit an IConstruct.
+### WatchRdsAurora <a name="@myhelix/cdk-watchful.WatchRdsAurora"></a>
 
-```ts
-visit(node: IConstruct): void
+#### Initializer <a name="@myhelix/cdk-watchful.WatchRdsAurora.Initializer"></a>
+
+```typescript
+import { WatchRdsAurora } from '@myhelix/cdk-watchful'
+
+new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
 ```
 
-* **node** (<code>[IConstruct](#aws-cdk-core-iconstruct)</code>)  *No description*
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAurora.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAurora.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAurora.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchRdsAuroraProps`](#@myhelix/cdk-watchful.WatchRdsAuroraProps)
+
+---
 
 
 
 
 
+## Structs <a name="Structs"></a>
 
-## interface IWatchful  <a id="myhelix-cdk-watchful-iwatchful"></a>
+### QuickLink <a name="@myhelix/cdk-watchful.QuickLink"></a>
 
-__Implemented by__: [Watchful](#myhelix-cdk-watchful-watchful)
+#### Initializer <a name="[object Object].Initializer"></a>
 
+```typescript
+import { QuickLink } from '@myhelix/cdk-watchful'
 
-### Methods
-
-
-#### addAlarm(alarm, autoResolveEvents?) <a id="myhelix-cdk-watchful-iwatchful-addalarm"></a>
-
-
-
-```ts
-addAlarm(alarm: Alarm, autoResolveEvents?: boolean): void
+const quickLink: QuickLink = { ... }
 ```
 
-* **alarm** (<code>[Alarm](#aws-cdk-aws-cloudwatch-alarm)</code>)  *No description*
-* **autoResolveEvents** (<code>boolean</code>)  *No description*
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.QuickLink.property.title"></a>
 
+- *Type:* `string`
 
+---
 
+##### `url`<sup>Required</sup> <a name="@myhelix/cdk-watchful.QuickLink.property.url"></a>
 
-#### addSection(title, options?) <a id="myhelix-cdk-watchful-iwatchful-addsection"></a>
+- *Type:* `string`
 
+---
 
+### SectionOptions <a name="@myhelix/cdk-watchful.SectionOptions"></a>
 
-```ts
-addSection(title: string, options?: SectionOptions): void
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { SectionOptions } from '@myhelix/cdk-watchful'
+
+const sectionOptions: SectionOptions = { ... }
 ```
 
-* **title** (<code>string</code>)  *No description*
-* **options** (<code>[SectionOptions](#myhelix-cdk-watchful-sectionoptions)</code>)  *No description*
-  * **links** (<code>Array<[QuickLink](#myhelix-cdk-watchful-quicklink)></code>)  *No description* __*Optional*__
+##### `links`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.SectionOptions.property.links"></a>
 
+- *Type:* [`@myhelix/cdk-watchful.QuickLink`](#@myhelix/cdk-watchful.QuickLink)[]
 
+---
 
+### WatchApiGatewayOptions <a name="@myhelix/cdk-watchful.WatchApiGatewayOptions"></a>
 
-#### addWidgets(...widgets) <a id="myhelix-cdk-watchful-iwatchful-addwidgets"></a>
+#### Initializer <a name="[object Object].Initializer"></a>
 
+```typescript
+import { WatchApiGatewayOptions } from '@myhelix/cdk-watchful'
 
-
-```ts
-addWidgets(...widgets: IWidget[]): void
+const watchApiGatewayOptions: WatchApiGatewayOptions = { ... }
 ```
 
-* **widgets** (<code>[IWidget](#aws-cdk-aws-cloudwatch-iwidget)</code>)  *No description*
+##### `cacheGraph`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayOptions.property.cacheGraph"></a>
 
+- *Type:* `boolean`
+- *Default:* false
 
+Include a dashboard graph for caching metrics.
 
+---
 
+##### `serverErrorThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayOptions.property.serverErrorThreshold"></a>
 
+- *Type:* `number`
+- *Default:* 1 any 5xx HTTP response will trigger the alarm
 
-## struct QuickLink  <a id="myhelix-cdk-watchful-quicklink"></a>
+Alarm when 5XX errors reach this threshold over 5 minutes.
 
+---
 
+##### `watchedOperations`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayOptions.property.watchedOperations"></a>
 
+- *Type:* [`@myhelix/cdk-watchful.WatchedOperation`](#@myhelix/cdk-watchful.WatchedOperation)[]
+- *Default:* only API-level monitoring is added.
 
+A list of operations to monitor separately.
 
+---
 
-Name | Type | Description 
------|------|-------------
-**title** | <code>string</code> | <span></span>
-**url** | <code>string</code> | <span></span>
+### WatchApiGatewayProps <a name="@myhelix/cdk-watchful.WatchApiGatewayProps"></a>
 
+#### Initializer <a name="[object Object].Initializer"></a>
 
+```typescript
+import { WatchApiGatewayProps } from '@myhelix/cdk-watchful'
 
-## struct SectionOptions  <a id="myhelix-cdk-watchful-sectionoptions"></a>
+const watchApiGatewayProps: WatchApiGatewayProps = { ... }
+```
 
+##### `cacheGraph`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.cacheGraph"></a>
 
+- *Type:* `boolean`
+- *Default:* false
 
+Include a dashboard graph for caching metrics.
 
+---
 
+##### `serverErrorThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.serverErrorThreshold"></a>
 
-Name | Type | Description 
------|------|-------------
-**links**? | <code>Array<[QuickLink](#myhelix-cdk-watchful-quicklink)></code> | __*Optional*__
+- *Type:* `number`
+- *Default:* 1 any 5xx HTTP response will trigger the alarm
 
+Alarm when 5XX errors reach this threshold over 5 minutes.
 
+---
 
-## struct WatchApiGatewayOptions  <a id="myhelix-cdk-watchful-watchapigatewayoptions"></a>
+##### `watchedOperations`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.watchedOperations"></a>
 
+- *Type:* [`@myhelix/cdk-watchful.WatchedOperation`](#@myhelix/cdk-watchful.WatchedOperation)[]
+- *Default:* only API-level monitoring is added.
 
+A list of operations to monitor separately.
 
+---
 
+##### `restApi`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.restApi"></a>
 
+- *Type:* [`@aws-cdk/aws-apigateway.RestApi`](#@aws-cdk/aws-apigateway.RestApi)
 
-Name | Type | Description 
------|------|-------------
-**cacheGraph**? | <code>boolean</code> | Include a dashboard graph for caching metrics.<br/>__*Default*__: false
-**serverErrorThreshold**? | <code>number</code> | Alarm when 5XX errors reach this threshold over 5 minutes.<br/>__*Default*__: 1 any 5xx HTTP response will trigger the alarm
-**watchedOperations**? | <code>Array<[WatchedOperation](#myhelix-cdk-watchful-watchedoperation)></code> | A list of operations to monitor separately.<br/>__*Default*__: only API-level monitoring is added.
+The API Gateway REST API that is being watched.
 
+---
 
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.title"></a>
 
-## struct WatchApiGatewayProps  <a id="myhelix-cdk-watchful-watchapigatewayprops"></a>
+- *Type:* `string`
 
+The title of this section.
 
+---
 
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.watchful"></a>
 
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 
+The Watchful instance to add widgets into.
 
-Name | Type | Description 
------|------|-------------
-**restApi** | <code>[RestApi](#aws-cdk-aws-apigateway-restapi)</code> | The API Gateway REST API that is being watched.
-**title** | <code>string</code> | The title of this section.
-**watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | The Watchful instance to add widgets into.
-**cacheGraph**? | <code>boolean</code> | Include a dashboard graph for caching metrics.<br/>__*Default*__: false
-**serverErrorThreshold**? | <code>number</code> | Alarm when 5XX errors reach this threshold over 5 minutes.<br/>__*Default*__: 1 any 5xx HTTP response will trigger the alarm
-**watchedOperations**? | <code>Array<[WatchedOperation](#myhelix-cdk-watchful-watchedoperation)></code> | A list of operations to monitor separately.<br/>__*Default*__: only API-level monitoring is added.
+---
 
+### WatchDynamoTableOptions <a name="@myhelix/cdk-watchful.WatchDynamoTableOptions"></a>
 
+#### Initializer <a name="[object Object].Initializer"></a>
 
-## struct WatchDynamoTableOptions  <a id="myhelix-cdk-watchful-watchdynamotableoptions"></a>
+```typescript
+import { WatchDynamoTableOptions } from '@myhelix/cdk-watchful'
 
+const watchDynamoTableOptions: WatchDynamoTableOptions = { ... }
+```
 
+##### `readCapacityThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableOptions.property.readCapacityThresholdPercent"></a>
 
+- *Type:* `number`
+- *Default:* 80
 
+Threshold for read capacity alarm (percentage).
 
+---
 
-Name | Type | Description 
------|------|-------------
-**readCapacityThresholdPercent**? | <code>number</code> | Threshold for read capacity alarm (percentage).<br/>__*Default*__: 80
-**writeCapacityThresholdPercent**? | <code>number</code> | Threshold for read capacity alarm (percentage).<br/>__*Default*__: 80
+##### `writeCapacityThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableOptions.property.writeCapacityThresholdPercent"></a>
 
+- *Type:* `number`
+- *Default:* 80
 
+Threshold for read capacity alarm (percentage).
 
-## struct WatchDynamoTableProps  <a id="myhelix-cdk-watchful-watchdynamotableprops"></a>
+---
 
+### WatchDynamoTableProps <a name="@myhelix/cdk-watchful.WatchDynamoTableProps"></a>
 
+#### Initializer <a name="[object Object].Initializer"></a>
 
+```typescript
+import { WatchDynamoTableProps } from '@myhelix/cdk-watchful'
 
+const watchDynamoTableProps: WatchDynamoTableProps = { ... }
+```
 
+##### `readCapacityThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableProps.property.readCapacityThresholdPercent"></a>
 
-Name | Type | Description 
------|------|-------------
-**table** | <code>[Table](#aws-cdk-aws-dynamodb-table)</code> | <span></span>
-**title** | <code>string</code> | <span></span>
-**watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | <span></span>
-**readCapacityThresholdPercent**? | <code>number</code> | Threshold for read capacity alarm (percentage).<br/>__*Default*__: 80
-**writeCapacityThresholdPercent**? | <code>number</code> | Threshold for read capacity alarm (percentage).<br/>__*Default*__: 80
+- *Type:* `number`
+- *Default:* 80
 
+Threshold for read capacity alarm (percentage).
 
+---
 
-## struct WatchEcsServiceOptions  <a id="myhelix-cdk-watchful-watchecsserviceoptions"></a>
+##### `writeCapacityThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableProps.property.writeCapacityThresholdPercent"></a>
 
+- *Type:* `number`
+- *Default:* 80
 
+Threshold for read capacity alarm (percentage).
 
+---
 
+##### `table`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableProps.property.table"></a>
 
+- *Type:* [`@aws-cdk/aws-dynamodb.Table`](#@aws-cdk/aws-dynamodb.Table)
 
-Name | Type | Description 
------|------|-------------
-**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
-**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 80
-**requestsErrorRateThreshold**? | <code>number</code> | Threshold for the Request Error rate.<br/>__*Default*__: 0
-**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 1000
-**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 1
+---
 
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableProps.property.title"></a>
 
+- *Type:* `string`
 
-## struct WatchEcsServiceProps  <a id="myhelix-cdk-watchful-watchecsserviceprops"></a>
+---
 
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchDynamoTableProps.property.watchful"></a>
 
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 
+---
 
+### WatchEcsServiceOptions <a name="@myhelix/cdk-watchful.WatchEcsServiceOptions"></a>
 
+#### Initializer <a name="[object Object].Initializer"></a>
 
-Name | Type | Description 
------|------|-------------
-**targetGroup** | <code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code> | <span></span>
-**title** | <code>string</code> | <span></span>
-**watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | <span></span>
-**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
-**ec2Service**? | <code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code> | __*Optional*__
-**fargateService**? | <code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code> | __*Optional*__
-**memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 80
-**requestsErrorRateThreshold**? | <code>number</code> | Threshold for the Request Error rate.<br/>__*Default*__: 0
-**requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 1000
-**targetResponseTimeThreshold**? | <code>number</code> | Threshold for the Target Response Time.<br/>__*Default*__: 1
+```typescript
+import { WatchEcsServiceOptions } from '@myhelix/cdk-watchful'
 
+const watchEcsServiceOptions: WatchEcsServiceOptions = { ... }
+```
 
+##### `cpuMaximumThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceOptions.property.cpuMaximumThresholdPercent"></a>
 
-## struct WatchFirehoseServiceOptions  <a id="myhelix-cdk-watchful-watchfirehoseserviceoptions"></a>
+- *Type:* `number`
+- *Default:* 80
 
+Threshold for the Cpu Maximum utilization.
 
+---
 
+##### `memoryMaximumThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceOptions.property.memoryMaximumThresholdPercent"></a>
 
+- *Type:* `number`
+- *Default:* 80
 
-## struct WatchFirehoseServiceProps  <a id="myhelix-cdk-watchful-watchfirehoseserviceprops"></a>
+Threshold for the Memory Maximum utilization.
 
+---
 
+##### `requestsErrorRateThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceOptions.property.requestsErrorRateThreshold"></a>
 
+- *Type:* `number`
+- *Default:* 0
 
+Threshold for the Request Error rate.
 
+---
 
-Name | Type | Description 
------|------|-------------
-**fh** | <code>[CfnDeliveryStream](#aws-cdk-aws-kinesisfirehose-cfndeliverystream)</code> | <span></span>
-**title** | <code>string</code> | <span></span>
-**watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | <span></span>
+##### `requestsThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceOptions.property.requestsThreshold"></a>
 
+- *Type:* `number`
+- *Default:* 1000
 
+Threshold for the Number of Requests.
 
-## struct WatchLambdaFunctionOptions  <a id="myhelix-cdk-watchful-watchlambdafunctionoptions"></a>
+---
 
+##### `targetResponseTimeThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceOptions.property.targetResponseTimeThreshold"></a>
 
+- *Type:* `number`
+- *Default:* 1
 
+Threshold for the Target Response Time.
 
+---
 
+### WatchEcsServiceProps <a name="@myhelix/cdk-watchful.WatchEcsServiceProps"></a>
 
-Name | Type | Description 
------|------|-------------
-**durationThresholdPercent**? | <code>number</code> | Threshold for the duration alarm as percentage of the function's timeout value.<br/>__*Default*__: 80
-**durationTimeoutSec**? | <code>number</code> | Override duration timeout threshold.<br/>__*Default*__: 3
-**errorsDisableAlerts**? | <code>boolean</code> | Flag to disable alerting on errors.<br/>__*Default*__: false
-**errorsPerMinuteThreshold**? | <code>number</code> | Number of allowed errors per minute.<br/>__*Default*__: 0
-**throttlesPerMinuteThreshold**? | <code>number</code> | Number of allowed throttles per minute.<br/>__*Default*__: 0
+#### Initializer <a name="[object Object].Initializer"></a>
 
+```typescript
+import { WatchEcsServiceProps } from '@myhelix/cdk-watchful'
 
+const watchEcsServiceProps: WatchEcsServiceProps = { ... }
+```
 
-## struct WatchLambdaFunctionProps  <a id="myhelix-cdk-watchful-watchlambdafunctionprops"></a>
+##### `cpuMaximumThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.cpuMaximumThresholdPercent"></a>
 
+- *Type:* `number`
+- *Default:* 80
 
+Threshold for the Cpu Maximum utilization.
 
+---
 
+##### `memoryMaximumThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.memoryMaximumThresholdPercent"></a>
 
+- *Type:* `number`
+- *Default:* 80
 
-Name | Type | Description 
------|------|-------------
-**fn** | <code>[IFunction](#aws-cdk-aws-lambda-ifunction)</code> | <span></span>
-**title** | <code>string</code> | <span></span>
-**watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | <span></span>
-**durationThresholdPercent**? | <code>number</code> | Threshold for the duration alarm as percentage of the function's timeout value.<br/>__*Default*__: 80
-**durationTimeoutSec**? | <code>number</code> | Override duration timeout threshold.<br/>__*Default*__: 3
-**errorsDisableAlerts**? | <code>boolean</code> | Flag to disable alerting on errors.<br/>__*Default*__: false
-**errorsPerMinuteThreshold**? | <code>number</code> | Number of allowed errors per minute.<br/>__*Default*__: 0
-**throttlesPerMinuteThreshold**? | <code>number</code> | Number of allowed throttles per minute.<br/>__*Default*__: 0
+Threshold for the Memory Maximum utilization.
 
+---
 
+##### `requestsErrorRateThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.requestsErrorRateThreshold"></a>
 
-## struct WatchRdsAuroraOptions  <a id="myhelix-cdk-watchful-watchrdsauroraoptions"></a>
+- *Type:* `number`
+- *Default:* 0
 
+Threshold for the Request Error rate.
 
+---
 
+##### `requestsThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.requestsThreshold"></a>
 
+- *Type:* `number`
+- *Default:* 1000
 
+Threshold for the Number of Requests.
 
-Name | Type | Description 
------|------|-------------
-**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
-**dbBufferCacheMinimumThreshold**? | <code>number</code> | Threshold for the Minimum Db Buffer Cache.<br/>__*Default*__: 0.
-**dbConnectionsMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Connections.<br/>__*Default*__: 0.
-**dbReplicaLagMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db ReplicaLag.<br/>__*Default*__: 0.
-**dbThroughputMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Throughput.<br/>__*Default*__: 0.
+---
 
+##### `targetResponseTimeThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.targetResponseTimeThreshold"></a>
 
+- *Type:* `number`
+- *Default:* 1
 
-## struct WatchRdsAuroraProps  <a id="myhelix-cdk-watchful-watchrdsauroraprops"></a>
+Threshold for the Target Response Time.
 
+---
 
+##### `targetGroup`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.targetGroup"></a>
 
+- *Type:* [`@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup`](#@aws-cdk/aws-elasticloadbalancingv2.ApplicationTargetGroup)
 
+---
 
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.title"></a>
 
-Name | Type | Description 
------|------|-------------
-**cluster** | <code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code> | <span></span>
-**title** | <code>string</code> | <span></span>
-**watchful** | <code>[IWatchful](#myhelix-cdk-watchful-iwatchful)</code> | <span></span>
-**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
-**dbBufferCacheMinimumThreshold**? | <code>number</code> | Threshold for the Minimum Db Buffer Cache.<br/>__*Default*__: 0.
-**dbConnectionsMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Connections.<br/>__*Default*__: 0.
-**dbReplicaLagMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db ReplicaLag.<br/>__*Default*__: 0.
-**dbThroughputMaximumThreshold**? | <code>number</code> | Threshold for the Maximum Db Throughput.<br/>__*Default*__: 0.
+- *Type:* `string`
 
+---
 
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.watchful"></a>
 
-## struct WatchedOperation  <a id="myhelix-cdk-watchful-watchedoperation"></a>
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 
+---
+
+##### `ec2Service`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.ec2Service"></a>
+
+- *Type:* [`@aws-cdk/aws-ecs.Ec2Service`](#@aws-cdk/aws-ecs.Ec2Service)
+
+---
+
+##### `fargateService`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchEcsServiceProps.property.fargateService"></a>
+
+- *Type:* [`@aws-cdk/aws-ecs.FargateService`](#@aws-cdk/aws-ecs.FargateService)
+
+---
+
+### WatchedOperation <a name="@myhelix/cdk-watchful.WatchedOperation"></a>
 
 An operation (path and method) worth monitoring.
 
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchedOperation } from '@myhelix/cdk-watchful'
+
+const watchedOperation: WatchedOperation = { ... }
+```
+
+##### `httpMethod`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchedOperation.property.httpMethod"></a>
+
+- *Type:* `string`
+
+The HTTP method for the operation (GET, POST, ...).
+
+---
+
+##### `resourcePath`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchedOperation.property.resourcePath"></a>
+
+- *Type:* `string`
+
+The REST API path for this operation (/, /resource/{id}, ...).
+
+---
+
+### WatchFirehoseServiceOptions <a name="@myhelix/cdk-watchful.WatchFirehoseServiceOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchFirehoseServiceOptions } from '@myhelix/cdk-watchful'
+
+const watchFirehoseServiceOptions: WatchFirehoseServiceOptions = { ... }
+```
+
+### WatchFirehoseServiceProps <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchFirehoseServiceProps } from '@myhelix/cdk-watchful'
+
+const watchFirehoseServiceProps: WatchFirehoseServiceProps = { ... }
+```
+
+##### `fh`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps.property.fh"></a>
+
+- *Type:* [`@aws-cdk/aws-kinesisfirehose.CfnDeliveryStream`](#@aws-cdk/aws-kinesisfirehose.CfnDeliveryStream)
+
+---
+
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps.property.title"></a>
+
+- *Type:* `string`
+
+---
+
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps.property.watchful"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
+
+---
+
+### WatchfulAspectProps <a name="@myhelix/cdk-watchful.WatchfulAspectProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchfulAspectProps } from '@myhelix/cdk-watchful'
+
+const watchfulAspectProps: WatchfulAspectProps = { ... }
+```
+
+##### `apiGateway`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.apiGateway"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch API Gateway APIs in the scope.
+
+---
+
+##### `dynamodb`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.dynamodb"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch all Amazon DynamoDB tables in the scope.
+
+---
+
+##### `ec2ecs`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.ec2ecs"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern).
+
+---
+
+##### `fargateecs`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.fargateecs"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).
+
+---
+
+##### `firehose`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.firehose"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch AWS firehose in the scope.
+
+---
+
+##### `lambdaFn`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.lambdaFn"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch AWS Lambda functions in the scope.
+
+---
+
+##### `rdsaurora`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.rdsaurora"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch RDS Aurora clusters in the scope.
+
+---
+
+### WatchfulProps <a name="@myhelix/cdk-watchful.WatchfulProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchfulProps } from '@myhelix/cdk-watchful'
+
+const watchfulProps: WatchfulProps = { ... }
+```
+
+##### `alarmEmail`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulProps.property.alarmEmail"></a>
+
+- *Type:* `string`
+
+---
+
+##### `alarmSns`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulProps.property.alarmSns"></a>
+
+- *Type:* [`@aws-cdk/aws-sns.ITopic`](#@aws-cdk/aws-sns.ITopic)
+
+---
+
+##### `alarmSqs`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulProps.property.alarmSqs"></a>
+
+- *Type:* [`@aws-cdk/aws-sqs.IQueue`](#@aws-cdk/aws-sqs.IQueue)
+
+---
+
+##### `dashboardName`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulProps.property.dashboardName"></a>
+
+- *Type:* `string`
+
+---
+
+### WatchLambdaFunctionOptions <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchLambdaFunctionOptions } from '@myhelix/cdk-watchful'
+
+const watchLambdaFunctionOptions: WatchLambdaFunctionOptions = { ... }
+```
+
+##### `durationThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.durationThresholdPercent"></a>
+
+- *Type:* `number`
+- *Default:* 80
+
+Threshold for the duration alarm as percentage of the function's timeout value.
+
+If this is set to 50%, the alarm will be set when p99 latency of the
+function exceeds 50% of the function's timeout setting.
+
+---
+
+##### `durationTimeoutSec`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.durationTimeoutSec"></a>
+
+- *Type:* `number`
+- *Default:* 3
+
+Override duration timeout threshold.
+
+Necessary for lambdas that aren't created via the CDK.
+This value is still adjusted by durationThresholdPercent
+
+---
+
+##### `errorsDisableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.errorsDisableAlerts"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Flag to disable alerting on errors.
+
+---
+
+##### `errorsPerMinuteThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.errorsPerMinuteThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0
+
+Number of allowed errors per minute.
+
+If there are more errors than that, an alarm will trigger.
+
+---
+
+##### `throttlesPerMinuteThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.throttlesPerMinuteThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0
+
+Number of allowed throttles per minute.
+
+---
+
+### WatchLambdaFunctionProps <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchLambdaFunctionProps } from '@myhelix/cdk-watchful'
+
+const watchLambdaFunctionProps: WatchLambdaFunctionProps = { ... }
+```
+
+##### `durationThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.durationThresholdPercent"></a>
+
+- *Type:* `number`
+- *Default:* 80
+
+Threshold for the duration alarm as percentage of the function's timeout value.
+
+If this is set to 50%, the alarm will be set when p99 latency of the
+function exceeds 50% of the function's timeout setting.
+
+---
+
+##### `durationTimeoutSec`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.durationTimeoutSec"></a>
+
+- *Type:* `number`
+- *Default:* 3
+
+Override duration timeout threshold.
+
+Necessary for lambdas that aren't created via the CDK.
+This value is still adjusted by durationThresholdPercent
+
+---
+
+##### `errorsDisableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.errorsDisableAlerts"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Flag to disable alerting on errors.
+
+---
+
+##### `errorsPerMinuteThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.errorsPerMinuteThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0
+
+Number of allowed errors per minute.
+
+If there are more errors than that, an alarm will trigger.
+
+---
+
+##### `throttlesPerMinuteThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.throttlesPerMinuteThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0
+
+Number of allowed throttles per minute.
+
+---
+
+##### `fn`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.fn"></a>
+
+- *Type:* [`@aws-cdk/aws-lambda.IFunction`](#@aws-cdk/aws-lambda.IFunction)
+
+---
+
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.title"></a>
+
+- *Type:* `string`
+
+---
+
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.watchful"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
+
+---
+
+### WatchRdsAuroraOptions <a name="@myhelix/cdk-watchful.WatchRdsAuroraOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchRdsAuroraOptions } from '@myhelix/cdk-watchful'
+
+const watchRdsAuroraOptions: WatchRdsAuroraOptions = { ... }
+```
+
+##### `cpuMaximumThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraOptions.property.cpuMaximumThresholdPercent"></a>
+
+- *Type:* `number`
+- *Default:* 80
+
+Threshold for the Cpu Maximum utilization.
+
+---
+
+##### `dbBufferCacheMinimumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraOptions.property.dbBufferCacheMinimumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Minimum Db Buffer Cache.
+
+---
+
+##### `dbConnectionsMaximumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraOptions.property.dbConnectionsMaximumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Maximum Db Connections.
+
+---
+
+##### `dbReplicaLagMaximumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraOptions.property.dbReplicaLagMaximumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Maximum Db ReplicaLag.
+
+---
+
+##### `dbThroughputMaximumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraOptions.property.dbThroughputMaximumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Maximum Db Throughput.
+
+---
+
+### WatchRdsAuroraProps <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchRdsAuroraProps } from '@myhelix/cdk-watchful'
+
+const watchRdsAuroraProps: WatchRdsAuroraProps = { ... }
+```
+
+##### `cpuMaximumThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.cpuMaximumThresholdPercent"></a>
+
+- *Type:* `number`
+- *Default:* 80
+
+Threshold for the Cpu Maximum utilization.
+
+---
+
+##### `dbBufferCacheMinimumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.dbBufferCacheMinimumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Minimum Db Buffer Cache.
+
+---
+
+##### `dbConnectionsMaximumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.dbConnectionsMaximumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Maximum Db Connections.
+
+---
+
+##### `dbReplicaLagMaximumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.dbReplicaLagMaximumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Maximum Db ReplicaLag.
+
+---
+
+##### `dbThroughputMaximumThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.dbThroughputMaximumThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 0.
+
+Threshold for the Maximum Db Throughput.
+
+---
+
+##### `cluster`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.cluster"></a>
+
+- *Type:* [`@aws-cdk/aws-rds.DatabaseCluster`](#@aws-cdk/aws-rds.DatabaseCluster)
+
+---
+
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.title"></a>
+
+- *Type:* `string`
+
+---
+
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.watchful"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
+
+---
+
+## Classes <a name="Classes"></a>
+
+### WatchfulAspect <a name="@myhelix/cdk-watchful.WatchfulAspect"></a>
+
+- *Implements:* [`@aws-cdk/core.IAspect`](#@aws-cdk/core.IAspect)
+
+A CDK aspect that can automatically watch all resources within a scope.
+
+#### Initializer <a name="@myhelix/cdk-watchful.WatchfulAspect.Initializer"></a>
+
+```typescript
+import { WatchfulAspect } from '@myhelix/cdk-watchful'
+
+new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
+```
+
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchfulAspect.parameter.watchful"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.Watchful`](#@myhelix/cdk-watchful.Watchful)
+
+The watchful to add those resources to.
+
+---
+
+##### `props`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspect.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchfulAspectProps`](#@myhelix/cdk-watchful.WatchfulAspectProps)
+
+Options.
+
+---
+
+#### Methods <a name="Methods"></a>
+
+##### `visit` <a name="@myhelix/cdk-watchful.WatchfulAspect.visit"></a>
+
+```typescript
+public visit(node: IConstruct)
+```
+
+###### `node`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchfulAspect.parameter.node"></a>
+
+- *Type:* [`@aws-cdk/core.IConstruct`](#@aws-cdk/core.IConstruct)
+
+---
 
 
-Name | Type | Description 
------|------|-------------
-**httpMethod** | <code>string</code> | The HTTP method for the operation (GET, POST, ...).
-**resourcePath** | <code>string</code> | The REST API path for this operation (/, /resource/{id}, ...).
 
 
+## Protocols <a name="Protocols"></a>
 
-## struct WatchfulAspectProps  <a id="myhelix-cdk-watchful-watchfulaspectprops"></a>
+### IWatchful <a name="@myhelix/cdk-watchful.IWatchful"></a>
 
+- *Implemented By:* [`@myhelix/cdk-watchful.Watchful`](#@myhelix/cdk-watchful.Watchful), [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 
+#### Methods <a name="Methods"></a>
 
+##### `addAlarm` <a name="@myhelix/cdk-watchful.IWatchful.addAlarm"></a>
 
+```typescript
+public addAlarm(alarm: Alarm, autoResolveEvents?: boolean)
+```
 
+###### `alarm`<sup>Required</sup> <a name="@myhelix/cdk-watchful.IWatchful.parameter.alarm"></a>
 
-Name | Type | Description 
------|------|-------------
-**apiGateway**? | <code>boolean</code> | Automatically watch API Gateway APIs in the scope.<br/>__*Default*__: true
-**dynamodb**? | <code>boolean</code> | Automatically watch all Amazon DynamoDB tables in the scope.<br/>__*Default*__: true
-**ec2ecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
-**fargateecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
-**firehose**? | <code>boolean</code> | Automatically watch AWS firehose in the scope.<br/>__*Default*__: true
-**lambdaFn**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
-**rdsaurora**? | <code>boolean</code> | Automatically watch RDS Aurora clusters in the scope.<br/>__*Default*__: true
+- *Type:* [`@aws-cdk/aws-cloudwatch.Alarm`](#@aws-cdk/aws-cloudwatch.Alarm)
 
+---
 
+###### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.IWatchful.parameter.autoResolveEvents"></a>
 
-## struct WatchfulProps  <a id="myhelix-cdk-watchful-watchfulprops"></a>
+- *Type:* `boolean`
 
+---
 
+##### `addSection` <a name="@myhelix/cdk-watchful.IWatchful.addSection"></a>
 
+```typescript
+public addSection(title: string, options?: SectionOptions)
+```
 
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.IWatchful.parameter.title"></a>
 
+- *Type:* `string`
 
-Name | Type | Description 
------|------|-------------
-**alarmEmail**? | <code>string</code> | __*Optional*__
-**alarmSns**? | <code>[ITopic](#aws-cdk-aws-sns-itopic)</code> | __*Optional*__
-**alarmSqs**? | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | __*Optional*__
-**dashboardName**? | <code>string</code> | __*Optional*__
+---
 
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.IWatchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.SectionOptions`](#@myhelix/cdk-watchful.SectionOptions)
+
+---
+
+##### `addWidgets` <a name="@myhelix/cdk-watchful.IWatchful.addWidgets"></a>
+
+```typescript
+public addWidgets(widgets: IWidget)
+```
+
+###### `widgets`<sup>Required</sup> <a name="@myhelix/cdk-watchful.IWatchful.parameter.widgets"></a>
+
+- *Type:* [`@aws-cdk/aws-cloudwatch.IWidget`](#@aws-cdk/aws-cloudwatch.IWidget)
+
+---
 
 
