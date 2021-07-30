@@ -1469,9 +1469,9 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*":
-  version "16.4.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.6.tgz#1734d119dfa8fede5606d35ae10f9fc9c84d889b"
-  integrity sha512-FKyawK3o5KL16AwbeFajen8G4K3mmqUrQsehn5wNKs8IzlKHE8TfnSmILXVMVziAEcnB23u1RCFU1NT6hSyr7Q==
+  version "16.4.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.7.tgz#f7afa78769d4b477f5092d7c3468e2e8653d779c"
+  integrity sha512-aDDY54sst8sx47CWT6QQqIZp45yURq4dic0+HCYfYNcY5Ejlb/CLmFnRLfy3wQuYafOeh3lB/DAKaqRKBtcZmA==
 
 "@types/node@^10.17.0", "@types/node@^10.17.60":
   version "10.17.60"
@@ -1860,10 +1860,10 @@ available-typed-arrays@^1.0.2:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.4.tgz#9e0ae84ecff20caae6a94a1c3bc39b955649b7a9"
   integrity sha512-SA5mXJWrId1TaQjfxUYghbqQ/hYioKmLJvPJyDuYRtXXenFNMjj4hSSt1Cf1xsuXSXrtxrVC5Ot4eU6cOtBDdA==
 
-aws-sdk@^2.956.0:
-  version "2.956.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.956.0.tgz#fbc3900f413bb1a7a48f586587a8edea76bca615"
-  integrity sha512-vSzL66tjeRSBPnLR2Pkx4qS7SPqADT7K9QBjWdMhVd9BF5spyMvJ9hReIEShILp3hq99sHI+MvO+uTUm5s023g==
+aws-sdk@^2.957.0:
+  version "2.957.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.957.0.tgz#579fbb5310f918ebcba6b968e0c43903180bad35"
+  integrity sha512-TtRv/ebZL7gWgAW8XGlRizs5xhyzlDt2KbrxoPcHcxPTH8KHlbEyOmAXafyB7K/Jf3En5TDdJN1daJ4idSKWSg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2052,9 +2052,9 @@ bser@2.1.1:
     node-int64 "^0.4.0"
 
 buffer-from@1.x, buffer-from@^1.0.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
-  integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
+  integrity sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==
 
 buffer@4.9.2:
   version "4.9.2"
@@ -2945,9 +2945,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.723:
-  version "1.3.790"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.790.tgz#5c569290929d92c8094fa08c79bc9393ca9e94e7"
-  integrity sha512-epMH/S2MkhBv+Y0+nHK8dC7bzmOaPwcmiYqt+VwxSUJLgPzkqZnGUEQ8eVhy5zGmgWm9tDDdXkHDzOEsVU979A==
+  version "1.3.791"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.791.tgz#e38f325ff22470bdcff34409d58c0baf9c2e3e93"
+  integrity sha512-Tdx7w1fZpeWOOBluK+kXTAKCXyc79K65RB6Zp0+sPSZZhDjXlrxfGlXrlMGVVQUrKCyEZFQs1UBBLNz5IdbF0g==
 
 emittery@^0.7.1:
   version "0.7.2"
@@ -6205,10 +6205,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.27.11:
-  version "0.27.11"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.27.11.tgz#ea20caaa2f4206037093b30ee8a2c4f7c5d7779c"
-  integrity sha512-VGxXKy9TWFen0WuZBchKPkKdODaXcNrrW5eJdT98F/Pmyyd4aU1beJLAZAC5D+DrUb/74KkTZyNImCI8rshjNQ==
+projen@^0.27.12:
+  version "0.27.12"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.27.12.tgz#324c170bc5d76eaf7725cbc1aa1320a656b8a9bb"
+  integrity sha512-3sKI0/Oii4067fRK5q7LBlt8o4v0I7fFz7RPY2QE+qOzOR+4cuyR+QFzeCC8vDVNf/EzxzD0sdQWy3oBD8Sn1Q==
   dependencies:
     "@iarna/toml" "^2.2.5"
     chalk "^4.1.1"
