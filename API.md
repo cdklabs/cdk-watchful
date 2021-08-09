@@ -439,6 +439,25 @@ new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunction
 
 ---
 
+#### Methods <a name="Methods"></a>
+
+##### `createInvocationsMonitor` <a name="@myhelix/cdk-watchful.WatchLambdaFunction.createInvocationsMonitor"></a>
+
+```typescript
+public createInvocationsMonitor(invocationsEnableAlerts?: boolean, invocationsThreshold?: Duration)
+```
+
+###### `invocationsEnableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunction.parameter.invocationsEnableAlerts"></a>
+
+- *Type:* `boolean`
+
+---
+
+###### `invocationsThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunction.parameter.invocationsThreshold"></a>
+
+- *Type:* [`@aws-cdk/core.Duration`](#@aws-cdk/core.Duration)
+
+---
 
 
 
@@ -1054,6 +1073,23 @@ If there are more errors than that, an alarm will trigger.
 
 ---
 
+##### `invocationsEnableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.invocationsEnableAlerts"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Flag to enable alerting on invocationsMetric.
+
+---
+
+##### `invocationsThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.invocationsThreshold"></a>
+
+- *Type:* [`@aws-cdk/core.Duration`](#@aws-cdk/core.Duration)
+
+Threshold for alerting invocations.
+
+---
+
 ##### `throttlesPerMinuteThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.throttlesPerMinuteThreshold"></a>
 
 - *Type:* `number`
@@ -1114,6 +1150,23 @@ Flag to disable alerting on errors.
 Number of allowed errors per minute.
 
 If there are more errors than that, an alarm will trigger.
+
+---
+
+##### `invocationsEnableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.invocationsEnableAlerts"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Flag to enable alerting on invocationsMetric.
+
+---
+
+##### `invocationsThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.invocationsThreshold"></a>
+
+- *Type:* [`@aws-cdk/core.Duration`](#@aws-cdk/core.Duration)
+
+Threshold for alerting invocations.
 
 ---
 
