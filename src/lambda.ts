@@ -158,6 +158,7 @@ export class WatchLambdaFunction extends Construct {
         threshold: 1,
         comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
         evaluationPeriods: 1,
+        treatMissingData: cloudwatch.TreatMissingData.BREACHING,
       });
       this.invocationsMetric.with({ period: invocationsThreshold } );
       this.watchful.addAlarm(this.invocationsAlarm);
