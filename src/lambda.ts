@@ -156,11 +156,13 @@ export class WatchLambdaFunction extends Construct {
       this.invocationsAlarm = this.invocationsMetric.createAlarm(this, 'InvocationAlarm', {
         alarmDescription: `Expecting invocations to occur every ${invocationsThreshold.toHours()}hours`,
         threshold: 1,
+        period: invocationsThreshold, // deprecated but functional
         comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
         evaluationPeriods: 1,
         treatMissingData: cloudwatch.TreatMissingData.BREACHING,
       });
-      this.invocationsMetric.with({ period: invocationsThreshold } );
+      // this isn't working as promised, so keep using the deprecated method for now
+      // this.invocationsMetric.with({ period: invocationsThreshold } );
       this.watchful.addAlarm(this.invocationsAlarm);
     }
   }
