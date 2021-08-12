@@ -40,7 +40,7 @@
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
-    "aws-sdk": "^2.965.0",
+    "aws-sdk": "^2.966.0",
     "eslint": "^6.8.0",
     "eslint-import-resolver-node": "^0.3.5",
     "eslint-import-resolver-typescript": "^2.4.0",
