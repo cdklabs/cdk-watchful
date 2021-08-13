@@ -40,7 +40,7 @@
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
-    "aws-sdk": "^2.966.0",
+    "aws-sdk": "^2.967.0",
     "eslint": "^6.8.0",
     "eslint-import-resolver-node": "^0.3.5",
     "eslint-import-resolver-typescript": "^2.4.0",
@@ -53,7 +53,7 @@
     "jsii-pacmak": "^1.32.0",
     "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
-    "projen": "^0.27.27",
+    "projen": "^0.27.28",
     "standard-version": "^9",
     "ts-jest": "^26.5.6",
     "typescript": "^3.9.10"
