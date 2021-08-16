@@ -19,6 +19,7 @@ import { WatchEcsServiceOptions, WatchEcsService } from './ecs';
 import { WatchFirehoseServiceOptions, WatchFirehoseService } from './firehose';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
+import { WatchSqsOptions, WatchSqsService } from './sqs';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
@@ -129,6 +130,13 @@ export class Watchful extends Construct implements IWatchful {
   public watchEc2Ecs(title: string, ec2Service: ecs.Ec2Service, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
     return new WatchEcsService(this, ec2Service.node.addr, {
       title, watchful: this, ec2Service, targetGroup, ...options,
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  public watchSqs(title: string, sqs: sqs.IQueue, options: WatchSqsOptions = {}) {
+    return new WatchSqsService(this, sqs.node.addr, {
+      title, watchful: this, sqs, ...options,
     });
   }
 }

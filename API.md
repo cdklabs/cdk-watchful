@@ -408,6 +408,30 @@ public watchScope(scope: Construct, options?: WatchfulAspectProps)
 
 ---
 
+##### `watchSqs` <a name="@myhelix/cdk-watchful.Watchful.watchSqs"></a>
+
+```typescript
+public watchSqs(title: string, sqs: IQueue, options?: WatchSqsOptions)
+```
+
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
+
+- *Type:* `string`
+
+---
+
+###### `sqs`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.sqs"></a>
+
+- *Type:* [`@aws-cdk/aws-sqs.IQueue`](#@aws-cdk/aws-sqs.IQueue)
+
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchSqsOptions`](#@myhelix/cdk-watchful.WatchSqsOptions)
+
+---
+
 
 
 
@@ -487,6 +511,38 @@ new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
 ##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAurora.parameter.props"></a>
 
 - *Type:* [`@myhelix/cdk-watchful.WatchRdsAuroraProps`](#@myhelix/cdk-watchful.WatchRdsAuroraProps)
+
+---
+
+
+
+
+
+### WatchSqsService <a name="@myhelix/cdk-watchful.WatchSqsService"></a>
+
+#### Initializer <a name="@myhelix/cdk-watchful.WatchSqsService.Initializer"></a>
+
+```typescript
+import { WatchSqsService } from '@myhelix/cdk-watchful'
+
+new WatchSqsService(scope: Construct, id: string, props: WatchSqsServiceProps)
+```
+
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsService.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsService.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsService.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchSqsServiceProps`](#@myhelix/cdk-watchful.WatchSqsServiceProps)
 
 ---
 
@@ -1320,6 +1376,44 @@ Threshold for the Maximum Db Throughput.
 ---
 
 ##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchRdsAuroraProps.property.watchful"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
+
+---
+
+### WatchSqsOptions <a name="@myhelix/cdk-watchful.WatchSqsOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchSqsOptions } from '@myhelix/cdk-watchful'
+
+const watchSqsOptions: WatchSqsOptions = { ... }
+```
+
+### WatchSqsServiceProps <a name="@myhelix/cdk-watchful.WatchSqsServiceProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchSqsServiceProps } from '@myhelix/cdk-watchful'
+
+const watchSqsServiceProps: WatchSqsServiceProps = { ... }
+```
+
+##### `sqs`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsServiceProps.property.sqs"></a>
+
+- *Type:* [`@aws-cdk/aws-sqs.IQueue`](#@aws-cdk/aws-sqs.IQueue)
+
+---
+
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsServiceProps.property.title"></a>
+
+- *Type:* `string`
+
+---
+
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsServiceProps.property.watchful"></a>
 
 - *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 
