@@ -58,6 +58,13 @@ export interface WatchLambdaFunctionOptions {
    * @default 3
    */
   readonly durationTimeoutSec?: number;
+
+  /**
+   * Send notifications to resolve alerts
+   *
+   * @default false
+   */
+  readonly autoResolveEvents?: boolean;
 }
 
 export interface WatchLambdaFunctionProps extends WatchLambdaFunctionOptions {
@@ -70,6 +77,7 @@ export class WatchLambdaFunction extends Construct {
 
   private readonly watchful: IWatchful;
   private readonly fn: lambda.IFunction;
+  private readonly autoResolveEvents: boolean;
   private invocationsMetric!: cloudwatch.Metric;
   private invocationsAlarm: cloudwatch.Alarm | undefined;
   private errorsMetric!: cloudwatch.Metric;
@@ -88,6 +96,7 @@ export class WatchLambdaFunction extends Construct {
 
     this.watchful = props.watchful;
     this.fn = props.fn;
+    this.autoResolveEvents = props.autoResolveEvents ?? false;
 
     this.watchful.addSection(props.title, {
       links: [
@@ -154,6 +163,7 @@ export class WatchLambdaFunction extends Construct {
     this.invocationsMetric = fn.metricInvocations();
     if (invocationsEnableAlerts) {
       this.invocationsAlarm = this.invocationsMetric.createAlarm(this, 'InvocationAlarm', {
+        alarmName: `${fn.functionName}-invocation`,
         alarmDescription: `Expecting invocations to occur every ${invocationsThreshold.toHours()}hours`,
         threshold: 1,
         period: invocationsThreshold, // deprecated but functional
@@ -163,7 +173,7 @@ export class WatchLambdaFunction extends Construct {
       });
       // this isn't working as promised, so keep using the deprecated method for now
       // this.invocationsMetric.with({ period: invocationsThreshold } );
-      this.watchful.addAlarm(this.invocationsAlarm);
+      this.watchful.addAlarm(this.invocationsAlarm, this.autoResolveEvents );
     }
   }
 
@@ -172,12 +182,13 @@ export class WatchLambdaFunction extends Construct {
     this.errorsMetric = fn.metricErrors();
     if (!errorsDisableAlerts) {
       this.errorsAlarm = this.errorsMetric.createAlarm(this, 'ErrorsAlarm', {
+        alarmName: `${fn.functionName}-errors`,
         alarmDescription: `Over ${errorsPerMinuteThreshold} errors per minute`,
         threshold: errorsPerMinuteThreshold,
         comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
         evaluationPeriods: 3,
       });
-      this.watchful.addAlarm(this.errorsAlarm);
+      this.watchful.addAlarm(this.errorsAlarm, this.autoResolveEvents);
     }
   }
 
@@ -185,12 +196,13 @@ export class WatchLambdaFunction extends Construct {
     const fn = this.fn;
     this.throttlesMetric = fn.metricThrottles();
     this.throttlesAlarm = this.throttlesMetric.createAlarm(this, 'ThrottlesAlarm', {
+      alarmName: `${fn.functionName}-throttles`,
       alarmDescription: `Over ${throttlesPerMinuteThreshold} throttles per minute`,
       threshold: throttlesPerMinuteThreshold,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       evaluationPeriods: 3,
     });
-    this.watchful.addAlarm(this.throttlesAlarm);
+    this.watchful.addAlarm(this.throttlesAlarm, this.autoResolveEvents);
   }
 
   private createDurationMonitor(timeoutSec: number, durationPercentThreshold: number = DEFAULT_DURATION_THRESHOLD_PERCENT) {
@@ -198,12 +210,13 @@ export class WatchLambdaFunction extends Construct {
     this.durationMetric = fn.metricDuration();
     const durationThresholdSec = Math.floor(durationPercentThreshold / 100 * timeoutSec);
     this.durationAlarm = this.durationMetric.createAlarm(this, 'DurationAlarm', {
+      alarmName: `${fn.functionName}-duration`,
       alarmDescription: `p99 latency >= ${durationThresholdSec}s (${durationPercentThreshold}%)`,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
       threshold: durationThresholdSec * 1000, // milliseconds
       evaluationPeriods: 3,
     });
-    this.watchful.addAlarm(this.durationAlarm);
+    this.watchful.addAlarm(this.durationAlarm, this.autoResolveEvents);
   }
 }
 

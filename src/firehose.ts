@@ -4,6 +4,7 @@ import * as cdk from '@aws-cdk/core';
 import { IWatchful } from './api';
 
 export interface WatchFirehoseServiceOptions {
+  readonly autoResolveEvents?: boolean;
 }
 
 export interface WatchFirehoseServiceProps extends WatchFirehoseServiceOptions {
@@ -15,12 +16,15 @@ export interface WatchFirehoseServiceProps extends WatchFirehoseServiceOptions {
 export class WatchFirehoseService extends cdk.Construct {
   private readonly watchful: IWatchful;
   private readonly fh: firehose.CfnDeliveryStream;
+  private readonly autoResolveEvents: boolean;
+
 
   constructor(scope: cdk.Construct, id: string, props: WatchFirehoseServiceProps) {
     super(scope, id);
 
     this.watchful = props.watchful;
     this.fh = props.fh;
+    this.autoResolveEvents = props.autoResolveEvents ?? false;
 
     this.watchful.addSection(props.title, {
       links: [{ title: 'Firehose Console', url: linkForFirehoseService(this.fh) }],
@@ -61,6 +65,8 @@ export class WatchFirehoseService extends cdk.Construct {
       },
     });
     const deliveryToRedshiftSuccessAlarm = new cloudwatch.Alarm(this, 'deliveryToRedshiftAlarm', {
+      alarmName: `${this.fh.deliveryStreamName}-unsuccessful-delivery`,
+      alarmDescription: `${this.fh.deliveryStreamName} delivery unsuccessful`,
       comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
       metric: deliveryToRedshiftSuccessMetric,
       threshold: 1,
@@ -68,7 +74,7 @@ export class WatchFirehoseService extends cdk.Construct {
       evaluationPeriods: 1,
       treatMissingData: cloudwatch.TreatMissingData.NOT_BREACHING,
     });
-    this.watchful.addAlarm(deliveryToRedshiftSuccessAlarm, false);
+    this.watchful.addAlarm(deliveryToRedshiftSuccessAlarm, this.autoResolveEvents);
     return { deliveryToRedshiftSuccessMetric, deliveryToRedshiftSuccessAlarm };
   }
   private createDeliveryToRedshiftRecordsMonitor() {

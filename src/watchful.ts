@@ -25,6 +25,7 @@ export interface WatchfulProps {
   readonly alarmEmail?: string;
   readonly alarmSqs?: sqs.IQueue;
   readonly alarmSns?: sns.ITopic;
+  readonly autoResolveEvents?: boolean;
   readonly dashboardName?: string;
 }
 

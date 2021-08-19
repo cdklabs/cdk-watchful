@@ -940,6 +940,12 @@ import { WatchFirehoseServiceOptions } from '@myhelix/cdk-watchful'
 const watchFirehoseServiceOptions: WatchFirehoseServiceOptions = { ... }
 ```
 
+##### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseServiceOptions.property.autoResolveEvents"></a>
+
+- *Type:* `boolean`
+
+---
+
 ### WatchFirehoseServiceProps <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps"></a>
 
 #### Initializer <a name="[object Object].Initializer"></a>
@@ -949,6 +955,12 @@ import { WatchFirehoseServiceProps } from '@myhelix/cdk-watchful'
 
 const watchFirehoseServiceProps: WatchFirehoseServiceProps = { ... }
 ```
+
+##### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps.property.autoResolveEvents"></a>
+
+- *Type:* `boolean`
+
+---
 
 ##### `fh`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchFirehoseServiceProps.property.fh"></a>
 
@@ -1069,6 +1081,12 @@ const watchfulProps: WatchfulProps = { ... }
 
 ---
 
+##### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulProps.property.autoResolveEvents"></a>
+
+- *Type:* `boolean`
+
+---
+
 ##### `dashboardName`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulProps.property.dashboardName"></a>
 
 - *Type:* `string`
@@ -1084,6 +1102,15 @@ import { WatchLambdaFunctionOptions } from '@myhelix/cdk-watchful'
 
 const watchLambdaFunctionOptions: WatchLambdaFunctionOptions = { ... }
 ```
+
+##### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.autoResolveEvents"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Send notifications to resolve alerts.
+
+---
 
 ##### `durationThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionOptions.property.durationThresholdPercent"></a>
 
@@ -1164,6 +1191,15 @@ import { WatchLambdaFunctionProps } from '@myhelix/cdk-watchful'
 
 const watchLambdaFunctionProps: WatchLambdaFunctionProps = { ... }
 ```
+
+##### `autoResolveEvents`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.autoResolveEvents"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Send notifications to resolve alerts.
+
+---
 
 ##### `durationThresholdPercent`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchLambdaFunctionProps.property.durationThresholdPercent"></a>
 
