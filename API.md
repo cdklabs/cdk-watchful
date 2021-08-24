@@ -609,6 +609,15 @@ Include a dashboard graph for caching metrics.
 
 ---
 
+##### `disableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayOptions.property.disableAlerts"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Flag to disable alerting.
+
+---
+
 ##### `serverErrorThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayOptions.property.serverErrorThreshold"></a>
 
 - *Type:* `number`
@@ -643,6 +652,15 @@ const watchApiGatewayProps: WatchApiGatewayProps = { ... }
 - *Default:* false
 
 Include a dashboard graph for caching metrics.
+
+---
+
+##### `disableAlerts`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchApiGatewayProps.property.disableAlerts"></a>
+
+- *Type:* `boolean`
+- *Default:* false
+
+Flag to disable alerting.
 
 ---
 
