@@ -120,7 +120,7 @@ export class Watchful extends Construct implements IWatchful {
     this.dash?.addWidgets(...widgets);
   }
 
-  public addAlarm(alarm: cloudwatch.Alarm) {
+  public addAlarm(alarm: cloudwatch.AlarmBase) {
     if (this.alarmTopic) {
       alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
     }
