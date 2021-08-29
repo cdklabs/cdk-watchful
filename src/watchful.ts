@@ -120,12 +120,14 @@ export class Watchful extends Construct implements IWatchful {
     this.dash?.addWidgets(...widgets);
   }
 
-  public addAlarm(alarm: cloudwatch.AlarmBase) {
-    if (this.alarmTopic) {
-      alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
-    }
+  public addAlarm(alarm: cloudwatch.IAlarm) {
+    if (hasAlarmAction(alarm)) {
+      if (this.alarmTopic) {
+        alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
+      }
 
-    alarm.addAlarmAction(...this.alarmActions);
+      alarm.addAlarmAction(...this.alarmActions);
+    }
   }
 
   public addSection(title: string, options: SectionOptions = {}) {
@@ -185,3 +187,8 @@ function linkForDashboard(dashboard: cloudwatch.Dashboard) {
   const cfnDashboard = dashboard.node.defaultChild as cloudwatch.CfnDashboard;
   return `https://console.aws.amazon.com/cloudwatch/home?region=${dashboard.stack.region}#dashboards:name=${cfnDashboard.ref}`;
 }
+
+function hasAlarmAction(alarm: cloudwatch.IAlarm): alarm is cloudwatch.IAlarm & { addAlarmAction: (...actions: cloudwatch.IAlarmAction[]) => void } {
+  return 'addAlarmAction' in alarm;
+}
+
