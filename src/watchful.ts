@@ -71,6 +71,7 @@ export class Watchful extends Construct implements IWatchful {
   private readonly dash?: cloudwatch.Dashboard;
   private readonly alarmTopic?: sns.ITopic;
   private readonly alarmActions: cloudwatch.IAlarmAction[];
+  private createdAlarmCount = 0;
 
   constructor(scope: Construct, id: string, props: WatchfulProps = { }) {
     super(scope, id);
@@ -121,13 +122,14 @@ export class Watchful extends Construct implements IWatchful {
   }
 
   public addAlarm(alarm: cloudwatch.IAlarm) {
-    if (hasAlarmAction(alarm)) {
-      if (this.alarmTopic) {
-        alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
-      }
-
-      alarm.addAlarmAction(...this.alarmActions);
+    const alarmWithAction = hasAlarmAction(alarm) ? alarm : new cloudwatch.CompositeAlarm(this, `Created Alarm ${this.createdAlarmCount++}`, {
+      alarmRule: cloudwatch.AlarmRule.fromAlarm(alarm, cloudwatch.AlarmState.ALARM),
+    });
+    if (this.alarmTopic) {
+      alarmWithAction.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
     }
+
+    alarmWithAction.addAlarmAction(...this.alarmActions);
   }
 
   public addSection(title: string, options: SectionOptions = {}) {
