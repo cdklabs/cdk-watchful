@@ -1,7 +1,7 @@
 import { expect as cdk_expect, haveResource } from '@aws-cdk/assert';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as ddb from '@aws-cdk/aws-dynamodb';
-import { Construct, Resource, ResourceProps, Stack } from '@aws-cdk/core';
+import { Construct, Stack } from '@aws-cdk/core';
 import { Watchful } from '../src';
 
 test('creates an empty dashboard', () => {
@@ -141,16 +141,16 @@ test('alarms that do not implement addAlarmAction will be wrapped in CompositeAl
   // GIVEN
   const stack = new Stack();
 
-  interface MyAlarmProps extends ResourceProps {
+  interface MyAlarmProps {
     alarmArn: string;
     alarmName: string;
   }
-  class MyAlarm extends Resource implements cloudwatch.IAlarm {
+  class MyAlarm extends Construct implements cloudwatch.IAlarm {
     public alarmArn: string;
     public alarmName: string;
 
     constructor(scope: Construct, id: string, props: MyAlarmProps) {
-      super(scope, id, props);
+      super(scope, id);
       this.alarmArn = props.alarmArn;
       this.alarmName = props.alarmName;
     }
