@@ -1,7 +1,7 @@
 import { expect as cdk_expect, haveResource } from '@aws-cdk/assert';
 import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
 import * as ddb from '@aws-cdk/aws-dynamodb';
-import { Stack } from '@aws-cdk/core';
+import { Construct, Resource, ResourceProps, Stack } from '@aws-cdk/core';
 import { Watchful } from '../src';
 
 test('creates an empty dashboard', () => {
@@ -134,5 +134,50 @@ test('composite alarms can be created from other alarms', ()=> {
       'arn:of:custom:alarm:action',
       'arn:2',
     ],
+  }));
+});
+
+test('alarms that do not implement addAlarmAction will be wrapped in CompositeAlarm', () => {
+  // GIVEN
+  const stack = new Stack();
+
+  interface MyAlarmProps extends ResourceProps {
+    alarmArn: string;
+    alarmName: string;
+  }
+  class MyAlarm extends Resource implements cloudwatch.IAlarm {
+    public alarmArn: string;
+    public alarmName: string;
+
+    constructor(scope: Construct, id: string, props: MyAlarmProps) {
+      super(scope, id, props);
+      this.alarmArn = props.alarmArn;
+      this.alarmName = props.alarmName;
+    }
+    public renderAlarmRule(): string {
+      return `ALARM("${this.alarmArn}")`;
+    }
+  }
+
+  // WHEN
+  const wf = new Watchful(stack, 'watchful', {
+    alarmActionArns: [
+      'arn:of:custom:alarm:action',
+      'arn:2',
+    ],
+  });
+
+  const alarmArn = 'arn:of:custom:external:my:alarm';
+  const alarm1 = new MyAlarm(stack, 'MyAlarm', { alarmArn, alarmName: 'MyAlarm' });
+
+  wf.addAlarm(alarm1);
+
+  // THEN
+  cdk_expect(stack).to(haveResource('AWS::CloudWatch::CompositeAlarm', {
+    AlarmActions: [
+      'arn:of:custom:alarm:action',
+      'arn:2',
+    ],
+    AlarmRule: `ALARM(\"${alarmArn}\")`,
   }));
 });
