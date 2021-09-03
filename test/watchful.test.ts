@@ -137,7 +137,7 @@ test('composite alarms can be created from other alarms', ()=> {
   }));
 });
 
-test('alarms that do not implement addAlarmAction will be wrapped in CompositeAlarm', () => {
+test('alarms that do not implement alarmAction will be wrapped in CompositeAlarm', () => {
   // GIVEN
   const stack = new Stack();
 
