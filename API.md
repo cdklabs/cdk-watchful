@@ -228,10 +228,10 @@ new Watchful(scope: Construct, id: string, props?: WatchfulProps)
 
 
 ```ts
-addAlarm(alarm: Alarm): void
+addAlarm(alarm: IAlarm): void
 ```
 
-* **alarm** (<code>[Alarm](#aws-cdk-aws-cloudwatch-alarm)</code>)  *No description*
+* **alarm** (<code>[IAlarm](#aws-cdk-aws-cloudwatch-ialarm)</code>)  *No description*
 
 
 
@@ -457,10 +457,10 @@ __Implemented by__: [Watchful](#cdk-watchful-watchful)
 
 
 ```ts
-addAlarm(alarm: Alarm): void
+addAlarm(alarm: IAlarm): void
 ```
 
-* **alarm** (<code>[Alarm](#aws-cdk-aws-cloudwatch-alarm)</code>)  *No description*
+* **alarm** (<code>[IAlarm](#aws-cdk-aws-cloudwatch-ialarm)</code>)  *No description*
 
 
 

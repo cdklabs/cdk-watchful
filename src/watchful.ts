@@ -71,6 +71,7 @@ export class Watchful extends Construct implements IWatchful {
   private readonly dash?: cloudwatch.Dashboard;
   private readonly alarmTopic?: sns.ITopic;
   private readonly alarmActions: cloudwatch.IAlarmAction[];
+  private createdAlarmCount = 0;
 
   constructor(scope: Construct, id: string, props: WatchfulProps = { }) {
     super(scope, id);
@@ -120,12 +121,15 @@ export class Watchful extends Construct implements IWatchful {
     this.dash?.addWidgets(...widgets);
   }
 
-  public addAlarm(alarm: cloudwatch.Alarm) {
+  public addAlarm(alarm: cloudwatch.IAlarm) {
+    const alarmWithAction = hasAlarmAction(alarm) ? alarm : new cloudwatch.CompositeAlarm(this, `Created Alarm ${this.createdAlarmCount++}`, {
+      alarmRule: cloudwatch.AlarmRule.fromAlarm(alarm, cloudwatch.AlarmState.ALARM),
+    });
     if (this.alarmTopic) {
-      alarm.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
+      alarmWithAction.addAlarmAction(new cloudwatch_actions.SnsAction(this.alarmTopic));
     }
 
-    alarm.addAlarmAction(...this.alarmActions);
+    alarmWithAction.addAlarmAction(...this.alarmActions);
   }
 
   public addSection(title: string, options: SectionOptions = {}) {
@@ -185,3 +189,8 @@ function linkForDashboard(dashboard: cloudwatch.Dashboard) {
   const cfnDashboard = dashboard.node.defaultChild as cloudwatch.CfnDashboard;
   return `https://console.aws.amazon.com/cloudwatch/home?region=${dashboard.stack.region}#dashboards:name=${cfnDashboard.ref}`;
 }
+
+function hasAlarmAction(alarm: cloudwatch.IAlarm): alarm is cloudwatch.IAlarm & { addAlarmAction: (...actions: cloudwatch.IAlarmAction[]) => void } {
+  return 'addAlarmAction' in alarm;
+}
+
