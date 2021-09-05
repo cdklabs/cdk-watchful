@@ -25,6 +25,7 @@
     "publish:npm": "npx projen publish:npm",
     "publish:maven": "npx projen publish:maven",
     "publish:pypi": "npx projen publish:pypi",
+    "publish:nuget": "npx projen publish:nuget",
     "docgen": "npx projen docgen",
     "release": "npx projen release",
     "projen": "npx projen"
@@ -147,15 +148,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "com.github.eladb.watchful",
+        "package": "io.github.cdklabs.watchful",
         "maven": {
-          "groupId": "com.github.eladb",
+          "groupId": "io.github.cdklabs",
           "artifactId": "cdk-watchful"
         }
       },
       "python": {
         "distName": "cdk-watchful",
         "module": "cdk_watchful"
+      },
+      "dotnet": {
+        "namespace": "Cdklabs.CdkWatchful",
+        "packageId": "Cdklabs.CdkWatchful"
       }
     },
     "tsc": {

@@ -232,6 +232,9 @@
     "publish:maven": {
       "name": "publish:maven",
       "description": "Publish this package to Maven Central",
+      "env": {
+        "MAVEN_ENDPOINT": "https://s01.oss.sonatype.org"
+      },
       "requiredEnv": [
         "MAVEN_GPG_PRIVATE_KEY",
         "MAVEN_GPG_PRIVATE_KEY_PASSPHRASE",
@@ -255,6 +258,18 @@
       "steps": [
         {
           "exec": "npx -p jsii-release@latest jsii-release-pypi"
+        }
+      ]
+    },
+    "publish:nuget": {
+      "name": "publish:nuget",
+      "description": "Publish this package to NuGet Gallery",
+      "requiredEnv": [
+        "NUGET_API_KEY"
+      ],
+      "steps": [
+        {
+          "exec": "npx -p jsii-release@latest jsii-release-nuget"
         }
       ]
     },
