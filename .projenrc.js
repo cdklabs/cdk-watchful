@@ -46,19 +46,27 @@ const project = new AwsCdkConstructLibrary({
   // jsii publishing
 
   publishToMaven: {
-    javaPackage: 'com.github.eladb.watchful',
-    mavenGroupId: 'com.github.eladb',
+    javaPackage: 'io.github.cdklabs.watchful',
+    mavenGroupId: 'io.github.cdklabs',
     mavenArtifactId: 'cdk-watchful',
+    mavenEndpoint: 'https://s01.oss.sonatype.org',
   },
 
   publishToPypi: {
     distName: 'cdk-watchful',
     module: 'cdk_watchful',
   },
+
+  publishToNuget: {
+    dotNetNamespace: 'Cdklabs.CdkWatchful',
+    packageId: 'Cdklabs.CdkWatchful',
+  },
+
   autoApproveOptions: {
     allowedUsernames: ['aws-cdk-automation'],
     secret: 'GITHUB_TOKEN',
   },
+
   autoApproveUpgrades: true,
 });
 
