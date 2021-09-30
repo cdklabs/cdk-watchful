@@ -10,7 +10,7 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "lib": [
-      "es2018"
+      "es2019"
     ],
     "module": "CommonJS",
     "newLine": "lf",
@@ -26,7 +26,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "stripInternal": false,
-    "target": "ES2018",
+    "target": "ES2019",
     "composite": false,
     "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo"
   },
