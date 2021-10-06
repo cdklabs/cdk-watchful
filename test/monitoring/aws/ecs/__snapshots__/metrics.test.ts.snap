@@ -38,6 +38,8 @@ MathExpression {
       "label": "minutes",
     },
   },
+  "searchAccount": undefined,
+  "searchRegion": undefined,
   "usingMetrics": Object {
     "http4xx": Metric {
       "account": undefined,
