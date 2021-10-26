@@ -1,4 +1,4 @@
-import { ComparisonOperator } from '@aws-cdk/aws-cloudwatch';
+import { ComparisonOperator, GraphWidget } from '@aws-cdk/aws-cloudwatch';
 import { StateMachine } from '@aws-cdk/aws-stepfunctions';
 import { Construct, Duration } from '@aws-cdk/core';
 import { IWatchful } from './api';
@@ -53,6 +53,14 @@ export class WatchStateMachine extends Construct {
       evaluationPeriods: 1,
       statistic: 'sum',
     });
+
+    this.watchful.addWidgets(new GraphWidget({
+      title: 'Overall Execution/min',
+      width: 12,
+      stacked: false,
+      left: Object.values(execMetrics),
+      leftAnnotations: [{ value: this.metricFailedThreshold, color: '#ff0000', label: 'Execution Failure Alarm' }],
+    }));
   }
 
   private createLinks() {
