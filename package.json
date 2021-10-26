@@ -73,6 +73,7 @@
     "@aws-cdk/aws-sns": "^1.95.2",
     "@aws-cdk/aws-sns-subscriptions": "^1.95.2",
     "@aws-cdk/aws-sqs": "^1.95.2",
+    "@aws-cdk/aws-stepfunctions": "^1.95.2",
     "@aws-cdk/core": "^1.95.2",
     "constructs": "^3.2.27"
   },
@@ -91,6 +92,7 @@
     "@aws-cdk/aws-sns": "^1.95.2",
     "@aws-cdk/aws-sns-subscriptions": "^1.95.2",
     "@aws-cdk/aws-sqs": "^1.95.2",
+    "@aws-cdk/aws-stepfunctions": "^1.95.2",
     "@aws-cdk/core": "^1.95.2"
   },
   "bundledDependencies": [],
