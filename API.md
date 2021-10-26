@@ -9,6 +9,7 @@ Name|Description
 [WatchEcsService](#cdk-watchful-watchecsservice)|*No description*
 [WatchLambdaFunction](#cdk-watchful-watchlambdafunction)|*No description*
 [WatchRdsAurora](#cdk-watchful-watchrdsaurora)|*No description*
+[WatchStateMachine](#cdk-watchful-watchstatemachine)|*No description*
 [Watchful](#cdk-watchful-watchful)|*No description*
 [WatchfulAspect](#cdk-watchful-watchfulaspect)|A CDK aspect that can automatically watch all resources within a scope.
 
@@ -29,6 +30,8 @@ Name|Description
 [WatchLambdaFunctionProps](#cdk-watchful-watchlambdafunctionprops)|*No description*
 [WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)|*No description*
 [WatchRdsAuroraProps](#cdk-watchful-watchrdsauroraprops)|*No description*
+[WatchStateMachineOptions](#cdk-watchful-watchstatemachineoptions)|*No description*
+[WatchStateMachineProps](#cdk-watchful-watchstatemachineprops)|*No description*
 [WatchedOperation](#cdk-watchful-watchedoperation)|An operation (path and method) worth monitoring.
 [WatchfulAspectProps](#cdk-watchful-watchfulaspectprops)|*No description*
 [WatchfulProps](#cdk-watchful-watchfulprops)|*No description*
@@ -186,6 +189,33 @@ new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
   * **dbReplicaLagMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db ReplicaLag. __*Default*__: 0.
   * **dbThroughputMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Throughput. __*Default*__: 0.
   * **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description* 
+  * **title** (<code>string</code>)  *No description* 
+  * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
+
+
+
+
+## class WatchStateMachine  <a id="cdk-watchful-watchstatemachine"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
+__Extends__: [Construct](#aws-cdk-core-construct)
+
+### Initializer
+
+
+
+
+```ts
+new WatchStateMachine(scope: Construct, id: string, props: WatchStateMachineProps)
+```
+
+* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[WatchStateMachineProps](#cdk-watchful-watchstatemachineprops)</code>)  *No description*
+  * **metricFailedThreshold** (<code>number</code>)  Alarm when execution failures reach this threshold over 1 minute. __*Default*__: 1 any execution failure will trigger the alarm
+  * **stateMachine** (<code>[StateMachine](#aws-cdk-aws-stepfunctions-statemachine)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -395,9 +425,26 @@ watchScope(scope: Construct, options?: WatchfulAspectProps): void
   * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
+  * **stateMachine** (<code>boolean</code>)  Automatically watch AWS state machines in the scope. __*Default*__: true
 
 
 
+
+#### watchStateMachine(title, stateMachine, options?) <a id="cdk-watchful-watchful-watchstatemachine"></a>
+
+
+
+```ts
+watchStateMachine(title: string, stateMachine: StateMachine, options?: WatchStateMachineOptions): WatchStateMachine
+```
+
+* **title** (<code>string</code>)  *No description*
+* **stateMachine** (<code>[StateMachine](#aws-cdk-aws-stepfunctions-statemachine)</code>)  *No description*
+* **options** (<code>[WatchStateMachineOptions](#cdk-watchful-watchstatemachineoptions)</code>)  *No description*
+  * **metricFailedThreshold** (<code>number</code>)  Alarm when execution failures reach this threshold over 1 minute. __*Default*__: 1 any execution failure will trigger the alarm
+
+__Returns__:
+* <code>[WatchStateMachine](#cdk-watchful-watchstatemachine)</code>
 
 
 
@@ -424,6 +471,7 @@ new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
   * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
+  * **stateMachine** (<code>boolean</code>)  Automatically watch AWS state machines in the scope. __*Default*__: true
 
 
 ### Methods
@@ -695,6 +743,35 @@ Name | Type | Description
 
 
 
+## struct WatchStateMachineOptions  <a id="cdk-watchful-watchstatemachineoptions"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**metricFailedThreshold**? | <code>number</code> | Alarm when execution failures reach this threshold over 1 minute.<br/>__*Default*__: 1 any execution failure will trigger the alarm
+
+
+
+## struct WatchStateMachineProps  <a id="cdk-watchful-watchstatemachineprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**stateMachine** | <code>[StateMachine](#aws-cdk-aws-stepfunctions-statemachine)</code> | <span></span>
+**title** | <code>string</code> | <span></span>
+**watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
+**metricFailedThreshold**? | <code>number</code> | Alarm when execution failures reach this threshold over 1 minute.<br/>__*Default*__: 1 any execution failure will trigger the alarm
+
+
+
 ## struct WatchedOperation  <a id="cdk-watchful-watchedoperation"></a>
 
 
@@ -724,6 +801,7 @@ Name | Type | Description
 **fargateecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
 **lambda**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
 **rdsaurora**? | <code>boolean</code> | Automatically watch RDS Aurora clusters in the scope.<br/>__*Default*__: true
+**stateMachine**? | <code>boolean</code> | Automatically watch AWS state machines in the scope.<br/>__*Default*__: true
 
 
 
