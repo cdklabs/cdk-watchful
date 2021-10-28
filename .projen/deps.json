@@ -169,6 +169,11 @@
       "type": "peer"
     },
     {
+      "name": "@aws-cdk/aws-stepfunctions",
+      "version": "1.129.0",
+      "type": "peer"
+    },
+    {
       "name": "@aws-cdk/core",
       "version": "1.129.0",
       "type": "peer"
@@ -250,6 +255,11 @@
     },
     {
       "name": "@aws-cdk/aws-sqs",
+      "version": "1.129.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-stepfunctions",
       "version": "1.129.0",
       "type": "runtime"
     },

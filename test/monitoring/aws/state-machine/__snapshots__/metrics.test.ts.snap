@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricExecutions 1`] = `
+Object {
+  "aborted": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "StateMachineArn": "dummy-state-machine-arn",
+    },
+    "label": "Aborted Executions",
+    "metricName": "ExecutionsAborted",
+    "namespace": "AWS/States",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "failed": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "StateMachineArn": "dummy-state-machine-arn",
+    },
+    "label": "Failed Executions",
+    "metricName": "ExecutionsFailed",
+    "namespace": "AWS/States",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "succeeded": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "StateMachineArn": "dummy-state-machine-arn",
+    },
+    "label": "Failed Succeeded",
+    "metricName": "ExecutionsSucceeded",
+    "namespace": "AWS/States",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "throttled": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "StateMachineArn": "dummy-state-machine-arn",
+    },
+    "label": "Executions Throttled",
+    "metricName": "ExecutionThrottled",
+    "namespace": "AWS/States",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "timedOut": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "StateMachineArn": "dummy-state-machine-arn",
+    },
+    "label": "Executions TimedOut",
+    "metricName": "ExecutionsTimedOut",
+    "namespace": "AWS/States",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "total": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "StateMachineArn": "dummy-state-machine-arn",
+    },
+    "label": "Total",
+    "metricName": "ExecutionsStarted",
+    "namespace": "AWS/States",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;

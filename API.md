@@ -432,6 +432,30 @@ public watchSqs(title: string, sqs: IQueue, options?: WatchSqsOptions)
 
 ---
 
+##### `watchStateMachine` <a name="@myhelix/cdk-watchful.Watchful.watchStateMachine"></a>
+
+```typescript
+public watchStateMachine(title: string, stateMachine: StateMachine, options?: WatchStateMachineOptions)
+```
+
+###### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.title"></a>
+
+- *Type:* `string`
+
+---
+
+###### `stateMachine`<sup>Required</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.stateMachine"></a>
+
+- *Type:* [`@aws-cdk/aws-stepfunctions.StateMachine`](#@aws-cdk/aws-stepfunctions.StateMachine)
+
+---
+
+###### `options`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.Watchful.parameter.options"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchStateMachineOptions`](#@myhelix/cdk-watchful.WatchStateMachineOptions)
+
+---
+
 
 
 
@@ -543,6 +567,38 @@ new WatchSqsService(scope: Construct, id: string, props: WatchSqsServiceProps)
 ##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsService.parameter.props"></a>
 
 - *Type:* [`@myhelix/cdk-watchful.WatchSqsServiceProps`](#@myhelix/cdk-watchful.WatchSqsServiceProps)
+
+---
+
+
+
+
+
+### WatchStateMachine <a name="@myhelix/cdk-watchful.WatchStateMachine"></a>
+
+#### Initializer <a name="@myhelix/cdk-watchful.WatchStateMachine.Initializer"></a>
+
+```typescript
+import { WatchStateMachine } from '@myhelix/cdk-watchful'
+
+new WatchStateMachine(scope: Construct, id: string, props: WatchStateMachineProps)
+```
+
+##### `scope`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchStateMachine.parameter.scope"></a>
+
+- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+
+---
+
+##### `id`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchStateMachine.parameter.id"></a>
+
+- *Type:* `string`
+
+---
+
+##### `props`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchStateMachine.parameter.props"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.WatchStateMachineProps`](#@myhelix/cdk-watchful.WatchStateMachineProps)
 
 ---
 
@@ -1071,6 +1127,15 @@ Automatically watch RDS Aurora clusters in the scope.
 
 ---
 
+##### `stateMachine`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchfulAspectProps.property.stateMachine"></a>
+
+- *Type:* `boolean`
+- *Default:* true
+
+Automatically watch AWS state machines in the scope.
+
+---
+
 ### WatchfulProps <a name="@myhelix/cdk-watchful.WatchfulProps"></a>
 
 #### Initializer <a name="[object Object].Initializer"></a>
@@ -1468,6 +1533,62 @@ const watchSqsServiceProps: WatchSqsServiceProps = { ... }
 ---
 
 ##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchSqsServiceProps.property.watchful"></a>
+
+- *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
+
+---
+
+### WatchStateMachineOptions <a name="@myhelix/cdk-watchful.WatchStateMachineOptions"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchStateMachineOptions } from '@myhelix/cdk-watchful'
+
+const watchStateMachineOptions: WatchStateMachineOptions = { ... }
+```
+
+##### `metricFailedThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchStateMachineOptions.property.metricFailedThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 1 any execution failure will trigger the alarm
+
+Alarm when execution failures reach this threshold over 1 minute.
+
+---
+
+### WatchStateMachineProps <a name="@myhelix/cdk-watchful.WatchStateMachineProps"></a>
+
+#### Initializer <a name="[object Object].Initializer"></a>
+
+```typescript
+import { WatchStateMachineProps } from '@myhelix/cdk-watchful'
+
+const watchStateMachineProps: WatchStateMachineProps = { ... }
+```
+
+##### `metricFailedThreshold`<sup>Optional</sup> <a name="@myhelix/cdk-watchful.WatchStateMachineProps.property.metricFailedThreshold"></a>
+
+- *Type:* `number`
+- *Default:* 1 any execution failure will trigger the alarm
+
+Alarm when execution failures reach this threshold over 1 minute.
+
+---
+
+##### `stateMachine`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchStateMachineProps.property.stateMachine"></a>
+
+- *Type:* [`@aws-cdk/aws-stepfunctions.StateMachine`](#@aws-cdk/aws-stepfunctions.StateMachine)
+
+---
+
+##### `title`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchStateMachineProps.property.title"></a>
+
+- *Type:* `string`
+
+---
+
+##### `watchful`<sup>Required</sup> <a name="@myhelix/cdk-watchful.WatchStateMachineProps.property.watchful"></a>
 
 - *Type:* [`@myhelix/cdk-watchful.IWatchful`](#@myhelix/cdk-watchful.IWatchful)
 

@@ -10,6 +10,7 @@ import * as rds from '@aws-cdk/aws-rds';
 import * as sns from '@aws-cdk/aws-sns';
 import * as sns_subscriptions from '@aws-cdk/aws-sns-subscriptions';
 import * as sqs from '@aws-cdk/aws-sqs';
+import * as stepfunctions from '@aws-cdk/aws-stepfunctions';
 import { Construct, CfnOutput, Aspects } from '@aws-cdk/core';
 import { IWatchful, SectionOptions } from './api';
 import { WatchApiGatewayOptions, WatchApiGateway } from './api-gateway';
@@ -20,6 +21,7 @@ import { WatchFirehoseServiceOptions, WatchFirehoseService } from './firehose';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
 import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
 import { WatchSqsOptions, WatchSqsService } from './sqs';
+import { WatchStateMachineOptions, WatchStateMachine } from './state-machine';
 
 export interface WatchfulProps {
   readonly alarmEmail?: string;
@@ -118,6 +120,12 @@ export class Watchful extends Construct implements IWatchful {
   public watchRdsAuroraCluster(title: string, cluster: rds.DatabaseCluster, options: WatchRdsAuroraOptions = {}) {
     return new WatchRdsAurora(this, cluster.node.addr, {
       title, watchful: this, cluster, ...options,
+    });
+  }
+
+  public watchStateMachine(title: string, stateMachine: stepfunctions.StateMachine, options: WatchStateMachineOptions = {}) {
+    return new WatchStateMachine(this, stateMachine.node.uniqueId, {
+      title, watchful: this, stateMachine, ...options,
     });
   }
 

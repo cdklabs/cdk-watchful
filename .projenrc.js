@@ -35,6 +35,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-sns',
     '@aws-cdk/aws-sns-subscriptions',
     '@aws-cdk/aws-sqs',
+    '@aws-cdk/aws-stepfunctions',
     '@aws-cdk/core',
   ],
 
