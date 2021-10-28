@@ -38,8 +38,8 @@ export class WatchStateMachine extends Construct {
 
     this.metrics = new StateMachineMetricFactory();
 
-    this.createExecutionMetrics();
     this.createLinks();
+    this.createExecutionMetrics();
   }
 
   private createExecutionMetrics() {
