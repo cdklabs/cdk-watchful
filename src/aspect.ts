@@ -3,6 +3,7 @@ import * as dynamodb from '@aws-cdk/aws-dynamodb';
 import * as ecs_patterns from '@aws-cdk/aws-ecs-patterns';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds';
+import * as stepfunctions from '@aws-cdk/aws-stepfunctions';
 import { IAspect, IConstruct } from '@aws-cdk/core';
 
 export interface WatchfulAspectProps {
@@ -23,6 +24,12 @@ export interface WatchfulAspectProps {
    * @default true
    */
   readonly lambda?: boolean;
+
+  /**
+   * Automatically watch AWS state machines in the scope.
+   * @default true
+   */
+  readonly stateMachine?: boolean;
 
   /**
    * Automatically watch RDS Aurora clusters in the scope.
@@ -61,6 +68,7 @@ export class WatchfulAspect implements IAspect {
     const watchApiGateway = this.props.apiGateway === undefined ? true : this.props.apiGateway;
     const watchDynamo = this.props.dynamodb === undefined ? true : this.props.dynamodb;
     const watchLambda = this.props.lambda === undefined ? true : this.props.lambda;
+    const watchStateMachine = this.props.stateMachine === undefined ? true : this.props.stateMachine;
     const watchRdsAuroraCluster = this.props.rdsaurora === undefined ? true : this.props.rdsaurora;
     const watchFargateEcs = this.props.fargateecs === undefined ? true : this.props.fargateecs;
     const watchEc2Ecs = this.props.ec2ecs === undefined ? true : this.props.ec2ecs;
@@ -75,6 +83,10 @@ export class WatchfulAspect implements IAspect {
 
     if (watchLambda && node instanceof lambda.Function) {
       this.watchful.watchLambdaFunction(node.node.path, node);
+    }
+
+    if (watchStateMachine && node instanceof stepfunctions.StateMachine) {
+      this.watchful.watchStateMachine(node.node.path, node);
     }
 
     if (watchRdsAuroraCluster && node instanceof rds.DatabaseCluster) {
