@@ -16,7 +16,7 @@ export class StateMachineMetricFactory {
   metricExecutions(stateMachineArn: string) {
     return {
       total: this.metric(Metrics.ExecutionsStarted, stateMachineArn).with({ label: 'Total', statistic: Statistic.SUM }),
-      succeeded: this.metric(Metrics.ExecutionsSucceeded, stateMachineArn).with({ label: 'Failed Succeeded', statistic: Statistic.SUM }),
+      succeeded: this.metric(Metrics.ExecutionsSucceeded, stateMachineArn).with({ label: 'Executions Succeeded', statistic: Statistic.SUM }),
       failed: this.metric(Metrics.ExecutionsFailed, stateMachineArn).with({ label: 'Failed Executions', statistic: Statistic.SUM }),
       aborted: this.metric(Metrics.ExecutionsAborted, stateMachineArn).with({ label: 'Aborted Executions', statistic: Statistic.SUM }),
       throttled: this.metric(Metrics.ExecutionThrottled, stateMachineArn).with({ label: 'Executions Throttled', statistic: Statistic.SUM }),
