@@ -2845,9 +2845,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.896:
-  version "1.3.903"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.903.tgz#e2d3c3809f4ef05fdbe5cc88969dfc94b1bd15b9"
-  integrity sha512-+PnYAyniRRTkNq56cqYDLq9LyklZYk0hqoDy9GpcU11H5QjRmFZVDbxtgHUMK/YzdNTcn1XWP5gb+hFlSCr20g==
+  version "1.3.904"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.904.tgz#52a353994faeb0f2a9fab3606b4e0614d1af7b58"
+  integrity sha512-x5uZWXcVNYkTh4JubD7KSC1VMKz0vZwJUqVwY3ihsW0bst1BXDe494Uqbg3Y0fDGVjJqA8vEeGuvO5foyH2+qw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4936,9 +4936,9 @@ libnpmconfig@^1.2.1:
     ini "^1.3.5"
 
 lines-and-columns@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
-  integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.1.tgz#2710d566aed4caeb6761f4c78d94435f15a939e9"
+  integrity sha512-91ZNKhhjixyL5pQ0a6Chny53eg1Q7usO/eaU6Jjws6BhclcINGKG4zDkA6Wq11pZ6oqvElwBV+rnRTfG7t1Xmw==
 
 load-json-file@^4.0.0:
   version "4.0.0"
@@ -5830,10 +5830,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.34.10:
-  version "0.34.10"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.34.10.tgz#5ab73f3a683dee4b85e49a78997ae7d0325690a4"
-  integrity sha512-jdOvATVXQXCoprHp5sZLrNjO9eVuA3mIcj3PvsrR59l1jQDsd5O4Iuba3VV3Q50KEqciU7YtX/UV+c3NPLt/Cw==
+projen@^0.34.12:
+  version "0.34.12"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.34.12.tgz#35bc8bdbcc498fdfb41f89e0517b9a6009b6151b"
+  integrity sha512-Yagiq79ZC0p1RpHkc68KEidtneHpvn+yzrBK40QShlJ78vQZ2pzK/FN+f0kwoCk0F1OY2TKpGmqtWpe7/daCuA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -6840,9 +6840,9 @@ ts-jest@^27.0.7:
     yargs-parser "20.x"
 
 tsconfig-paths@^3.11.0, tsconfig-paths@^3.9.0:
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.11.0.tgz#954c1fe973da6339c78e06b03ce2e48810b65f36"
-  integrity sha512-7ecdYDnIdmv639mmDwslG6KQg1Z9STTz1j7Gcz0xa+nshh/gKDAHcPxRbWOsA3SPp0tXP2leTcY9Kw+NAkfZzA==
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.12.0.tgz#19769aca6ee8f6a1a341e38c8fa45dd9fb18899b"
+  integrity sha512-e5adrnOYT6zqVnWqZu7i/BQ3BnhzvGbjEjejFXO20lKIKpwTaupkCPgEfv4GZK1IBciJUEhYs3J3p75FdaTFVg==
   dependencies:
     "@types/json5" "^0.0.29"
     json5 "^1.0.1"
