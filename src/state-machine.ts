@@ -45,7 +45,7 @@ export class WatchStateMachine extends Construct {
   private createExecutionMetrics() {
     const execMetrics = this.metrics.metricExecutions(this.stateMachine.stateMachineArn);
     const { failed } = execMetrics;
-    failed.createAlarm(this, 'ExecutionFailures', {
+    const failureAlarm = failed.createAlarm(this, 'ExecutionFailures', {
       alarmDescription: `at ${this.metricFailedThreshold}`,
       threshold: this.metricFailedThreshold,
       period: Duration.minutes(5),
@@ -53,6 +53,8 @@ export class WatchStateMachine extends Construct {
       evaluationPeriods: 1,
       statistic: 'sum',
     });
+
+    this.watchful.addAlarm(failureAlarm);
 
     this.watchful.addWidgets(new GraphWidget({
       title: 'Overall Execution/min',
