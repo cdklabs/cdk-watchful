@@ -4374,13 +4374,13 @@ jest-jasmine2@^27.4.2:
     pretty-format "^27.4.2"
     throat "^6.0.1"
 
-jest-junit@^12:
-  version "12.3.0"
-  resolved "https://registry.yarnpkg.com/jest-junit/-/jest-junit-12.3.0.tgz#ee41a74e439eecdc8965f163f83035cce5998d6d"
-  integrity sha512-+NmE5ogsEjFppEl90GChrk7xgz8xzvF0f+ZT5AnhW6suJC93gvQtmQjfyjDnE0Z2nXJqEkxF0WXlvjG/J+wn/g==
+jest-junit@^13:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/jest-junit/-/jest-junit-13.0.0.tgz#479be347457aad98ae8a5983a23d7c3ec526c9a3"
+  integrity sha512-JSHR+Dhb32FGJaiKkqsB7AR3OqWKtldLd6ZH2+FJ8D4tsweb8Id8zEVReU4+OlrRO1ZluqJLQEETm+Q6/KilBg==
   dependencies:
     mkdirp "^1.0.4"
-    strip-ansi "^5.2.0"
+    strip-ansi "^6.0.1"
     uuid "^8.3.2"
     xml "^1.0.1"
 
@@ -5826,10 +5826,10 @@ progress@^2.0.0, progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.36.0.tgz#e3201f2963a50bb1be16ce37d7a0aa03f5f9907f"
-  integrity sha512-j8bN/CnvuBHDVri2We3lssMHJLWDO2r9lLi2e7RQeYz1UGYu4hu445SEyoi8inkf0D4TZrVFjNk3gLbCslMVBQ==
+projen@^0.36.3:
+  version "0.36.3"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.36.3.tgz#c8c8a25e11215b26785f15f06a4b289ed9944aec"
+  integrity sha512-hxWkaYBXt8CyJnpt0gyIWQr48H7lH2rUkuvv6vUZ48mJ444qWJQt2p0wGimfpVxHE0hCaptwf0r8JTZTrYVQxQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
