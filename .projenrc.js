@@ -1,8 +1,6 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { awscdk } = require('projen');
 
-const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
-
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
   name: 'cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
