@@ -1,23 +1,21 @@
 const { AwsCdkConstructLibrary } = require('projen');
 
+const cdkVersion = '1.135.0';
+
 const project = new AwsCdkConstructLibrary({
   name: '@myhelix/cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
 
-
   authorName: 'Elad Ben-Israel (maintained by myhelix)',
   authorEmail: 'ops@helix.com',
   repository: 'https://github.com/myhelix/cdk-watchful.git',
-  keywords: [
-    'cloudwatch',
-    'monitoring',
-  ],
+  keywords: ['cloudwatch', 'monitoring'],
 
   // creates PRs for projen upgrades
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
-  cdkVersion: '1.134.0',
+  cdkVersion,
   cdkVersionPinning: true,
   cdkDependencies: [
     '@aws-cdk/aws-apigateway',
@@ -39,10 +37,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/core',
   ],
 
-  devDeps: [
-    'aws-sdk',
-  ],
-
+  devDeps: ['aws-sdk'],
 });
 
 project.gitignore.exclude('.env', '.idea');
