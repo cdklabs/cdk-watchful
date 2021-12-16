@@ -11,38 +11,16 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorName: 'Elad Ben-Israel',
   authorEmail: 'elad.benisrael@gmail.com',
   repository: 'https://github.com/eladb/cdk-watchful.git',
-  keywords: [
-    'cloudwatch',
-    'monitoring',
-  ],
+  keywords: ['cloudwatch', 'monitoring'],
 
   catalog: {
     twitter: 'emeshbi',
   },
 
-  cdkVersion: '1.95.2',
-  cdkDependencies: [
-    '@aws-cdk/aws-apigateway',
-    '@aws-cdk/aws-cloudwatch',
-    '@aws-cdk/aws-cloudwatch-actions',
-    '@aws-cdk/aws-dynamodb',
-    '@aws-cdk/aws-ecs',
-    '@aws-cdk/aws-ecs-patterns',
-    '@aws-cdk/aws-elasticloadbalancingv2',
-    '@aws-cdk/aws-events',
-    '@aws-cdk/aws-events-targets',
-    '@aws-cdk/aws-lambda',
-    '@aws-cdk/aws-rds',
-    '@aws-cdk/aws-sns',
-    '@aws-cdk/aws-sns-subscriptions',
-    '@aws-cdk/aws-stepfunctions',
-    '@aws-cdk/aws-sqs',
-    '@aws-cdk/core',
-  ],
+  cdkVersion: '2.2.0',
+  peerDeps: ['aws-cdk-lib'],
 
-  devDeps: [
-    'aws-sdk',
-  ],
+  devDeps: ['aws-sdk'],
 
   // jsii publishing
 
