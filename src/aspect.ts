@@ -1,10 +1,13 @@
-import * as apigw from '@aws-cdk/aws-apigateway';
-import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import * as ecs_patterns from '@aws-cdk/aws-ecs-patterns';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as rds from '@aws-cdk/aws-rds';
-import * as stepfunctions from '@aws-cdk/aws-stepfunctions';
-import { IAspect, IConstruct } from '@aws-cdk/core';
+import { IAspect } from 'aws-cdk-lib';
+import * as apigw from 'aws-cdk-lib/aws-apigateway';
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
+import * as ecs_patterns from 'aws-cdk-lib/aws-ecs-patterns';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as rds from 'aws-cdk-lib/aws-rds';
+import * as stepfunctions from 'aws-cdk-lib/aws-stepfunctions';
+
+import { IConstruct } from 'constructs';
+import { Watchful } from './watchful';
 
 export interface WatchfulAspectProps {
   /**
@@ -48,7 +51,6 @@ export interface WatchfulAspectProps {
    * @default true
    */
   readonly ec2ecs?: boolean;
-
 }
 
 /**
@@ -60,18 +62,26 @@ export class WatchfulAspect implements IAspect {
    * @param watchful The watchful to add those resources to
    * @param props Options
    */
-  constructor(private readonly watchful: Watchful, private readonly props: WatchfulAspectProps = { }) {
-
-  }
+  constructor(
+    private readonly watchful: Watchful,
+    private readonly props: WatchfulAspectProps = {},
+  ) {}
 
   public visit(node: IConstruct): void {
-    const watchApiGateway = this.props.apiGateway === undefined ? true : this.props.apiGateway;
-    const watchDynamo = this.props.dynamodb === undefined ? true : this.props.dynamodb;
-    const watchLambda = this.props.lambda === undefined ? true : this.props.lambda;
-    const watchStateMachine = this.props.stateMachine === undefined ? true : this.props.stateMachine;
-    const watchRdsAuroraCluster = this.props.rdsaurora === undefined ? true : this.props.rdsaurora;
-    const watchFargateEcs = this.props.fargateecs === undefined ? true : this.props.fargateecs;
-    const watchEc2Ecs = this.props.ec2ecs === undefined ? true : this.props.ec2ecs;
+    const watchApiGateway =
+      this.props.apiGateway === undefined ? true : this.props.apiGateway;
+    const watchDynamo =
+      this.props.dynamodb === undefined ? true : this.props.dynamodb;
+    const watchLambda =
+      this.props.lambda === undefined ? true : this.props.lambda;
+    const watchStateMachine =
+      this.props.stateMachine === undefined ? true : this.props.stateMachine;
+    const watchRdsAuroraCluster =
+      this.props.rdsaurora === undefined ? true : this.props.rdsaurora;
+    const watchFargateEcs =
+      this.props.fargateecs === undefined ? true : this.props.fargateecs;
+    const watchEc2Ecs =
+      this.props.ec2ecs === undefined ? true : this.props.ec2ecs;
 
     if (watchApiGateway && node instanceof apigw.RestApi) {
       this.watchful.watchApiGateway(node.node.path, node);
@@ -93,14 +103,22 @@ export class WatchfulAspect implements IAspect {
       this.watchful.watchRdsAuroraCluster(node.node.path, node);
     }
 
-    if (watchFargateEcs && node instanceof ecs_patterns.ApplicationLoadBalancedFargateService) {
-      this.watchful.watchFargateEcs(node.node.path, node.service, node.targetGroup);
+    if (
+      watchFargateEcs &&
+      node instanceof ecs_patterns.ApplicationLoadBalancedFargateService
+    ) {
+      this.watchful.watchFargateEcs(
+        node.node.path,
+        node.service,
+        node.targetGroup,
+      );
     }
 
-    if (watchEc2Ecs && node instanceof ecs_patterns.ApplicationLoadBalancedEc2Service) {
+    if (
+      watchEc2Ecs &&
+      node instanceof ecs_patterns.ApplicationLoadBalancedEc2Service
+    ) {
       this.watchful.watchEc2Ecs(node.node.path, node.service, node.targetGroup);
     }
   }
 }
-
-import { Watchful } from './watchful';

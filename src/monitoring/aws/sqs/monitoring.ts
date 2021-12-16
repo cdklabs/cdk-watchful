@@ -1,10 +1,20 @@
-import { GraphWidget, HorizontalAnnotation, IWidget, Metric } from '@aws-cdk/aws-cloudwatch';
-import { IQueue } from '@aws-cdk/aws-sqs';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
+import {
+  GraphWidget,
+  HorizontalAnnotation,
+  IWidget,
+  Metric,
+} from 'aws-cdk-lib/aws-cloudwatch';
+import { IQueue } from 'aws-cdk-lib/aws-sqs';
 import { Monitoring, MonitoringProps } from '../../../core/monitoring';
-import { CountAxis, SizeBytesAxis, TimeSecondsAxis } from '../../../widget/axis';
+import {
+  CountAxis,
+  SizeBytesAxis,
+  TimeSecondsAxis,
+} from '../../../widget/axis';
 import { CommonWidgetDimensions } from '../../../widget/constant';
 import { SectionWidget, SectionWidgetProps } from '../../../widget/section';
+
 import { SqsMetricFactory } from './metrics';
 
 /**
@@ -35,10 +45,18 @@ export class SqsMonitoring extends Monitoring {
     this.section = this.headerProps(props);
     this.metrics = new SqsMetricFactory();
 
-    this.visibleMessagesMetric = this.metrics.metricApproximateVisibleMessages(props.queue.queueName);
-    this.incomingMessagesMetric = this.metrics.metricIncomingMessages(props.queue.queueName);
-    this.oldestMessageAgeMetric = this.metrics.metricAgeOfOldestMessageInSeconds(props.queue.queueName);
-    this.messageSizeMetric = this.metrics.metricAverageMessageSizeInBytes(props.queue.queueName);
+    this.visibleMessagesMetric = this.metrics.metricApproximateVisibleMessages(
+      props.queue.queueName,
+    );
+    this.incomingMessagesMetric = this.metrics.metricIncomingMessages(
+      props.queue.queueName,
+    );
+    this.oldestMessageAgeMetric = this.metrics.metricAgeOfOldestMessageInSeconds(
+      props.queue.queueName,
+    );
+    this.messageSizeMetric = this.metrics.metricAverageMessageSizeInBytes(
+      props.queue.queueName,
+    );
 
     this.countAnnotations = [];
     this.ageAnnotations = [];
@@ -47,9 +65,18 @@ export class SqsMonitoring extends Monitoring {
   getWidgets(): IWidget[] {
     return [
       this.headerWidget(),
-      this.messageCountWidget(CommonWidgetDimensions.ThirdWidth, CommonWidgetDimensions.DefaultHeight),
-      this.messageAgeWidget(CommonWidgetDimensions.ThirdWidth, CommonWidgetDimensions.DefaultHeight),
-      this.messageSizeWidget(CommonWidgetDimensions.ThirdWidth, CommonWidgetDimensions.DefaultHeight),
+      this.messageCountWidget(
+        CommonWidgetDimensions.ThirdWidth,
+        CommonWidgetDimensions.DefaultHeight,
+      ),
+      this.messageAgeWidget(
+        CommonWidgetDimensions.ThirdWidth,
+        CommonWidgetDimensions.DefaultHeight,
+      ),
+      this.messageSizeWidget(
+        CommonWidgetDimensions.ThirdWidth,
+        CommonWidgetDimensions.DefaultHeight,
+      ),
     ];
   }
 
@@ -98,9 +125,7 @@ export class SqsMonitoring extends Monitoring {
   }
 
   protected headerQuickLinks(props: SqsMonitoringProps) {
-    return [
-      { title: 'Overview', url: this.urlForQueueOverview(props) },
-    ];
+    return [{ title: 'Overview', url: this.urlForQueueOverview(props) }];
   }
 
   protected urlForQueueOverview(props: SqsMonitoringProps) {

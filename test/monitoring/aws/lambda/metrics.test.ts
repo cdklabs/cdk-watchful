@@ -23,9 +23,11 @@ test('snapshot test: metricDuration', () => {
   const metric = unitToTest.metricDuration(DummyFunctionName);
 
   // THEN
-  Object.values(metric).forEach(eachMetric => {
+  Object.values(metric).forEach((eachMetric) => {
     expect(eachMetric.metricName).toStrictEqual('Duration');
-    expect(eachMetric.dimensions).toStrictEqual({ FunctionName: DummyFunctionName });
+    expect(eachMetric.dimensions).toStrictEqual({
+      FunctionName: DummyFunctionName,
+    });
   });
   expect(metric).toMatchSnapshot();
 });

@@ -6,12 +6,12 @@ Watchful is an [AWS CDK](https://github.com/awslabs/aws-cdk) construct library t
 to monitor CDK apps. It automatically synthesizes alarms and dashboards for supported AWS resources.
 
 ```ts
-import { Watchful } from 'cdk-watchful'
+import { Watchful } from "cdk-watchful";
 
-const wf = new Watchful(this, 'watchful');
-wf.watchDynamoTable('My Cute Little Table', myTable);
-wf.watchLambdaFunction('My Function', myFunction);
-wf.watchApiGateway('My REST API', myRestApi);
+const wf = new Watchful(this, "watchful");
+wf.watchDynamoTable("My Cute Little Table", myTable);
+wf.watchLambdaFunction("My Function", myFunction);
+wf.watchApiGateway("My REST API", myRestApi);
 ```
 
 And...
@@ -20,22 +20,30 @@ And...
 
 ## Initialize
 
-To get started, just define a `Watchful` construct in your CDK app. 
+To get started, just define a `Watchful` construct in your CDK app.
 You can initialize using an email address, SQS ARN or both:
 
 ```ts
-import { Watchful } from 'cdk-watchful'
-import * as sns from '@aws-cdk/aws-sns';
-import * as sqs from '@aws-cdk/aws-sqs';
+import { Watchful } from "cdk-watchful";
+import * as sns from "aws-cdk-lib/aws-sns";
+import * as sqs from "aws-cdk-lib/aws-sqs";
 
-const alarmSqs = sqs.Queue.fromQueueArn(this, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
-const alarmSns = sns.Topic.fromTopicArn(this, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic');
+const alarmSqs = sqs.Queue.fromQueueArn(
+  this,
+  "AlarmQueue",
+  "arn:aws:sqs:us-east-1:444455556666:alarm-queue"
+);
+const alarmSns = sns.Topic.fromTopicArn(
+  this,
+  "AlarmTopic",
+  "arn:aws:sns:us-east-2:444455556666:MyTopic"
+);
 
-const wf = new Watchful(this, 'watchful', {
-  alarmEmail: 'your@email.com',
+const wf = new Watchful(this, "watchful", {
+  alarmEmail: "your@email.com",
   alarmSqs,
   alarmSns,
-  alarmActionArns: [ 'arn:aws:sqs:us-east-1:444455556666:alarm-queue' ]
+  alarmActionArns: ["arn:aws:sqs:us-east-1:444455556666:alarm-queue"],
 });
 ```
 
@@ -88,4 +96,3 @@ And then publish as a PR.
 ## License
 
 [Apache 2.0](https://github.com/eladb/cdk-watchful/blob/master/LICENSE)
-

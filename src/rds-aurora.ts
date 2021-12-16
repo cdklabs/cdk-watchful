@@ -1,15 +1,16 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as rds from '@aws-cdk/aws-rds';
-import * as cdk from '@aws-cdk/core';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as rds from 'aws-cdk-lib/aws-rds';
+
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { RdsAuroraMetricFactory } from './monitoring/aws/rds/metrics';
 
 export interface WatchRdsAuroraOptions {
   /**
-     * Threshold for the Cpu Maximum utilization
-     *
-     * @default 80
-     */
+   * Threshold for the Cpu Maximum utilization
+   *
+   * @default 80
+   */
   readonly cpuMaximumThresholdPercent?: number;
 
   /**
@@ -39,7 +40,6 @@ export interface WatchRdsAuroraOptions {
    * @default - 0.
    */
   readonly dbBufferCacheMinimumThreshold?: number;
-
 }
 
 export interface WatchRdsAuroraProps extends WatchRdsAuroraOptions {
@@ -48,13 +48,12 @@ export interface WatchRdsAuroraProps extends WatchRdsAuroraOptions {
   readonly cluster: rds.DatabaseCluster;
 }
 
-export class WatchRdsAurora extends cdk.Construct {
-
+export class WatchRdsAurora extends Construct {
   private readonly watchful: IWatchful;
   private readonly cluster: rds.DatabaseCluster;
   private readonly metrics: RdsAuroraMetricFactory;
 
-  constructor(scope: cdk.Construct, id: string, props: WatchRdsAuroraProps) {
+  constructor(scope: Construct, id: string, props: WatchRdsAuroraProps) {
     super(scope, id);
 
     this.watchful = props.watchful;
@@ -62,18 +61,32 @@ export class WatchRdsAurora extends cdk.Construct {
     this.metrics = new RdsAuroraMetricFactory();
 
     this.watchful.addSection(props.title, {
-      links: [
-        { title: 'AWS RDS Cluster', url: linkForRDS(this.cluster) },
-      ],
+      links: [{ title: 'AWS RDS Cluster', url: linkForRDS(this.cluster) }],
     });
 
-    const { cpuUtilizationMetric, cpuUtilizationAlarm } = this.createCpuUtilizationMonitor(props.cpuMaximumThresholdPercent);
-    const { dbConnectionsMetric, dbConnectionsAlarm } = this.createDbConnectionsMonitor(props.dbConnectionsMaximumThreshold);
-    const { dbReplicaLagMetric, dbReplicaLagAlarm } = this.createDbReplicaLagMonitor(props.dbReplicaLagMaximumThreshold);
-    const { dbBufferCacheHitRatioMetric, dbBufferCacheHitRatioAlarm } = this.createDbBufferCacheMonitor(props.dbBufferCacheMinimumThreshold);
+    const {
+      cpuUtilizationMetric,
+      cpuUtilizationAlarm,
+    } = this.createCpuUtilizationMonitor(props.cpuMaximumThresholdPercent);
+    const {
+      dbConnectionsMetric,
+      dbConnectionsAlarm,
+    } = this.createDbConnectionsMonitor(props.dbConnectionsMaximumThreshold);
+    const {
+      dbReplicaLagMetric,
+      dbReplicaLagAlarm,
+    } = this.createDbReplicaLagMonitor(props.dbReplicaLagMaximumThreshold);
+    const {
+      dbBufferCacheHitRatioMetric,
+      dbBufferCacheHitRatioAlarm,
+    } = this.createDbBufferCacheMonitor(props.dbBufferCacheMinimumThreshold);
 
-    const { dbInsertThroughputMetric, dbUpdateThroughputMetric, dbSelectThroughputMetric, dbDeleteThroughputMetric } =
-        this.createDbDmlThroughputMonitor(props.dbThroughputMaximumThreshold);
+    const {
+      dbInsertThroughputMetric,
+      dbUpdateThroughputMetric,
+      dbSelectThroughputMetric,
+      dbDeleteThroughputMetric,
+    } = this.createDbDmlThroughputMonitor(props.dbThroughputMaximumThreshold);
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
@@ -105,52 +118,84 @@ export class WatchRdsAurora extends cdk.Construct {
       new cloudwatch.GraphWidget({
         title: 'RDS DML Overview',
         width: 24,
-        left: [dbInsertThroughputMetric, dbUpdateThroughputMetric, dbSelectThroughputMetric, dbDeleteThroughputMetric],
+        left: [
+          dbInsertThroughputMetric,
+          dbUpdateThroughputMetric,
+          dbSelectThroughputMetric,
+          dbDeleteThroughputMetric,
+        ],
       }),
     );
   }
 
   private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 80) {
-    const cpuUtilizationMetric = this.metrics.metricCpuUtilization(this.cluster.clusterIdentifier);
-    const cpuUtilizationAlarm = cpuUtilizationMetric.createAlarm(this, 'CpuUtilizationAlarm', {
-      alarmDescription: 'cpuUtilizationAlarm',
-      threshold: cpuMaximumThresholdPercent,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const cpuUtilizationMetric = this.metrics.metricCpuUtilization(
+      this.cluster.clusterIdentifier,
+    );
+    const cpuUtilizationAlarm = cpuUtilizationMetric.createAlarm(
+      this,
+      'CpuUtilizationAlarm',
+      {
+        alarmDescription: 'cpuUtilizationAlarm',
+        threshold: cpuMaximumThresholdPercent,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     return { cpuUtilizationMetric, cpuUtilizationAlarm };
   }
 
   private createDbConnectionsMonitor(dbConnectionsMaximumThreshold = 0) {
-    const dbConnectionsMetric = this.metrics.metricDbConnections(this.cluster.clusterIdentifier);
-    const dbConnectionsAlarm = dbConnectionsMetric.createAlarm(this, 'DbConnectionsAlarm', {
-      alarmDescription: 'dbConnectionsAlarm',
-      threshold: dbConnectionsMaximumThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const dbConnectionsMetric = this.metrics.metricDbConnections(
+      this.cluster.clusterIdentifier,
+    );
+    const dbConnectionsAlarm = dbConnectionsMetric.createAlarm(
+      this,
+      'DbConnectionsAlarm',
+      {
+        alarmDescription: 'dbConnectionsAlarm',
+        threshold: dbConnectionsMaximumThreshold,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     return { dbConnectionsMetric, dbConnectionsAlarm };
   }
 
   private createDbReplicaLagMonitor(dbReplicaLagMaximumThreshold = 0) {
-    const dbReplicaLagMetric = this.metrics.metricReplicaLag(this.cluster.clusterIdentifier);
-    const dbReplicaLagAlarm = dbReplicaLagMetric.createAlarm(this, 'DbReplicaLagAlarm', {
-      alarmDescription: 'dbConnectionsAlarm',
-      threshold: dbReplicaLagMaximumThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const dbReplicaLagMetric = this.metrics.metricReplicaLag(
+      this.cluster.clusterIdentifier,
+    );
+    const dbReplicaLagAlarm = dbReplicaLagMetric.createAlarm(
+      this,
+      'DbReplicaLagAlarm',
+      {
+        alarmDescription: 'dbConnectionsAlarm',
+        threshold: dbReplicaLagMaximumThreshold,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     return { dbReplicaLagMetric, dbReplicaLagAlarm };
   }
 
   private createDbBufferCacheMonitor(dbBufferCacheMinimumThreshold = 0) {
-    const dbBufferCacheHitRatioMetric = this.metrics.metricBufferCacheHitRatio(this.cluster.clusterIdentifier);
-    const dbBufferCacheHitRatioAlarm = dbBufferCacheHitRatioMetric.createAlarm(this, 'DbBufferCacheHitRatioAlarm', {
-      alarmDescription: 'dbConnectionsAlarm',
-      threshold: dbBufferCacheMinimumThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const dbBufferCacheHitRatioMetric = this.metrics.metricBufferCacheHitRatio(
+      this.cluster.clusterIdentifier,
+    );
+    const dbBufferCacheHitRatioAlarm = dbBufferCacheHitRatioMetric.createAlarm(
+      this,
+      'DbBufferCacheHitRatioAlarm',
+      {
+        alarmDescription: 'dbConnectionsAlarm',
+        threshold: dbBufferCacheMinimumThreshold,
+        comparisonOperator: cloudwatch.ComparisonOperator.LESS_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     return { dbBufferCacheHitRatioMetric, dbBufferCacheHitRatioAlarm };
   }
   private createDbDmlThroughputMonitor(dbThroughputMaximumThreshold = 0) {
@@ -163,5 +208,3 @@ export class WatchRdsAurora extends cdk.Construct {
 function linkForRDS(cluster: rds.DatabaseCluster) {
   return `https://console.aws.amazon.com/rds/home?region=${cluster.stack.region}#database:id=${cluster.clusterIdentifier};is-cluster=true`;
 }
-
-

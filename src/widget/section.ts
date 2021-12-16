@@ -1,4 +1,4 @@
-import { TextWidget } from '@aws-cdk/aws-cloudwatch';
+import { TextWidget } from 'aws-cdk-lib/aws-cloudwatch';
 import { QuickLink } from '../api';
 
 /**
@@ -61,13 +61,21 @@ export class SectionWidget extends TextWidget {
     // quick links
 
     if (props.quicklinks && props.quicklinks.length > 0) {
-      lines.push(props.quicklinks.map(link => `[button:${link.title}](${link.url})`).join(' '));
+      lines.push(
+        props.quicklinks
+          .map((link) => `[button:${link.title}](${link.url})`)
+          .join(' '),
+      );
     }
 
     return lines.join('\n\n');
   }
 
   constructor(props: SectionWidgetProps) {
-    super({ width: props.width ?? 24, height: props.height ?? 2, markdown: SectionWidget.toMarkdown(props) });
+    super({
+      width: props.width ?? 24,
+      height: props.height ?? 2,
+      markdown: SectionWidget.toMarkdown(props),
+    });
   }
 }

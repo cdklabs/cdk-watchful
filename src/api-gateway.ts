@@ -1,6 +1,13 @@
-import * as apigw from '@aws-cdk/aws-apigateway';
-import { ComparisonOperator, GraphWidget, HorizontalAnnotation } from '@aws-cdk/aws-cloudwatch';
-import { Construct, Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import * as apigw from 'aws-cdk-lib/aws-apigateway';
+
+import {
+  ComparisonOperator,
+  GraphWidget,
+  HorizontalAnnotation,
+} from 'aws-cdk-lib/aws-cloudwatch';
+
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { ApiGatewayMetricFactory } from './monitoring/aws/api-gateway/metrics';
 
@@ -60,41 +67,56 @@ export class WatchApiGateway extends Construct {
     this.watchful = props.watchful;
     this.metrics = new ApiGatewayMetricFactory();
 
-    const alarmThreshold = props.serverErrorThreshold == null ? 1 : props.serverErrorThreshold;
+    const alarmThreshold =
+      props.serverErrorThreshold == null ? 1 : props.serverErrorThreshold;
     if (alarmThreshold) {
+      this.metrics.metricErrors(this.apiName, this.stage).count5XX.with({
+        statistic: 'sum',
+        period: Duration.minutes(5),
+      });
       this.watchful.addAlarm(
-        this.metrics.metricErrors(this.apiName, this.stage).count5XX
-          .createAlarm(this, '5XXErrorAlarm', {
+        this.metrics
+          .metricErrors(this.apiName, this.stage)
+          .count5XX.createAlarm(this, '5XXErrorAlarm', {
             alarmDescription: `at ${alarmThreshold}`,
             threshold: alarmThreshold,
-            period: Duration.minutes(5),
-            comparisonOperator: ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
+            comparisonOperator:
+              ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
             evaluationPeriods: 1,
-            statistic: 'sum',
           }),
       );
     }
 
     this.watchful.addSection(props.title, {
-      links: [{ title: 'Amazon API Gateway Console', url: linkForApiGateway(props.restApi) }],
+      links: [
+        {
+          title: 'Amazon API Gateway Console',
+          url: linkForApiGateway(props.restApi),
+        },
+      ],
     });
-    [undefined, ...props.watchedOperations || []].forEach(operation =>
+    [undefined, ...(props.watchedOperations || [])].forEach((operation) =>
       this.watchful.addWidgets(
         this.createCallGraphWidget(operation, alarmThreshold),
-        ...props.cacheGraph ? [this.createCacheGraphWidget(operation)] : [],
+        ...(props.cacheGraph ? [this.createCacheGraphWidget(operation)] : []),
         this.createLatencyGraphWidget(operation),
         this.createIntegrationLatencyGraphWidget(operation),
       ),
     );
   }
 
-  private createCallGraphWidget(opts?: WatchedOperation, alarmThreshold?: number) {
+  private createCallGraphWidget(
+    opts?: WatchedOperation,
+    alarmThreshold?: number,
+  ) {
     const leftAnnotations: HorizontalAnnotation[] = alarmThreshold
       ? [{ value: alarmThreshold, color: '#ff0000', label: '5XX Errors Alarm' }]
       : [];
 
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Calls/min`,
+      title: `${
+        opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'
+      } Calls/min`,
       width: 12,
       stacked: false,
       left: [
@@ -108,7 +130,9 @@ export class WatchApiGateway extends Construct {
 
   private createCacheGraphWidget(opts?: WatchedOperation) {
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Cache/min`,
+      title: `${
+        opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'
+      } Cache/min`,
       width: 12,
       stacked: false,
       left: [
@@ -121,19 +145,27 @@ export class WatchApiGateway extends Construct {
 
   private createLatencyGraphWidget(opts?: WatchedOperation) {
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} (1-minute periods)`,
+      title: `${
+        opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'
+      } (1-minute periods)`,
       width: 12,
       stacked: false,
-      left: Object.values(this.metrics.metricLatency(this.apiName, this.stage, opts)),
+      left: Object.values(
+        this.metrics.metricLatency(this.apiName, this.stage, opts),
+      ),
     });
   }
 
   private createIntegrationLatencyGraphWidget(opts?: WatchedOperation) {
     return new GraphWidget({
-      title: `${opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'} Integration (1-minute periods)`,
+      title: `${
+        opts ? `${opts.httpMethod} ${opts.resourcePath}` : 'Overall'
+      } Integration (1-minute periods)`,
       width: 12,
       stacked: false,
-      left: Object.values(this.metrics.metricIntegrationLatency(this.apiName, this.stage, opts)),
+      left: Object.values(
+        this.metrics.metricIntegrationLatency(this.apiName, this.stage, opts),
+      ),
     });
   }
 }

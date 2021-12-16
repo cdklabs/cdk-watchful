@@ -1,4 +1,4 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
 
 export interface IWatchful {
   addSection(title: string, options?: SectionOptions): void;
@@ -14,4 +14,3 @@ export interface QuickLink {
   readonly title: string;
   readonly url: string;
 }
-

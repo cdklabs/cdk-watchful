@@ -1,5 +1,6 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import { Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
+
 
 const enum Metrics {
   SelectThroughput = 'SelectThroughput',
@@ -9,7 +10,7 @@ const enum Metrics {
   BufferCacheHitRatio = 'BufferCacheHitRatio',
   DatabaseConnections = 'DatabaseConnections',
   AuroraReplicaLag = 'AuroraReplicaLag',
-  CPUUtilization = 'CPUUtilization'
+  CPUUtilization = 'CPUUtilization',
 }
 
 const Namespace = 'AWS/RDS';
@@ -20,27 +21,47 @@ const Namespace = 'AWS/RDS';
 export class RdsAuroraMetricFactory {
   metricDmlThroughput(clusterIdentifier: string) {
     return {
-      dbInsertThroughputMetric: this.metric(Metrics.InsertThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
-      dbUpdateThroughputMetric: this.metric(Metrics.UpdateThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
-      dbSelectThroughputMetric: this.metric(Metrics.SelectThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
-      dbDeleteThroughputMetric: this.metric(Metrics.DeleteThroughput, clusterIdentifier).with({ statistic: Statistic.SUM }),
+      dbInsertThroughputMetric: this.metric(
+        Metrics.InsertThroughput,
+        clusterIdentifier,
+      ).with({ statistic: Statistic.SUM }),
+      dbUpdateThroughputMetric: this.metric(
+        Metrics.UpdateThroughput,
+        clusterIdentifier,
+      ).with({ statistic: Statistic.SUM }),
+      dbSelectThroughputMetric: this.metric(
+        Metrics.SelectThroughput,
+        clusterIdentifier,
+      ).with({ statistic: Statistic.SUM }),
+      dbDeleteThroughputMetric: this.metric(
+        Metrics.DeleteThroughput,
+        clusterIdentifier,
+      ).with({ statistic: Statistic.SUM }),
     };
   }
 
   metricBufferCacheHitRatio(clusterIdentifier: string) {
-    return this.metric(Metrics.BufferCacheHitRatio, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
+    return this.metric(Metrics.BufferCacheHitRatio, clusterIdentifier).with({
+      statistic: Statistic.AVERAGE,
+    });
   }
 
   metricDbConnections(clusterIdentifier: string) {
-    return this.metric(Metrics.DatabaseConnections, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
+    return this.metric(Metrics.DatabaseConnections, clusterIdentifier).with({
+      statistic: Statistic.AVERAGE,
+    });
   }
 
   metricReplicaLag(clusterIdentifier: string) {
-    return this.metric(Metrics.AuroraReplicaLag, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
+    return this.metric(Metrics.AuroraReplicaLag, clusterIdentifier).with({
+      statistic: Statistic.AVERAGE,
+    });
   }
 
   metricCpuUtilization(clusterIdentifier: string) {
-    return this.metric(Metrics.CPUUtilization, clusterIdentifier).with({ statistic: Statistic.AVERAGE });
+    return this.metric(Metrics.CPUUtilization, clusterIdentifier).with({
+      statistic: Statistic.AVERAGE,
+    });
   }
 
   protected metric(metric: Metrics, clusterIdentifier: string) {
@@ -49,7 +70,7 @@ export class RdsAuroraMetricFactory {
       namespace: Namespace,
       period: Duration.minutes(5),
       statistic: Statistic.SUM,
-      dimensions: {
+      dimensionsMap: {
         DBClusterIdentifier: clusterIdentifier,
       },
     });

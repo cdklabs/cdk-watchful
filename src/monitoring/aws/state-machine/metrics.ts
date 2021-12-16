@@ -1,13 +1,14 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import { Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
+
 
 const enum Metrics {
   ExecutionsStarted = 'ExecutionsStarted',
   ExecutionsSucceeded = 'ExecutionsSucceeded',
   ExecutionsFailed = 'ExecutionsFailed',
   ExecutionsAborted = 'ExecutionsAborted',
-  ExecutionThrottled ='ExecutionThrottled',
-  ExecutionsTimedOut = 'ExecutionsTimedOut'
+  ExecutionThrottled = 'ExecutionThrottled',
+  ExecutionsTimedOut = 'ExecutionsTimedOut',
 }
 
 const Namespace = 'AWS/States';
@@ -15,12 +16,30 @@ const Namespace = 'AWS/States';
 export class StateMachineMetricFactory {
   metricExecutions(stateMachineArn: string) {
     return {
-      total: this.metric(Metrics.ExecutionsStarted, stateMachineArn).with({ label: 'Total', statistic: Statistic.SUM }),
-      succeeded: this.metric(Metrics.ExecutionsSucceeded, stateMachineArn).with({ label: 'Executions Succeeded', statistic: Statistic.SUM }),
-      failed: this.metric(Metrics.ExecutionsFailed, stateMachineArn).with({ label: 'Failed Executions', statistic: Statistic.SUM }),
-      aborted: this.metric(Metrics.ExecutionsAborted, stateMachineArn).with({ label: 'Aborted Executions', statistic: Statistic.SUM }),
-      throttled: this.metric(Metrics.ExecutionThrottled, stateMachineArn).with({ label: 'Executions Throttled', statistic: Statistic.SUM }),
-      timedOut: this.metric(Metrics.ExecutionsTimedOut, stateMachineArn).with({ label: 'Executions TimedOut', statistic: Statistic.SUM }),
+      total: this.metric(Metrics.ExecutionsStarted, stateMachineArn).with({
+        label: 'Total',
+        statistic: Statistic.SUM,
+      }),
+      succeeded: this.metric(
+        Metrics.ExecutionsSucceeded,
+        stateMachineArn,
+      ).with({ label: 'Executions Succeeded', statistic: Statistic.SUM }),
+      failed: this.metric(Metrics.ExecutionsFailed, stateMachineArn).with({
+        label: 'Failed Executions',
+        statistic: Statistic.SUM,
+      }),
+      aborted: this.metric(Metrics.ExecutionsAborted, stateMachineArn).with({
+        label: 'Aborted Executions',
+        statistic: Statistic.SUM,
+      }),
+      throttled: this.metric(Metrics.ExecutionThrottled, stateMachineArn).with({
+        label: 'Executions Throttled',
+        statistic: Statistic.SUM,
+      }),
+      timedOut: this.metric(Metrics.ExecutionsTimedOut, stateMachineArn).with({
+        label: 'Executions TimedOut',
+        statistic: Statistic.SUM,
+      }),
     };
   }
 
@@ -29,7 +48,7 @@ export class StateMachineMetricFactory {
       metricName: metric,
       namespace: Namespace,
       period: Duration.minutes(1),
-      dimensions: {
+      dimensionsMap: {
         StateMachineArn: stateMachineArn,
       },
     });

@@ -1,17 +1,17 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as ecs from '@aws-cdk/aws-ecs';
-import { ApplicationTargetGroup } from '@aws-cdk/aws-elasticloadbalancingv2';
-import * as cdk from '@aws-cdk/core';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as ecs from 'aws-cdk-lib/aws-ecs';
+
+import { ApplicationTargetGroup } from 'aws-cdk-lib/aws-elasticloadbalancingv2';
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { EcsMetricFactory } from './monitoring/aws/ecs/metrics';
 
-
 export interface WatchEcsServiceOptions {
   /**
-     * Threshold for the Cpu Maximum utilization
-     *
-     * @default 80
-     */
+   * Threshold for the Cpu Maximum utilization
+   *
+   * @default 80
+   */
   readonly cpuMaximumThresholdPercent?: number;
 
   /**
@@ -51,8 +51,7 @@ export interface WatchEcsServiceProps extends WatchEcsServiceOptions {
   readonly targetGroup: ApplicationTargetGroup;
 }
 
-export class WatchEcsService extends cdk.Construct {
-
+export class WatchEcsService extends Construct {
   private readonly watchful: IWatchful;
   private readonly ecsService: any;
   private readonly targetGroup: ApplicationTargetGroup;
@@ -62,7 +61,7 @@ export class WatchEcsService extends cdk.Construct {
   private readonly loadBalancerName: string;
   private readonly metrics: EcsMetricFactory;
 
-  constructor(scope: cdk.Construct, id: string, props: WatchEcsServiceProps) {
+  constructor(scope: Construct, id: string, props: WatchEcsServiceProps) {
     super(scope, id);
 
     this.watchful = props.watchful;
@@ -89,16 +88,39 @@ export class WatchEcsService extends cdk.Construct {
       ],
     });
 
-    const { cpuUtilizationMetric, cpuUtilizationAlarm } = this.createCpuUtilizationMonitor(props.cpuMaximumThresholdPercent);
-    const { memoryUtilizationMetric, memoryUtilizationAlarm } = this.createMemoryUtilizationMonitor(props.memoryMaximumThresholdPercent);
+    const {
+      cpuUtilizationMetric,
+      cpuUtilizationAlarm,
+    } = this.createCpuUtilizationMonitor(props.cpuMaximumThresholdPercent);
+    const {
+      memoryUtilizationMetric,
+      memoryUtilizationAlarm,
+    } = this.createMemoryUtilizationMonitor(
+      props.memoryMaximumThresholdPercent,
+    );
 
-    const { targetResponseTimeMetric, targetResponseTimeAlarm } = this.createTargetResponseTimeMonitor(props.targetResponseTimeThreshold);
-    const { healthyHostsMetric, unhealthyHostsMetric } = this.createHostCountMetrics();
+    const {
+      targetResponseTimeMetric,
+      targetResponseTimeAlarm,
+    } = this.createTargetResponseTimeMonitor(props.targetResponseTimeThreshold);
+    const {
+      healthyHostsMetric,
+      unhealthyHostsMetric,
+    } = this.createHostCountMetrics();
 
-    const { requestsMetric, requestsAlarm } = this.createRequestsMonitor(props.requestsThreshold);
-    const { http2xxMetric, http3xxMetric, http4xxMetric, http5xxMetric } = this.createHttpRequestsMetrics();
-    const { requestsErrorRateMetric, requestsErrorRateAlarm } = this.requestsErrorRate(props.requestsErrorRateThreshold);
-
+    const { requestsMetric, requestsAlarm } = this.createRequestsMonitor(
+      props.requestsThreshold,
+    );
+    const {
+      http2xxMetric,
+      http3xxMetric,
+      http4xxMetric,
+      http5xxMetric,
+    } = this.createHttpRequestsMetrics();
+    const {
+      requestsErrorRateMetric,
+      requestsErrorRateAlarm,
+    } = this.requestsErrorRate(props.requestsErrorRateThreshold);
 
     this.watchful.addWidgets(
       new cloudwatch.GraphWidget({
@@ -156,43 +178,70 @@ export class WatchEcsService extends cdk.Construct {
   }
 
   private createCpuUtilizationMonitor(cpuMaximumThresholdPercent = 0) {
-    const cpuUtilizationMetric = this.metrics.metricCpuUtilizationAverage(this.clusterName, this.serviceName);
-    const cpuUtilizationAlarm = cpuUtilizationMetric.createAlarm(this, 'cpuUtilizationAlarm', {
-      alarmDescription: 'cpuUtilizationAlarm',
-      threshold: cpuMaximumThresholdPercent,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const cpuUtilizationMetric = this.metrics.metricCpuUtilizationAverage(
+      this.clusterName,
+      this.serviceName,
+    );
+    const cpuUtilizationAlarm = cpuUtilizationMetric.createAlarm(
+      this,
+      'cpuUtilizationAlarm',
+      {
+        alarmDescription: 'cpuUtilizationAlarm',
+        threshold: cpuMaximumThresholdPercent,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     this.watchful.addAlarm(cpuUtilizationAlarm);
     return { cpuUtilizationMetric, cpuUtilizationAlarm };
   }
 
   private createMemoryUtilizationMonitor(memoryMaximumThresholdPercent = 0) {
-    const memoryUtilizationMetric = this.metrics.metricMemoryUtilizationAverage(this.clusterName, this.serviceName);
-    const memoryUtilizationAlarm = memoryUtilizationMetric.createAlarm(this, 'memoryUtilizationAlarm', {
-      alarmDescription: 'memoryUtilizationAlarm',
-      threshold: memoryMaximumThresholdPercent,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const memoryUtilizationMetric = this.metrics.metricMemoryUtilizationAverage(
+      this.clusterName,
+      this.serviceName,
+    );
+    const memoryUtilizationAlarm = memoryUtilizationMetric.createAlarm(
+      this,
+      'memoryUtilizationAlarm',
+      {
+        alarmDescription: 'memoryUtilizationAlarm',
+        threshold: memoryMaximumThresholdPercent,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     this.watchful.addAlarm(memoryUtilizationAlarm);
     return { memoryUtilizationMetric, memoryUtilizationAlarm };
   }
 
   private createTargetResponseTimeMonitor(targetResponseTimeThreshold = 0) {
-    const targetResponseTimeMetric = this.metrics.metricTargetResponseTime(this.targetGroupName, this.loadBalancerName).avg;
-    const targetResponseTimeAlarm = targetResponseTimeMetric.createAlarm(this, 'targetResponseTimeAlarm', {
-      alarmDescription: 'targetResponseTimeAlarm',
-      threshold: targetResponseTimeThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const targetResponseTimeMetric = this.metrics.metricTargetResponseTime(
+      this.targetGroupName,
+      this.loadBalancerName,
+    ).avg;
+    const targetResponseTimeAlarm = targetResponseTimeMetric.createAlarm(
+      this,
+      'targetResponseTimeAlarm',
+      {
+        alarmDescription: 'targetResponseTimeAlarm',
+        threshold: targetResponseTimeThreshold,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     this.watchful.addAlarm(targetResponseTimeAlarm);
     return { targetResponseTimeMetric, targetResponseTimeAlarm };
   }
 
   private createRequestsMonitor(requestsThreshold = 0) {
-    const requestsMetric = this.metrics.metricRequestCount(this.targetGroupName, this.loadBalancerName);
+    const requestsMetric = this.metrics.metricRequestCount(
+      this.targetGroupName,
+      this.loadBalancerName,
+    );
     const requestsAlarm = requestsMetric.createAlarm(this, 'requestsAlarm', {
       alarmDescription: 'requestsAlarm',
       threshold: requestsThreshold,
@@ -203,9 +252,11 @@ export class WatchEcsService extends cdk.Construct {
     return { requestsMetric, requestsAlarm };
   }
 
-
   private createHttpRequestsMetrics() {
-    const metrics = this.metrics.metricHttpStatusCodeCount(this.targetGroupName, this.loadBalancerName);
+    const metrics = this.metrics.metricHttpStatusCodeCount(
+      this.targetGroupName,
+      this.loadBalancerName,
+    );
     const http2xxMetric = metrics.count2XX;
     const http3xxMetric = metrics.count3XX;
     const http4xxMetric = metrics.count4XX;
@@ -214,28 +265,38 @@ export class WatchEcsService extends cdk.Construct {
   }
 
   private createHostCountMetrics() {
-    const healthyHostsMetric = this.metrics.metricMinHealthyHostCount(this.targetGroupName, this.loadBalancerName);
-    const unhealthyHostsMetric = this.metrics.metricMaxUnhealthyHostCount(this.targetGroupName, this.loadBalancerName);
+    const healthyHostsMetric = this.metrics.metricMinHealthyHostCount(
+      this.targetGroupName,
+      this.loadBalancerName,
+    );
+    const unhealthyHostsMetric = this.metrics.metricMaxUnhealthyHostCount(
+      this.targetGroupName,
+      this.loadBalancerName,
+    );
     return { healthyHostsMetric, unhealthyHostsMetric };
   }
 
   private requestsErrorRate(requestsErrorRateThreshold = 0) {
-    const requestsErrorRateMetric = this.metrics.metricHttpErrorStatusCodeRate(this.targetGroupName, this.loadBalancerName);
-    const requestsErrorRateAlarm = requestsErrorRateMetric.createAlarm(this, 'requestsErrorRateAlarm', {
-      alarmDescription: 'requestsErrorRateAlarm',
-      threshold: requestsErrorRateThreshold,
-      comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
-      evaluationPeriods: 3,
-    });
+    const requestsErrorRateMetric = this.metrics.metricHttpErrorStatusCodeRate(
+      this.targetGroupName,
+      this.loadBalancerName,
+    );
+    const requestsErrorRateAlarm = requestsErrorRateMetric.createAlarm(
+      this,
+      'requestsErrorRateAlarm',
+      {
+        alarmDescription: 'requestsErrorRateAlarm',
+        threshold: requestsErrorRateThreshold,
+        comparisonOperator:
+          cloudwatch.ComparisonOperator.GREATER_THAN_THRESHOLD,
+        evaluationPeriods: 3,
+      },
+    );
     this.watchful.addAlarm(requestsErrorRateAlarm);
     return { requestsErrorRateMetric, requestsErrorRateAlarm };
   }
-
 }
-
 
 function linkForEcsService(ecsService: any) {
   return `https://console.aws.amazon.com/ecs/home?region=${ecsService.stack.region}#/clusters/${ecsService.cluster.clusterName}/services/${ecsService.serviceName}/details`;
 }
-
-
