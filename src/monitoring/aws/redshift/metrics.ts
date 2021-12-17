@@ -1,5 +1,5 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import { Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
 
 const enum Metrics {
   DatabaseConnections = 'DatabaseConnections',
@@ -50,7 +50,7 @@ export class RedshiftMetricFactory {
       metricName: Metrics.QueryDuration,
       namespace: Namespace,
       period: Duration.minutes(5),
-      dimensions: {
+      dimensionsMap: {
         DBClusterIdentifier: clusterIdentifier,
         latency,
       },
@@ -62,7 +62,7 @@ export class RedshiftMetricFactory {
       metricName: metric,
       namespace: Namespace,
       period: Duration.minutes(5),
-      dimensions: {
+      dimensionsMap: {
         DBClusterIdentifier: clusterIdentifier,
       },
     });

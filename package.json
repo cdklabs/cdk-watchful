@@ -32,12 +32,13 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.95.2",
     "@types/jest": "^27.0.3",
     "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
+    "aws-cdk-lib": "2.2.0",
     "aws-sdk": "^2.1046.0",
+    "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -56,41 +57,8 @@
     "typescript": "^3.9.10"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-apigateway": "^1.95.2",
-    "@aws-cdk/aws-cloudwatch": "^1.95.2",
-    "@aws-cdk/aws-cloudwatch-actions": "^1.95.2",
-    "@aws-cdk/aws-dynamodb": "^1.95.2",
-    "@aws-cdk/aws-ecs": "^1.95.2",
-    "@aws-cdk/aws-ecs-patterns": "^1.95.2",
-    "@aws-cdk/aws-elasticloadbalancingv2": "^1.95.2",
-    "@aws-cdk/aws-events": "^1.95.2",
-    "@aws-cdk/aws-events-targets": "^1.95.2",
-    "@aws-cdk/aws-lambda": "^1.95.2",
-    "@aws-cdk/aws-rds": "^1.95.2",
-    "@aws-cdk/aws-sns": "^1.95.2",
-    "@aws-cdk/aws-sns-subscriptions": "^1.95.2",
-    "@aws-cdk/aws-sqs": "^1.95.2",
-    "@aws-cdk/aws-stepfunctions": "^1.95.2",
-    "@aws-cdk/core": "^1.95.2",
-    "constructs": "^3.2.27"
-  },
-  "dependencies": {
-    "@aws-cdk/aws-apigateway": "^1.95.2",
-    "@aws-cdk/aws-cloudwatch": "^1.95.2",
-    "@aws-cdk/aws-cloudwatch-actions": "^1.95.2",
-    "@aws-cdk/aws-dynamodb": "^1.95.2",
-    "@aws-cdk/aws-ecs": "^1.95.2",
-    "@aws-cdk/aws-ecs-patterns": "^1.95.2",
-    "@aws-cdk/aws-elasticloadbalancingv2": "^1.95.2",
-    "@aws-cdk/aws-events": "^1.95.2",
-    "@aws-cdk/aws-events-targets": "^1.95.2",
-    "@aws-cdk/aws-lambda": "^1.95.2",
-    "@aws-cdk/aws-rds": "^1.95.2",
-    "@aws-cdk/aws-sns": "^1.95.2",
-    "@aws-cdk/aws-sns-subscriptions": "^1.95.2",
-    "@aws-cdk/aws-sqs": "^1.95.2",
-    "@aws-cdk/aws-stepfunctions": "^1.95.2",
-    "@aws-cdk/core": "^1.95.2"
+    "aws-cdk-lib": "^2.2.0",
+    "constructs": "^10.0.5"
   },
   "bundledDependencies": [],
   "keywords": [

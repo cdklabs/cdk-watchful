@@ -1,7 +1,7 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as ecs from '@aws-cdk/aws-ecs';
-import { ApplicationTargetGroup } from '@aws-cdk/aws-elasticloadbalancingv2';
-import * as cdk from '@aws-cdk/core';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as ecs from 'aws-cdk-lib/aws-ecs';
+import { ApplicationTargetGroup } from 'aws-cdk-lib/aws-elasticloadbalancingv2';
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { EcsMetricFactory } from './monitoring/aws/ecs/metrics';
 
@@ -51,7 +51,7 @@ export interface WatchEcsServiceProps extends WatchEcsServiceOptions {
   readonly targetGroup: ApplicationTargetGroup;
 }
 
-export class WatchEcsService extends cdk.Construct {
+export class WatchEcsService extends Construct {
 
   private readonly watchful: IWatchful;
   private readonly ecsService: any;
@@ -62,7 +62,7 @@ export class WatchEcsService extends cdk.Construct {
   private readonly loadBalancerName: string;
   private readonly metrics: EcsMetricFactory;
 
-  constructor(scope: cdk.Construct, id: string, props: WatchEcsServiceProps) {
+  constructor(scope: Construct, id: string, props: WatchEcsServiceProps) {
     super(scope, id);
 
     this.watchful = props.watchful;

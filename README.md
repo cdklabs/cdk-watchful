@@ -25,8 +25,8 @@ You can initialize using an email address, SQS ARN or both:
 
 ```ts
 import { Watchful } from 'cdk-watchful'
-import * as sns from '@aws-cdk/aws-sns';
-import * as sqs from '@aws-cdk/aws-sqs';
+import * as sns from 'aws-cdk-lib/aws-sns';
+import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 const alarmSqs = sqs.Queue.fromQueueArn(this, 'AlarmQueue', 'arn:aws:sqs:us-east-1:444455556666:alarm-queue')
 const alarmSns = sns.Topic.fromTopicArn(this, 'AlarmTopic', 'arn:aws:sns:us-east-2:444455556666:MyTopic');

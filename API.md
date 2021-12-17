@@ -49,8 +49,8 @@ Name|Description
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -61,13 +61,13 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new WatchApiGateway(scope: Construct, id: string, props: WatchApiGatewayProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchApiGatewayProps](#cdk-watchful-watchapigatewayprops)</code>)  *No description*
   * **cacheGraph** (<code>boolean</code>)  Include a dashboard graph for caching metrics. __*Default*__: false
   * **serverErrorThreshold** (<code>number</code>)  Alarm when 5XX errors reach this threshold over 5 minutes. __*Default*__: 1 any 5xx HTTP response will trigger the alarm
   * **watchedOperations** (<code>Array<[WatchedOperation](#cdk-watchful-watchedoperation)></code>)  A list of operations to monitor separately. __*Default*__: only API-level monitoring is added.
-  * **restApi** (<code>[RestApi](#aws-cdk-aws-apigateway-restapi)</code>)  The API Gateway REST API that is being watched. 
+  * **restApi** (<code>[aws_apigateway.RestApi](#aws-cdk-lib-aws-apigateway-restapi)</code>)  The API Gateway REST API that is being watched. 
   * **title** (<code>string</code>)  The title of this section. 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  The Watchful instance to add widgets into. 
 
@@ -78,8 +78,8 @@ new WatchApiGateway(scope: Construct, id: string, props: WatchApiGatewayProps)
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -90,12 +90,12 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new WatchDynamoTable(scope: Construct, id: string, props: WatchDynamoTableProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchDynamoTableProps](#cdk-watchful-watchdynamotableprops)</code>)  *No description*
   * **readCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
   * **writeCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
-  * **table** (<code>[Table](#aws-cdk-aws-dynamodb-table)</code>)  *No description* 
+  * **table** (<code>[aws_dynamodb.Table](#aws-cdk-lib-aws-dynamodb-table)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -106,8 +106,8 @@ new WatchDynamoTable(scope: Construct, id: string, props: WatchDynamoTableProps)
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -118,7 +118,7 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchEcsServiceProps](#cdk-watchful-watchecsserviceprops)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
@@ -126,11 +126,11 @@ new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
   * **requestsErrorRateThreshold** (<code>number</code>)  Threshold for the Number of Request Errors. __*Default*__: 0.
   * **requestsThreshold** (<code>number</code>)  Threshold for the Number of Requests. __*Default*__: 0.
   * **targetResponseTimeThreshold** (<code>number</code>)  Threshold for the Target Response Time. __*Default*__: 0.
-  * **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description* 
+  * **targetGroup** (<code>[aws_elasticloadbalancingv2.ApplicationTargetGroup](#aws-cdk-lib-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
-  * **ec2Service** (<code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code>)  *No description* __*Optional*__
-  * **fargateService** (<code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code>)  *No description* __*Optional*__
+  * **ec2Service** (<code>[aws_ecs.Ec2Service](#aws-cdk-lib-aws-ecs-ec2service)</code>)  *No description* __*Optional*__
+  * **fargateService** (<code>[aws_ecs.FargateService](#aws-cdk-lib-aws-ecs-fargateservice)</code>)  *No description* __*Optional*__
 
 
 
@@ -139,8 +139,8 @@ new WatchEcsService(scope: Construct, id: string, props: WatchEcsServiceProps)
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -151,13 +151,13 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunctionProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchLambdaFunctionProps](#cdk-watchful-watchlambdafunctionprops)</code>)  *No description*
   * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
   * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
-  * **fn** (<code>[Function](#aws-cdk-aws-lambda-function)</code>)  *No description* 
+  * **fn** (<code>[aws_lambda.Function](#aws-cdk-lib-aws-lambda-function)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -168,8 +168,8 @@ new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunction
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -180,7 +180,7 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchRdsAuroraProps](#cdk-watchful-watchrdsauroraprops)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
@@ -188,7 +188,7 @@ new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
   * **dbConnectionsMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Connections. __*Default*__: 0.
   * **dbReplicaLagMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db ReplicaLag. __*Default*__: 0.
   * **dbThroughputMaximumThreshold** (<code>number</code>)  Threshold for the Maximum Db Throughput. __*Default*__: 0.
-  * **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description* 
+  * **cluster** (<code>[aws_rds.DatabaseCluster](#aws-cdk-lib-aws-rds-databasecluster)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -199,8 +199,8 @@ new WatchRdsAurora(scope: Construct, id: string, props: WatchRdsAuroraProps)
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -211,11 +211,11 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new WatchStateMachine(scope: Construct, id: string, props: WatchStateMachineProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchStateMachineProps](#cdk-watchful-watchstatemachineprops)</code>)  *No description*
   * **metricFailedThreshold** (<code>number</code>)  Alarm when execution failures reach this threshold over 1 minute. __*Default*__: 1 any execution failure will trigger the alarm
-  * **stateMachine** (<code>[StateMachine](#aws-cdk-aws-stepfunctions-statemachine)</code>)  *No description* 
+  * **stateMachine** (<code>[aws_stepfunctions.StateMachine](#aws-cdk-lib-aws-stepfunctions-statemachine)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -226,8 +226,8 @@ new WatchStateMachine(scope: Construct, id: string, props: WatchStateMachineProp
 
 
 
-__Implements__: [IConstruct](#constructs-iconstruct), [IConstruct](#aws-cdk-core-iconstruct), [IConstruct](#constructs-iconstruct), [IDependable](#aws-cdk-core-idependable), [IWatchful](#cdk-watchful-iwatchful)
-__Extends__: [Construct](#aws-cdk-core-construct)
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable), [IWatchful](#cdk-watchful-iwatchful)
+__Extends__: [Construct](#constructs-construct)
 
 ### Initializer
 
@@ -238,14 +238,14 @@ __Extends__: [Construct](#aws-cdk-core-construct)
 new Watchful(scope: Construct, id: string, props?: WatchfulProps)
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[WatchfulProps](#cdk-watchful-watchfulprops)</code>)  *No description*
   * **alarmActionArns** (<code>Array<string></code>)  ARNs of actions to perform when alarms go off. __*Default*__: []  You can use `alarmActions` instead as a strongly-typed alternative.
-  * **alarmActions** (<code>Array<[IAlarmAction](#aws-cdk-aws-cloudwatch-ialarmaction)></code>)  CloudWatch alarm actions to perform when alarms go off. __*Optional*__
+  * **alarmActions** (<code>Array<[aws_cloudwatch.IAlarmAction](#aws-cdk-lib-aws-cloudwatch-ialarmaction)></code>)  CloudWatch alarm actions to perform when alarms go off. __*Optional*__
   * **alarmEmail** (<code>string</code>)  Email address to send alarms to. __*Default*__: alarms are not sent to an email recipient.
-  * **alarmSns** (<code>[ITopic](#aws-cdk-aws-sns-itopic)</code>)  SNS topic to send alarms to. __*Default*__: alarms are not sent to an SNS Topic.
-  * **alarmSqs** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  SQS queue to send alarms to. __*Default*__: alarms are not sent to an SQS queue.
+  * **alarmSns** (<code>[aws_sns.ITopic](#aws-cdk-lib-aws-sns-itopic)</code>)  SNS topic to send alarms to. __*Default*__: alarms are not sent to an SNS Topic.
+  * **alarmSqs** (<code>[aws_sqs.IQueue](#aws-cdk-lib-aws-sqs-iqueue)</code>)  SQS queue to send alarms to. __*Default*__: alarms are not sent to an SQS queue.
   * **dashboard** (<code>boolean</code>)  Whether to generate CloudWatch dashboards. __*Default*__: true
   * **dashboardName** (<code>string</code>)  The name of the CloudWatch dashboard generated by Watchful. __*Default*__: auto-generated
 
@@ -261,7 +261,7 @@ new Watchful(scope: Construct, id: string, props?: WatchfulProps)
 addAlarm(alarm: IAlarm): void
 ```
 
-* **alarm** (<code>[IAlarm](#aws-cdk-aws-cloudwatch-ialarm)</code>)  *No description*
+* **alarm** (<code>[aws_cloudwatch.IAlarm](#aws-cdk-lib-aws-cloudwatch-ialarm)</code>)  *No description*
 
 
 
@@ -289,7 +289,7 @@ addSection(title: string, options?: SectionOptions): void
 addWidgets(...widgets: IWidget[]): void
 ```
 
-* **widgets** (<code>[IWidget](#aws-cdk-aws-cloudwatch-iwidget)</code>)  *No description*
+* **widgets** (<code>[aws_cloudwatch.IWidget](#aws-cdk-lib-aws-cloudwatch-iwidget)</code>)  *No description*
 
 
 
@@ -303,7 +303,7 @@ watchApiGateway(title: string, restApi: RestApi, options?: WatchApiGatewayOption
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **restApi** (<code>[RestApi](#aws-cdk-aws-apigateway-restapi)</code>)  *No description*
+* **restApi** (<code>[aws_apigateway.RestApi](#aws-cdk-lib-aws-apigateway-restapi)</code>)  *No description*
 * **options** (<code>[WatchApiGatewayOptions](#cdk-watchful-watchapigatewayoptions)</code>)  *No description*
   * **cacheGraph** (<code>boolean</code>)  Include a dashboard graph for caching metrics. __*Default*__: false
   * **serverErrorThreshold** (<code>number</code>)  Alarm when 5XX errors reach this threshold over 5 minutes. __*Default*__: 1 any 5xx HTTP response will trigger the alarm
@@ -321,7 +321,7 @@ watchDynamoTable(title: string, table: Table, options?: WatchDynamoTableOptions)
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **table** (<code>[Table](#aws-cdk-aws-dynamodb-table)</code>)  *No description*
+* **table** (<code>[aws_dynamodb.Table](#aws-cdk-lib-aws-dynamodb-table)</code>)  *No description*
 * **options** (<code>[WatchDynamoTableOptions](#cdk-watchful-watchdynamotableoptions)</code>)  *No description*
   * **readCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
   * **writeCapacityThresholdPercent** (<code>number</code>)  Threshold for read capacity alarm (percentage). __*Default*__: 80
@@ -338,8 +338,8 @@ watchEc2Ecs(title: string, ec2Service: Ec2Service, targetGroup: ApplicationTarge
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **ec2Service** (<code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code>)  *No description*
-* **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
+* **ec2Service** (<code>[aws_ecs.Ec2Service](#aws-cdk-lib-aws-ecs-ec2service)</code>)  *No description*
+* **targetGroup** (<code>[aws_elasticloadbalancingv2.ApplicationTargetGroup](#aws-cdk-lib-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
 * **options** (<code>[WatchEcsServiceOptions](#cdk-watchful-watchecsserviceoptions)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
   * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
@@ -359,8 +359,8 @@ watchFargateEcs(title: string, fargateService: FargateService, targetGroup: Appl
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **fargateService** (<code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code>)  *No description*
-* **targetGroup** (<code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
+* **fargateService** (<code>[aws_ecs.FargateService](#aws-cdk-lib-aws-ecs-fargateservice)</code>)  *No description*
+* **targetGroup** (<code>[aws_elasticloadbalancingv2.ApplicationTargetGroup](#aws-cdk-lib-aws-elasticloadbalancingv2-applicationtargetgroup)</code>)  *No description*
 * **options** (<code>[WatchEcsServiceOptions](#cdk-watchful-watchecsserviceoptions)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
   * **memoryMaximumThresholdPercent** (<code>number</code>)  Threshold for the Memory Maximum utilization. __*Default*__: 0.
@@ -380,7 +380,7 @@ watchLambdaFunction(title: string, fn: Function, options?: WatchLambdaFunctionOp
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **fn** (<code>[Function](#aws-cdk-aws-lambda-function)</code>)  *No description*
+* **fn** (<code>[aws_lambda.Function](#aws-cdk-lib-aws-lambda-function)</code>)  *No description*
 * **options** (<code>[WatchLambdaFunctionOptions](#cdk-watchful-watchlambdafunctionoptions)</code>)  *No description*
   * **durationThresholdPercent** (<code>number</code>)  Threshold for the duration alarm as percentage of the function's timeout value. __*Default*__: 80
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
@@ -398,7 +398,7 @@ watchRdsAuroraCluster(title: string, cluster: DatabaseCluster, options?: WatchRd
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **cluster** (<code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code>)  *No description*
+* **cluster** (<code>[aws_rds.DatabaseCluster](#aws-cdk-lib-aws-rds-databasecluster)</code>)  *No description*
 * **options** (<code>[WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)</code>)  *No description*
   * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
   * **dbBufferCacheMinimumThreshold** (<code>number</code>)  Threshold for the Minimum Db Buffer Cache. __*Default*__: 0.
@@ -417,7 +417,7 @@ __Returns__:
 watchScope(scope: Construct, options?: WatchfulAspectProps): void
 ```
 
-* **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
 * **options** (<code>[WatchfulAspectProps](#cdk-watchful-watchfulaspectprops)</code>)  *No description*
   * **apiGateway** (<code>boolean</code>)  Automatically watch API Gateway APIs in the scope. __*Default*__: true
   * **dynamodb** (<code>boolean</code>)  Automatically watch all Amazon DynamoDB tables in the scope. __*Default*__: true
@@ -439,7 +439,7 @@ watchStateMachine(title: string, stateMachine: StateMachine, options?: WatchStat
 ```
 
 * **title** (<code>string</code>)  *No description*
-* **stateMachine** (<code>[StateMachine](#aws-cdk-aws-stepfunctions-statemachine)</code>)  *No description*
+* **stateMachine** (<code>[aws_stepfunctions.StateMachine](#aws-cdk-lib-aws-stepfunctions-statemachine)</code>)  *No description*
 * **options** (<code>[WatchStateMachineOptions](#cdk-watchful-watchstatemachineoptions)</code>)  *No description*
   * **metricFailedThreshold** (<code>number</code>)  Alarm when execution failures reach this threshold over 1 minute. __*Default*__: 1 any execution failure will trigger the alarm
 
@@ -452,7 +452,7 @@ __Returns__:
 
 A CDK aspect that can automatically watch all resources within a scope.
 
-__Implements__: [IAspect](#aws-cdk-core-iaspect)
+__Implements__: [IAspect](#aws-cdk-lib-iaspect)
 
 ### Initializer
 
@@ -485,7 +485,7 @@ All aspects can visit an IConstruct.
 visit(node: IConstruct): void
 ```
 
-* **node** (<code>[IConstruct](#aws-cdk-core-iconstruct)</code>)  *No description*
+* **node** (<code>[IConstruct](#constructs-iconstruct)</code>)  *No description*
 
 
 
@@ -508,7 +508,7 @@ __Implemented by__: [Watchful](#cdk-watchful-watchful)
 addAlarm(alarm: IAlarm): void
 ```
 
-* **alarm** (<code>[IAlarm](#aws-cdk-aws-cloudwatch-ialarm)</code>)  *No description*
+* **alarm** (<code>[aws_cloudwatch.IAlarm](#aws-cdk-lib-aws-cloudwatch-ialarm)</code>)  *No description*
 
 
 
@@ -536,7 +536,7 @@ addSection(title: string, options?: SectionOptions): void
 addWidgets(...widgets: IWidget[]): void
 ```
 
-* **widgets** (<code>[IWidget](#aws-cdk-aws-cloudwatch-iwidget)</code>)  *No description*
+* **widgets** (<code>[aws_cloudwatch.IWidget](#aws-cdk-lib-aws-cloudwatch-iwidget)</code>)  *No description*
 
 
 
@@ -594,7 +594,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**restApi** | <code>[RestApi](#aws-cdk-aws-apigateway-restapi)</code> | The API Gateway REST API that is being watched.
+**restApi** | <code>[aws_apigateway.RestApi](#aws-cdk-lib-aws-apigateway-restapi)</code> | The API Gateway REST API that is being watched.
 **title** | <code>string</code> | The title of this section.
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | The Watchful instance to add widgets into.
 **cacheGraph**? | <code>boolean</code> | Include a dashboard graph for caching metrics.<br/>__*Default*__: false
@@ -626,7 +626,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**table** | <code>[Table](#aws-cdk-aws-dynamodb-table)</code> | <span></span>
+**table** | <code>[aws_dynamodb.Table](#aws-cdk-lib-aws-dynamodb-table)</code> | <span></span>
 **title** | <code>string</code> | <span></span>
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
 **readCapacityThresholdPercent**? | <code>number</code> | Threshold for read capacity alarm (percentage).<br/>__*Default*__: 80
@@ -660,12 +660,12 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**targetGroup** | <code>[ApplicationTargetGroup](#aws-cdk-aws-elasticloadbalancingv2-applicationtargetgroup)</code> | <span></span>
+**targetGroup** | <code>[aws_elasticloadbalancingv2.ApplicationTargetGroup](#aws-cdk-lib-aws-elasticloadbalancingv2-applicationtargetgroup)</code> | <span></span>
 **title** | <code>string</code> | <span></span>
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
 **cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
-**ec2Service**? | <code>[Ec2Service](#aws-cdk-aws-ecs-ec2service)</code> | __*Optional*__
-**fargateService**? | <code>[FargateService](#aws-cdk-aws-ecs-fargateservice)</code> | __*Optional*__
+**ec2Service**? | <code>[aws_ecs.Ec2Service](#aws-cdk-lib-aws-ecs-ec2service)</code> | __*Optional*__
+**fargateService**? | <code>[aws_ecs.FargateService](#aws-cdk-lib-aws-ecs-fargateservice)</code> | __*Optional*__
 **memoryMaximumThresholdPercent**? | <code>number</code> | Threshold for the Memory Maximum utilization.<br/>__*Default*__: 0.
 **requestsErrorRateThreshold**? | <code>number</code> | Threshold for the Number of Request Errors.<br/>__*Default*__: 0.
 **requestsThreshold**? | <code>number</code> | Threshold for the Number of Requests.<br/>__*Default*__: 0.
@@ -697,7 +697,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**fn** | <code>[Function](#aws-cdk-aws-lambda-function)</code> | <span></span>
+**fn** | <code>[aws_lambda.Function](#aws-cdk-lib-aws-lambda-function)</code> | <span></span>
 **title** | <code>string</code> | <span></span>
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
 **durationThresholdPercent**? | <code>number</code> | Threshold for the duration alarm as percentage of the function's timeout value.<br/>__*Default*__: 80
@@ -732,7 +732,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**cluster** | <code>[DatabaseCluster](#aws-cdk-aws-rds-databasecluster)</code> | <span></span>
+**cluster** | <code>[aws_rds.DatabaseCluster](#aws-cdk-lib-aws-rds-databasecluster)</code> | <span></span>
 **title** | <code>string</code> | <span></span>
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
 **cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
@@ -765,7 +765,7 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**stateMachine** | <code>[StateMachine](#aws-cdk-aws-stepfunctions-statemachine)</code> | <span></span>
+**stateMachine** | <code>[aws_stepfunctions.StateMachine](#aws-cdk-lib-aws-stepfunctions-statemachine)</code> | <span></span>
 **title** | <code>string</code> | <span></span>
 **watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
 **metricFailedThreshold**? | <code>number</code> | Alarm when execution failures reach this threshold over 1 minute.<br/>__*Default*__: 1 any execution failure will trigger the alarm
@@ -815,10 +815,10 @@ Name | Type | Description
 Name | Type | Description 
 -----|------|-------------
 **alarmActionArns**? | <code>Array<string></code> | ARNs of actions to perform when alarms go off.<br/>__*Default*__: []  You can use `alarmActions` instead as a strongly-typed alternative.
-**alarmActions**? | <code>Array<[IAlarmAction](#aws-cdk-aws-cloudwatch-ialarmaction)></code> | CloudWatch alarm actions to perform when alarms go off.<br/>__*Optional*__
+**alarmActions**? | <code>Array<[aws_cloudwatch.IAlarmAction](#aws-cdk-lib-aws-cloudwatch-ialarmaction)></code> | CloudWatch alarm actions to perform when alarms go off.<br/>__*Optional*__
 **alarmEmail**? | <code>string</code> | Email address to send alarms to.<br/>__*Default*__: alarms are not sent to an email recipient.
-**alarmSns**? | <code>[ITopic](#aws-cdk-aws-sns-itopic)</code> | SNS topic to send alarms to.<br/>__*Default*__: alarms are not sent to an SNS Topic.
-**alarmSqs**? | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | SQS queue to send alarms to.<br/>__*Default*__: alarms are not sent to an SQS queue.
+**alarmSns**? | <code>[aws_sns.ITopic](#aws-cdk-lib-aws-sns-itopic)</code> | SNS topic to send alarms to.<br/>__*Default*__: alarms are not sent to an SNS Topic.
+**alarmSqs**? | <code>[aws_sqs.IQueue](#aws-cdk-lib-aws-sqs-iqueue)</code> | SQS queue to send alarms to.<br/>__*Default*__: alarms are not sent to an SQS queue.
 **dashboard**? | <code>boolean</code> | Whether to generate CloudWatch dashboards.<br/>__*Default*__: true
 **dashboardName**? | <code>string</code> | The name of the CloudWatch dashboard generated by Watchful.<br/>__*Default*__: auto-generated
 

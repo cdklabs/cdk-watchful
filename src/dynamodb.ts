@@ -1,6 +1,7 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import { Construct, Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { DynamoDbMetricFactory } from './monitoring/aws/dynamodb/metrics';
 
@@ -135,13 +136,15 @@ export class WatchDynamoTable extends Construct {
   private createDynamoCapacityAlarm(type: string, metric: cloudwatch.Metric, provisioned: number, percent: number = DEFAULT_PERCENT) {
     const periodMinutes = 5;
     const threshold = calculateUnits(provisioned, percent, Duration.minutes(periodMinutes));
+    metric.with({
+      statistic: 'sum',
+      period: Duration.minutes(periodMinutes),
+    });
     const alarm = metric.createAlarm(this, `CapacityAlarm:${type}`, {
       alarmDescription: `at ${threshold}% of ${type} capacity`,
       threshold,
-      period: Duration.minutes(periodMinutes),
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
       evaluationPeriods: 1,
-      statistic: 'sum',
     });
     return alarm;
   }

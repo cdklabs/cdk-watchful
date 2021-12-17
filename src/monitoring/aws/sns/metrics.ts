@@ -1,5 +1,5 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import { Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
 
 const enum Metrics {
   NumberOfMessagesPublished = 'NumberOfMessagesPublished',
@@ -32,7 +32,7 @@ export class SnsMetricFactory {
       metricName: metric,
       namespace: Namespace,
       period: Duration.minutes(5),
-      dimensions: {
+      dimensionsMap: {
         TopicName: topicName,
       },
     });

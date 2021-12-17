@@ -1,11 +1,12 @@
-import { Stack, Construct, StackProps, App, Duration } from '@aws-cdk/core';
+import { Stack, StackProps, App, Duration } from 'aws-cdk-lib';
+import {Construct} from 'constructs'
 import { Watchful } from '../src';
-import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import * as events from '@aws-cdk/aws-events';
-import * as sns from '@aws-cdk/aws-sns';
-import * as sqs from '@aws-cdk/aws-sqs';
-import * as events_targets from '@aws-cdk/aws-events-targets';
-import * as lambda from '@aws-cdk/aws-lambda';
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
+import * as events from 'aws-cdk-lib/aws-events';
+import * as sns from 'aws-cdk-lib/aws-sns';
+import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as events_targets from 'aws-cdk-lib/aws-events-targets';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as path from 'path';
 
 class TestStack extends Stack {
@@ -64,7 +65,7 @@ class TrafficDriver extends Construct {
     }
 
     this.fn = new lambda.Function(this, 'LambdaFunction', {
-      code: lambda.Code.asset(path.join(__dirname, 'lambda')),
+      code: lambda.Code.fromAsset(path.join(__dirname, 'lambda')),
       runtime: lambda.Runtime.NODEJS_10_X,
       handler: 'index.handler',
       environment: {

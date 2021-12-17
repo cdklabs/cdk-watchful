@@ -1,6 +1,6 @@
-import { GraphWidget, HorizontalAnnotation, IWidget, Metric } from '@aws-cdk/aws-cloudwatch';
-import { IQueue } from '@aws-cdk/aws-sqs';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
+import { GraphWidget, HorizontalAnnotation, IWidget, Metric } from 'aws-cdk-lib/aws-cloudwatch';
+import { IQueue } from 'aws-cdk-lib/aws-sqs';
 import { Monitoring, MonitoringProps } from '../../../core/monitoring';
 import { CountAxis, SizeBytesAxis, TimeSecondsAxis } from '../../../widget/axis';
 import { CommonWidgetDimensions } from '../../../widget/constant';

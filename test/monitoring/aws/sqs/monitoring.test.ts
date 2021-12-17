@@ -1,5 +1,5 @@
-import { Queue } from '@aws-cdk/aws-sqs';
-import { Stack } from '@aws-cdk/core';
+import { Stack } from 'aws-cdk-lib';
+import { Queue } from 'aws-cdk-lib/aws-sqs';
 import { SqsMonitoring } from '../../../../src/monitoring/aws/sqs/monitoring';
 
 test('snapshot test', () => {

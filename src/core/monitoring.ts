@@ -1,4 +1,4 @@
-import { IWidget } from '@aws-cdk/aws-cloudwatch';
+import { IWidget } from 'aws-cdk-lib/aws-cloudwatch';
 
 /**
  * Base class for monitoring props.

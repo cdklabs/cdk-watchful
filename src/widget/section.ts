@@ -1,4 +1,4 @@
-import { TextWidget } from '@aws-cdk/aws-cloudwatch';
+import { TextWidget } from 'aws-cdk-lib/aws-cloudwatch';
 import { QuickLink } from '../api';
 
 /**

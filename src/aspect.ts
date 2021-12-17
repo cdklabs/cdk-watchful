@@ -1,10 +1,12 @@
-import * as apigw from '@aws-cdk/aws-apigateway';
-import * as dynamodb from '@aws-cdk/aws-dynamodb';
-import * as ecs_patterns from '@aws-cdk/aws-ecs-patterns';
-import * as lambda from '@aws-cdk/aws-lambda';
-import * as rds from '@aws-cdk/aws-rds';
-import * as stepfunctions from '@aws-cdk/aws-stepfunctions';
-import { IAspect, IConstruct } from '@aws-cdk/core';
+import { IAspect } from 'aws-cdk-lib';
+import * as apigw from 'aws-cdk-lib/aws-apigateway';
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
+import * as ecs_patterns from 'aws-cdk-lib/aws-ecs-patterns';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as rds from 'aws-cdk-lib/aws-rds';
+import * as stepfunctions from 'aws-cdk-lib/aws-stepfunctions';
+import { IConstruct } from 'constructs';
+
 
 export interface WatchfulAspectProps {
   /**
