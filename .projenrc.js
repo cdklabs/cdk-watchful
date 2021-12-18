@@ -20,7 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     twitter: 'emeshbi',
   },
 
-  cdkVersion: '2.2.0',
+  cdkVersion: '2.0.0',
   peerDependencies: [
     'aws-cdk-lib',
   ],
