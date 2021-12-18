@@ -6,7 +6,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^12",
+      "version": "^14",
       "type": "build"
     },
     {
@@ -21,7 +21,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "2.2.0",
+      "version": "2.0.0",
       "type": "build"
     },
     {
@@ -103,7 +103,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.2.0",
+      "version": "^2.0.0",
       "type": "peer"
     },
     {

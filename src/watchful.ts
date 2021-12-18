@@ -1,4 +1,4 @@
-import { CfnOutput, Aspects } from 'aws-cdk-lib';
+import { CfnOutput, Aspects, Names } from 'aws-cdk-lib';
 import * as apigw from 'aws-cdk-lib/aws-apigateway';
 import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
 import * as cloudwatch_actions from 'aws-cdk-lib/aws-cloudwatch-actions';
@@ -149,7 +149,7 @@ export class Watchful extends Construct implements IWatchful {
   }
 
   public watchDynamoTable(title: string, table: dynamodb.Table, options: WatchDynamoTableOptions = {}) {
-    return new WatchDynamoTable(this, table.node.id, {
+    return new WatchDynamoTable(this, Names.uniqueId(table), {
       title,
       watchful: this,
       table,
@@ -158,37 +158,37 @@ export class Watchful extends Construct implements IWatchful {
   }
 
   public watchApiGateway(title: string, restApi: apigw.RestApi, options: WatchApiGatewayOptions = {}) {
-    return new WatchApiGateway(this, restApi.node.id, {
+    return new WatchApiGateway(this, Names.uniqueId(restApi), {
       title, watchful: this, restApi, ...options,
     });
   }
 
   public watchLambdaFunction(title: string, fn: lambda.Function, options: WatchLambdaFunctionOptions = {}) {
-    return new WatchLambdaFunction(this, fn.node.id, {
+    return new WatchLambdaFunction(this, Names.uniqueId(fn), {
       title, watchful: this, fn, ...options,
     });
   }
 
   public watchStateMachine(title: string, stateMachine: stepfunctions.StateMachine, options: WatchStateMachineOptions = {}) {
-    return new WatchStateMachine(this, stateMachine.node.id, {
+    return new WatchStateMachine(this, Names.uniqueId(stateMachine), {
       title, watchful: this, stateMachine, ...options,
     });
   }
 
   public watchRdsAuroraCluster(title: string, cluster: rds.DatabaseCluster, options: WatchRdsAuroraOptions = {}) {
-    return new WatchRdsAurora(this, cluster.node.id, {
+    return new WatchRdsAurora(this, Names.uniqueId(cluster), {
       title, watchful: this, cluster, ...options,
     });
   }
   public watchFargateEcs(title: string, fargateService: ecs.FargateService, targetGroup: ApplicationTargetGroup,
     options: WatchEcsServiceOptions = {}) {
 
-    return new WatchEcsService(this, fargateService.node.id, {
+    return new WatchEcsService(this, Names.uniqueId(fargateService), {
       title, watchful: this, fargateService, targetGroup, ...options,
     });
   }
   public watchEc2Ecs(title: string, ec2Service: ecs.Ec2Service, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
-    return new WatchEcsService(this, ec2Service.node.id, {
+    return new WatchEcsService(this, Names.uniqueId(ec2Service), {
       title, watchful: this, ec2Service, targetGroup, ...options,
     });
   }

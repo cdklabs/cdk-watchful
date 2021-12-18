@@ -54,6 +54,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
 
   autoApproveUpgrades: true,
+
+  minNodeVersion: '14.15.0',
 });
 
 project.gitignore.exclude('.env', '.idea');

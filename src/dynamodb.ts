@@ -136,11 +136,11 @@ export class WatchDynamoTable extends Construct {
   private createDynamoCapacityAlarm(type: string, metric: cloudwatch.Metric, provisioned: number, percent: number = DEFAULT_PERCENT) {
     const periodMinutes = 5;
     const threshold = calculateUnits(provisioned, percent, Duration.minutes(periodMinutes));
-    metric.with({
+    const metricWithPeriod = metric.with({
       statistic: 'sum',
       period: Duration.minutes(periodMinutes),
     });
-    const alarm = metric.createAlarm(this, `CapacityAlarm:${type}`, {
+    const alarm = metricWithPeriod.createAlarm(this, `CapacityAlarm:${type}`, {
       alarmDescription: `at ${threshold}% of ${type} capacity`,
       threshold,
       comparisonOperator: cloudwatch.ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,

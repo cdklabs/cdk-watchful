@@ -46,11 +46,11 @@ export class WatchStateMachine extends Construct {
   private createExecutionMetrics() {
     const execMetrics = this.metrics.metricExecutions(this.stateMachine.stateMachineArn);
     const { failed } = execMetrics;
-    failed.with({
+    const failedWithPeriod = failed.with({
       statistic: 'sum',
       period: Duration.minutes(5),
     });
-    const failureAlarm = failed.createAlarm(this, 'ExecutionFailures', {
+    const failureAlarm = failedWithPeriod.createAlarm(this, 'ExecutionFailures', {
       alarmDescription: `at ${this.metricFailedThreshold}`,
       threshold: this.metricFailedThreshold,
       comparisonOperator: ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
