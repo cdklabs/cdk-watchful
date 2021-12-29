@@ -228,7 +228,7 @@
           "spawn": "unbump"
         },
         {
-          "exec": "git diff --staged --ignore-space-at-eol --exit-code"
+          "exec": "git diff --ignore-space-at-eol --exit-code"
         }
       ]
     },
