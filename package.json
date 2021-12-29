@@ -54,7 +54,7 @@
     "jsii-docgen": "^1.8.110",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.46.3",
+    "projen": "^0.47.2",
     "standard-version": "^9",
     "ts-jest": "^27.1.2",
     "typescript": "^3.9.10"
