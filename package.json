@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@aws-cdk/assert": "^1.95.2",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.4.0",
     "@types/node": "^12",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
@@ -54,7 +54,7 @@
     "jsii-docgen": "^1.8.110",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.47.6",
+    "projen": "^0.47.12",
     "standard-version": "^9",
     "ts-jest": "^27.1.2",
     "typescript": "^3.9.10"
@@ -96,7 +96,6 @@
     "@aws-cdk/aws-stepfunctions": "^1.95.2",
     "@aws-cdk/core": "^1.95.2"
   },
-  "bundledDependencies": [],
   "keywords": [
     "cdk",
     "cloudwatch",
