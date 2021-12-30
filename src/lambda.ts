@@ -1,6 +1,6 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as lambda from '@aws-cdk/aws-lambda';
-import { Construct } from '@aws-cdk/core';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { LambdaMetricFactory } from './monitoring/aws/lambda/metrics';
 

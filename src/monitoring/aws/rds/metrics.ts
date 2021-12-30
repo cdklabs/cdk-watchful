@@ -1,5 +1,5 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import { Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
 
 const enum Metrics {
   SelectThroughput = 'SelectThroughput',
@@ -49,7 +49,7 @@ export class RdsAuroraMetricFactory {
       namespace: Namespace,
       period: Duration.minutes(5),
       statistic: Statistic.SUM,
-      dimensions: {
+      dimensionsMap: {
         DBClusterIdentifier: clusterIdentifier,
       },
     });

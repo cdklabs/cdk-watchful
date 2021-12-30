@@ -1,6 +1,7 @@
-import * as apigw from '@aws-cdk/aws-apigateway';
-import { ComparisonOperator, GraphWidget, HorizontalAnnotation } from '@aws-cdk/aws-cloudwatch';
-import { Construct, Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import * as apigw from 'aws-cdk-lib/aws-apigateway';
+import { ComparisonOperator, GraphWidget, HorizontalAnnotation } from 'aws-cdk-lib/aws-cloudwatch';
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { ApiGatewayMetricFactory } from './monitoring/aws/api-gateway/metrics';
 
@@ -62,16 +63,19 @@ export class WatchApiGateway extends Construct {
 
     const alarmThreshold = props.serverErrorThreshold == null ? 1 : props.serverErrorThreshold;
     if (alarmThreshold) {
+
+      const count5xxMetric = this.metrics.metricErrors(this.apiName, this.stage).count5XX.with({
+        statistic: 'sum',
+        period: Duration.minutes(5),
+      });
       this.watchful.addAlarm(
-        this.metrics.metricErrors(this.apiName, this.stage).count5XX
-          .createAlarm(this, '5XXErrorAlarm', {
-            alarmDescription: `at ${alarmThreshold}`,
-            threshold: alarmThreshold,
-            period: Duration.minutes(5),
-            comparisonOperator: ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
-            evaluationPeriods: 1,
-            statistic: 'sum',
-          }),
+        count5xxMetric.createAlarm(this, '5XXErrorAlarm', {
+          alarmDescription: `at ${alarmThreshold}`,
+          threshold: alarmThreshold,
+          comparisonOperator:
+              ComparisonOperator.GREATER_THAN_OR_EQUAL_TO_THRESHOLD,
+          evaluationPeriods: 1,
+        }),
       );
     }
 

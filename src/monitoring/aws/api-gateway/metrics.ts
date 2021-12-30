@@ -1,5 +1,5 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import { Duration } from '@aws-cdk/core';
+import { Duration } from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
 import { WatchedOperation } from '../../../api-gateway';
 
 const enum Metrics {
@@ -67,7 +67,7 @@ export class ApiGatewayMetricFactory {
       metricName,
       namespace: Namespace,
       period: Duration.minutes(1),
-      dimensions: {
+      dimensionsMap: {
         ApiName: apiName,
         Stage: stage,
         ...op && {

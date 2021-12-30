@@ -1,4 +1,4 @@
-import { MathExpression, Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
+import { MathExpression, Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
 
 const enum ApplicationELBMetrics {
   HealthyHostCount = 'HealthyHostCount',
@@ -36,7 +36,7 @@ export class EcsMetricFactory {
     return new Metric({
       namespace: EcsNamespace,
       metricName: metric,
-      dimensions: {
+      dimensionsMap: {
         ClusterName: clusterName,
         ServiceName: serviceName,
       },
@@ -97,7 +97,7 @@ export class EcsMetricFactory {
     return new Metric({
       namespace: ApplicationELBNamespace,
       metricName: metric,
-      dimensions: {
+      dimensionsMap: {
         TargetGroup: targetGroup,
         LoadBalancer: loadBalancer,
       },

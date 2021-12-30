@@ -1,7 +1,8 @@
-import { expect as cdk_expect, haveResource } from '@aws-cdk/assert';
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as ddb from '@aws-cdk/aws-dynamodb';
-import { Construct, Resource, ResourceProps, Stack } from '@aws-cdk/core';
+import { Resource, ResourceProps, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as ddb from 'aws-cdk-lib/aws-dynamodb';
+import { Construct } from 'constructs';
 import { Watchful } from '../src';
 
 test('creates an empty dashboard', () => {
@@ -12,7 +13,8 @@ test('creates an empty dashboard', () => {
   new Watchful(stack, 'watchful');
 
   // THEN
-  cdk_expect(stack).to(haveResource('AWS::CloudWatch::Dashboard'));
+  const template = Template.fromStack(stack);
+  expect(template.findResources('AWS::CloudWatch::Dashboard'));
 });
 
 test('alarmActionArns can be used to specify a list of custom alarm actions', () => {
@@ -33,12 +35,12 @@ test('alarmActionArns can be used to specify a list of custom alarm actions', ()
   wf.watchDynamoTable('MyTable', table);
 
   // THEN
-  cdk_expect(stack).to(haveResource('AWS::CloudWatch::Alarm', {
-    AlarmActions: [
-      'arn:of:custom:alarm:action',
-      'arn:2',
-    ],
-  }));
+  const template = Template.fromStack(stack);
+  expect(
+    template.hasResourceProperties('AWS::CloudWatch::Alarm', {
+      AlarmActions: ['arn:of:custom:alarm:action', 'arn:2'],
+    }),
+  );
 });
 
 test('alarmActions can be used to specify a list of custom alarm actions', () => {
@@ -58,11 +60,14 @@ test('alarmActions can be used to specify a list of custom alarm actions', () =>
   wf.watchDynamoTable('MyTable', table);
 
   // THEN
-  cdk_expect(stack).to(haveResource('AWS::CloudWatch::Alarm', {
-    AlarmActions: [
-      'arn:phony:Default/watchful/Table/CapacityAlarm:write:Default/watchful/Table/CapacityAlarm:write',
-    ],
-  }));
+  const template = Template.fromStack(stack);
+  expect(
+    template.hasResourceProperties('AWS::CloudWatch::Alarm', {
+      AlarmActions: [
+        'arn:phony:Default/watchful/Table/CapacityAlarm:write:Default/watchful/Table/CapacityAlarm:write',
+      ],
+    }),
+  );
 });
 
 test('alarmActions AND alarmActionArns can be used to specify a list of custom alarm actions', () => {
@@ -86,13 +91,16 @@ test('alarmActions AND alarmActionArns can be used to specify a list of custom a
   wf.watchDynamoTable('MyTable', table);
 
   // THEN
-  cdk_expect(stack).to(haveResource('AWS::CloudWatch::Alarm', {
-    AlarmActions: [
-      'arn:of:custom:alarm:action',
-      'arn:2',
-      'arn:phony:Default/watchful/Table/CapacityAlarm:write:Default/watchful/Table/CapacityAlarm:write',
-    ],
-  }));
+  const template = Template.fromStack(stack);
+  expect(
+    template.hasResourceProperties('AWS::CloudWatch::Alarm', {
+      AlarmActions: [
+        'arn:of:custom:alarm:action',
+        'arn:2',
+        'arn:phony:Default/watchful/Table/CapacityAlarm:write:Default/watchful/Table/CapacityAlarm:write',
+      ],
+    }),
+  );
 });
 
 test('composite alarms can be created from other alarms', ()=> {
@@ -129,12 +137,12 @@ test('composite alarms can be created from other alarms', ()=> {
   wf.addAlarm(compositeAlarm);
 
   // THEN
-  cdk_expect(stack).to(haveResource('AWS::CloudWatch::CompositeAlarm', {
-    AlarmActions: [
-      'arn:of:custom:alarm:action',
-      'arn:2',
-    ],
-  }));
+  const template = Template.fromStack(stack);
+  expect(
+    template.hasResourceProperties('AWS::CloudWatch::CompositeAlarm', {
+      AlarmActions: ['arn:of:custom:alarm:action', 'arn:2'],
+    }),
+  );
 });
 
 test('alarms that do not implement addAlarmAction will be wrapped in CompositeAlarm', () => {
@@ -173,11 +181,11 @@ test('alarms that do not implement addAlarmAction will be wrapped in CompositeAl
   wf.addAlarm(alarm1);
 
   // THEN
-  cdk_expect(stack).to(haveResource('AWS::CloudWatch::CompositeAlarm', {
-    AlarmActions: [
-      'arn:of:custom:alarm:action',
-      'arn:2',
-    ],
-    AlarmRule: `ALARM(\"${alarmArn}\")`,
-  }));
+  const template = Template.fromStack(stack);
+  expect(
+    template.hasResourceProperties('AWS::CloudWatch::CompositeAlarm', {
+      AlarmActions: ['arn:of:custom:alarm:action', 'arn:2'],
+      AlarmRule: `ALARM(\"${alarmArn}\")`,
+    }),
+  );
 });

@@ -1,6 +1,6 @@
-import * as cloudwatch from '@aws-cdk/aws-cloudwatch';
-import * as rds from '@aws-cdk/aws-rds';
-import * as cdk from '@aws-cdk/core';
+import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
+import * as rds from 'aws-cdk-lib/aws-rds';
+import { Construct } from 'constructs';
 import { IWatchful } from './api';
 import { RdsAuroraMetricFactory } from './monitoring/aws/rds/metrics';
 
@@ -48,13 +48,13 @@ export interface WatchRdsAuroraProps extends WatchRdsAuroraOptions {
   readonly cluster: rds.DatabaseCluster;
 }
 
-export class WatchRdsAurora extends cdk.Construct {
+export class WatchRdsAurora extends Construct {
 
   private readonly watchful: IWatchful;
   private readonly cluster: rds.DatabaseCluster;
   private readonly metrics: RdsAuroraMetricFactory;
 
-  constructor(scope: cdk.Construct, id: string, props: WatchRdsAuroraProps) {
+  constructor(scope: Construct, id: string, props: WatchRdsAuroraProps) {
     super(scope, id);
 
     this.watchful = props.watchful;

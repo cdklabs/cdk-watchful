@@ -1,5 +1,5 @@
-import { Metric, Statistic } from '@aws-cdk/aws-cloudwatch';
-import * as cdk from '@aws-cdk/core';
+import * as cdk from 'aws-cdk-lib';
+import { Metric, Statistic } from 'aws-cdk-lib/aws-cloudwatch';
 
 const enum Metrics {
   Invocations = 'Invocations',
@@ -41,7 +41,7 @@ export class LambdaMetricFactory {
       metricName: metric,
       namespace: Namespace,
       period: cdk.Duration.minutes(5),
-      dimensions: {
+      dimensionsMap: {
         FunctionName: functionName,
       },
     });
