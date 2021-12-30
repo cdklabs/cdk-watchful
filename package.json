@@ -70,7 +70,7 @@
     "monitoring"
   ],
   "engines": {
-    "node": ">= 14.15.0"
+    "node": ">= 14.17.0"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
