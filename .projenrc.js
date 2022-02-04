@@ -1,6 +1,6 @@
 const { AwsCdkConstructLibrary } = require('projen');
 
-const cdkVersion = '1.139.0';
+const cdkVersion = '1.143.0';
 
 const project = new AwsCdkConstructLibrary({
   name: '@myhelix/cdk-watchful',
