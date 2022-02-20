@@ -1255,9 +1255,9 @@ browser-process-hrtime@^1.0.0:
   integrity sha512-9o5UecI3GhkpM6DrXr69PblIuWxPKk9Y0jHBRhdocZ2y7YECBFCsHm79Pr3OyR2AvjhDkabFJaDJMYRazHgsow==
 
 browserslist@^4.17.5:
-  version "4.19.2"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.19.2.tgz#9ba98791192a39e1242f0670bb265ceee1baf0a4"
-  integrity sha512-97XU1CTZ5TwU9Qy/Taj+RtiI6SQM1WIhZ9osT7EY0oO2aWXGABZT2OZeRL+6PfaQsiiMIjjwIoYFPq4APgspgQ==
+  version "4.19.3"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.19.3.tgz#29b7caad327ecf2859485f696f9604214bedd383"
+  integrity sha512-XK3X4xtKJ+Txj8G5c30B4gsm71s69lqXlkYui4s6EkKxuv49qjYlY6oVd+IFJ73d4YymtM3+djvvt/R/iJwwDg==
   dependencies:
     caniuse-lite "^1.0.30001312"
     electron-to-chromium "^1.4.71"
@@ -4778,10 +4778,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.52.35:
-  version "0.52.35"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.35.tgz#907066ba3ca86d4c24bbbd4fa8b774323bc3e221"
-  integrity sha512-ugjJc81SIv1YBcqCJSHMSILiujupApMA6Qj0Xv80qJrFHWGc1yO0UOEyVErL1k1qNpdpYtZ26kwgxqJu1Be59g==
+projen@^0.52.36:
+  version "0.52.36"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.52.36.tgz#77a928428d87c164e1c4786bb7130959005a99fd"
+  integrity sha512-zMJuBejy8vnfzIK++28z/nEH9r+jFdPafD9TJsthazoDS/A/AAmdIvqoy9W/UMDUOjUu3bAh/cVE6aCU8W+NIw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
