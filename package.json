@@ -48,7 +48,7 @@
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
-    "eslint-import-resolver-typescript": "^2.7.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.25.4",
     "jest": "^27.5.1",
     "jest-junit": "^13",
@@ -58,7 +58,7 @@
     "jsii-pacmak": "^1.55.1",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.54.4",
+    "projen": "^0.54.5",
     "standard-version": "^9",
     "ts-jest": "^27.1.4",
     "typescript": "^3.9.10"
