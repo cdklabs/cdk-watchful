@@ -1,0 +1,1473 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test: metricAutomatedSnapshotFailure 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "AutomatedSnapshotFailure",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricClusterEbsIOPS 1`] = `
+Object {
+  "readIOPSMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ReadIOPS",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "writeIOPSMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "WriteIOPS",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricClusterEbsLatency 1`] = `
+Object {
+  "readLatencyMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ReadLatency",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "writeLatencyMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "WriteLatency",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricClusterEbsThroughput 1`] = `
+Object {
+  "readThroughputMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ReadThroughput",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "writeThroughputMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "WriteThroughput",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricClusterIndexWritesBlocked 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "ClusterIndexWritesBlocked",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricClusterStatus 1`] = `
+Object {
+  "clusterStatusGreenMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ClusterStatus.green",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+  "clusterStatusRedMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ClusterStatus.red",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+  "clusterStatusYellowMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ClusterStatus.yellow",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricCpuUtilization 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "CPUUtilization",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 15,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Average",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricDocuments 1`] = `
+Object {
+  "deletedDocumentsMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "DeletedDocuments",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "searchableDocumentsMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "SearchableDocuments",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricFreeStorageSpace 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "FreeStorageSpace",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Sum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricHttp5xxPercentage 1`] = `
+MathExpression {
+  "color": undefined,
+  "expression": "100*(http5XXMetric/openSearchRequestsMetric)",
+  "label": "HTTP5XXPercentage",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "searchAccount": undefined,
+  "searchRegion": undefined,
+  "usingMetrics": Object {
+    "http5XXMetric": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": Object {
+        "ClientId": "012345679012",
+        "DomainName": "DummyDomainName",
+      },
+      "label": undefined,
+      "metricName": "5xx",
+      "namespace": "AWS/ES",
+      "period": Duration {
+        "amount": 1,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Sum",
+      "unit": undefined,
+    },
+    "openSearchRequestsMetric": Metric {
+      "account": undefined,
+      "color": undefined,
+      "dimensions": Object {
+        "ClientId": "012345679012",
+        "DomainName": "DummyDomainName",
+      },
+      "label": undefined,
+      "metricName": "OpenSearchRequests",
+      "namespace": "AWS/ES",
+      "period": Duration {
+        "amount": 1,
+        "unit": TimeUnit {
+          "inMillis": 60000,
+          "isoLabel": "M",
+          "label": "minutes",
+        },
+      },
+      "region": undefined,
+      "statistic": "Sum",
+      "unit": undefined,
+    },
+  },
+}
+`;
+
+exports[`snapshot test: metricJVMMemoryPressure 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "JVMMemoryPressure",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 5,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricKms 1`] = `
+Object {
+  "kmsKeyErrorMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "KMSKeyError",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+  "kmsKeyInaccessibleMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "KMSKeyInaccessible",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Maximum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricLatency 1`] = `
+Object {
+  "indexingLatencyMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "IndexingLatency",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "searchLatencyMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "SearchLatency",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricMasterCpuUtilization 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "MasterCPUUtilization",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricMasterJVMMemoryPressure 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "MasterJVMMemoryPressure",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricMasterReachableFromNode 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "MasterReachableFromNode",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 3600000,
+      "isoLabel": "H",
+      "label": "hours",
+    },
+  },
+  "region": undefined,
+  "statistic": "Minimum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricMasterSysMemoryUtilization 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "MasterSysMemoryUtilization",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 60000,
+      "isoLabel": "M",
+      "label": "minutes",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricNodes 1`] = `
+Metric {
+  "account": undefined,
+  "color": undefined,
+  "dimensions": Object {
+    "ClientId": "012345679012",
+    "DomainName": "DummyDomainName",
+  },
+  "label": undefined,
+  "metricName": "Nodes",
+  "namespace": "AWS/ES",
+  "period": Duration {
+    "amount": 1,
+    "unit": TimeUnit {
+      "inMillis": 3600000,
+      "isoLabel": "H",
+      "label": "hours",
+    },
+  },
+  "region": undefined,
+  "statistic": "Maximum",
+  "unit": undefined,
+}
+`;
+
+exports[`snapshot test: metricRate 1`] = `
+Object {
+  "indexingRateMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "IndexingRate",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "searchRateMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "SearchRate",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricRequests 1`] = `
+Object {
+  "invalidHostHeaderRequests": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "InvalidHostHeaderRequests",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "openSearchRequests": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "OpenSearchRequests",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricResponseCodes 1`] = `
+Object {
+  "2xxMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "2xx",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "3xxMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "3xx",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "4xxMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "4xx",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "5xxMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "5xx",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricShards 1`] = `
+Object {
+  "shardsActive": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "Shards.active",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "shardsActivePrimary": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "Shards.activePrimary",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "shardsDelayedUnassigned": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "Shards.delayedUnassigned",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "shardsInitializing": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "Shards.initializing",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "shardsRelocating": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "Shards.relocating",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "shardsUnassigned": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "Shards.unassigned",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricStorage 1`] = `
+Object {
+  "clusterUsedSpaceMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ClusterUsedSpace",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "freeStorageSpaceMetric": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "FreeStorageSpace",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Minimum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricThreadpoolQueues 1`] = `
+Object {
+  "threadpoolBulkQueue": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolBulkQueue",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolForceMergeQueue": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolForce_mergeQueue",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolIndexQueue": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolIndexQueue",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolSearchQueue": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolSearchQueue",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolWriteQueue": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolWriteQueue",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricThreadpoolRejected 1`] = `
+Object {
+  "threadpoolBulkRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolBulkRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "threadpoolForceMergeRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolForce_mergeRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "threadpoolIndexRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolIndexRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "threadpoolSearchRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolSearchRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "threadpoolWriteRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolWriteRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricThreadpoolThreads 1`] = `
+Object {
+  "threadpoolBulkThreads": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolBulkThreads",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolForceMergeThreads": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolForce_mergeThreads",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolIndexThreads": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolIndexThreads",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolSearchThreads": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolSearchThreads",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+  "threadpoolWriteThreads": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ThreadpoolWriteThreads",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 1,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Average",
+    "unit": undefined,
+  },
+}
+`;
+
+exports[`snapshot test: metricWriteRejections 1`] = `
+Object {
+  "CoordinatingWriteRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "CoordinatingWriteRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "PrimaryWriteRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "PrimaryWriteRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+  "ReplicaWriteRejected": Metric {
+    "account": undefined,
+    "color": undefined,
+    "dimensions": Object {
+      "ClientId": "012345679012",
+      "DomainName": "DummyDomainName",
+    },
+    "label": undefined,
+    "metricName": "ReplicaWriteRejected",
+    "namespace": "AWS/ES",
+    "period": Duration {
+      "amount": 5,
+      "unit": TimeUnit {
+        "inMillis": 60000,
+        "isoLabel": "M",
+        "label": "minutes",
+      },
+    },
+    "region": undefined,
+    "statistic": "Sum",
+    "unit": undefined,
+  },
+}
+`;
