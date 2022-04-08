@@ -1,3 +1,11 @@
+-----
+
+### ✨ Have you heard of <a href="https://github.com/cdklabs/cdk-monitoring-constructs">cdk-monitoring-constructs</a>? ✨</span>
+
+Watchful on steroids. Check it out! 🔝
+
+-----
+
 # cdk-watchful
 
 > Watching your CDK back since 2019
