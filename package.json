@@ -39,12 +39,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^27.5.0",
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.0.0",
-    "aws-sdk": "^2.1125.0",
+    "aws-sdk": "^2.1126.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
@@ -58,7 +58,7 @@
     "jsii-pacmak": "^1.57.0",
     "json-schema": "^0.4.0",
     "npm-check-updates": "^12",
-    "projen": "^0.54.57",
+    "projen": "^0.55.1",
     "standard-version": "^9",
     "ts-jest": "^27",
     "typescript": "^3.9.10"
