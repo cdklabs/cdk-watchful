@@ -4562,9 +4562,9 @@ nwsapi@^2.2.0:
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
 
 object-inspect@^1.12.0, object-inspect@^1.9.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.12.0.tgz#6e2c120e868fd1fd18cb4f18c31741d0d6e776f0"
-  integrity sha512-Ho2z80bVIvJloH+YzRmpZVQe87+qASmBUKZDWgx9cu+KDrX2ZDH/3tMy+gXbZETVGs2M8YdxObOh7XAtim9Y0g==
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.12.1.tgz#28a661153bad7e470e4b01479ef1cb91ce511191"
+  integrity sha512-Y/jF6vnvEtOPGiKD1+q+X0CiUYRQtEHp89MLLUJ7TUivtH8Ugn2+3A7Rynqk7BRsAoqeOQWnFnjpDrKSxDgIGA==
 
 object-is@^1.1.4:
   version "1.1.5"
@@ -4892,10 +4892,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.56.24:
-  version "0.56.24"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.56.24.tgz#7d99f4e66eca36479bd93f703daddd0d1162d1fd"
-  integrity sha512-gmqwS6c3JdTawzyLH679IrLBEHV31HMv9E0CqlDHzMoMxtJ4nmJhAfGXvpgaT+9mD2RkPNOHHvZZ6XXV+XJ7hA==
+projen@^0.56.26:
+  version "0.56.26"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.56.26.tgz#79561ba9c3a3eecf0d518cb0fd385ef5558b8300"
+  integrity sha512-KUkOUJTwkEquY9tydBpnBXJDM0hqqqr50F4oxdZ1gFwQJVPNxMNGKLyUbfFMqOSJ26OpTka7M5KaXy3jn7WKtQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
