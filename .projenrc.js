@@ -1,8 +1,8 @@
-const { AwsCdkConstructLibrary } = require('projen');
+const { awscdk } = require('projen');
 
-const cdkVersion = '1.149.0';
+const cdkVersion = '1.161.0';
 
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
   name: '@myhelix/cdk-watchful',
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
@@ -37,7 +37,7 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/core',
   ],
 
-  devDeps: ['aws-sdk'],
+  devDeps: ['aws-sdk', 'eslint-plugin-import'],
 });
 
 project.gitignore.exclude('.env', '.idea');
