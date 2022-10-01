@@ -35,6 +35,9 @@ jobs:
       - name: Check for new commits
         id: git_remote
         run: echo ::set-output name=latest_commit::"$(git ls-remote origin -h ${{ github.ref }} | cut -f1)"
+      - name: Backup artifact permissions
+        if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
+        run: cd dist && getfacl -R . > permissions-backup.acl
       - name: Upload artifact
         if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         uses: actions/upload-artifact@v2.1.1
@@ -57,6 +60,8 @@ jobs:
         with:
           name: build-artifact
           path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
       - name: Prepare Repository
         run: mv dist .repo
       - name: Collect GitHub Metadata
@@ -83,6 +88,8 @@ jobs:
         with:
           name: build-artifact
           path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -117,6 +124,8 @@ jobs:
         with:
           name: build-artifact
           path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -153,6 +162,8 @@ jobs:
         with:
           name: build-artifact
           path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -185,6 +196,8 @@ jobs:
         with:
           name: build-artifact
           path: dist
+      - name: Restore build artifact permissions
+        run: cd dist && setfacl --restore=permissions-backup.acl
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
