@@ -1,0 +1,15 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  schedule:
+    # Runs at 15:00 UTC every Monday
+    - cron: '0 15 * * 1'
+
+jobs:
+  call-workflow:
+    uses: myhelix/security-workflows/.github/workflows/codeql-analysis-javascript.yml@v1.0.0
