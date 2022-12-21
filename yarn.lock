@@ -1218,10 +1218,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-sdk@^2.1278.0:
-  version "2.1278.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1278.0.tgz#887692f4518e8ef0ed7c185d9de468dfd0423fe9"
-  integrity sha512-keh0FXU6kP5j5vkWDgizZCSggmRfyRLUxmDKDVuiWb64H9FHIgoDBTMnYzKnQr6trHdBMopQdQ7RxnjYZ3BblA==
+aws-sdk@^2.1279.0:
+  version "2.1279.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1279.0.tgz#a79a7f51375eb521efeb2539f658f26acbec46b2"
+  integrity sha512-52NbHEZTLlrld6XDLvVaOwEI0p4nYTYVuninX8s4kdkBXeTezaBahsufWT7LmeYh10gp70dnwaUxvja1TjmeRA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1306,9 +1306,9 @@ base64-js@^1.0.2:
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
 boxen@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/boxen/-/boxen-7.0.0.tgz#9e5f8c26e716793fc96edcf7cf754cdf5e3fbf32"
-  integrity sha512-j//dBVuyacJbvW+tvZ9HuH03fZ46QcaKvvhZickZqtB271DxJ7SNRSNxrV/dZX0085m7hISRZWbzWlJvx/rHSg==
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/boxen/-/boxen-7.0.1.tgz#cd84db4364a8bae65f1f016ce94a21ec2c832c16"
+  integrity sha512-8k2eH6SRAK00NDl1iX5q17RJ8rfl53TajdYxE3ssMLehbg487dEVgsad4pIsZb/QqBgYWIl6JOauMTLGX2Kpkw==
   dependencies:
     ansi-align "^3.0.1"
     camelcase "^7.0.0"
@@ -4383,9 +4383,9 @@ minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
     brace-expansion "^1.1.7"
 
 minimatch@^5.0.1, minimatch@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.1.tgz#6c9dffcf9927ff2a31e74b5af11adf8b9604b022"
-  integrity sha512-362NP+zlprccbEt/SkxKfRMHnNY85V74mVnpUpNyr3F35covl09Kec7/sEFLt3RA4oXmewtoaanoIf67SE5Y5g==
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.2.tgz#0939d7d6f0898acbd1508abe534d1929368a8fff"
+  integrity sha512-bNH9mmM9qsJ2X4r2Nat1B//1dJVcn3+iBLa3IgqJ7EbGaDNepL9QSHOxN4ng33s52VMMhhIfgCYDk3C4ZmlDAg==
   dependencies:
     brace-expansion "^2.0.1"
 
@@ -5031,10 +5031,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.65.66:
-  version "0.65.66"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.66.tgz#183440adf0547e083d919fc762eed323a24b6ac3"
-  integrity sha512-mxEDuIqvLt5GFXk0gDAfMPfm7ah6bbSfRgm3skGmo6dBsS0K/D3PkBvyFoDIu5/+w12DflluaPEb1OwOoXNWFA==
+projen@^0.65.67:
+  version "0.65.67"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.67.tgz#fc68d611a144561e17032f912a26a6797079ca04"
+  integrity sha512-mZa+4u7TyJ8FNBiWHwhD2QTPtQ9jsSGLk+kQFdPWtyJR1HM4XGkmEkQOZYOlRnzFz1rjixjsmESUhjb0J/GwiQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
