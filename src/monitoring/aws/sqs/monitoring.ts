@@ -1,11 +1,11 @@
 import { Stack } from 'aws-cdk-lib';
 import { GraphWidget, HorizontalAnnotation, IWidget, Metric } from 'aws-cdk-lib/aws-cloudwatch';
 import { IQueue } from 'aws-cdk-lib/aws-sqs';
+import { SqsMetricFactory } from './metrics';
 import { Monitoring, MonitoringProps } from '../../../core/monitoring';
 import { CountAxis, SizeBytesAxis, TimeSecondsAxis } from '../../../widget/axis';
 import { CommonWidgetDimensions } from '../../../widget/constant';
 import { SectionWidget, SectionWidgetProps } from '../../../widget/section';
-import { SqsMetricFactory } from './metrics';
 
 /**
  * Properties to create SqsMonitoring.
