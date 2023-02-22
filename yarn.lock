@@ -1231,10 +1231,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-sdk@^2.1319.0:
-  version "2.1319.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1319.0.tgz#be1d91fcac13262fa106f0f0a15ee07c023972fd"
-  integrity sha512-/gPCVsCARitph9FmBTXZmzjX0Br8LwBfu2MTNPGjVCiZkEUSoUWAAigIWkvrjTWOXCI7TSElRwtCzlsVHdv5VA==
+aws-sdk@^2.1320.0:
+  version "2.1320.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1320.0.tgz#8688b737e0590a5106bbdb0270f6bf0afb83fa99"
+  integrity sha512-oOsR+ClQZ6hmuAD/fu9gpsGMuLY1xG7m5SE/PDY3ZL4n34dmoXqwhQ3AHT1NTE0Z0sH1th6UqpHeHPS1trMOXw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2126,9 +2126,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.303"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.303.tgz#6c598653c52b2554f768d98374803236b8f022a8"
-  integrity sha512-XaqiQhVsGO5ymf/Lg6XEGpv2h8b5AFqQDQ9fQckolNP2VtD2VL1pn1TIx1SSYsf0srfXVi2Sm7n/K3slJSX3ig==
+  version "1.4.305"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.305.tgz#e4dfe3e06ab783f33171f9bde9e8ed092510fcd0"
+  integrity sha512-WETy6tG0CT5gm1O+xCbyapWNsCcmIvrn4NHViIGYo2AT8FV2qUCXdaB+WqYxSv/vS5mFqhBYnfZAAkVArjBmUg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4275,9 +4275,9 @@ lru-cache@^6.0.0:
     yallist "^4.0.0"
 
 lru-cache@^7.4.4, lru-cache@^7.5.1, lru-cache@^7.7.1:
-  version "7.16.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.16.1.tgz#7acea16fecd9ed11430e78443c2bb81a06d3dea9"
-  integrity sha512-9kkuMZHnLH/8qXARvYSjNvq8S1GYFFzynQTAfKeaJ0sIrR3PUPuu37Z+EiIANiZBvpfTf2B5y8ecDLSMWlLv+w==
+  version "7.16.2"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.16.2.tgz#df096ce4374d0cf9d34f29a35832c80534af54b6"
+  integrity sha512-t6D6OM05Y3f+61zNnXh/+0D69kAgJKVEWLuWL1r38CIHRPTWpNjwpR7S+nmiQlG5GmUB1BDiiMjU1Ihs4YBLlg==
 
 make-dir@^3.0.0:
   version "3.1.0"
@@ -5081,10 +5081,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.67.60:
-  version "0.67.60"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.67.60.tgz#b9c1a98aed6769f04c7ba1af9069cdccc0ecf2ed"
-  integrity sha512-4S9Dl9qT6tc16Fjbkw+AQeaoxOkT+55rwin9oIk6sZTZD/EjP+pr/auswZHGOqH+notUmhhVOzBRBrz6pMx/Jw==
+projen@^0.67.62:
+  version "0.67.62"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.67.62.tgz#51d5baab0da9b2dd295070b6d7d2984046b88dce"
+  integrity sha512-EPIjOSgEMGBw5dizr0VdPJzZj/d9lKs2jpY/L0qehujRwVHrhiB/S4RT6wJkr0ULSuhb1AqhRxxBPmlGN3zYrw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
