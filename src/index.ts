@@ -8,3 +8,4 @@ export * from './lambda';
 export * from './state-machine';
 export * from './rds-aurora';
 export * from './ecs';
+export * from './opensearch';

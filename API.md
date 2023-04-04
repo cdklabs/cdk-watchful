@@ -8,6 +8,7 @@ Name|Description
 [WatchDynamoTable](#cdk-watchful-watchdynamotable)|*No description*
 [WatchEcsService](#cdk-watchful-watchecsservice)|*No description*
 [WatchLambdaFunction](#cdk-watchful-watchlambdafunction)|*No description*
+[WatchOpenSearchDomain](#cdk-watchful-watchopensearchdomain)|*No description*
 [WatchRdsAurora](#cdk-watchful-watchrdsaurora)|*No description*
 [WatchStateMachine](#cdk-watchful-watchstatemachine)|*No description*
 [Watchful](#cdk-watchful-watchful)|*No description*
@@ -28,6 +29,8 @@ Name|Description
 [WatchEcsServiceProps](#cdk-watchful-watchecsserviceprops)|*No description*
 [WatchLambdaFunctionOptions](#cdk-watchful-watchlambdafunctionoptions)|*No description*
 [WatchLambdaFunctionProps](#cdk-watchful-watchlambdafunctionprops)|*No description*
+[WatchOpenSearchOptions](#cdk-watchful-watchopensearchoptions)|*No description*
+[WatchOpenSearchProps](#cdk-watchful-watchopensearchprops)|*No description*
 [WatchRdsAuroraOptions](#cdk-watchful-watchrdsauroraoptions)|*No description*
 [WatchRdsAuroraProps](#cdk-watchful-watchrdsauroraprops)|*No description*
 [WatchStateMachineOptions](#cdk-watchful-watchstatemachineoptions)|*No description*
@@ -158,6 +161,49 @@ new WatchLambdaFunction(scope: Construct, id: string, props: WatchLambdaFunction
   * **errorsPerMinuteThreshold** (<code>number</code>)  Number of allowed errors per minute. __*Default*__: 0
   * **throttlesPerMinuteThreshold** (<code>number</code>)  Number of allowed throttles per minute. __*Default*__: 0
   * **fn** (<code>[aws_lambda.Function](#aws-cdk-lib-aws-lambda-function)</code>)  *No description* 
+  * **title** (<code>string</code>)  *No description* 
+  * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
+
+
+
+
+## class WatchOpenSearchDomain  <a id="cdk-watchful-watchopensearchdomain"></a>
+
+
+
+__Implements__: [IConstruct](#constructs-iconstruct), [IDependable](#constructs-idependable)
+__Extends__: [Construct](#constructs-construct)
+
+### Initializer
+
+
+
+
+```ts
+new WatchOpenSearchDomain(scope: Construct, id: string, props: WatchOpenSearchProps)
+```
+
+* **scope** (<code>[Construct](#constructs-construct)</code>)  *No description*
+* **id** (<code>string</code>)  *No description*
+* **props** (<code>[WatchOpenSearchProps](#cdk-watchful-watchopensearchprops)</code>)  *No description*
+  * **automatedSnapshotFailureThresholdMax** (<code>number</code>)  Threshold for AutomatedSnapshotFailure metric. __*Default*__: 1
+  * **clusterIndexWritesBlockedThresholdMax** (<code>number</code>)  Threshold for ClusterIndexWritesBlocked metric. __*Default*__: 1
+  * **clusterStatusRedThresholdMax** (<code>number</code>)  Threshold for ClusterStatus.red metric. __*Default*__: 1
+  * **clusterStatusYellowThresholdMax** (<code>number</code>)  Threshold for ClusterStatus.yellow metric. __*Default*__: 1
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **freeStorageSpaceThresholdPercent** (<code>number</code>)  Threshold for FreeStorageSpace metric. __*Default*__: 25% of storage
+  * **http5XXResponsesThresholdPercent** (<code>number</code>)  Threshold for 5XX Errors metric. __*Default*__: 10
+  * **jvmMemoryPressureThresholdMax** (<code>number</code>)  Threshold for the JVMMMemoryPressure metric. __*Default*__: 80
+  * **kmsKeyErrorThresholdMax** (<code>number</code>)  Threshold for KMSKeyError. __*Default*__: 1
+  * **kmsKeyInaccessibleThresholdMax** (<code>number</code>)  Threshold for KMSKeyInaccessible. __*Default*__: 1
+  * **masterCpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Master Cpu Maximum utilization. __*Default*__: 50
+  * **masterJVMMemoryPressureThresholdMax** (<code>number</code>)  Threshold for the MasterJVMMMemoryPressure metric. __*Default*__: 80
+  * **masterReachableFromNodeThresholdMin** (<code>number</code>)  Threshold for MasterReachableFromNode metric. __*Default*__: 1
+  * **nodesThresholdMin** (<code>number</code>)  Threshold for Nodes metric. __*Default*__: instanceCount
+  * **shardsActiveThresholdSum** (<code>number</code>)  Threshold for ShardsActive metric. __*Default*__: 30000
+  * **threadpoolSearchQueueThresholdAvg** (<code>number</code>)  Threshold for ThreadpoolSearchQueue metric. __*Default*__: 500
+  * **threadpoolWriteQueueThresholdAvg** (<code>number</code>)  Threshold for ThreadpoolWriteQueue metric. __*Default*__: 100
+  * **domain** (<code>[aws_opensearchservice.Domain](#aws-cdk-lib-aws-opensearchservice-domain) &#124; [aws_opensearchservice.CfnDomain](#aws-cdk-lib-aws-opensearchservice-cfndomain)</code>)  *No description* 
   * **title** (<code>string</code>)  *No description* 
   * **watchful** (<code>[IWatchful](#cdk-watchful-iwatchful)</code>)  *No description* 
 
@@ -389,6 +435,38 @@ watchLambdaFunction(title: string, fn: Function, options?: WatchLambdaFunctionOp
 __Returns__:
 * <code>[WatchLambdaFunction](#cdk-watchful-watchlambdafunction)</code>
 
+#### watchOpenSearch(title, domain, options?) <a id="cdk-watchful-watchful-watchopensearch"></a>
+
+
+
+```ts
+watchOpenSearch(title: string, domain: Domain &#124; CfnDomain, options?: WatchOpenSearchOptions): WatchOpenSearchDomain
+```
+
+* **title** (<code>string</code>)  *No description*
+* **domain** (<code>[aws_opensearchservice.Domain](#aws-cdk-lib-aws-opensearchservice-domain) &#124; [aws_opensearchservice.CfnDomain](#aws-cdk-lib-aws-opensearchservice-cfndomain)</code>)  *No description*
+* **options** (<code>[WatchOpenSearchOptions](#cdk-watchful-watchopensearchoptions)</code>)  *No description*
+  * **automatedSnapshotFailureThresholdMax** (<code>number</code>)  Threshold for AutomatedSnapshotFailure metric. __*Default*__: 1
+  * **clusterIndexWritesBlockedThresholdMax** (<code>number</code>)  Threshold for ClusterIndexWritesBlocked metric. __*Default*__: 1
+  * **clusterStatusRedThresholdMax** (<code>number</code>)  Threshold for ClusterStatus.red metric. __*Default*__: 1
+  * **clusterStatusYellowThresholdMax** (<code>number</code>)  Threshold for ClusterStatus.yellow metric. __*Default*__: 1
+  * **cpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Cpu Maximum utilization. __*Default*__: 80
+  * **freeStorageSpaceThresholdPercent** (<code>number</code>)  Threshold for FreeStorageSpace metric. __*Default*__: 25% of storage
+  * **http5XXResponsesThresholdPercent** (<code>number</code>)  Threshold for 5XX Errors metric. __*Default*__: 10
+  * **jvmMemoryPressureThresholdMax** (<code>number</code>)  Threshold for the JVMMMemoryPressure metric. __*Default*__: 80
+  * **kmsKeyErrorThresholdMax** (<code>number</code>)  Threshold for KMSKeyError. __*Default*__: 1
+  * **kmsKeyInaccessibleThresholdMax** (<code>number</code>)  Threshold for KMSKeyInaccessible. __*Default*__: 1
+  * **masterCpuMaximumThresholdPercent** (<code>number</code>)  Threshold for the Master Cpu Maximum utilization. __*Default*__: 50
+  * **masterJVMMemoryPressureThresholdMax** (<code>number</code>)  Threshold for the MasterJVMMMemoryPressure metric. __*Default*__: 80
+  * **masterReachableFromNodeThresholdMin** (<code>number</code>)  Threshold for MasterReachableFromNode metric. __*Default*__: 1
+  * **nodesThresholdMin** (<code>number</code>)  Threshold for Nodes metric. __*Default*__: instanceCount
+  * **shardsActiveThresholdSum** (<code>number</code>)  Threshold for ShardsActive metric. __*Default*__: 30000
+  * **threadpoolSearchQueueThresholdAvg** (<code>number</code>)  Threshold for ThreadpoolSearchQueue metric. __*Default*__: 500
+  * **threadpoolWriteQueueThresholdAvg** (<code>number</code>)  Threshold for ThreadpoolWriteQueue metric. __*Default*__: 100
+
+__Returns__:
+* <code>[WatchOpenSearchDomain](#cdk-watchful-watchopensearchdomain)</code>
+
 #### watchRdsAuroraCluster(title, cluster, options?) <a id="cdk-watchful-watchful-watchrdsauroracluster"></a>
 
 
@@ -424,6 +502,7 @@ watchScope(scope: Construct, options?: WatchfulAspectProps): void
   * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
+  * **opensearch** (<code>boolean</code>)  Automatically watch OpenSearch Domains in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
   * **stateMachine** (<code>boolean</code>)  Automatically watch AWS state machines in the scope. __*Default*__: true
 
@@ -470,6 +549,7 @@ new WatchfulAspect(watchful: Watchful, props?: WatchfulAspectProps)
   * **ec2ecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **fargateecs** (<code>boolean</code>)  Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern). __*Default*__: true
   * **lambda** (<code>boolean</code>)  Automatically watch AWS Lambda functions in the scope. __*Default*__: true
+  * **opensearch** (<code>boolean</code>)  Automatically watch OpenSearch Domains in the scope. __*Default*__: true
   * **rdsaurora** (<code>boolean</code>)  Automatically watch RDS Aurora clusters in the scope. __*Default*__: true
   * **stateMachine** (<code>boolean</code>)  Automatically watch AWS state machines in the scope. __*Default*__: true
 
@@ -706,6 +786,67 @@ Name | Type | Description
 
 
 
+## struct WatchOpenSearchOptions  <a id="cdk-watchful-watchopensearchoptions"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**automatedSnapshotFailureThresholdMax**? | <code>number</code> | Threshold for AutomatedSnapshotFailure metric.<br/>__*Default*__: 1
+**clusterIndexWritesBlockedThresholdMax**? | <code>number</code> | Threshold for ClusterIndexWritesBlocked metric.<br/>__*Default*__: 1
+**clusterStatusRedThresholdMax**? | <code>number</code> | Threshold for ClusterStatus.red metric.<br/>__*Default*__: 1
+**clusterStatusYellowThresholdMax**? | <code>number</code> | Threshold for ClusterStatus.yellow metric.<br/>__*Default*__: 1
+**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
+**freeStorageSpaceThresholdPercent**? | <code>number</code> | Threshold for FreeStorageSpace metric.<br/>__*Default*__: 25% of storage
+**http5XXResponsesThresholdPercent**? | <code>number</code> | Threshold for 5XX Errors metric.<br/>__*Default*__: 10
+**jvmMemoryPressureThresholdMax**? | <code>number</code> | Threshold for the JVMMMemoryPressure metric.<br/>__*Default*__: 80
+**kmsKeyErrorThresholdMax**? | <code>number</code> | Threshold for KMSKeyError.<br/>__*Default*__: 1
+**kmsKeyInaccessibleThresholdMax**? | <code>number</code> | Threshold for KMSKeyInaccessible.<br/>__*Default*__: 1
+**masterCpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Master Cpu Maximum utilization.<br/>__*Default*__: 50
+**masterJVMMemoryPressureThresholdMax**? | <code>number</code> | Threshold for the MasterJVMMMemoryPressure metric.<br/>__*Default*__: 80
+**masterReachableFromNodeThresholdMin**? | <code>number</code> | Threshold for MasterReachableFromNode metric.<br/>__*Default*__: 1
+**nodesThresholdMin**? | <code>number</code> | Threshold for Nodes metric.<br/>__*Default*__: instanceCount
+**shardsActiveThresholdSum**? | <code>number</code> | Threshold for ShardsActive metric.<br/>__*Default*__: 30000
+**threadpoolSearchQueueThresholdAvg**? | <code>number</code> | Threshold for ThreadpoolSearchQueue metric.<br/>__*Default*__: 500
+**threadpoolWriteQueueThresholdAvg**? | <code>number</code> | Threshold for ThreadpoolWriteQueue metric.<br/>__*Default*__: 100
+
+
+
+## struct WatchOpenSearchProps  <a id="cdk-watchful-watchopensearchprops"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**domain** | <code>[aws_opensearchservice.Domain](#aws-cdk-lib-aws-opensearchservice-domain) &#124; [aws_opensearchservice.CfnDomain](#aws-cdk-lib-aws-opensearchservice-cfndomain)</code> | <span></span>
+**title** | <code>string</code> | <span></span>
+**watchful** | <code>[IWatchful](#cdk-watchful-iwatchful)</code> | <span></span>
+**automatedSnapshotFailureThresholdMax**? | <code>number</code> | Threshold for AutomatedSnapshotFailure metric.<br/>__*Default*__: 1
+**clusterIndexWritesBlockedThresholdMax**? | <code>number</code> | Threshold for ClusterIndexWritesBlocked metric.<br/>__*Default*__: 1
+**clusterStatusRedThresholdMax**? | <code>number</code> | Threshold for ClusterStatus.red metric.<br/>__*Default*__: 1
+**clusterStatusYellowThresholdMax**? | <code>number</code> | Threshold for ClusterStatus.yellow metric.<br/>__*Default*__: 1
+**cpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Cpu Maximum utilization.<br/>__*Default*__: 80
+**freeStorageSpaceThresholdPercent**? | <code>number</code> | Threshold for FreeStorageSpace metric.<br/>__*Default*__: 25% of storage
+**http5XXResponsesThresholdPercent**? | <code>number</code> | Threshold for 5XX Errors metric.<br/>__*Default*__: 10
+**jvmMemoryPressureThresholdMax**? | <code>number</code> | Threshold for the JVMMMemoryPressure metric.<br/>__*Default*__: 80
+**kmsKeyErrorThresholdMax**? | <code>number</code> | Threshold for KMSKeyError.<br/>__*Default*__: 1
+**kmsKeyInaccessibleThresholdMax**? | <code>number</code> | Threshold for KMSKeyInaccessible.<br/>__*Default*__: 1
+**masterCpuMaximumThresholdPercent**? | <code>number</code> | Threshold for the Master Cpu Maximum utilization.<br/>__*Default*__: 50
+**masterJVMMemoryPressureThresholdMax**? | <code>number</code> | Threshold for the MasterJVMMMemoryPressure metric.<br/>__*Default*__: 80
+**masterReachableFromNodeThresholdMin**? | <code>number</code> | Threshold for MasterReachableFromNode metric.<br/>__*Default*__: 1
+**nodesThresholdMin**? | <code>number</code> | Threshold for Nodes metric.<br/>__*Default*__: instanceCount
+**shardsActiveThresholdSum**? | <code>number</code> | Threshold for ShardsActive metric.<br/>__*Default*__: 30000
+**threadpoolSearchQueueThresholdAvg**? | <code>number</code> | Threshold for ThreadpoolSearchQueue metric.<br/>__*Default*__: 500
+**threadpoolWriteQueueThresholdAvg**? | <code>number</code> | Threshold for ThreadpoolWriteQueue metric.<br/>__*Default*__: 100
+
+
+
 ## struct WatchRdsAuroraOptions  <a id="cdk-watchful-watchrdsauroraoptions"></a>
 
 
@@ -800,6 +941,7 @@ Name | Type | Description
 **ec2ecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced EC2 Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
 **fargateecs**? | <code>boolean</code> | Automatically watch ApplicationLoadBalanced Fargate Ecs Services in the scope (using ECS Pattern).<br/>__*Default*__: true
 **lambda**? | <code>boolean</code> | Automatically watch AWS Lambda functions in the scope.<br/>__*Default*__: true
+**opensearch**? | <code>boolean</code> | Automatically watch OpenSearch Domains in the scope.<br/>__*Default*__: true
 **rdsaurora**? | <code>boolean</code> | Automatically watch RDS Aurora clusters in the scope.<br/>__*Default*__: true
 **stateMachine**? | <code>boolean</code> | Automatically watch AWS state machines in the scope.<br/>__*Default*__: true
 

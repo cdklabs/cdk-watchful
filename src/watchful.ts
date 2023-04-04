@@ -6,6 +6,7 @@ import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as ecs from 'aws-cdk-lib/aws-ecs';
 import { ApplicationTargetGroup } from 'aws-cdk-lib/aws-elasticloadbalancingv2';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as opensearch from 'aws-cdk-lib/aws-opensearchservice';
 import * as rds from 'aws-cdk-lib/aws-rds';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as sns_subscriptions from 'aws-cdk-lib/aws-sns-subscriptions';
@@ -18,6 +19,7 @@ import { WatchfulAspect, WatchfulAspectProps } from './aspect';
 import { WatchDynamoTableOptions, WatchDynamoTable } from './dynamodb';
 import { WatchEcsServiceOptions, WatchEcsService } from './ecs';
 import { WatchLambdaFunctionOptions, WatchLambdaFunction } from './lambda';
+import { WatchOpenSearchOptions, WatchOpenSearchDomain } from './opensearch';
 import { WatchRdsAuroraOptions, WatchRdsAurora } from './rds-aurora';
 import { WatchStateMachineOptions, WatchStateMachine } from './state-machine';
 import { SectionWidget } from './widget/section';
@@ -190,6 +192,12 @@ export class Watchful extends Construct implements IWatchful {
   public watchEc2Ecs(title: string, ec2Service: ecs.Ec2Service, targetGroup: ApplicationTargetGroup, options: WatchEcsServiceOptions = {}) {
     return new WatchEcsService(this, Names.uniqueId(ec2Service), {
       title, watchful: this, ec2Service, targetGroup, ...options,
+    });
+  }
+
+  public watchOpenSearch(title: string, domain: opensearch.Domain | opensearch.CfnDomain, options: WatchOpenSearchOptions = {}) {
+    return new WatchOpenSearchDomain(this, Names.uniqueId(domain), {
+      title, watchful: this, domain, ...options,
     });
   }
 }

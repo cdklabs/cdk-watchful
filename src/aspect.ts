@@ -3,6 +3,7 @@ import * as apigw from 'aws-cdk-lib/aws-apigateway';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as ecs_patterns from 'aws-cdk-lib/aws-ecs-patterns';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as opensearch from 'aws-cdk-lib/aws-opensearchservice';
 import * as rds from 'aws-cdk-lib/aws-rds';
 import * as stepfunctions from 'aws-cdk-lib/aws-stepfunctions';
 import { IConstruct } from 'constructs';
@@ -51,6 +52,11 @@ export interface WatchfulAspectProps {
    */
   readonly ec2ecs?: boolean;
 
+  /**
+   * Automatically watch OpenSearch Domains in the scope.
+   * @default true
+   */
+  readonly opensearch?: boolean;
 }
 
 /**
@@ -74,6 +80,7 @@ export class WatchfulAspect implements IAspect {
     const watchRdsAuroraCluster = this.props.rdsaurora === undefined ? true : this.props.rdsaurora;
     const watchFargateEcs = this.props.fargateecs === undefined ? true : this.props.fargateecs;
     const watchEc2Ecs = this.props.ec2ecs === undefined ? true : this.props.ec2ecs;
+    const watchOpenSearch = this.props.opensearch === undefined ? true : this.props.opensearch;
 
     if (watchApiGateway && node instanceof apigw.RestApi) {
       this.watchful.watchApiGateway(node.node.path, node);
@@ -102,6 +109,11 @@ export class WatchfulAspect implements IAspect {
     if (watchEc2Ecs && node instanceof ecs_patterns.ApplicationLoadBalancedEc2Service) {
       this.watchful.watchEc2Ecs(node.node.path, node.service, node.targetGroup);
     }
+
+    if (watchOpenSearch && node instanceof opensearch.Domain || watchOpenSearch && node instanceof opensearch.CfnDomain) {
+      this.watchful.watchOpenSearch(node.node.path, node);
+    }
+
   }
 }
 
