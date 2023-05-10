@@ -14,7 +14,9 @@ Watchful is an [AWS CDK](https://github.com/awslabs/aws-cdk) construct library t
 to monitor CDK apps. It automatically synthesizes alarms and dashboards for supported AWS resources.
 
 ```ts
-import { Watchful } from 'cdk-watchful'
+declare const myTable: dynamodb.Table;
+declare const myFunction: lambda.Function;
+declare const myRestApi: apigw.RestApi;
 
 const wf = new Watchful(this, 'watchful');
 wf.watchDynamoTable('My Cute Little Table', myTable);
@@ -32,7 +34,6 @@ To get started, just define a `Watchful` construct in your CDK app.
 You can initialize using an email address, SQS ARN or both:
 
 ```ts
-import { Watchful } from 'cdk-watchful'
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as sqs from 'aws-cdk-lib/aws-sqs';
 
@@ -63,6 +64,9 @@ discover all watchable resources within that scope (recursively), add them
 to your dashboard and configure alarms for them.
 
 ```ts
+declare const storageLayer: Stack;
+declare const wf: Watchful;
+
 wf.watchScope(storageLayer);
 ```
 

@@ -10,6 +10,9 @@ on:
       - reopened
       - ready_for_review
       - edited
+  merge_group:
+    branches:
+      - main
 jobs:
   validate:
     name: Validate PR title
@@ -26,3 +29,4 @@ jobs:
             fix
             chore
           requireScope: false
+    if: github.event_name == 'pull_request' || github.event_name == 'pull_request_target'

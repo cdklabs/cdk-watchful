@@ -1,9 +1,9 @@
-const { awscdk } = require('projen');
+const { CdklabsConstructLibrary } = require('cdklabs-projen-project-types');
 
-const AUTOMATION_TOKEN = 'PROJEN_GITHUB_TOKEN';
-
-const project = new awscdk.AwsCdkConstructLibrary({
+const project = new CdklabsConstructLibrary({
   name: 'cdk-watchful',
+  private: false,
+  enablePRAutoMerge: true,
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
   projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
@@ -27,6 +27,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   devDeps: [
     'aws-sdk',
+    'cdklabs-projen-project-types',
   ],
 
   // jsii publishing
@@ -55,7 +56,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   autoApproveUpgrades: true,
 
-  minNodeVersion: '14.17.0',
+  minNodeVersion: '16.14.0',
+  workflowNodeVersion: '16.x',
 });
 
 project.gitignore.exclude('.env', '.idea');
