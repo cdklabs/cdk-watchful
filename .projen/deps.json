@@ -7,7 +7,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^14",
+      "version": "^16",
       "type": "build"
     },
     {
@@ -27,6 +27,10 @@
     },
     {
       "name": "aws-sdk",
+      "type": "build"
+    },
+    {
+      "name": "cdklabs-projen-project-types",
       "type": "build"
     },
     {
@@ -100,6 +104,16 @@
     {
       "name": "typescript",
       "type": "build"
+    },
+    {
+      "name": "@aws-cdk/integ-runner",
+      "version": "^2",
+      "type": "devenv"
+    },
+    {
+      "name": "@aws-cdk/integ-tests-alpha",
+      "version": "latest",
+      "type": "devenv"
     },
     {
       "name": "@types/babel__traverse",
