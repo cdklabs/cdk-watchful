@@ -779,9 +779,9 @@
   integrity sha512-a31EnjuIDSX8IXBUib3cYLDRlPMU36AWX4xS8ysLaNu4ZzUesDiPt83pgrW2X1YLMe5L2HbDyaKK5BrL4cNKaQ==
 
 "@sindresorhus/is@^5.2.0":
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-5.4.0.tgz#b1bfbd6024311ade045093b424536cefcc8e3a42"
-  integrity sha512-Ggh6E9AnMpiNXlbXfFUcWE9qm408rL8jDi7+PMBBx7TMbwEmiqAiSmZ+zydYwxcJLqPGNDoLc9mXDuMDBZg0sA==
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-5.4.1.tgz#c4383ce702fb90531c3d310506bab89e70427c53"
+  integrity sha512-axlrvsHlHlFmKKMEg4VyvMzFr93JWJj4eIfXY1STVuO2fsImCa7ncaiG5gC8HKOX590AW5RtRsC41/B+OfrSqw==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.6"
@@ -1597,10 +1597,10 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.1.119:
-  version "0.1.119"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.119.tgz#b75bc2fb9ec0306db3197bb3d5a325140bc5fcf0"
-  integrity sha512-sUb7ZAm+XsLB7kCXG+WZVwZW7kiFLlZtL+G5+ELQh7ilW8bTs+DdSGeLNyVtjYY8lipm57ZSixcZ6EbIW4aWPg==
+cdklabs-projen-project-types@^0.1.120:
+  version "0.1.120"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.120.tgz#7680d878f96cf712c433ac0dc4e8282476a048a1"
+  integrity sha512-hRFXYDQm8U7ONNlU4MnM/fHQ/rv0lHBzZg3JgSCmncVXuBZ4xRlLz+XxH+DvpakeyawlwCSzB7c5WlsMWL2ovg==
   dependencies:
     projen "^0.71.82"
     yaml "^2.3.1"
