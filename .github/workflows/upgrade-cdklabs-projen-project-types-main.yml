@@ -3,8 +3,6 @@
 name: upgrade-cdklabs-projen-project-types-main
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: 0 0 * * *
 jobs:
   upgrade:
     name: Upgrade
