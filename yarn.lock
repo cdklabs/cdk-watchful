@@ -1606,12 +1606,12 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.1.128:
-  version "0.1.128"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.128.tgz#79857fe3e2614dd9e151c5a4e82f8257c7a2bd66"
-  integrity sha512-N0ihg6sxbur8XbwLySCezztPqJJqqkwQU1kewsz5/LZPEN9W/6nw2teR7eUVBdLYyDl8IkQsJxRVY9yURWPHCg==
+cdklabs-projen-project-types@^0.1.130:
+  version "0.1.130"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.130.tgz#4e78d76419b4beace647a4fccf385c10fd520526"
+  integrity sha512-kbjqc8omqWJ9+gbXJkq34hSKi7Bv+4tihomOa4uhHF4ZjtsSu/G8Y55sZsOTNNh2K3Z79b8f04sUskn4oDUUHw==
   dependencies:
-    projen "^0.71.84"
+    projen "^0.71.85"
     yaml "^2.3.1"
 
 chalk@^2.0.0, chalk@^2.4.2:
@@ -5228,10 +5228,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.84, projen@^0.71.85:
-  version "0.71.85"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.85.tgz#da1ce11cbb02b09ea166a3b787b2148069dc723a"
-  integrity sha512-3TMQk015d0TXFhqlYVfgIiGj1QtAlpCfJADZ6Wg6cC2MA5cFlidwFfE/NCcZr1iz/UHZCw6J6TDHfl/Bllan4A==
+projen@^0.71.85, projen@^0.71.87:
+  version "0.71.87"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.87.tgz#18d1c404d87fe71639de00611ffe7ff0e35a74a5"
+  integrity sha512-XEid9NfTfvw1LSS8fjIlOQbxwcqjngwSa7ToAQcB5wxrYjTNk7y4Z1rOyNsBkKpkStiOaJ3bzUw73lPypt+VOg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
