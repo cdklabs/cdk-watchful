@@ -107,7 +107,7 @@
     },
     {
       "name": "@aws-cdk/integ-runner",
-      "version": "^2",
+      "version": "latest",
       "type": "devenv"
     },
     {
