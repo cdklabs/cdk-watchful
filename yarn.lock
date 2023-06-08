@@ -10,12 +10,12 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@aws-cdk/integ-runner@^2":
-  version "2.72.1"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.72.1.tgz#c0ef2968182205aa4616305d581ba9d9e8e0266d"
-  integrity sha512-K+PHvPRrhLbGC33vro5kDNdol5HW/ECORLesxjk5LMXQGDgHqEIIlYgtloVAswlaNSpjopTGrH+/BZYI7Oa8eQ==
+"@aws-cdk/integ-runner@latest":
+  version "2.83.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.83.0-alpha.0.tgz#0f8d4ebc855e12966ef02267ac188203f9226861"
+  integrity sha512-laFbAo83FM6Gybb42o7iTjaLoM6em2BMuOF5616iewlatcUzQOSzPBcZiPPVaOq1rtfMm9UDGnE7yuLAiTYJew==
   dependencies:
-    aws-cdk "2.72.1"
+    aws-cdk "2.83.0"
 
 "@aws-cdk/integ-tests-alpha@latest":
   version "2.82.0-alpha.0"
@@ -1319,10 +1319,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.72.1:
-  version "2.72.1"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.72.1.tgz#5c8dc41239ed7f47d2dd2f54afb980df2a58a24b"
-  integrity sha512-Noihlxyurq9ecz/aTx+j3raeedI0hcPaYFKqS1CkFDoOEvLHIuIEB6regoJHWy9GER/yYYgKu68c7xYo3LaZPA==
+aws-cdk@2.83.0:
+  version "2.83.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.83.0.tgz#0e4f311547c162771b385a7b9e80a48679c493f9"
+  integrity sha512-UB9foPqsQkUeFHP5ZOjxqg0N+g53MPJnpxyKeMhDQDIiS9kG1LqVyHUwHNzq0PSk4kdwH9g50keu6zslb1iA1w==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -1606,12 +1606,12 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.1.125:
-  version "0.1.125"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.125.tgz#6a31786292385f0b8edcc9ece543643ad9e525c4"
-  integrity sha512-Eu7/Ghia1DCS/GA11TyZnf+VtpU07/l3S1uRNAPTdazySO0tOkNxUwaCa1m4OwJJnjGrO6McqCFm9xsnTxmZaQ==
+cdklabs-projen-project-types@^0.1.128:
+  version "0.1.128"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.128.tgz#79857fe3e2614dd9e151c5a4e82f8257c7a2bd66"
+  integrity sha512-N0ihg6sxbur8XbwLySCezztPqJJqqkwQU1kewsz5/LZPEN9W/6nw2teR7eUVBdLYyDl8IkQsJxRVY9yURWPHCg==
   dependencies:
-    projen "^0.71.82"
+    projen "^0.71.84"
     yaml "^2.3.1"
 
 chalk@^2.0.0, chalk@^2.4.2:
@@ -5228,7 +5228,7 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.82, projen@^0.71.84:
+projen@^0.71.84:
   version "0.71.84"
   resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.84.tgz#de71151e71262868020c383e1a1e2a2ad55bf9da"
   integrity sha512-qm1DeX8uVM07dHQn3h5euA7O2S06M32aW9Zol+h+cKaciDFojhY0CDcougdbtaPOsb672O0VxXpub+z95Zxy0w==
@@ -6579,6 +6579,7 @@ workerpool@^6.4.0:
   integrity sha512-i3KR1mQMNwY2wx20ozq2EjISGtQWDIfV56We+yGJ5yDs8jTwQiLLaqHlkBHITlCuJnYlVRmXegxFxZg7gqI++A==
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
