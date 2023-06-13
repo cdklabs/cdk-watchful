@@ -1,16 +1,16 @@
-const { CdklabsConstructLibrary } = require('cdklabs-projen-project-types');
+import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
 
 const project = new CdklabsConstructLibrary({
   name: 'cdk-watchful',
+  projenrcTs: true,
   private: false,
   enablePRAutoMerge: true,
   description: 'Watching your CDK apps since 2019',
   defaultReleaseBranch: 'main',
-  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
 
-  authorName: 'Elad Ben-Israel',
-  authorEmail: 'elad.benisrael@gmail.com',
-  repository: 'https://github.com/eladb/cdk-watchful.git',
+  author: 'Elad Ben-Israel',
+  authorAddress: 'elad.benisrael@gmail.com',
+  repositoryUrl: 'https://github.com/eladb/cdk-watchful.git',
   keywords: [
     'cloudwatch',
     'monitoring',
@@ -21,7 +21,7 @@ const project = new CdklabsConstructLibrary({
   },
 
   cdkVersion: '2.0.0',
-  peerDependencies: [
+  peerDeps: [
     'aws-cdk-lib',
   ],
 
