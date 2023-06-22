@@ -6,7 +6,7 @@ import {
   aws_lambda as lambda,
   aws_apigateway as apigw,
 } from 'aws-cdk-lib';
-import { Watchful } from './src';
+import { Watchful } from 'cdk-watchful';
 
 class Fixture extends Stack {
   constructor(scope: Construct, id: string) {
