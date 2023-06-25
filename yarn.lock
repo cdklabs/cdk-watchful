@@ -1611,12 +1611,12 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.1.151:
-  version "0.1.151"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.151.tgz#b148973d8b7ef5791b04b618c13595d9ef39914f"
-  integrity sha512-gdF+UuvjTP4L9DEHaoMyW9Im0zc4fauLNJs2l43Wc9Yk+CBVliXwBvRPiJI+mRwT2PKLvawRsvxwo8A5/W7pVQ==
+cdklabs-projen-project-types@^0.1.152:
+  version "0.1.152"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.152.tgz#c82133d08dd13e9d6dc3966b38e93367ea3b7660"
+  integrity sha512-UATKCuADpdoKJSFec7eDEEIMAcF3MfhyWXoT0HuVWt6toPn/R2zZ98v1DRdYqW4QwY64rsh5ymDZqazgeR8QOA==
   dependencies:
-    projen "^0.71.108"
+    projen "^0.71.109"
     yaml "^2.3.1"
 
 chalk@^2.0.0, chalk@^2.4.2:
@@ -5258,10 +5258,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.108:
-  version "0.71.108"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.108.tgz#e842bc06235ed0c0f0c09659fcd2bf5d9a15eba0"
-  integrity sha512-1GS9XrN5aIJq4E3jxVzymHizPyAqkAiOiMzzTZ+b3cUKmfQn8xKRTM2JSVlmkcBteXMo4BmdqGWqkQihm1e5lA==
+projen@^0.71.109:
+  version "0.71.109"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.109.tgz#02d11b60006851040642d6a645743b0fdce9f53b"
+  integrity sha512-/a3o+uxILqcWQPwNVfhJ7jkS5cb7aP8fBtqeI3y90RPvyHJxGBDCDdyBNEwG8+TLAHYTLIk+0RfkyjG7OYXDMQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -6332,9 +6332,9 @@ typescript@^3.9.10, typescript@~3.9.10:
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typescript@next:
-  version "5.2.0-dev.20230623"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230623.tgz#e051a098ff9e45b82c21bd8387d618b3bef654f8"
-  integrity sha512-IduDyLpZBJFdoFuHAXj0QfHwkT6GXtkki03deolpXnPG4R+wiVZGIyyzdS0lfVbFCVejcINPxxBs7ce6E5mp+A==
+  version "5.2.0-dev.20230624"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230624.tgz#87d481b2959e6605d9df70ed2c006d60d23b38ca"
+  integrity sha512-n/E1V9TddYiQdoaPXXt7yWU214+n0pGWk82auTMaAkOAj4HJy+TLtaeNt4QjDhMLiF2yFCjVma8qNgD24X6VxQ==
 
 typescript@~5.1.3:
   version "5.1.3"
