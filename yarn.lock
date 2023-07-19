@@ -1378,10 +1378,10 @@ aws-cdk@2.87.0:
   optionalDependencies:
     fsevents "2.3.2"
 
-aws-sdk@^2.1416.0:
-  version "2.1416.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1416.0.tgz#6f88c74a72cc7bc6e5af1b0711f24106445e22c5"
-  integrity sha512-AP36hsRZhyceyCoTYrsV9FH04CEcAegQYcrg2ybsYB4axo5uvwM67YLFcwc9jAAbk4l2ALWv2XnI0e7HZFCGqQ==
+aws-sdk@^2.1417.0:
+  version "2.1417.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1417.0.tgz#47056eb03f335f07d03514019fa6922b03865fce"
+  integrity sha512-tSYegmmcwUwr5PGivsqQ+j49D+mE1f6diKnTylrvyZ463nFB9cAe1GcDgKD/Q3zSKq0mcpF/WZCesnC3pFD9UQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2281,9 +2281,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.431:
-  version "1.4.462"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.462.tgz#4faf5072bb5f55269d35ca9dc7475e7bf91b1ac3"
-  integrity sha512-ux2LqN9JKRBDKXMT+78jtiBLPiXf+rLtYlsrOg5Qn7uv6Cbg7+9JyIalE3wcqkOdB2wPCUYNWAuL7suKRMHe9w==
+  version "1.4.464"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.464.tgz#2f94bad78dff34e527aacbfc5d0b1a33cf046507"
+  integrity sha512-guZ84yoou4+ILNdj0XEbmGs6DEWj6zpVOWYpY09GU66yEb0DSYvP/biBPzHn0GuW/3RC/pnaYNUWlQE1fJYtgA==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3546,15 +3546,11 @@ is-text-path@^1.0.1:
     text-extensions "^1.0.0"
 
 is-typed-array@^1.1.10, is-typed-array@^1.1.3, is-typed-array@^1.1.9:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/is-typed-array/-/is-typed-array-1.1.11.tgz#893621188e6919d4e6a488b9f6557d8c4b051953"
-  integrity sha512-l2SCJk9RflSWHQjOJJgNsV5FnE1pq/RpHnYW6ckSjTCYypv07SMbiRSCmLQD63WOv2eXaEwNsn+7kcn3csvYSw==
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/is-typed-array/-/is-typed-array-1.1.12.tgz#d0bab5686ef4a76f7a73097b95470ab199c57d4a"
+  integrity sha512-Z14TF2JNG8Lss5/HMqt0//T9JeHXttXy5pH/DBU4vi98ozO2btxzq9MwYDZYnKwU8nRsz/+GVFVRDq3DkVuSPg==
   dependencies:
-    available-typed-arrays "^1.0.5"
-    call-bind "^1.0.2"
-    for-each "^0.3.3"
-    gopd "^1.0.1"
-    has-tostringtag "^1.0.0"
+    which-typed-array "^1.1.11"
 
 is-typedarray@^1.0.0:
   version "1.0.0"
@@ -5253,10 +5249,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.124, projen@^0.71.141:
-  version "0.71.141"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.141.tgz#74556ecc5a875023acdb2eb0e51f859d70d99512"
-  integrity sha512-G5CKV/NgmWlmHha9xXhxKliZkT8/ZDc9MQ8QQfY2OFT+gneLFR35xJtSzl3Musnu2AgpN5pd6MKcPffjagp+Tw==
+projen@^0.71.124, projen@^0.71.142:
+  version "0.71.142"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.142.tgz#f44dc122a304ce524d105015c6712507cdc456c1"
+  integrity sha512-LFtXUYwDhihsDo7jXtZbqZZaLIUuBI9OXSngqGuy7X5SlSJk3qjq3hH0ILr4orBRzCY2JDKb2Eq9CpJJbx080w==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -6359,9 +6355,9 @@ typescript@^3.9.10, typescript@~3.9.10:
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typescript@next:
-  version "5.2.0-dev.20230717"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230717.tgz#e1468ce4983646adc9138de6f07d4c1a617d2783"
-  integrity sha512-T6Jl+oxydjHSfqyak7AeMpeei76VXFdEYdYkFavnQK8cEcw9knjJ8W63cT8IZUBgEIStQcI4zNEuoFUnotysOg==
+  version "5.2.0-dev.20230718"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230718.tgz#8c60b2f6807b3f8b2db47980ee6c73dea1f45e42"
+  integrity sha512-ED1Vm+2UzdbtKui+0lVswEuAX94fQXeoghXyy/+aTNers8X/WB81r5sFg6nA4e43nVQ2MP/Qsa7/XJRFuHR+Cg==
 
 typescript@~5.1.6:
   version "5.1.6"
@@ -6593,17 +6589,16 @@ which-boxed-primitive@^1.0.2:
     is-string "^1.0.5"
     is-symbol "^1.0.3"
 
-which-typed-array@^1.1.10, which-typed-array@^1.1.2:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/which-typed-array/-/which-typed-array-1.1.10.tgz#74baa2789991905c2076abb317103b866c64e69e"
-  integrity sha512-uxoA5vLUfRPdjCuJ1h5LlYdmTLbYfums398v3WLkM+i/Wltl2/XyZpQWKbN++ck5L64SR/grOHqtXCUKmlZPNA==
+which-typed-array@^1.1.10, which-typed-array@^1.1.11, which-typed-array@^1.1.2:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/which-typed-array/-/which-typed-array-1.1.11.tgz#99d691f23c72aab6768680805a271b69761ed61a"
+  integrity sha512-qe9UWWpkeG5yzZ0tNYxDmd7vo58HDBc39mZ0xWWpolAGADdFOzkfamWLDxkOWcvHQKVmdTyQdLD4NOfjLWTKew==
   dependencies:
     available-typed-arrays "^1.0.5"
     call-bind "^1.0.2"
     for-each "^0.3.3"
     gopd "^1.0.1"
     has-tostringtag "^1.0.0"
-    is-typed-array "^1.1.10"
 
 which@^2.0.1, which@^2.0.2:
   version "2.0.2"
