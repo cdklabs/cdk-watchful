@@ -1155,12 +1155,10 @@ agent-base@6, agent-base@^6.0.2:
     debug "4"
 
 agentkeepalive@^4.2.1:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-4.4.0.tgz#6304d7f60e503ecd7d39b43942f7698d77c60497"
-  integrity sha512-MysLRwkhsJTZKs+fsZIsTgBlr3IjQroonVJWMSqC9k3LS6f6ZifePl9fCqOtvc8p0CeYDSZVFvytdkwhOGaSZA==
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/agentkeepalive/-/agentkeepalive-4.5.0.tgz#2673ad1389b3c418c5a20c5d7364f93ca04be923"
+  integrity sha512-5GG/5IbQQpC9FpkRGsSvZI5QYeSCzlJHdpBQntCsuTOxhKD8lqKhrleg2Yi7yvMIf82Ycmmqln9U8V9qwEiJew==
   dependencies:
-    debug "^4.1.0"
-    depd "^2.0.0"
     humanize-ms "^1.2.1"
 
 aggregate-error@^3.0.0:
@@ -2198,11 +2196,6 @@ delegates@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==
-
-depd@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
-  integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
 
 detect-indent@^5.0.0:
   version "5.0.0"
@@ -5308,10 +5301,10 @@ projen@^0.71.124:
     yaml "^2.2.2"
     yargs "^17.7.2"
 
-projen@^0.72.3:
-  version "0.72.3"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.3.tgz#df9d7eba5f596c1ed5c29c238996558bd9225c75"
-  integrity sha512-VFXCdJcPFDWH+VtVEPD30J5M+OCgRD6CWKqbKLghHP6aUMgZGPVdri7QKhxijpyNTvqMhjIptoYAXU2NO63x+g==
+projen@^0.72.4:
+  version "0.72.4"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.4.tgz#663e29bf75cbc4e62ab10f10a9950d276499fcdc"
+  integrity sha512-zbYq7NXKrkz9zb8wS6jgk2q6zNoap/bmHTKmwk3I/eAGeEXc2Rt06HkrjQ/z9LqTUbqwsk4YQU5wzY7IE8n5iw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -6415,9 +6408,9 @@ typescript@^3.9.10, typescript@~3.9.10:
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typescript@next:
-  version "5.2.0-dev.20230805"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230805.tgz#268b16daef756e046afb3cde7909a28805711b4a"
-  integrity sha512-7WQVs+Bx10F/0wuAO6+4raW6bvWnZ723Hrm6RdTof2L8dO0vsUDdxg0gpoEHL1tJ+Z3llQ8bOdxpliBVevvofQ==
+  version "5.2.0-dev.20230806"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.2.0-dev.20230806.tgz#c7c283b2f77d8451e8a173df474b32db3ab1525a"
+  integrity sha512-YQFa8UzjncWuVozkTh+XxPySrW053wUDWVofVi6fwqipHsGtZzi3SYpXv4H3OpViICbej9bCwEL17lo8WhMq+w==
 
 typescript@~5.1.6:
   version "5.1.6"
