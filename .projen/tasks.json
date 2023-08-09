@@ -386,7 +386,7 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade "
+          "exec": "yarn upgrade npm-check-updates"
         },
         {
           "exec": "npm-check-updates --filter=cdklabs-projen-project-types,projen --upgrade"
@@ -395,7 +395,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade "
+          "exec": "yarn upgrade cdklabs-projen-project-types projen"
         },
         {
           "exec": "npx projen"
