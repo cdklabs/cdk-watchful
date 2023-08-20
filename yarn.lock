@@ -1641,9 +1641,9 @@ camelcase@^7.0.1:
   integrity sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==
 
 caniuse-lite@^1.0.30001517:
-  version "1.0.30001521"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001521.tgz#e9930cf499f7c1e80334b6c1fbca52e00d889e56"
-  integrity sha512-fnx1grfpEOvDGH+V17eccmNjucGUnCbP6KL+l5KqBIerp26WK/+RQ7CIDE37KGJjaPyqWXXlFUyKiWmvdNNKmQ==
+  version "1.0.30001522"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001522.tgz#44b87a406c901269adcdb834713e23582dd71856"
+  integrity sha512-TKiyTVZxJGhsTszLuzb+6vUZSjVOAhClszBr2Ta2k9IwtNBT/4dzmL6aywt0HCgEZlmwJzXJd8yNiob6HgwTRg==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -5282,10 +5282,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.72.13, projen@^0.72.16:
-  version "0.72.16"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.16.tgz#14da387badd0f7392c43300ab2eb473e377cd3f7"
-  integrity sha512-c8LhT3/96inICH6zpSbxGanNpHhC2r/tZ7H5h8WjYkSfxik27NYdmB6RhTPLKSFxc086uQyj/ybCOPIAlNyP/A==
+projen@^0.72.13, projen@^0.72.17:
+  version "0.72.17"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.72.17.tgz#9f916637b252e9c5863333b9785c1e58be216afa"
+  integrity sha512-BYBtefNoW0NPCsou/Ln6z0I6XlmNY40a/AUQLKIQchlhtDmqh3rr39HIBc4YIupw4Tz9eY9EeUsaVRSQnHiB5A==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -6390,9 +6390,9 @@ typescript@^3.9.10, typescript@~3.9.10:
   integrity sha512-w6fIxVE/H1PkLKcCPsFqKE7Kv7QUwhU8qQY2MueZXWx5cPZdwFupLgKK3vntcK98BtNHZtAF4LA/yl2a7k8R6Q==
 
 typescript@next:
-  version "5.3.0-dev.20230818"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.3.0-dev.20230818.tgz#1b2342f15246476f9830ba44c7fe6d42c8a92e93"
-  integrity sha512-inkObfKw5TVieNQdO9vTAAzUIKV6i2bjqpC28j1knVWvcxaBLtNGrPgxGVnhWB/LQ5AjMLvgkCM58kkamkRObQ==
+  version "5.3.0-dev.20230819"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.3.0-dev.20230819.tgz#2d9dcc12507c459031f7d2c39bdcd8aa6480a0a6"
+  integrity sha512-xFI03/rVF4TqfFun9uM1WLqJxM69zGmALg4vOWFGXLW6W126ay+fBUcCm3xoRVNA8ltwzViJq2dXpZKzckShBQ==
 
 typescript@~5.1.6:
   version "5.1.6"
