@@ -347,16 +347,13 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade npm-check-updates"
-        },
-        {
-          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-sdk,cdklabs-projen-project-types,eslint-import-resolver-node,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest-junit,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript,aws-cdk-lib,constructs"
+          "exec": "npx npm-check-updates@latest --upgrade --target=minor --peer --dep=prod,peer --filter=aws-cdk-lib,constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk cdklabs-projen-project-types eslint-import-resolver-node eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest jsii-diff jsii-docgen jsii-pacmak jsii-rosetta npm-check-updates projen standard-version ts-jest ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"
@@ -374,10 +371,7 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade npm-check-updates"
-        },
-        {
-          "exec": "npm-check-updates --filter=cdklabs-projen-project-types,projen --upgrade"
+          "exec": "npx npm-check-updates@latest --upgrade --target=latest --peer --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
         },
         {
           "exec": "yarn install --check-files"
@@ -387,6 +381,33 @@
         },
         {
           "exec": "npx projen"
+        },
+        {
+          "spawn": "post-upgrade"
+        }
+      ]
+    },
+    "upgrade-dev-deps": {
+      "name": "upgrade-dev-deps",
+      "description": "upgrade dev dependencies",
+      "env": {
+        "CI": "0"
+      },
+      "steps": [
+        {
+          "exec": "npx npm-check-updates@latest --upgrade --target=minor --peer --dep=dev --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-sdk,cdklabs-projen-project-types,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest-junit,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,npm-check-updates,projen,standard-version,ts-jest,ts-node,typescript"
+        },
+        {
+          "exec": "yarn install --check-files"
+        },
+        {
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser aws-sdk cdklabs-projen-project-types eslint-import-resolver-typescript eslint-plugin-import eslint jest-junit jest jsii-diff jsii-docgen jsii-pacmak jsii-rosetta npm-check-updates projen standard-version ts-jest ts-node typescript"
+        },
+        {
+          "exec": "npx projen"
+        },
+        {
+          "spawn": "post-upgrade"
         }
       ]
     },
