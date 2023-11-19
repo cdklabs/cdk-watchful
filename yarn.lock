@@ -817,16 +817,16 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "20.9.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.1.tgz#9d578c610ce1e984adda087f685ace940954fe19"
-  integrity sha512-HhmzZh5LSJNS5O8jQKpJ/3ZcrrlG6L70hpGqMIAoM9YVD0YBRNWYsfwcXq8VnSjlNpCpgLzMXdiPo+dxcvSmiA==
+  version "20.9.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.2.tgz#002815c8e87fe0c9369121c78b52e800fadc0ac6"
+  integrity sha512-WHZXKFCEyIUJzAwh3NyyTHYSR35SevJ6mZ1nWwJafKtiQbqRTIKSRcw3Ma3acqgsent3RRDqeVwpHntMk+9irg==
   dependencies:
     undici-types "~5.26.4"
 
 "@types/node@^16":
-  version "16.18.61"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.61.tgz#5ea47e3018348bf3bbbe646b396ba5e720310be1"
-  integrity sha512-k0N7BqGhJoJzdh6MuQg1V1ragJiXTh8VUBAZTWjJ9cUq23SG0F0xavOwZbhiP4J3y20xd6jxKx+xNUhkMAi76Q==
+  version "16.18.62"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.62.tgz#5b80d7a800f86842c5fadc066a63d6312208805c"
+  integrity sha512-/zbPnIBkef8sT+6vw6BxdvU3dCxRI0v6rBu/6IvXnRNtOPILucigqhUBPYxtQ/8JdAna0JLTAcNTCDmQ77QYkQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.4"
@@ -4333,26 +4333,6 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.76.29:
-  version "0.76.29"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.76.29.tgz#13810ceb6d63f26b6ded63d4a49c4a21c523f727"
-  integrity sha512-m0bKElBV/aRtXqRD0KMVjTRXnFabNXfEDUeAefrXQWtlmHcdPCzVEJKGgpH334B2eceT9rzJlV+iI/PXUxmTWg==
-  dependencies:
-    "@iarna/toml" "^2.2.5"
-    case "^1.6.3"
-    chalk "^4.1.2"
-    comment-json "4.2.2"
-    constructs "^10.0.0"
-    conventional-changelog-config-spec "^2.1.0"
-    fast-json-patch "^3.1.1"
-    glob "^8"
-    ini "^2.0.0"
-    semver "^7.5.4"
-    shx "^0.3.4"
-    xmlbuilder2 "^3.1.1"
-    yaml "^2.2.2"
-    yargs "^17.7.2"
-
 projen@^0.77.0:
   version "0.77.0"
   resolved "https://registry.yarnpkg.com/projen/-/projen-0.77.0.tgz#d19c5a57ecccecdce868c870f1d274ae57f09d9f"
@@ -5234,9 +5214,9 @@ typescript@^5.2.2, typescript@~5.2, typescript@~5.2.2:
   integrity sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==
 
 typescript@next:
-  version "5.4.0-dev.20231117"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.0-dev.20231117.tgz#a7e6f0b38755678da22a7ccccdc3fe98102d2824"
-  integrity sha512-qJs5vq279esPS+UX+NlDaSB8aDc9NiC1VLo6cHGrEVMUV8e9WTMic5T92KgDsExf239vViwmKNvtSMGf90aDOA==
+  version "5.4.0-dev.20231118"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.0-dev.20231118.tgz#f0316f78fd737358a2ce0414419bb7c35ad2853b"
+  integrity sha512-ZrQd4CI6YXINmXfnDSNG26zo+qAAh3UXig2GREmT9wOqmxceVHE7wbeP4PU3IBIpea8P22WEcB/cP33yPsxjsA==
 
 typescript@~3.9.10:
   version "3.9.10"
