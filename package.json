@@ -64,7 +64,7 @@
     "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.92.0",
     "jsii-rosetta": "^5.2.2",
-    "projen": "^0.76.29",
+    "projen": "^0.77.0",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
