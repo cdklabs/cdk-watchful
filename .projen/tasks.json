@@ -345,20 +345,7 @@
       "env": {
         "CI": "0"
       },
-      "steps": [
-        {
-          "exec": "yarn install --check-files"
-        },
-        {
-          "exec": "yarn upgrade aws-cdk-lib constructs"
-        },
-        {
-          "exec": "npx projen"
-        },
-        {
-          "spawn": "post-upgrade"
-        }
-      ]
+      "steps": []
     },
     "upgrade-cdklabs-projen-project-types": {
       "name": "upgrade-cdklabs-projen-project-types",
