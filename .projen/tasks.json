@@ -345,7 +345,11 @@
       "env": {
         "CI": "0"
       },
-      "steps": []
+      "steps": [
+        {
+          "exec": "echo No dependencies to upgrade."
+        }
+      ]
     },
     "upgrade-cdklabs-projen-project-types": {
       "name": "upgrade-cdklabs-projen-project-types",
@@ -354,6 +358,9 @@
         "CI": "0"
       },
       "steps": [
+        {
+          "exec": "npx npm-check-updates@16 --upgrade --target=latest --peer --dep=dev,peer,prod,optional --filter=cdklabs-projen-project-types,projen"
+        },
         {
           "exec": "yarn install --check-files"
         },
@@ -375,6 +382,9 @@
         "CI": "0"
       },
       "steps": [
+        {
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev --filter=@types/jest,@types/node,@typescript-eslint/eslint-plugin,@typescript-eslint/parser,aws-sdk,cdklabs-projen-project-types,eslint-import-resolver-typescript,eslint-plugin-import,eslint,jest-junit,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,projen,standard-version,ts-jest,ts-node,typescript"
+        },
         {
           "exec": "yarn install --check-files"
         },
