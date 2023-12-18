@@ -809,9 +809,9 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "20.10.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.4.tgz#b246fd84d55d5b1b71bf51f964bd514409347198"
-  integrity sha512-D08YG6rr8X90YB56tSIuBaddy/UXAA9RKJoFvrsnogAum/0pmjkgi4+2nx96A330FmioegBWmEYQ+syqCFaveg==
+  version "20.10.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.5.tgz#47ad460b514096b7ed63a1dae26fad0914ed3ab2"
+  integrity sha512-nNPsNE65wjMxEKI93yOP+NPGGBJz/PoN3kZsVLee0XMiJolxSekEVD8wRwBUBqkwc7UWop0edW50yrCQW4CyRw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -3661,9 +3661,9 @@ jsii@1.x:
     yargs "^16.2.0"
 
 jsii@~5.2.5:
-  version "5.2.41"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.2.41.tgz#ba1ec85b2f0a92fed3163b028645d5bb62a97bd8"
-  integrity sha512-MToK0IBcx1+KZWpwMehLALT60TEav0yDXcu3TilNQbtJLztQrzA1HKZuzV6EIMB1nmHwABCr1qSeoIvqLnYfWA==
+  version "5.2.42"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.2.42.tgz#c229b4a164687dcc5b5aeef6f87064209498b9d8"
+  integrity sha512-2tE08NPGHxkhfLnqYExLN5Pr3cr3ZslugQsi53huXJMywn4HGAJgH1vdzcN5TD5FNGy8TwnKyo7VAn6CahDtfA==
   dependencies:
     "@jsii/check-node" "1.93.0"
     "@jsii/spec" "^1.93.0"
@@ -5205,9 +5205,9 @@ typescript@^5.2.2:
   integrity sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==
 
 typescript@next:
-  version "5.4.0-dev.20231216"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.0-dev.20231216.tgz#5dbbc18000b8b868605299fa69507b9a7873db42"
-  integrity sha512-N38i9y3t+zXZuhzVuU7Czkfb1gGhsp4qCrOFxjJrTywFYFx8BlE2ugpYCbS59Sb7e42RpHxKjTGrPOBpOnouXQ==
+  version "5.4.0-dev.20231217"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.0-dev.20231217.tgz#7b774444c14ae6ede3149753ca9f9301f91200e6"
+  integrity sha512-LfTSjpGkhz5vojqrbHPD0UyPplTewag9lJpWP0U4hfeOXi62DN1CBp/us35zPVmD49iznxiIgTW9rNMbEiJYtw==
 
 typescript@~3.9.10:
   version "3.9.10"
