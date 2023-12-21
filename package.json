@@ -51,7 +51,7 @@
     "@typescript-eslint/eslint-plugin": "^6",
     "@typescript-eslint/parser": "^6",
     "aws-cdk-lib": "2.0.0",
-    "aws-sdk": "^2.1523.0",
+    "aws-sdk": "^2.1524.0",
     "cdklabs-projen-project-types": "^0.1.183",
     "constructs": "10.0.5",
     "eslint": "^8",
@@ -80,7 +80,7 @@
     "monitoring"
   ],
   "engines": {
-    "node": ">= 18.0.0"
+    "node": ">= 18.12.0"
   },
   "main": "lib/index.js",
   "license": "Apache-2.0",
