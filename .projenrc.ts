@@ -56,8 +56,8 @@ const project = new CdklabsConstructLibrary({
 
   autoApproveUpgrades: true,
 
-  minNodeVersion: '16.14.0',
-  workflowNodeVersion: '16.x',
+  minNodeVersion: '18.0.0',
+  workflowNodeVersion: '18.x',
 });
 
 project.gitignore.exclude('.env', '.idea');
