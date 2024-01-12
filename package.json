@@ -52,14 +52,14 @@
     "@typescript-eslint/parser": "^6",
     "aws-cdk-lib": "2.0.0",
     "aws-sdk": "^2.1521.0",
-    "cdklabs-projen-project-types": "^0.1.182",
+    "cdklabs-projen-project-types": "^0.1.186",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.29.1",
     "jest": "^27",
     "jest-junit": "^15",
-    "jsii": "1.x",
+    "jsii": "~5.2",
     "jsii-diff": "^1.93.0",
     "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.93.0",
@@ -73,10 +73,6 @@
   "peerDependencies": {
     "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.5"
-  },
-  "resolutions": {
-    "@types/babel__traverse": "7.18.2",
-    "@types/prettier": "2.6.0"
   },
   "keywords": [
     "cdk",
