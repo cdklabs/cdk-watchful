@@ -1429,12 +1429,12 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.1.188:
-  version "0.1.188"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.188.tgz#12538d1055f2faa1f00dbc93a31eca0e73558431"
-  integrity sha512-tnsjh0VLH575vJJUOCgx9893kN1iZ/8fO8KZqVmQKCmDPUFkjhB3lJDP1uD9FGOZfyUSn8r2thFmBQiLn71u5g==
+cdklabs-projen-project-types@^0.1.189:
+  version "0.1.189"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.189.tgz#947f7892d16b2facce89a288e32fd42c3d3fa872"
+  integrity sha512-d7vFKFXDqgpTxFAz5cJTCIOgW+K4dT0V9UbhImU3hYtili2hX9ISYPJqYaONHlEvt2OCTJxutnwRRSl94HVrgQ==
   dependencies:
-    yaml "^2.3.4"
+    yaml "^2.4.0"
 
 chalk@^2.4.2:
   version "2.4.2"
@@ -3734,9 +3734,9 @@ jsii@~5.2:
     yargs "^17.7.2"
 
 jsii@~5.3.0:
-  version "5.3.20"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.3.20.tgz#7de79228c1d8f86336c33b47dc56d85b2d8b69f0"
-  integrity sha512-OPoEpEvD943+fx6ruoUTpmFJoY55wiuUl64ELeQ4CQ6mUfx31YczvacqDYrrbSwoEe8Ea9a7sQOUXo3b3Oi8PQ==
+  version "5.3.21"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.3.21.tgz#cd13aab1da64bbde4ba899975884079b0897005b"
+  integrity sha512-P8ko6yoT0MaAThUhZjV1ZNuJ0NmyIQAfj+Rld2WfD0q8M49bMtkd3RoqjRJWwYBLPLeQYqI4VkHwRv8T6psCJA==
   dependencies:
     "@jsii/check-node" "1.94.0"
     "@jsii/spec" "^1.94.0"
@@ -3748,7 +3748,7 @@ jsii@~5.3.0:
     semver "^7.6.0"
     semver-intersect "^1.5.0"
     sort-json "^2.0.1"
-    spdx-license-list "^6.8.0"
+    spdx-license-list "^6.9.0"
     typescript "~5.3"
     yargs "^17.7.2"
 
@@ -4852,7 +4852,7 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.17.tgz#887da8aa73218e51a1d917502d79863161a93f9c"
   integrity sha512-sh8PWc/ftMqAAdFiBu6Fy6JUOYjqDJBJvIhpfDMyHrr0Rbp5liZqd4TjtQ/RgfLjKFZb+LMx5hpml5qOWy0qvg==
 
-spdx-license-list@^6.8.0:
+spdx-license-list@^6.8.0, spdx-license-list@^6.9.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-6.9.0.tgz#5543abb3a15f985a12808f642a622d2721c372ad"
   integrity sha512-L2jl5vc2j6jxWcNCvcVj/BW9A8yGIG02Dw+IUw0ZxDM70f7Ylf5Hq39appV1BI9yxyWQRpq2TQ1qaXvf+yjkqA==
@@ -5311,9 +5311,9 @@ typescript@^5.2.2, typescript@~5.3:
   integrity sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==
 
 typescript@next:
-  version "5.5.0-dev.20240224"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240224.tgz#3e20340f6b5faafbe28462d38a179c38aedcce0e"
-  integrity sha512-mOiRt5RHvvap+xlmjpkYjr22olnof2cj2TUc98uAAY2fmkxcQrsa5kjPIiT/PUoOYda3XhDvvnWL6h+z6Y4oqA==
+  version "5.5.0-dev.20240225"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240225.tgz#9923a147e92b22cde3636271acd24e880e38eb6a"
+  integrity sha512-0Zcu9sgcrxHNKb2BiBo0wbMquDvFR7QT7yySgRtb5DlkdgzuVS+xQUL5stK48NHLb7GhHNqqVhJ3zDHgoT8SbQ==
 
 typescript@~3.9.10:
   version "3.9.10"
@@ -5627,10 +5627,10 @@ yaml@1.10.2:
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 
-yaml@^2.2.2, yaml@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.3.4.tgz#53fc1d514be80aabf386dc6001eb29bf3b7523b2"
-  integrity sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==
+yaml@^2.2.2, yaml@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.4.0.tgz#2376db1083d157f4b3a452995803dbcf43b08140"
+  integrity sha512-j9iR8g+/t0lArF4V6NE/QCfT+CO7iLqrXAHZbJdo+LfjqP1vR8Fg5bSiaq6Q2lOD1AUEVrEVIgABvBFYojJVYQ==
 
 yargs-parser@20.x, yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.9"
