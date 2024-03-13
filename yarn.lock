@@ -24,19 +24,19 @@
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.132.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.132.0-alpha.0.tgz#cfb2251258fc1ad9933a9e4e113aaf85a14943bc"
-  integrity sha512-0QVWst/uYLOq5pS8ugty3eFAGfwSZqpG1taf2w6hQ4ok0xPedWI2kvNTuk3A2qmBxV4TI7MaWxhU3Um+irPhiA==
+  version "2.132.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.132.1-alpha.0.tgz#d059fb76516fdf5abf540791bc4951559ebdbdad"
+  integrity sha512-S2/iXb72XqAod/0yAbvZ3Q3LRnW66G24pDxD3fkOfu4aoZ7EE0h9WAeSOXAn8nhQll4f26n3Kyu/Ic9ewCgfUg==
   dependencies:
     "@aws-cdk/aws-service-spec" "0.0.52"
-    aws-cdk "2.132.0"
+    aws-cdk "2.132.1"
   optionalDependencies:
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.132.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.132.0-alpha.0.tgz#429974db3fee75a050afb2ab6bc3378523f1d8b4"
-  integrity sha512-a6SGtk+5A1wD/xoihGuIRbPKeqzu0a/7s2MEQPrgVMqrtDKcac3FF98McPu734/IqGD3ibv6Ucez2z0Wn8ffJQ==
+  version "2.132.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.132.1-alpha.0.tgz#16d26a8ec2af983ea36ebcdb6300dc13172fccbf"
+  integrity sha512-+MN4h5Gap7EGaPFWapk/jt165KLgQYz3dfRfHdB/KNUMk5UwA14kNY7JGfShlJsVAT+NvsFhBuZi2APhxiZ6wA==
 
 "@aws-cdk/service-spec-types@^0.0.52":
   version "0.0.52"
@@ -1225,17 +1225,17 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.132.0:
-  version "2.132.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.132.0.tgz#4b39e05fcb1a35351bd43f3ea6e9ad127e4e9f90"
-  integrity sha512-C2j9iQqpl21YGuip02tIAAkgkDZNDDWeEoWfPcdXCJlQ9DVpYTJG24QxtY0rWflJ7Xkn+iAozdjlCrXSxYeAfA==
+aws-cdk@2.132.1:
+  version "2.132.1"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.132.1.tgz#c7c281200f2bee627bda3f7909000eb35f0ec0ee"
+  integrity sha512-aIZXfX5YGNvqhbTUoUrNeXWVt6CL3d7RDSEXrPifX5OpEgI2jqtZQVpHaUzuTzTd8niuyucwvlmZmKN8xBg2/A==
   optionalDependencies:
     fsevents "2.3.2"
 
-aws-sdk@^2.1575.0:
-  version "2.1575.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1575.0.tgz#3ccf2d0192a26d61ffa008ffb036a23c38b1dce1"
-  integrity sha512-q33w5NN057CYOdcbxpKAgrb7CUSPrtPBxGGzgIo44y1Fi1iEXDawMYcahu5cwSfD6NFzvZkPz2a5Eo1Fu3Az8A==
+aws-sdk@^2.1576.0:
+  version "2.1576.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1576.0.tgz#f852d8c51df41b55e437610c653b31759f6a1a98"
+  integrity sha512-h9ujtJl6LrELtbBrMkzywHoL90L7/7R/CwRx8nWwF500wmmzKwScmQ3MJQ9XSZxl0TjY6lf39K1zP6pNCwh1lA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1996,9 +1996,9 @@ downlevel-dts@^0.11.0:
     typescript next
 
 electron-to-chromium@^1.4.668:
-  version "1.4.701"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.701.tgz#7335e5761331774b4dea54cd24a1b84861d45cdf"
-  integrity sha512-K3WPQ36bUOtXg/1+69bFlFOvdSm0/0bGqmsfPDLRXLanoKXdA+pIWuf/VbA9b+2CwBFuONgl4NEz4OEm+OJOKA==
+  version "1.4.702"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.702.tgz#a05803c5a1a54f5eb727ce6a922a5923ef436261"
+  integrity sha512-LYLXyEUsZ3nNSwiOWjI88N1PJUAMU2QphQSgGLVkFnb3FxZxNui2Vzi2PaKPgPWbsWbZstZnh6BMf/VQJamjiQ==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5311,9 +5311,9 @@ typescript@^5.2.2:
   integrity sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==
 
 typescript@next:
-  version "5.5.0-dev.20240311"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240311.tgz#98eb4774ff5dc21d821e8b0c60e06ad0c0c7e693"
-  integrity sha512-Cdp0eYgn/19lkcrq7WCqQxmnvCqvuJrd/jGhm1HyPMSYVTGzjxVP0NfXr2A4YVS12IAipt1uO4zgAJeLlYG2JA==
+  version "5.5.0-dev.20240312"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240312.tgz#6164816ce937d23391cf87865f25baf8e5b5057c"
+  integrity sha512-CEPqB9IvrkCgyoFCmsmQH4AXsXM+KX32FQvmVk8LYecfoNsow5+nW5ZwI8MiQUoGNZ78uTINFwyM1M6G/aNSrA==
 
 typescript@~3.9.10:
   version "3.9.10"
