@@ -384,7 +384,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev --filter=@types/jest,aws-sdk,cdklabs-projen-project-types,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,jsii,projen,ts-jest,ts-node,typescript,@aws-cdk/integ-runner,@aws-cdk/integ-tests-alpha"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev --filter=@types/jest,aws-sdk,cdklabs-projen-project-types,eslint-import-resolver-typescript,eslint-plugin-import,jest,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,projen,ts-jest,ts-node,typescript"
         },
         {
           "exec": "yarn install --check-files"
