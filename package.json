@@ -63,7 +63,7 @@
     "jsii-diff": "^1.97.0",
     "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.97.0",
-    "jsii-rosetta": "^5.4.0",
+    "jsii-rosetta": "^5.4.2",
     "projen": "^0.81.0",
     "standard-version": "^9",
     "ts-jest": "^27",
