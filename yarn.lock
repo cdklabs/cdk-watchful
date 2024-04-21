@@ -4177,9 +4177,9 @@ npm-run-path@^4.0.1:
     path-key "^3.0.0"
 
 nwsapi@^2.2.0:
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.7.tgz#738e0707d3128cb750dddcfe90e4610482df0f30"
-  integrity sha512-ub5E4+FBPKwAZx0UwIQOjYWGHTEq5sPqHQNRN8Z9e4A7u3Tj1weLJsL59yH9vmvqEtBHaOmT6cYQKIZOxp35FQ==
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.8.tgz#a3552e65b74bf8cc89d0480c4132b61dbe54eccf"
+  integrity sha512-GU/I3lTEFQ9mkEm07Q7HvdRajss8E1wVMGOk3/lHl60QPseG+B3BIQY+JUjYWw7gF8cCeoQCXd4N7DB7avw0Rg==
 
 object-inspect@^1.13.1:
   version "1.13.1"
@@ -5344,9 +5344,9 @@ typescript@^5.2.2, typescript@~5.4:
   integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
 typescript@next:
-  version "5.5.0-dev.20240419"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240419.tgz#75c1070ad6829a5d5ad16ac930e7bcbb77b50511"
-  integrity sha512-8ypxI/j8ctX5QljMci0V6iljmCDnSmardVThnbxKC8p3eRc83c2Ip6K4MmGO5yHgeEyz9rpusbM2iY/6lDZBdw==
+  version "5.5.0-dev.20240420"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240420.tgz#30ffce215a8a537503d862188fec043eb8955f62"
+  integrity sha512-Zc++5htXHmanVoBIvJiyHGt8oMYH5UmfziSqGrDEMl68Rkk031KoS1PhO8917eO34UOVlCvFFaKRNUr3yVuP9A==
 
 typescript@~3.9.10:
   version "3.9.10"
