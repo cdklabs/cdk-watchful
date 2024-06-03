@@ -810,9 +810,9 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "20.13.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.13.0.tgz#011a76bc1e71ae9a026dddcfd7039084f752c4b6"
-  integrity sha512-FM6AOb3khNkNIXPnHFDYaHerSv8uN22C91z098AnGccVu+Pcdhi+pNUFDi0iLmPIsVE0JBD0KVS7mzUYt4nRzQ==
+  version "20.14.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.14.0.tgz#49ceec7b34f8621470cff44677fa9d461a477f17"
+  integrity sha512-5cHBxFGJx6L4s56Bubp4fglrEpmyJypsqI6RgzMfBHWUJQGWAAi8cWcgetEbZXHYXo9C2Fa4EEds/uSyS4cxmA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1398,21 +1398,21 @@ camelcase@^6.2.0, camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001587:
-  version "1.0.30001625"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001625.tgz#ead1b155ea691d6a87938754d3cb119c24465b03"
-  integrity sha512-4KE9N2gcRH+HQhpeiRZXd+1niLB/XNLAhSy4z7fI8EzcbcPoAqjNInxVHTiTwWfTIV4w096XG8OtCOCQQKPv3w==
+  version "1.0.30001626"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001626.tgz#328623664a28493b4a9019af7ce03ea39fbe898c"
+  integrity sha512-JRW7kAH8PFJzoPCJhLSHgDgKg5348hsQ68aqb+slnzuB5QFERv846oA/mRChmlLAOdEDeOkRn3ynb1gSFnjt3w==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdklabs-projen-project-types@^0.1.196:
-  version "0.1.196"
-  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.196.tgz#feb7d3df1a67665d66c08ce57808bb2b9cb6567a"
-  integrity sha512-AFgFHJjUyaJBeCnkeFWe6EAda2kPshJxiB+vhsym/B8YSjd2A5H/VS/N3BDpaKeXU7v2gdshtyREKnUWGavGMw==
+cdklabs-projen-project-types@^0.1.197:
+  version "0.1.197"
+  resolved "https://registry.yarnpkg.com/cdklabs-projen-project-types/-/cdklabs-projen-project-types-0.1.197.tgz#a6330b6e0fbeede34bcf77442bd476d22cabfffe"
+  integrity sha512-0FGHqog5h/gSv6jLx8ApGX4D0+MCumPCCfEq1l4vadn6rpFk5XSFw+mobaoexLLFiYBl9uiRbqTI9f6Ki2TJSA==
   dependencies:
-    yaml "^2.4.2"
+    yaml "^2.4.3"
 
 chalk@^2.4.2:
   version "2.4.2"
@@ -3677,10 +3677,10 @@ jsii-reflect@^1.30.0, jsii-reflect@^1.98.0:
     oo-ascii-tree "^1.98.0"
     yargs "^16.2.0"
 
-jsii-rosetta@^5.4.20:
-  version "5.4.20"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.4.20.tgz#ed2df46aa3d48c6bac14db1d187eb618abc16ea1"
-  integrity sha512-OfZMOMobZB8MwTaiYYn/Iqw2SSWBPut9lJ/IfXK8lbP8JOBk4xJp/p2V5G44qShQQJqp6NS5Nv438DZ/0/wsvA==
+jsii-rosetta@^5.4.21:
+  version "5.4.21"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.4.21.tgz#4073340067b13f3198d7bd08e49b2976626ebbb0"
+  integrity sha512-g7E935trSNQ8rbs+VYQiDBbeoaqS0sO7HuJ+bz27x7pvKBri5Uk9w+aLtmFI8UhHX7JgZ6mUxruY0zRW4AqCyQ==
   dependencies:
     "@jsii/check-node" "1.98.0"
     "@jsii/spec" "^1.98.0"
@@ -3716,9 +3716,9 @@ jsii@~5.2:
     yargs "^17.7.2"
 
 jsii@~5.4.0:
-  version "5.4.18"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.4.18.tgz#82298308de4077b52dba631c891d32a9d21b340d"
-  integrity sha512-ocVGqfYmXk0SCKmygQt+OS9dfCnIMIdAfwqdyhwaY3AnNlRxN6d74Yg6Pz9GaB4zeE9skFBlOJLLtn2J+EKULQ==
+  version "5.4.20"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.4.20.tgz#d348ff3556d36a209a76eccc96e1ce2258192e47"
+  integrity sha512-kZoopDv3Gy6wKOt6aYzPhMvEErOAnQXoeUjd3sGAODey/mUVJRvXoScYVvmmtVgKqt+120OFPhVRWzgefwio+g==
   dependencies:
     "@jsii/check-node" "1.98.0"
     "@jsii/spec" "^1.98.0"
@@ -4391,10 +4391,10 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.82.2:
-  version "0.82.2"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.82.2.tgz#5d450a919e598dcb240655531d93b0b77248b353"
-  integrity sha512-FMS73lMtFukF9v1LexWu+LLCHSlPrVj691lZ5wJyJ2HULBVs0HPyVOIS0CZhPfad9E/sS0jf0ibw+TcL/rbXKg==
+projen@^0.82.4:
+  version "0.82.4"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.82.4.tgz#e7db812d25fb7ed2a3a2a16ebc02f15583551cdd"
+  integrity sha512-tZhYkxZpl3PyaOvzIyUfLdCY3iMFZaGsMpBZZcX0efnumm0sP4VMj75TBxVrqdTxf4XwE18cCvIOOFvI/iuFxA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -5291,9 +5291,9 @@ typescript@^5.2.2, typescript@~5.4:
   integrity sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==
 
 typescript@next:
-  version "5.5.0-dev.20240601"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240601.tgz#f5f62280f540c4673eb89a801ba4c6b431de55a1"
-  integrity sha512-JdOf4SBFb/i7lh8CiIsRk1SOEA2uwr/2qoYjmPWiLP6L4ttAJd0Chb0PbGAItbRy9Cf55iej67T2l9D0NCmE6w==
+  version "5.5.0-dev.20240602"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.5.0-dev.20240602.tgz#7699e7a191be9fc8cd41b042f64cab45503e812a"
+  integrity sha512-R5PnpSfGGNylti0nmjM7R3zjr+9osr8M0tUItQDcc960/qa9gDTgA8F4f64IZeT9e7IoJklxXjyAdBjVpI909A==
 
 typescript@~5.2:
   version "5.2.2"
@@ -5607,10 +5607,10 @@ yaml@1.10.2:
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 
-yaml@^2.2.2, yaml@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.4.2.tgz#7a2b30f2243a5fc299e1f14ca58d475ed4bc5362"
-  integrity sha512-B3VqDZ+JAg1nZpaEmWtTXUlBneoGx6CPM9b0TENK6aoSu5t73dItudwdgmi6tHlIZZId4dZ9skcAQ2UbcyAeVA==
+yaml@^2.2.2, yaml@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.4.3.tgz#0777516b8c7880bcaa0f426a5410e8d6b0be1f3d"
+  integrity sha512-sntgmxj8o7DE7g/Qi60cqpLBA3HG3STcDA0kO+WfB05jEKhZMbY7umNm2rBpQvsmZ16/lPXCJGW2672dgOUkrg==
 
 yargs-parser@20.x, yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.9"
