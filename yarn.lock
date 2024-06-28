@@ -1209,10 +1209,10 @@ aws-cdk@2.147.1:
   optionalDependencies:
     fsevents "2.3.2"
 
-aws-sdk@^2.1649.0:
-  version "2.1649.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1649.0.tgz#346bbb2d64024144474883b34c59e1e7144b0149"
-  integrity sha512-iKwUomvBwzlrcX83PU60SW8KgLP+zNSQtl+lVnJkxRdbehS/p/wTdofby88TgMGDBHrWppreiaYC1fToB8Wznw==
+aws-sdk@^2.1650.0:
+  version "2.1650.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1650.0.tgz#d37f85549fdeee85c2f9dd906114f8d6869f40f5"
+  integrity sha512-VZzpqGyHps7TiRedgRAPF6TmUoUrhFbSuNgnX212EQ5/eS3/ktkHsxPAPH4PrnThcYhbVkyseCiFtZ8qtOeDjQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1397,9 +1397,9 @@ camelcase@^6.2.0, camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001629:
-  version "1.0.30001637"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001637.tgz#d9fab531493d9ef46a8ff305e9812190ac463f21"
-  integrity sha512-1x0qRI1mD1o9e+7mBI7XtzFAP4XszbHaVWsMiGbSPLYekKTJF7K+FNk6AsXH4sUpc+qrsI3pVgf1Jdl/uGkuSQ==
+  version "1.0.30001638"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001638.tgz#598e1f0c2ac36f37ebc3f5b8887a32ca558e5d56"
+  integrity sha512-5SuJUJ7cZnhPpeLHaH0c/HPAnAHZvS6ElWyHK9GSIbVOQABLzowiI2pjmpvZ1WEbkyz46iFd4UXlOHR5SqgfMQ==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -1990,9 +1990,9 @@ downlevel-dts@^0.11.0:
     typescript next
 
 electron-to-chromium@^1.4.796:
-  version "1.4.812"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.812.tgz#21b78709c5a13af5d5c688d135a22dcea7617acf"
-  integrity sha512-7L8fC2Ey/b6SePDFKR2zHAy4mbdp1/38Yk5TsARO66W3hC5KEaeKMMHoxwtuH+jcu2AYLSn9QX04i95t6Fl1Hg==
+  version "1.4.813"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.813.tgz#542a05155df9bf0c4b43cb9fd1ae2f29448f1187"
+  integrity sha512-VyJ4tS2uD5iXFBz30wD2c0KtKZoiSQEfRuhrgfsDBbRMDiQCH+ki+nqe8jVR2miEeLTbZ5dNbSt88fHO01Vc9A==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3681,12 +3681,12 @@ jsii-rosetta@^5.4.23:
     yargs "^17.7.2"
 
 jsii@~5.2:
-  version "5.2.50"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.2.50.tgz#f33542483f4c413da6afbe235a6bf331c78f53a4"
-  integrity sha512-QDZsLChFEv+nEVmuWSEOeoBg/2hS4CNaPDdadbwAdNSc2Km7Ch59U3TuvCYAwW/JETtPivuLiChF3RDDTw897w==
+  version "5.2.51"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.2.51.tgz#280853b48e4470eb7aad694f4e4f4bd5d4984992"
+  integrity sha512-F0tt1K+TaRCtp8tUl5IjlNQkRzqILAOP/amSvh1mVCvdO0RHHPpoLn3mg4l/NL7FU9kl7GzIZuhdpitAUK+73w==
   dependencies:
-    "@jsii/check-node" "1.100.0"
-    "@jsii/spec" "^1.100.0"
+    "@jsii/check-node" "1.101.0"
+    "@jsii/spec" "^1.101.0"
     case "^1.6.3"
     chalk "^4"
     downlevel-dts "^0.11.0"
@@ -5270,9 +5270,9 @@ typescript@^5.2.2:
   integrity sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==
 
 typescript@next:
-  version "5.6.0-dev.20240626"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240626.tgz#1ec6397a6ca9b96d9c49d95bd22cde03166dca7e"
-  integrity sha512-OUmoaUrtJEMGnxr8luc4sBdJFMFl1rZHdG0h7lOT1J62RBkYiD/LfQJKaH7GcywgMA+oaONUb75kIHi3s8czkg==
+  version "5.6.0-dev.20240627"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240627.tgz#1f50baa35716a28c15273b2656dcc7f456a7b3d1"
+  integrity sha512-fP6zd/pZ8baYlr3jR1sdhUxcuRrbL4kAEpGD4sx9Gr/eBvxKbs5mQqWTKICgxwbtKOXJ4KdrEoJkbx8+3PaZpg==
 
 typescript@~5.2:
   version "5.2.2"
