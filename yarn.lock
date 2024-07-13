@@ -10,33 +10,33 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@aws-cdk/aws-service-spec@0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-service-spec/-/aws-service-spec-0.1.9.tgz#ac3f434c81e23fd8fb09272eb661cadc9f6ac8f4"
-  integrity sha512-j0Tx5HCt5857YvnnBDIexf7UcdB7GJ0aFxXbTk38oxN3RPEKf4ReiRuM5jAEnCIUv/Mj5QU6Nnf4WjztUSL5eQ==
+"@aws-cdk/aws-service-spec@0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-service-spec/-/aws-service-spec-0.1.10.tgz#8ba2ae746067e58e0a473167f85c0c6db2edeb8f"
+  integrity sha512-k7uxQNVDS8iKXDxojrNrcxV61QcDSzn/KmDU3/5aFhFCq5i4WOvS9M+7xXz8YmBP9ZxTEUqU2loq+LQyqoZPhA==
   dependencies:
-    "@aws-cdk/service-spec-types" "^0.0.77"
+    "@aws-cdk/service-spec-types" "^0.0.78"
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.148.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.148.1-alpha.0.tgz#a94af3c661345052ceb6f1ed11de0639ecb5d74c"
-  integrity sha512-wx0KIVn2FjV+rXLo7O52ElEq5SG0Z9a4oJqfblhyIr448gnV0MdFJn0DSVBkYuufUdnNBd9MILQTl/pcR5qR+g==
+  version "2.149.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.149.0-alpha.0.tgz#f5395f3ce8b24f1db44c9ae9b16eba5c923e28c6"
+  integrity sha512-Jhu5i6cJKayGYlFUOSnS8tPoWb8+gQeyLXoHNLFWZqcAnjlLAKgM0ZZhqi/1jLQmU0tJDvtwrnNvNirIsDE3Ow==
   dependencies:
-    "@aws-cdk/aws-service-spec" "0.1.9"
-    aws-cdk "2.148.1"
+    "@aws-cdk/aws-service-spec" "0.1.10"
+    aws-cdk "2.149.0"
   optionalDependencies:
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.148.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.148.1-alpha.0.tgz#a5026b70d54fbfc8a655e80c0715464e70690543"
-  integrity sha512-c5yixlkPPCGl0JduB/tT2jDfHcscou7ktPyNLygSGZ0vVZuMa4bugKfrR5MgvpKakNGOjjfGmRQMl14BxshNDA==
+  version "2.149.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.149.0-alpha.0.tgz#600f1cd493c6e8f16df49fcc4acd7df90df144cf"
+  integrity sha512-uNjslP38qx8+v02d0RkvjBpG+cwWH53fUdOCP9ilc06XQEGK+ch2u5nH2EEe9lc511KFLRX7MtB+gfHKqsThuA==
 
-"@aws-cdk/service-spec-types@^0.0.77":
-  version "0.0.77"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/service-spec-types/-/service-spec-types-0.0.77.tgz#cec807eeb4f2a43038a44b85a980a76b047cd226"
-  integrity sha512-+EQT4wuB6Icyi5q/0TV02JrIRXHI7430yl/58CbL8pPOjLSPcP+3xbAk6w27mklsB3eOIwp3VdAA3ZRH8pJwAQ==
+"@aws-cdk/service-spec-types@^0.0.78":
+  version "0.0.78"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/service-spec-types/-/service-spec-types-0.0.78.tgz#6b21c32ad49426795750ded7ff84e31120e9f34c"
+  integrity sha512-wrEevMQs9ubCA6DpHAcPgtxiCKeB2bAuWXlJm5EahL678+jD3ucP+kBctaRgExAzTw0rYISjS/tbRYRVvjpxDA==
   dependencies:
     "@cdklabs/tskb" "^0.0.3"
 
@@ -1011,14 +1011,14 @@ ajv@^6.12.4:
     uri-js "^4.2.2"
 
 ajv@^8.13.0:
-  version "8.16.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.16.0.tgz#22e2a92b94f005f7e0f9c9d39652ef0b8f6f0cb4"
-  integrity sha512-F0twR8U1ZU67JIEtekUcLkXkoO5mMMmgGD8sK/xUFzJ805jxHQl92hImFAqqXMyMYjSPOyUPAwHYhB72g5sTXw==
+  version "8.17.1"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.17.1.tgz#37d9a5c776af6bc92d7f4f9510eba4c0a60d11a6"
+  integrity sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==
   dependencies:
     fast-deep-equal "^3.1.3"
+    fast-uri "^3.0.1"
     json-schema-traverse "^1.0.0"
     require-from-string "^2.0.2"
-    uri-js "^4.4.1"
 
 ansi-escapes@^4.2.1:
   version "4.3.2"
@@ -1194,17 +1194,17 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.148.1:
-  version "2.148.1"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.148.1.tgz#87a6632c2332281346416c15f63c28515971839f"
-  integrity sha512-wiAi4vFJ52A42PpU3zRi2gVDqbTXSBVFrqKRqEd8wYL1mqa0qMv9FR35NsgbM1RL9s7g5ZljYvl+G2tXpcp5Eg==
+aws-cdk@2.149.0:
+  version "2.149.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.149.0.tgz#b2fe9e54fce1142526f7506e2e9687803aefab32"
+  integrity sha512-X+FGIJuBbsFPwA5tM4uOh9qdK1pbPZ6WK1QbtVfN7YsruwEgdx12wB8H3oLh3waFS87/rCww05Z1PzDdM+edCg==
   optionalDependencies:
     fsevents "2.3.2"
 
-aws-sdk@^2.1658.0:
-  version "2.1658.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1658.0.tgz#c7e0cc4bcd787932af01dac69d564d9adf416ae1"
-  integrity sha512-aJLps/LIRJtrfEv+1jQ//IfHbwDxJiBJJyXf+Oc9hH+l1PqLEwHtd+vWxSNGE4/YX1HFIVt2fCZJs4d/nL8HNg==
+aws-sdk@^2.1659.0:
+  version "2.1659.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1659.0.tgz#b2c84baddf1af7ea16d55365ad13b4f0c72baae0"
+  integrity sha512-WOoy5DdWW4kpQuxjWiQdoSDR+dT/HeAUwjb6b+8taEMZzvUzp3fmdDwdryUTlLWGxrnb7ru2yu5pryjhPOzANg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1982,9 +1982,9 @@ downlevel-dts@^0.11.0:
     typescript next
 
 electron-to-chromium@^1.4.820:
-  version "1.4.826"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.826.tgz#096426d3333718f867b16cc5195c8e56f75c998e"
-  integrity sha512-zULpSu/wQI4X9qWAHabbi0ZUfJ/bEFTA6bfdXlg6HSf5XS7A8vMdzpJC4r5Ws/5E5NGdrNHmXgvGewGuHMxhPQ==
+  version "1.4.827"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.827.tgz#76068ed1c71dd3963e1befc8ae815004b2da6a02"
+  integrity sha512-VY+J0e4SFcNfQy19MEoMdaIcZLmDCprqvBtkii1WTCTQHpRvf5N8+3kTYCgL/PcntvwQvmMJWTuDPsq+IlhWKQ==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -2345,6 +2345,11 @@ fast-levenshtein@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
+
+fast-uri@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-3.0.1.tgz#cddd2eecfc83a71c1be2cc2ef2061331be8a7134"
+  integrity sha512-MWipKbbYiYI0UC7cl8m/i/IWTqfC8YXsqjzybjddLsFjStroQzsHXkc73JutMvBiXmOvapk+axIl79ig5t55Bw==
 
 fastq@^1.6.0:
   version "1.17.1"
@@ -5262,9 +5267,9 @@ typescript@^5.2.2:
   integrity sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==
 
 typescript@next:
-  version "5.6.0-dev.20240711"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240711.tgz#2190141012fd1f3a535c13c7d4ba258c13ab4d74"
-  integrity sha512-7P96lBbF9T4qBB2IseUQBz/IakXa9a0zLOywLmWTZQB6EFbRnRMlwa7103Q44mwI8tfvdXRmed3ICuxHxSNUwA==
+  version "5.6.0-dev.20240712"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240712.tgz#85ccc65418bc2f0e31a4eec4ac6f1aa013e4e649"
+  integrity sha512-8Iu/vFdWrjtqSm31Dcp4rFgybCNdjMJVZFoWF6PlzEYE6M6eiA+TeKGgygspCbnErrBRjHgWrEMdP3LavHtQ+w==
 
 typescript@~5.2:
   version "5.2.2"
@@ -5319,7 +5324,7 @@ update-browserslist-db@^1.1.0:
     escalade "^3.1.2"
     picocolors "^1.0.1"
 
-uri-js@^4.2.2, uri-js@^4.4.1:
+uri-js@^4.2.2:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/uri-js/-/uri-js-4.4.1.tgz#9b1a52595225859e55f669d928f88c6c57f2a77e"
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
