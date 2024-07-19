@@ -64,7 +64,7 @@
     "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.101.0",
     "jsii-rosetta": "^5.4.25",
-    "projen": "^0.84.5",
+    "projen": "^0.84.6",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
@@ -91,9 +91,9 @@
   "jest": {
     "coverageProvider": "v8",
     "testMatch": [
-      "<rootDir>/@(src|test)/**/?(*.)+(spec|test).ts?(x)",
+      "<rootDir>/@(src|test)/**/*(*.)@(spec|test).ts?(x)",
       "<rootDir>/@(src|test)/**/__tests__/**/*.ts?(x)",
-      "<rootDir>/@(projenrc)/**/?(*.)+(spec|test).ts?(x)",
+      "<rootDir>/@(projenrc)/**/*(*.)@(spec|test).ts?(x)",
       "<rootDir>/@(projenrc)/**/__tests__/**/*.ts?(x)"
     ],
     "clearMocks": true,
