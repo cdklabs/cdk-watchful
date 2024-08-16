@@ -19,19 +19,19 @@
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.151.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.151.1-alpha.0.tgz#c18ad201be08a28816777960973590fc2d30a108"
-  integrity sha512-kDJGuYVaSvth13qHoKbmYj0GcvYokJB+MQn34QMDwW3l4aa6oiMP81zOI2zpMckDQOYUuLgsaE2Nm6StuNWklQ==
+  version "2.152.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.152.0-alpha.0.tgz#8f1edb57d2390594ee6383292f5e4285b2922bc3"
+  integrity sha512-xvAnNT7rtWDaZdUkpHpp9gt4pK/K6tmMzagHE/+FERIXre+WW7XsY+KceCnEUsEv0bTuzAD5jkXXzP7qipVnqA==
   dependencies:
     "@aws-cdk/aws-service-spec" "0.1.13"
-    aws-cdk "2.151.1"
+    aws-cdk "2.152.0"
   optionalDependencies:
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.151.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.151.1-alpha.0.tgz#91d5da56e70e7b6d8d5afb308d81213708c3e5df"
-  integrity sha512-hU5ZJc4N3AaO6/SwhurBE35ki54sFAbR8HQP04j2W5YAB/PyFbONWC4S9tzv+WCq4nxYXgewBFlVxdtXCIwG/A==
+  version "2.152.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.152.0-alpha.0.tgz#aa5fc6f5e80ad91c14ff9daab88af16025b703c8"
+  integrity sha512-/zOOyav8RsUsH4z58be2F7kfaJ5UXPfr6W/5RUWP2l+ZIoFuCFoNT7DDUF3uqQ0OFaQTu8QSZuP/jjOREq8j0A==
 
 "@aws-cdk/service-spec-types@^0.0.81":
   version "0.0.81"
@@ -1192,17 +1192,17 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.151.1:
-  version "2.151.1"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.151.1.tgz#1bc76e97ad5d461681c336b88765920bc25fbbb8"
-  integrity sha512-jaY679MR3eGKZ/UuYh3tMoS2Adh+NNOEG81KYivpOXvp7K/yTACbNYWI954YI6iG4zwzoz/L+52UM4+BQ7xZdg==
+aws-cdk@2.152.0:
+  version "2.152.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.152.0.tgz#efc1d1a89e31a5764efb4d61976758f8f15538c6"
+  integrity sha512-Cvmy8bKbn5EwUs9H+p4lR4UfbWDBBU9YTCoXziLzGnPL8i/I56wz92sX/awpTxDY9YocERdps0mXo8q0mu/Mvg==
   optionalDependencies:
     fsevents "2.3.2"
 
-aws-sdk@^2.1675.0:
-  version "2.1675.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1675.0.tgz#8cde066706a99b3645fa0671e30cbb2bfcefa196"
-  integrity sha512-gkqNAP0m3gDpnZCKL2OLdwAG+SjYT9MURGfTkixAWHIPDYD4OQf3sCcZNBTTTeOvOXus/tJIpgafKHD9DCIOCQ==
+aws-sdk@^2.1676.0:
+  version "2.1676.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1676.0.tgz#90f792112cd7ca85cce068ea08c04e933576f959"
+  integrity sha512-Kzg9931GroRG6uLoUEF5Pcp005D1xilgQ8ntH0fKFxiYKGkQqkU/3JkV6k7jNRzouxTypaozzXYVNXsHRgH6JA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1982,9 +1982,9 @@ downlevel-dts@^0.11.0:
     typescript next
 
 electron-to-chromium@^1.5.4:
-  version "1.5.7"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.7.tgz#425d2a7f76ecfa564fdca1040d11fb1979851f3c"
-  integrity sha512-6FTNWIWMxMy/ZY6799nBlPtF1DFDQ6VQJ7yyDP27SJNt5lwtQ5ufqVvHylb3fdQefvRcgA3fKcFMJi9OLwBRNw==
+  version "1.5.8"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.8.tgz#0a3225b305212f347be48f159a3c0a117d5e9801"
+  integrity sha512-4Nx0gP2tPNBLTrFxBMHpkQbtn2hidPVr/+/FTtcCiBYTucqc70zRyVZiOLj17Ui3wTO7SQ1/N+hkHYzJjBzt6A==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5259,9 +5259,9 @@ typescript@^5.2.2:
   integrity sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==
 
 typescript@next:
-  version "5.6.0-dev.20240814"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240814.tgz#55f6eb373301a6fd987e6b70c28bd72f4a73332b"
-  integrity sha512-7N6qhxVbJ3E1LdEZ68/WbvZMwlXp9bErVUs2yNA7XaSVDkg+iAYPM24ba0VeGkpR105+e5gaGhAYShD274qBWQ==
+  version "5.6.0-dev.20240815"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.6.0-dev.20240815.tgz#8406d080fd13cc03e52020038fdea4ca81ffd9c6"
+  integrity sha512-s/pqeJ9u7rBpafx0JKVmFic5QVh/iuuF095xA8qHImL6pOqIEkkBWQu/fvLVdLEB5W/aOsrVQuxrXrSyykzjyA==
 
 typescript@~5.2:
   version "5.2.2"
