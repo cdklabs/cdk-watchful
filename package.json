@@ -74,6 +74,12 @@
     "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "jsii-docgen": "^1.8.110"
+  },
+  "bundledDependencies": [
+    "jsii-docgen"
+  ],
   "keywords": [
     "cdk",
     "cloudwatch",

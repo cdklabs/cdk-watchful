@@ -1,4 +1,5 @@
 import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
+import { DependencyType } from 'projen';
 
 const project = new CdklabsConstructLibrary({
   name: 'cdk-watchful',
@@ -56,6 +57,8 @@ const project = new CdklabsConstructLibrary({
 
   autoApproveUpgrades: true,
 });
+
+project.deps.addDependency('jsii-docgen@^1.8.110', DependencyType.BUNDLED);
 
 project.gitignore.exclude('.env', '.idea');
 project.gitignore.exclude('example/*.js', 'example/*.d.ts');
