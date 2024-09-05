@@ -62,7 +62,7 @@
     "jest-junit": "^15",
     "jsii": "~5.2",
     "jsii-diff": "^1.102.0",
-    "jsii-docgen": "^10.5.0",
+    "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.102.0",
     "jsii-rosetta": "^5.4.31",
     "projen": "^0.86.9",
@@ -74,12 +74,6 @@
     "aws-cdk-lib": "^2.0.0",
     "constructs": "^10.0.5"
   },
-  "dependencies": {
-    "jsii-docgen": "^1.8.110"
-  },
-  "bundledDependencies": [
-    "jsii-docgen"
-  ],
   "keywords": [
     "cdk",
     "cloudwatch",

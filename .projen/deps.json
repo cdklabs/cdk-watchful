@@ -60,7 +60,7 @@
     },
     {
       "name": "jsii-docgen",
-      "version": "^10.5.0",
+      "version": "^1.8.110",
       "type": "build"
     },
     {
@@ -91,11 +91,6 @@
     {
       "name": "typescript",
       "type": "build"
-    },
-    {
-      "name": "jsii-docgen",
-      "version": "^1.8.110",
-      "type": "bundled"
     },
     {
       "name": "@aws-cdk/integ-runner",

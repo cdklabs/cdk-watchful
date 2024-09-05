@@ -58,7 +58,7 @@ const project = new CdklabsConstructLibrary({
   autoApproveUpgrades: true,
 });
 
-project.deps.addDependency('jsii-docgen@^1.8.110', DependencyType.BUNDLED);
+project.deps.addDependency('jsii-docgen@^1.8.110', DependencyType.BUILD);
 
 project.gitignore.exclude('.env', '.idea');
 project.gitignore.exclude('example/*.js', 'example/*.d.ts');

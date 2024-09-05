@@ -355,16 +355,7 @@
       },
       "steps": [
         {
-          "exec": "yarn install --check-files"
-        },
-        {
-          "exec": "yarn upgrade jsii-docgen"
-        },
-        {
-          "exec": "npx projen"
-        },
-        {
-          "spawn": "post-upgrade"
+          "exec": "echo No dependencies to upgrade."
         }
       ]
     },
