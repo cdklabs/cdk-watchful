@@ -3,7 +3,7 @@
   "description": "Watching your CDK apps since 2019",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdklabs/cdk-watchful.git"
+    "url": "https://github.com/eladb/cdk-watchful.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -52,7 +52,7 @@
     "@typescript-eslint/parser": "^7",
     "aws-cdk-lib": "2.0.0",
     "aws-sdk": "^2.1691.0",
-    "cdklabs-projen-project-types": "^0.1.202",
+    "cdklabs-projen-project-types": "^0.1.204",
     "commit-and-tag-version": "^12",
     "constructs": "10.0.5",
     "eslint": "^8",
@@ -64,8 +64,8 @@
     "jsii-diff": "^1.103.1",
     "jsii-docgen": "^1.8.110",
     "jsii-pacmak": "^1.103.1",
-    "jsii-rosetta": "^5.5.4",
-    "projen": "^0.87.2",
+    "jsii-rosetta": "^5.5.5",
+    "projen": "^0.87.4",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
