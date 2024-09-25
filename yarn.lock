@@ -19,19 +19,19 @@
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.159.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.159.1-alpha.0.tgz#5aaaa564d6a6ac133b66d0422616fe42545e52f6"
-  integrity sha512-WZt5NU5OW2g6pSQnSMZsUbZ73HXCuozRa7UZYyNFRa0HcJbVksfKiIYERy7uYoitDMqGm3g/D0LgUKaAMdfftg==
+  version "2.160.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.160.0-alpha.0.tgz#c815f7e01b8a55a8273ad60a8939473ddc43c6a8"
+  integrity sha512-cbgLygX0NhbYVWABYAU7ocg4x7MwhlDWKhLp6v74hkmUo7EY1KxQbvsrWZRIubgwIls91lf3fPMbfyIjZ8YfCA==
   dependencies:
     "@aws-cdk/aws-service-spec" "0.1.24"
-    aws-cdk "2.159.1"
+    aws-cdk "2.160.0"
   optionalDependencies:
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.159.1-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.159.1-alpha.0.tgz#6a024b8d36cf332e764fddb8a490be99c28c1fbc"
-  integrity sha512-Ty6zHF1njRExCNOAZk08BUWrer/XwbOVFXqYl/wSpEcXWCpUqnZwYfjKi1LLBjq85hQYxJeWcSly2Lex5k9h8g==
+  version "2.160.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.160.0-alpha.0.tgz#5d4ee01410d69ed25d2413674f61ce68cde28620"
+  integrity sha512-JH9oTKsHk9yIaed2mkCnQsQvAdDp5xKEwzM9FgMzLP9CRoCRTz4V0mc2GYIOnJikcQyibZFcZsQ0kqE2WEHJ5g==
 
 "@aws-cdk/service-spec-types@^0.0.91":
   version "0.0.91"
@@ -1204,10 +1204,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.159.1:
-  version "2.159.1"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.159.1.tgz#b702da9bb53160bba7129a5e0e79eab4d48b79bb"
-  integrity sha512-bkJOxic/NpJYQCF3MQhfyJVlFtIzMJeVGZp9jZa7TczxJp79Q/TNKzVJYv6GFabNS1wglGPfWkFB/rIJlRhJkg==
+aws-cdk@2.160.0:
+  version "2.160.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.160.0.tgz#5043311e4e576fda53b3ce761d47cbc1004fb309"
+  integrity sha512-JquccawrU2dp0cS80my65oLLNRUJZflKRKIRSVjQ1A9W4bNns/xhSqaVlL41NAsGSYBWxCzzWHrV3yOFShU87A==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -2007,9 +2007,9 @@ downlevel-dts@^0.11.0:
     typescript next
 
 electron-to-chromium@^1.5.4:
-  version "1.5.27"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.27.tgz#5203ce5d6054857d84ba84d3681cbe59132ade78"
-  integrity sha512-o37j1vZqCoEgBuWWXLHQgTN/KDKe7zwpiY5CPeq2RvUqOyJw9xnrULzZAEVQ5p4h+zjMk7hgtOoPdnLxr7m/jw==
+  version "1.5.28"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.28.tgz#aee074e202c6ee8a0030a9c2ef0b3fe9f967d576"
+  integrity sha512-VufdJl+rzaKZoYVUijN13QcXVF5dWPZANeFTLNy+OSpHdDL5ynXTF35+60RSBbaQYB1ae723lQXHCrf4pyLsMw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -2186,9 +2186,9 @@ eslint-import-resolver-typescript@^2.7.1:
     tsconfig-paths "^3.14.1"
 
 eslint-module-utils@^2.9.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.11.0.tgz#b99b211ca4318243f09661fae088f373ad5243c4"
-  integrity sha512-gbBE5Hitek/oG6MUVj6sFuzEjA/ClzNflVrLovHi/JgLdC7fiN5gLAY1WIPW1a0V5I999MnsrvVrCOGmmVqDBQ==
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.11.1.tgz#6d5a05f09af98f4d238a819ae4c23626a75fa65b"
+  integrity sha512-EwcbfLOhwVMAfatfqLecR2yv3dE5+kQ8kx+Rrt0DvDXEVwW86KQ/xbMDQhtp5l42VXukD5SOF8mQQHbaNtO0CQ==
   dependencies:
     debug "^3.2.7"
 
@@ -5357,9 +5357,9 @@ typescript@^5.2.2:
   integrity sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==
 
 typescript@next:
-  version "5.7.0-dev.20240923"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.0-dev.20240923.tgz#714c9c89f0aa3cc14753d187c88651f0df2df4f5"
-  integrity sha512-qRJIe8rRYuFlM6ZGJbdqhSO8Ogo9uIpqCz1/agh6x/phsOXiKU8pfebGSNiXFscUhQNZhSiUFXQ8LC5xUUGFgA==
+  version "5.7.0-dev.20240924"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.0-dev.20240924.tgz#bf97ed5c8c7bddcd8d178a9d74913d1e37b21b92"
+  integrity sha512-Ij5R6dGDoRwlwMv0YAF0DSKOp2gGIv0SZNybFpAm05zZ/tktjetR7IrwuurvRlDEz7v91AC3ehs2lF7lJ8F/QA==
 
 typescript@~5.2:
   version "5.2.2"
