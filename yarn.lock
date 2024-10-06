@@ -19,19 +19,19 @@
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.161.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.161.0-alpha.0.tgz#f7ed9fd9a6aef4d5fb9cc49a621ea462adcc3300"
-  integrity sha512-bymsr12nVhYJIXGkUdXt4qtKlJwtX434pzNMdJPefRRXa8R1IqY0looq5g3u3IuGmKX8yTqokIBHkYkUZyPBEg==
+  version "2.161.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.161.1-alpha.0.tgz#b4bba7f883631cc75d4a41f4fa506ea5093a8943"
+  integrity sha512-1DR1Ufx3d8pVNYraElRzvI/D9XPWm+9MEz4wsdcllOQi7+7Gus8gLmwxP9/FfJcL9V23wsb9vFaWY8MRhqTQKg==
   dependencies:
     "@aws-cdk/aws-service-spec" "0.1.25"
-    aws-cdk "2.161.0"
+    aws-cdk "2.161.1"
   optionalDependencies:
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.161.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.161.0-alpha.0.tgz#ffc9c67e25fa457eb7893b1a594582f653dbca48"
-  integrity sha512-rh96A4pVExmCaHkYJwET5QTta2fyntMfqE/UOR3kb4MXYbbAvqHL1T4+/k0nODKSdqUfzanVy2jc4cCe2k8mOg==
+  version "2.161.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.161.1-alpha.0.tgz#258d7cd4e81855e02321fc179b8729284dfdfe79"
+  integrity sha512-Rw7EspG76BZAG9oJgnYT7HWe19oy3MZAr8DoR5YS6AsNSes8W7QdNmeBJGiZm7Kpul0gqOts9vGR6GXLcZRBEw==
 
 "@aws-cdk/service-spec-types@^0.0.92":
   version "0.0.92"
@@ -1204,10 +1204,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.161.0:
-  version "2.161.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.161.0.tgz#24a4da357ab808038f6630c8b04e42f7f41ba40e"
-  integrity sha512-MOsh0Acu3CFi5UlW93JUFwidA/9+j19l3kcFJN0Vc/vvyBPRF3ua2g3y2jLT6muW7MbO0P+C/7OyR80YA1vzvg==
+aws-cdk@2.161.1:
+  version "2.161.1"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.161.1.tgz#4299ee1d0213386c95a8995b7a5053ef15e7c654"
+  integrity sha512-aMQsiCv8VxR8uyZ7EX8sWt46q/rOHeIFiIJ6pBvzKzc1nWaoI149rSxykIGGTpt0puin0L5SwYl6f6Sp3zohzg==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -5358,9 +5358,9 @@ typescript@^5.2.2:
   integrity sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==
 
 typescript@next:
-  version "5.7.0-dev.20241004"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.0-dev.20241004.tgz#a8baeee39b961e4619b5c50c3e60affe0841961e"
-  integrity sha512-u95eIEvZzkHiq7PEViwynbgPSpCdT0u7wzGk15FV1OrznDxPoiB/E8AOtdxicOkQlO35XebHMCJg1vjh4gCMIg==
+  version "5.7.0-dev.20241005"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.0-dev.20241005.tgz#9a945d532a17ce2790d11e444adad785db111141"
+  integrity sha512-jwUlB3Y1mBo3qAXxvbtv7eF4dATeS65xKT4fC9GThKJB2iY8Ptc+frjidfW2mGbKFR0abI8v5gpn9Z7w6oEmFw==
 
 typescript@~5.2:
   version "5.2.2"
