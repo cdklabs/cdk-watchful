@@ -2745,9 +2745,11 @@ has-property-descriptors@^1.0.0, has-property-descriptors@^1.0.2:
     es-define-property "^1.0.0"
 
 has-proto@^1.0.1, has-proto@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/has-proto/-/has-proto-1.0.3.tgz#b31ddfe9b0e6e9914536a6ab286426d0214f77fd"
-  integrity sha512-SJ1amZAJUiZS+PhsVLf5tGydlaVB8EdFpaSO4gmiUKUOxk8qzn5AIy4ZeJUmh22znIdk/uMAUT2pl3FxzVUH+Q==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/has-proto/-/has-proto-1.1.0.tgz#deb10494cbbe8809bce168a3b961f42969f5ed43"
+  integrity sha512-QLdzI9IIO1Jg7f9GT1gXpPpXArAn6cS31R1eEZqz08Gc+uQ8/XiqHWt17Fiw+2p6oTTIq5GXEpQkAlA88YRl/Q==
+  dependencies:
+    call-bind "^1.0.7"
 
 has-symbols@^1.0.2, has-symbols@^1.0.3:
   version "1.0.3"
@@ -3776,9 +3778,9 @@ jsii-reflect@^1.105.0, jsii-reflect@^1.30.0:
     yargs "^16.2.0"
 
 jsii-rosetta@^5.6.1:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.7.0.tgz#5ab61e79d84243022d0ef3de8343df97007d9ffc"
-  integrity sha512-ryDIm4Peh+LO6TZZE0L+ziL82BFGSbJuUba7wg7m2pIVdqFv6mlqw3ki7B7kS5u0fP0A2/zzL8GU5AdGqum9Eg==
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.7.1.tgz#8b5721ff5d6ea6572f12aa97e0657222aa75c961"
+  integrity sha512-joxTYrpaYYUFpDYwNhf0lHyp1i6ZfXjpl2AkSCEd6vd0FvmK00tKbWu8UnY/dA7ryI1hvDkm1MTi6f4s36ZzZg==
   dependencies:
     "@jsii/check-node" "1.105.0"
     "@jsii/spec" "^1.105.0"
@@ -5389,9 +5391,9 @@ typescript@^5.2.2, typescript@~5.7:
   integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
 
 typescript@next:
-  version "5.8.0-dev.20241130"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20241130.tgz#b1037763f9e978bffe41bfc7e4382b51dc8b7e04"
-  integrity sha512-cJ/17qrj874di4GaOZOxdH7kzhC25jyGXrxBhjUUUCq2HiQAo9nl8R33PKOqIejOA1ljGASS6jyHwWsBOjRwow==
+  version "5.8.0-dev.20241201"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20241201.tgz#d76d893340b96d2f8e7204b17aeb76650b5e2f23"
+  integrity sha512-c2pVSFoS1eJha1eBBNtuZoMkjQFOT9X+ib53SGU2psP+JCzoJxEXbobq9jwa7vauq45NB92wVPKaKgpqyCTaqQ==
 
 typescript@~5.2:
   version "5.2.2"
