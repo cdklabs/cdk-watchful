@@ -2521,9 +2521,9 @@ flatted@^3.2.7, flatted@^3.2.9:
   integrity sha512-AiwGJM8YcNOaobumgtng+6NHuOqC3A7MixFeDafM3X9cIUM+xUXoS5Vfgf+OihAYe20fxqNM9yPBXJzRtZ/4eA==
 
 for-each@^0.3.3:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.4.tgz#814517ffc303d1399b2564d8165318e735d0341c"
-  integrity sha512-kKaIINnFpzW6ffJNDjjyjrk21BkDx38c0xa/klsT8VzLCaMEefv4ZTacrcVR4DmgTeBra++jMDAfS/tS799YDw==
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/for-each/-/for-each-0.3.5.tgz#d650688027826920feeb0af747ee7b9421a41d47"
+  integrity sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==
   dependencies:
     is-callable "^1.2.7"
 
@@ -5572,9 +5572,9 @@ typescript@^5.2.2, typescript@~5.7:
   integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==
 
 typescript@next:
-  version "5.8.0-dev.20250210"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20250210.tgz#f3d140c1e82e43c847c942378f131ca1ee60eac5"
-  integrity sha512-6obwAtYV+jgxdpESDO+wGAyiLKQ6tunIjP4TFHqtcL4u5j15XUG2fSjaRN1W006kxHxFigADy9uDHb50l8UxGA==
+  version "5.8.0-dev.20250211"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.0-dev.20250211.tgz#918f39d8a74795191981b6ef7e8ae8290cc986bb"
+  integrity sha512-hGIlnTvpPLFx/1YksLghDEOJd5Am8RmFGQh9qeJfE1OKDT44jwI4DXxZL53M/K+yakPuT9tQSwY6P75V7DZlSQ==
 
 typescript@~5.2:
   version "5.2.2"
@@ -5768,9 +5768,9 @@ whatwg-mimetype@^4.0.0:
   integrity sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==
 
 whatwg-url@^14.0.0:
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-14.1.0.tgz#fffebec86cc8e6c2a657e50dc606207b870f0ab3"
-  integrity sha512-jlf/foYIKywAt3x/XWKZ/3rz8OSJPiWktjmk891alJUEjiVxKX9LEO92qH3hv4aJ0mN3MWPvGMCy8jQi95xK4w==
+  version "14.1.1"
+  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-14.1.1.tgz#ce71e240c61541315833b5cdafd139a479e47058"
+  integrity sha512-mDGf9diDad/giZ/Sm9Xi2YcyzaFpbdLpJPr+E9fSkyQ7KpQD4SdFcugkRQYzhmfI4KeV4Qpnn2sKPdo+kmsgRQ==
   dependencies:
     tr46 "^5.0.0"
     webidl-conversions "^7.0.0"
