@@ -1236,9 +1236,9 @@ aws-cdk-lib@2.0.0:
     yaml "1.10.2"
 
 aws-cdk@2:
-  version "2.1000.2"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1000.2.tgz#5c89404f24b09880bc9f7e9b4f7bd721be02b4bd"
-  integrity sha512-QsXqJhGWjHNqP7etgE3sHOTiDBXItmSKdFKgsm1qPMBabCMyFfmWZnEeUxfZ4sMaIoxvLpr3sqoWSNeLuUk4sg==
+  version "2.1000.3"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1000.3.tgz#48997f6b07c37d1aa43865162724dcad60f8cfca"
+  integrity sha512-y0sU603gGWpVTwqDw9MKVHg3e1t49Mvve6t3YDOvjeKY195Vu6dgHlHjW4h8n1vX04r49NKfpoApG60V8sMbdw==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -4838,9 +4838,9 @@ resolve@^1.1.6, resolve@^1.10.0, resolve@^1.20.0, resolve@^1.22.0, resolve@^1.22
     supports-preserve-symlinks-flag "^1.0.0"
 
 reusify@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.0.4.tgz#90da382b1e126efc02146e90845a88db12925d76"
-  integrity sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.1.0.tgz#0fe13b9522e1473f51b558ee796e08f11f9b489f"
+  integrity sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==
 
 rfdc@^1.3.0:
   version "1.4.1"
@@ -5576,9 +5576,9 @@ typescript@^5.2.2, typescript@~5.7:
   integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==
 
 typescript@next:
-  version "5.9.0-dev.20250224"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250224.tgz#b9586092e006e0e754f07f5f7f234046922f6efb"
-  integrity sha512-hE9YCxxyOJDBJhEo6w3veHldQw5ry0nhuTzaPU2UZe37YsBIC5kaOVdzeA+IUh4cgYWKe60B1vuC4GN8Q4a0SA==
+  version "5.9.0-dev.20250225"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250225.tgz#36b7e9c80d8f07da33bae83794cb12e8a3b12573"
+  integrity sha512-rOzayxhA6eEpXSqW3kiHMgNC7G3a/bqw2k6ls23L4abPMqrUlGiRB3q0haKfI1Le+8eXjzhP3GwsZCMpEKDDLw==
 
 typescript@~5.2:
   version "5.2.2"
