@@ -2064,9 +2064,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.73:
-  version "1.5.127"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.127.tgz#350a16aa09fb7f070ad118fade31260a5c173733"
-  integrity sha512-Ke5OggqOtEqzCzcUyV+9jgO6L6sv1gQVKGtSExXHjD/FK0p4qzPZbrDsrCdy0DptcQprD0V80RCBYSWLMhTTgQ==
+  version "1.5.128"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.128.tgz#8ea537b369c32527b3cc47df7973bffe5d3c2980"
+  integrity sha512-bo1A4HH/NS522Ws0QNFIzyPcyUUNV/yyy70Ho1xqfGYzPUme2F/xr4tlEOuM6/A538U1vDA7a4XfCd1CKRegKQ==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4334,9 +4334,9 @@ npm-run-path@^4.0.1:
     path-key "^3.0.0"
 
 nwsapi@^2.2.0, nwsapi@^2.2.12:
-  version "2.2.19"
-  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.19.tgz#586660f7c24c34691907002309a8dc28064c9c0b"
-  integrity sha512-94bcyI3RsqiZufXjkr3ltkI86iEl+I7uiHVDtcq9wJUTwYQJ5odHDeSzkkrRzi80jJ8MaeZgqKjH1bAWAFw9bA==
+  version "2.2.20"
+  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.20.tgz#22e53253c61e7b0e7e93cef42c891154bcca11ef"
+  integrity sha512-/ieB+mDe4MrrKMT8z+mQL8klXydZWGR5Dowt4RAGKbJ3kIGEx3X4ljUo+6V73IXtUPWgfOlU5B9MlGxFO5T+cA==
 
 object-inspect@^1.13.3:
   version "1.13.4"
@@ -5577,9 +5577,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
 
 typescript@next:
-  version "5.9.0-dev.20250327"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250327.tgz#54677592697eba3a791d43356fe365d08551df1e"
-  integrity sha512-mgPk1NuIM28WIA17sk771bQcwoqcS5k1Xyq0LgnWOEBjCjqDNevoVqAlU5pxW4uIgdZfpkk1b/lF577831be5Q==
+  version "5.9.0-dev.20250328"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250328.tgz#8cc102d7a4462e4b2d68208c1b5b25b29bc5470c"
+  integrity sha512-m38Gb1vTDu8LugpOKL4cw7FbjQhZDYf7X2oumF4GvAs7T9O3q0Apv26ckQKuSXTQJAUUCiRfST+QHWXvssdCpQ==
 
 typescript@~5.2:
   version "5.2.2"
