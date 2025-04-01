@@ -40,9 +40,9 @@
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.186.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.186.0-alpha.0.tgz#72abcb027f6937562cd38f52ea901931b1276ce6"
-  integrity sha512-K1OIiz9vMI53hxVaaw+bmjRWRqaOtxoF8WBrNdrbewA1kPYuC7w2QFYvQG4efusZvHO4YeQmlOhnAj2erxrkaA==
+  version "2.187.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.187.0-alpha.0.tgz#e056a35ba67a77b8299721265011c26e9ac68c01"
+  integrity sha512-oHzEsVTOFqi5Dk08blklrz5K+bwHZkCahZ9UpQLpx1vqkwYC1XF01h3bRTQPIpDGaKNFzbexWQ5Ogc2kue4OLA==
 
 "@aws-cdk/service-spec-types@^0.0.128":
   version "0.0.128"
@@ -3912,9 +3912,9 @@ jsii@~5.2:
     yargs "^17.7.2"
 
 jsii@~5.8.0:
-  version "5.8.2"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.8.2.tgz#f18d125dc3c347743efafebb94b3c2b38ffbe168"
-  integrity sha512-qfTGAoMRBLYoRF03cxKsBgI+1llJC8jc3hQQD5aVK1TwQDKtBi8Km6YQ4oeJqhSgWcdSr3sghRuN1sGKA6dcSA==
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.8.3.tgz#079e108207e9c5f78ef3ec9bf990b70f3f78d13b"
+  integrity sha512-u7WMEqNXN+6Adx9/mD4o/nvWOga8URUC+DyH7afveDazveWwQvzGtSUeT75emRQ8BPAGyABHDlexvikmTWVaeg==
   dependencies:
     "@jsii/check-node" "1.110.0"
     "@jsii/spec" "^1.110.0"
@@ -5569,9 +5569,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
 
 typescript@next:
-  version "5.9.0-dev.20250330"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250330.tgz#ce8685a87561527d162811d07b9753dd52fce4ab"
-  integrity sha512-0fBXnF2l9HbFy7inDnt2SiSq1/toj7eRPV/UygjZW5hBaV85HAfHjUFLBdw1pppxJ7/Xk9nxbU7jksCNy+nBgA==
+  version "5.9.0-dev.20250331"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250331.tgz#e3fa5276f856a4b889ab537d08d1b0a8c5f709de"
+  integrity sha512-0wW/4BrQ4HacVwcyQh/60+vAJwIrTasAqYqBdIPgc3EWr9nF/ZXjjCuzE3itlIH/6nXoBNuAyVTt9g9U8kTTWQ==
 
 typescript@~5.2:
   version "5.2.2"
