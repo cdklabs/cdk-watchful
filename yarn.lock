@@ -40,9 +40,9 @@
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.187.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.187.0-alpha.0.tgz#e056a35ba67a77b8299721265011c26e9ac68c01"
-  integrity sha512-oHzEsVTOFqi5Dk08blklrz5K+bwHZkCahZ9UpQLpx1vqkwYC1XF01h3bRTQPIpDGaKNFzbexWQ5Ogc2kue4OLA==
+  version "2.188.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.188.0-alpha.0.tgz#c71adf39f8a66057cb8f21a1ffd3b7e9420b1580"
+  integrity sha512-g5EWM8pjZYQTaNIv3LYSH1TzBWcFttAC0cIG5bRubZQ/D7RNyznGz5j3HAOOPdj781BKpt6wBmvrHL+bWTYV6Q==
 
 "@aws-cdk/service-spec-types@^0.0.131":
   version "0.0.131"
@@ -1449,9 +1449,9 @@ camelcase@^6.2.0, camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001688:
-  version "1.0.30001709"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001709.tgz#61b34187b52851ef34c44d90f39a94dc5b0acb43"
-  integrity sha512-NgL3vUTnDrPCZ3zTahp4fsugQ4dc7EKTSzwQDPEel6DMoMnfH2jhry9n2Zm8onbSR+f/QtKHFOA+iAQu4kbtWA==
+  version "1.0.30001710"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001710.tgz#2cda0c6071ddd43c01151c7f704a0e510a86612f"
+  integrity sha512-B5C0I0UmaGqHgo5FuqJ7hBd4L57A4dDD+Xi+XX1nXOoxGeDdY4Ko38qJYOyqznBVJEqON5p8P1x5zRR3+rsnxA==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -2064,9 +2064,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.73:
-  version "1.5.131"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.131.tgz#c28993f0624d283ef2e7debb567264730f3f4416"
-  integrity sha512-fJFRYXVEJgDCiqFOgRGJm8XR97hZ13tw7FXI9k2yC5hgY+nyzC2tMO8baq1cQR7Ur58iCkASx2zrkZPZUnfzPg==
+  version "1.5.132"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.132.tgz#081b8086d7cecc58732f7cc1f1c19306c5510c5f"
+  integrity sha512-QgX9EBvWGmvSRa74zqfnG7+Eno0Ak0vftBll0Pt2/z5b3bEGYL6OUXLgKPtvx73dn3dvwrlyVkjPKRRlhLYTEg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5137,9 +5137,9 @@ spdx-license-ids@^3.0.0:
   integrity sha512-Bvg/8F5XephndSK3JffaRqdT+gyhfqIPwDHpX80tJrF8QQRYMo8sNMeaZ2Dp5+jhwKnUmIOyFFQfHRkjJm5nXg==
 
 spdx-license-list@^6.9.0:
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-6.9.0.tgz#5543abb3a15f985a12808f642a622d2721c372ad"
-  integrity sha512-L2jl5vc2j6jxWcNCvcVj/BW9A8yGIG02Dw+IUw0ZxDM70f7Ylf5Hq39appV1BI9yxyWQRpq2TQ1qaXvf+yjkqA==
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-6.10.0.tgz#738249443db42f5fd6780c7c40daecefed7a3adf"
+  integrity sha512-wF3RhDFoqdu14d1Prv6c8aNU0FSRuSFJpNjWeygIZcNZEwPxp7I5/Hwo8j6lSkBKWAIkSQrKefrC5N0lvOP0Gw==
 
 split2@^3.2.2:
   version "3.2.2"
@@ -5572,14 +5572,14 @@ typedarray@^0.0.6:
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
 typescript@^5.2.2, typescript@~5.8:
-  version "5.8.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.2.tgz#8170b3702f74b79db2e5a96207c15e65807999e4"
-  integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
+  integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250403"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250403.tgz#22d6c87fc253a713b69d530380756c5f66c18b13"
-  integrity sha512-ycIMhR9vZwSarmdHpPcMejTDRgwVKpXix34p5vv5UeIglzoUzPO/TUmUWW1n9qyyPlJbDrUyhq8A8/FHFn7LSg==
+  version "5.9.0-dev.20250404"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250404.tgz#8a8216d67443297144277cd5bd3df28d1bec5e3c"
+  integrity sha512-GL0YP8pAL3ug0rLp7Sii/ML+kYUkfCU2wxk4O+aV2H3rYfligNa+/SaXzpXfRMaa5wjDnbNUq9mAuhGpMvIUHQ==
 
 typescript@~5.2:
   version "5.2.2"
