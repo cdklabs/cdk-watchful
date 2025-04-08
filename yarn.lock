@@ -646,14 +646,6 @@
     chalk "^4.1.2"
     semver "^7.6.0"
 
-"@jsii/check-node@1.110.0":
-  version "1.110.0"
-  resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.110.0.tgz#668188d5a7dd46faedbea45a67064a810c7f1cd4"
-  integrity sha512-JX8MV6j/ZScaxq4flcBfS4oHD+Fe4AMPUdlZ1xKm4VKwhoxV729dmC2m6XTad7tnipq5YhDAOS3HQgqFtpRlDA==
-  dependencies:
-    chalk "^4.1.2"
-    semver "^7.7.1"
-
 "@jsii/check-node@1.111.0":
   version "1.111.0"
   resolved "https://registry.yarnpkg.com/@jsii/check-node/-/check-node-1.111.0.tgz#dfd6dce4f9d7a97924e51f152a5e5058039d7b4d"
@@ -662,7 +654,7 @@
     chalk "^4.1.2"
     semver "^7.7.1"
 
-"@jsii/spec@^1.101.0", "@jsii/spec@^1.110.0", "@jsii/spec@^1.111.0", "@jsii/spec@^1.30.0":
+"@jsii/spec@^1.101.0", "@jsii/spec@^1.111.0", "@jsii/spec@^1.30.0":
   version "1.111.0"
   resolved "https://registry.yarnpkg.com/@jsii/spec/-/spec-1.111.0.tgz#b8fa48433565c5015b9c69595781cf3f3c6ba264"
   integrity sha512-T2t5xg4Epv0+AhKjod6UR+WXGdnUSKysviUotHVdX0MgrLc6cTQKQwz9aL/dj4GUSfKsR7M58AKHVhM+cLpdWw==
@@ -2064,9 +2056,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.73:
-  version "1.5.132"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.132.tgz#081b8086d7cecc58732f7cc1f1c19306c5510c5f"
-  integrity sha512-QgX9EBvWGmvSRa74zqfnG7+Eno0Ak0vftBll0Pt2/z5b3bEGYL6OUXLgKPtvx73dn3dvwrlyVkjPKRRlhLYTEg==
+  version "1.5.134"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.134.tgz#d90008c4f8a506c1a6d1b329f922d83e18904101"
+  integrity sha512-zSwzrLg3jNP3bwsLqWHmS5z2nIOQ5ngMnfMZOWWtXnqqQkPVyOipxK98w+1beLw1TB+EImPNcG8wVP/cLVs2Og==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3920,12 +3912,12 @@ jsii@~5.2:
     yargs "^17.7.2"
 
 jsii@~5.8.0:
-  version "5.8.3"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.8.3.tgz#079e108207e9c5f78ef3ec9bf990b70f3f78d13b"
-  integrity sha512-u7WMEqNXN+6Adx9/mD4o/nvWOga8URUC+DyH7afveDazveWwQvzGtSUeT75emRQ8BPAGyABHDlexvikmTWVaeg==
+  version "5.8.4"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.8.4.tgz#e9bd8d55968a1bc507cfd1407bbcedea04814ea0"
+  integrity sha512-aZb6e0dn5VZDC2Z5eC6g1Z5I1Vr4HoRQUncQ7Lk0QNaaB7dM3S/mgUIRs5QGFkOTGeO0BoE6SgYm0AEOixRRcQ==
   dependencies:
-    "@jsii/check-node" "1.110.0"
-    "@jsii/spec" "^1.110.0"
+    "@jsii/check-node" "1.111.0"
+    "@jsii/spec" "^1.111.0"
     case "^1.6.3"
     chalk "^4"
     fast-deep-equal "^3.1.3"
@@ -3933,7 +3925,7 @@ jsii@~5.8.0:
     semver "^7.7.1"
     semver-intersect "^1.5.0"
     sort-json "^2.0.1"
-    spdx-license-list "^6.9.0"
+    spdx-license-list "^6.10.0"
     typescript "~5.8"
     yargs "^17.7.2"
 
@@ -5136,7 +5128,7 @@ spdx-license-ids@^3.0.0:
   resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.21.tgz#6d6e980c9df2b6fc905343a3b2d702a6239536c3"
   integrity sha512-Bvg/8F5XephndSK3JffaRqdT+gyhfqIPwDHpX80tJrF8QQRYMo8sNMeaZ2Dp5+jhwKnUmIOyFFQfHRkjJm5nXg==
 
-spdx-license-list@^6.9.0:
+spdx-license-list@^6.10.0, spdx-license-list@^6.9.0:
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/spdx-license-list/-/spdx-license-list-6.10.0.tgz#738249443db42f5fd6780c7c40daecefed7a3adf"
   integrity sha512-wF3RhDFoqdu14d1Prv6c8aNU0FSRuSFJpNjWeygIZcNZEwPxp7I5/Hwo8j6lSkBKWAIkSQrKefrC5N0lvOP0Gw==
@@ -5577,9 +5569,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250406"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250406.tgz#daad12cc7b532e9798ae510c9da252fd50332021"
-  integrity sha512-wmbVe2nbuGo6aSmqXngKbLvqHgtT2O0eHphbCCwk0FvFswJOpH+LOtXEwbZiMq7nP83at8OfGOun439uuHelbA==
+  version "5.9.0-dev.20250407"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250407.tgz#1dcfbacf1f62ed0a286a81d65c058b71b6bcd043"
+  integrity sha512-JW8/Our6MR+QYS3M134UaLWtEYdVXWzwlbg6rj3fmF9TppADEdaSNiJK90M2wmfSuu5j8Nefk93oSrZF03JkGw==
 
 typescript@~5.2:
   version "5.2.2"
