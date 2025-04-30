@@ -2056,9 +2056,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.73:
-  version "1.5.143"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.143.tgz#b057bcb9dddd3a9b24ba6c9b9e39a82bee84bdaf"
-  integrity sha512-QqklJMOFBMqe46k8iIOwA9l2hz57V2OKMmP5eSWcUvwx+mASAsbU+wkF1pHjn9ZVSBPrsYWr4/W/95y5SwYg2g==
+  version "1.5.144"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.144.tgz#9804fd6c342802e1d4b4fe57babbe8b64ca0b46c"
+  integrity sha512-eJIaMRKeAzxfBSxtjYnoIAw/tdD6VIH6tHBZepZnAbE3Gyqqs5mGN87DvcldPUbVkIljTK8pY0CMcUljP64lfQ==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5569,9 +5569,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250428"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250428.tgz#1d83c2bdee80490c61433983a522a55fdd29cdad"
-  integrity sha512-/6K3WJlc0zjdAgLJMpU40jIxBIQ4fpAfE3o35EsPBTaqvDh9X6rY+c0NBYpYb/3UG0a2wgSr0yD0sS1l6Km7Fw==
+  version "5.9.0-dev.20250429"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250429.tgz#012fbe133e9a4861d069edada8f2b7c085dde31f"
+  integrity sha512-PySfZNqDdNVucyOwiH7S10Ou3Ly/ge8u4xMoIxMFLDzYNO5tCLTLWn5JE00/GORSLIPG9mBWX6lvSXlbMH1xNQ==
 
 typescript@~5.2:
   version "5.2.2"
