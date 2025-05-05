@@ -3873,10 +3873,10 @@ jsii-reflect@^1.111.0, jsii-reflect@^1.30.0:
     oo-ascii-tree "^1.111.0"
     yargs "^16.2.0"
 
-jsii-rosetta@^5.8.6:
-  version "5.8.6"
-  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.8.6.tgz#d4c5526c7f58035ba17eb1d4d9020645ab98275d"
-  integrity sha512-Hc3ISSZPODFjuS8SFIPnr2klwWgi6VMwE8YgGNAAVVInIrAqw3/SlfdGKJBcGEMLEPBAXLTu8yPSWbD7Gsu/zw==
+jsii-rosetta@^5.8.7:
+  version "5.8.7"
+  resolved "https://registry.yarnpkg.com/jsii-rosetta/-/jsii-rosetta-5.8.7.tgz#c88d7dedf51bb5068ac6d69e4dd9bf6a27451c84"
+  integrity sha512-8Ecl+BcCUXgRvqx9wqnVRqTlADuwdjS35sYSrKuXyAyLntdwlqn1NP3kMLLn20PBGjTkeqbCt8VmRox4hBASNA==
   dependencies:
     "@jsii/check-node" "1.111.0"
     "@jsii/spec" "^1.111.0"
@@ -5569,9 +5569,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250503"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250503.tgz#4b3e10a1409e1804c1853ad3eb5408383d228329"
-  integrity sha512-91TijWPubqcACvWr9n8qTZJPioEsP/Jo/X8c6v+JQYwHs9sKOb85CVYo5FinBGc/g7J+yNIv699ysphzaiI0xw==
+  version "5.9.0-dev.20250504"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250504.tgz#f561549a41b50702ee85b6e999cc6f0a8c9295ba"
+  integrity sha512-tdJ5/k+fpLlZbGlvpY9BM54lLu4W7kSG42hKbZokiKM+IahMjv7JgLo3qb/vH0o0khhM9C6e7eES5Yh0Zewx8w==
 
 typescript@~5.2:
   version "5.2.2"
