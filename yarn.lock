@@ -40,9 +40,9 @@
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.197.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.197.0-alpha.0.tgz#8346d03071ecfd95cab8104a6e93abef882faaea"
-  integrity sha512-g2s9tccAsq/i0uXpA3iohWIJghmiMBjxqQti1euiLxZULSfq5YHjKoo3JRS5QGJx5u2XUL8P1wFJAEKWZkh2hg==
+  version "2.198.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.198.0-alpha.0.tgz#c647d56ef7461285cde5d5ece43c8c4d8adb3429"
+  integrity sha512-2Fb4nmE8MX/lx3/2+31prjA+PcrlUK/z0Y9sDQ4Vvli4883PQTHRyFo1UHJjrlDwCuZXcrGCHfzCAkGHfzsPyA==
 
 "@aws-cdk/service-spec-types@^0.0.139":
   version "0.0.139"
@@ -2056,9 +2056,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.149:
-  version "1.5.156"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.156.tgz#26bc1fe40d0f364410aaa92ffc13a3e9820f6aa5"
-  integrity sha512-QeOqv11TSASsY/3Ft3LUyDqEiEOph5/85srEPFUo9wuGFNTb0/z5fGE/+ZzTrYvSTGoXNkdQLTw3MKRmgyOyGA==
+  version "1.5.157"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.157.tgz#553b122522ac7bba6f1a0dd7d50b14f297736f75"
+  integrity sha512-/0ybgsQd1muo8QlnuTpKwtl0oX5YMlUGbm8xyqgDU00motRkKFFbUJySAQBWcY79rVqNLWIWa87BGVGClwAB2w==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5569,9 +5569,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250522"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250522.tgz#d8da38af616a529b0d5ef5bc5f3607ab157ad322"
-  integrity sha512-5zi45joB4lxgbZokE23gOC139Blh5v/yOBqjO+mXURkJiDsEkfV/JJmTKyMpI8W7wnIx6H7Nyd9zxYOntclNZw==
+  version "5.9.0-dev.20250523"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250523.tgz#ff5f55fd70f945fc5436610ec23b870fdb960843"
+  integrity sha512-igDelnnCrlPHezUmn1QseV7BBn7bITue651a+X+JSKkBDwrvyy5vqd1G6dvM3vrc4PlInB5F6jQDp/23kg9ZEA==
 
 typescript@~5.2:
   version "5.2.2"
