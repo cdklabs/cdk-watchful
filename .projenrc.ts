@@ -37,7 +37,7 @@ const project = new CdklabsConstructLibrary({
     javaPackage: 'io.github.cdklabs.watchful',
     mavenGroupId: 'io.github.cdklabs',
     mavenArtifactId: 'cdk-watchful',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
+    mavenServerId: 'central-ossrh',
   },
 
   publishToPypi: {
