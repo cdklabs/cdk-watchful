@@ -5,7 +5,7 @@ const enum Metrics {
   ApproximateNumberOfMessagesVisible = 'ApproximateNumberOfMessagesVisible',
   NumberOfMessagesSent = 'NumberOfMessagesSent',
   ApproximateAgeOfOldestMessage = 'ApproximateAgeOfOldestMessage',
-  SentMessageSize = 'SentMessageSize'
+  SentMessageSize = 'SentMessageSize',
 }
 
 const Namespace = 'AWS/SQS';

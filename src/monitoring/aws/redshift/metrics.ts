@@ -8,7 +8,7 @@ const enum Metrics {
   MaintenanceMode = 'MaintenanceMode',
   ReadLatency = 'ReadLatency',
   WriteLatency = 'WriteLatency',
-  QueryDuration = 'QueryDuration'
+  QueryDuration = 'QueryDuration',
 }
 
 const Namespace = 'AWS/Redshift';
