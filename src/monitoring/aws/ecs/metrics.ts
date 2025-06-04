@@ -8,7 +8,7 @@ const enum ApplicationELBMetrics {
   TARGET_4XX_COUNT = 'HTTPCode_Target_4XX_Count',
   TARGET_5XX_COUNT = 'HTTPCode_Target_5XX_Count',
   TargetResponseTime = 'TargetResponseTime',
-  RequestCount = 'RequestCount'
+  RequestCount = 'RequestCount',
 }
 
 const enum EcsMetrics {
