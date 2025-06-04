@@ -1443,9 +1443,9 @@ camelcase@^6.2.0, camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001718:
-  version "1.0.30001720"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001720.tgz#c138cb6026d362be9d8d7b0e4bcd0183a850edfd"
-  integrity sha512-Ec/2yV2nNPwb4DnTANEV99ZWwm3ZWfdlfkQbWSDDt+PsXEVYwlhPH8tdMaPunYTKKmz7AnHi2oNEi1GcmKCD8g==
+  version "1.0.30001721"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001721.tgz#36b90cd96901f8c98dd6698bf5c8af7d4c6872d7"
+  integrity sha512-cOuvmUVtKrtEaoKiO0rSc29jcjwMwX5tOHDy4MgVFEWiUXj4uBMJkwI8MDySkgXidpMiHUcviogAvFi4pA2hDQ==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -2058,9 +2058,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.160:
-  version "1.5.162"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.162.tgz#5305c15292a960f36e86f8b330da958f8ae1690d"
-  integrity sha512-hQA+Zb5QQwoSaXJWEAGEw1zhk//O7qDzib05Z4qTqZfNju/FAkrm5ZInp0JbTp4Z18A6bilopdZWEYrFSsfllA==
+  version "1.5.164"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.164.tgz#d85fa1a083f19a54fbf1f6e55f6cfcde300fe68d"
+  integrity sha512-TXBrF2aZenRjY3wbj5Yc0mZn43lMiSHNkzwPkIxx+vWUB35Kf8Gm/uOYmOJFNQ7SUwWAinbfxX73ANIud65wSA==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5587,9 +5587,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250603"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250603.tgz#c69b9f94b0a4eaef01ad0b821eae195509ef7b90"
-  integrity sha512-RRJ56Yh0Mvfzqa40BEJJLEVclgGLZ6eNrp01Ihmn8qIP1XMjhwtUlq80JPSN36NryiUqn0XAzUp31+T/B9n9Fg==
+  version "5.9.0-dev.20250604"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250604.tgz#467f7de94a6a147cdcb90f63f668826117ad2b4c"
+  integrity sha512-a5aTDk5/loTfT1QjiW6KFuqTdGl/wXngRWGX60MdTAq+xzKKZmspKbcRPo2tVMWFK1omYIH3UF/WmN0nsSALlw==
 
 typescript@~5.2:
   version "5.2.2"
