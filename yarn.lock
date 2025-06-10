@@ -2058,9 +2058,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.160:
-  version "1.5.165"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.165.tgz#477b0957e42f071905a86f7c905a9848f95d2bdb"
-  integrity sha512-naiMx1Z6Nb2TxPU6fiFrUrDTjyPMLdTtaOd2oLmG8zVSg2hCWGkhPyxwk+qRmZ1ytwVqUv0u7ZcDA5+ALhaUtw==
+  version "1.5.166"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.166.tgz#3fff386ed473cc2169dbe2d3ace9592262601114"
+  integrity sha512-QPWqHL0BglzPYyJJ1zSSmwFFL6MFXhbACOCcsCdUMCkzPdS9/OIBVxg516X/Ado2qwAq8k0nJJ7phQPCqiaFAw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3923,9 +3923,9 @@ jsii@~5.2:
     yargs "^17.7.2"
 
 jsii@~5.8.0:
-  version "5.8.11"
-  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.8.11.tgz#3c3feab45190d3490de9e56e098f757a0bea328b"
-  integrity sha512-ga00MSW4ZTk5kuPAilxw0l4/g52XM5Dw+THDMXHKnYcgxtNsFnj9ffVjnIBpcD+Ufridjxobnqf9t0WuOSvrww==
+  version "5.8.12"
+  resolved "https://registry.yarnpkg.com/jsii/-/jsii-5.8.12.tgz#5565a4fc0d7e95400007c0a53bda62b6fe62c3d5"
+  integrity sha512-4EDpRiVDJ7iXSksebwi1/k5QXKG0ZiLyXcQNBFomD57Gb0Ph7VpKHhIt53GQ2cUwigZUJ09pO4LTf3DJUivDCg==
   dependencies:
     "@jsii/check-node" "1.112.0"
     "@jsii/spec" "^1.112.0"
@@ -5588,9 +5588,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250608"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250608.tgz#7ede51ea5f99d94e67f95700e69e501696123c39"
-  integrity sha512-bHhoHdKqMJ84XQiG+qLt1zhQHVGjtonvT+xQjE2ItGF53gPn+Gu+oJNPIkcs722DrIgOmiOoe1HpQ2SsuwyXPQ==
+  version "5.9.0-dev.20250609"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250609.tgz#0fc8eeb36f640c2d5aae3245dbdd926c0cb52cf0"
+  integrity sha512-uRfj5CPGwjzIvCROyYrAUVkkbR3roTbDBx+jDRaaHsJ95ugiCKNrMVr2LwOqAemF5UnYJS8pRFRUVnPOX+xISA==
 
 typescript@~5.2:
   version "5.2.2"
