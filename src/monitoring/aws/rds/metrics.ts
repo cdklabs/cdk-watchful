@@ -9,7 +9,7 @@ const enum Metrics {
   BufferCacheHitRatio = 'BufferCacheHitRatio',
   DatabaseConnections = 'DatabaseConnections',
   AuroraReplicaLag = 'AuroraReplicaLag',
-  CPUUtilization = 'CPUUtilization'
+  CPUUtilization = 'CPUUtilization',
 }
 
 const Namespace = 'AWS/RDS';
