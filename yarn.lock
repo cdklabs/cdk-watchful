@@ -30,12 +30,12 @@
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.188.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.188.2.tgz#1117778c340f15481bffa637800e16ae3a27c788"
-  integrity sha512-oEyuOlyR2FgdZ1BqVt+RPYZTcACNlR9KlHs2LqAzn5EVshnC6GhZG+HWo/X0Jt1Q+bv5gHl+KkqyVe7YxXpS/Q==
+  version "2.188.3"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.188.3.tgz#11ba5df5dd15414f18f7f1cc03af9103430dee74"
+  integrity sha512-+3A+HP7Yqt2j6/wKU24AOceVr2JggM/avmEL3T+raGLKxqOL5szMBcr0x3TqNDAoIWTiETQss8ArBS28n0h7nQ==
   dependencies:
     "@aws-cdk/aws-service-spec" "0.1.84"
-    aws-cdk "2.1020.1"
+    aws-cdk "2.1020.2"
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -1229,10 +1229,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.1020.1:
-  version "2.1020.1"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1020.1.tgz#97716539f80d3b74dc70cdf2bf38eb4232d94fa2"
-  integrity sha512-4UG9qzf6ZSDjINubcukPZChVj6PvDJAHiURAw0jYSkUhObPkX7Zo9uNUIlXzrM+hpB2N2jwRKY9b3sN+KDbtAQ==
+aws-cdk@2.1020.2:
+  version "2.1020.2"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1020.2.tgz#7e0a4113666a6d162cf40b6b1ebf9e310c22dd44"
+  integrity sha512-yWdt3dJh4aPm1VNyEgfG3lozGrvddw0i7avt+Cl9KOYixmisQtAg39/aZqzVVqjzVZVEanXmz+tlhzzh75Z69A==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -5582,9 +5582,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250702"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250702.tgz#1cdab1d948fd74293150c1b6ee1a29d45b0224cf"
-  integrity sha512-Qi2JC1TaAuDW62spVXK/hQoqdVQ6VEFgoJYgDwICyWS0Itvas4Sub8rbacMVbXrHveKQ4bWZ9/XlY+2JNkVj5A==
+  version "5.9.0-dev.20250703"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250703.tgz#cafe5b7b23721ed39da608c12a3641bb4ce6704c"
+  integrity sha512-ac492CXzUYoECS3nNBMbNJl1sCGdoRq8TRmUCRPrcJjzwcMwtnCxzG/J1klso6DQm1vBrOMouMN5MW0wqvP95w==
 
 typescript@~5.2:
   version "5.2.2"
