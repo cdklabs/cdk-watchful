@@ -300,9 +300,9 @@
     debug "^4.3.1"
 
 "@babel/types@^7.0.0", "@babel/types@^7.20.7", "@babel/types@^7.27.1", "@babel/types@^7.27.6", "@babel/types@^7.28.0", "@babel/types@^7.3.3":
-  version "7.28.0"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.28.0.tgz#2fd0159a6dc7353933920c43136335a9b264d950"
-  integrity sha512-jYnje+JyZG5YThjHiF28oT4SIZLnYOcSBb6+SDaFIyzDVSkXQmQQYclJ2R+YxcdmK0AX6x1E5OQNtuh3jHDrUg==
+  version "7.28.1"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.28.1.tgz#2aaf3c10b31ba03a77ac84f52b3912a0edef4cf9"
+  integrity sha512-x0LvFTekgSX+83TI28Y9wYPUfzrnl2aT5+5QLnO6v7mSJYtEEevuDRN0F0uSHRk1G1IWZC43o00Y0xDDrpBGPQ==
   dependencies:
     "@babel/helper-string-parser" "^7.27.1"
     "@babel/helper-validator-identifier" "^7.27.1"
@@ -5582,9 +5582,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250711"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250711.tgz#a9905e3e7ce2df612099138f9f531b9ef9e59264"
-  integrity sha512-HwW+1XkufazY3Aq9DUO6S5UbrsLx4QnsVn/B8PDBlIQWhi/9af23isw7+RI63Y3BadoZzkdUbkX26ojtnGT4Og==
+  version "5.9.0-dev.20250712"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250712.tgz#ddd8e18e028950865c00c2a0f809dc863674d446"
+  integrity sha512-X0LU5E4Od8XKP0H1RuFMIx+JAjP5Ic321mhQ9aZ7zluY7JrOcm5i1km8CSRJ2Laz7xBj+EpCxtNCSHGkSHZAGg==
 
 typescript@~5.2:
   version "5.2.2"
