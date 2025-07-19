@@ -5583,9 +5583,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250717"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250717.tgz#fc22bbda72bb29af70cd99bf0f6458f723ba16a0"
-  integrity sha512-txdoKMuQg9HgT4dRcGBUrpIXIBMabbBOjVWrS915z/yskIIq7FwGgriVoIlVIVNZP04INeuJw3NEFDnWb1Vzbw==
+  version "5.9.0-dev.20250718"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250718.tgz#e7002408b7b78c7f0237d6fbc33e3e8a5f93a62a"
+  integrity sha512-VsRjgSQKUjHwcQMefT6fTpUUqPCJ689Um+drvdJiS2QdR2si6vn1EpWhaPtNzJr3tgn5EpN/9+KWEUFMankULg==
 
 typescript@~5.2:
   version "5.2.2"
