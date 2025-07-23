@@ -832,9 +832,9 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "24.0.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.0.15.tgz#f34fbc973e7d64217106e0c59ed8761e6b51381e"
-  integrity sha512-oaeTSbCef7U/z7rDeJA138xpG3NuKc64/rZ2qmUFkFJmnMsAPaluIifqyWd8hSSMxyP9oie3dLAqYPblag9KgA==
+  version "24.1.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.1.0.tgz#0993f7dc31ab5cc402d112315b463e383d68a49c"
+  integrity sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==
   dependencies:
     undici-types "~7.8.0"
 
@@ -2057,9 +2057,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.173:
-  version "1.5.188"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.188.tgz#38033691f27b1ad914f8ba9812634fa4c4f5b4f9"
-  integrity sha512-pfEx5CBFAocOKNrc+i5fSvhDaI1Vr9R9aT5uX1IzM3hhdL6k649wfuUcdUd9EZnmbE1xdfA51CwqQ61CO3Xl3g==
+  version "1.5.190"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.190.tgz#f0ac8be182291a45e8154dbb12f18d2b2318e4ac"
+  integrity sha512-k4McmnB2091YIsdCgkS0fMVMPOJgxl93ltFzaryXqwip1AaxeDqKCGLxkXODDA5Ab/D+tV5EL5+aTx76RvLRxw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -5583,9 +5583,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250721"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250721.tgz#4764f1684710ef0586e37b817944f832ae7087e3"
-  integrity sha512-WKfsQb/Q2mwrbjDH7y9DmchMIlPfR9bb0TUQj0cBsHS/PsSc4rAZx8U17mMEcY2Ut3BGWiKWosXhb4Svdevj3w==
+  version "5.9.0-dev.20250722"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250722.tgz#c8625032bc52351a80e9ec67f4d575454c745fbe"
+  integrity sha512-6ZrhtZw1gMpOMXA5A8qzoOrF++iCoifZIJbbUSblrf6a9mHXhUQ9KTiD7S4/8pjPL+2PWm4FfG3bUb710t4ypw==
 
 typescript@~5.2:
   version "5.2.2"
