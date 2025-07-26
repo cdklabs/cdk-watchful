@@ -2057,9 +2057,9 @@ dunder-proto@^1.0.0, dunder-proto@^1.0.1:
     gopd "^1.2.0"
 
 electron-to-chromium@^1.5.173:
-  version "1.5.190"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.190.tgz#f0ac8be182291a45e8154dbb12f18d2b2318e4ac"
-  integrity sha512-k4McmnB2091YIsdCgkS0fMVMPOJgxl93ltFzaryXqwip1AaxeDqKCGLxkXODDA5Ab/D+tV5EL5+aTx76RvLRxw==
+  version "1.5.191"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.191.tgz#8ae49a471447b1ceaf1d4d183a9000082f52363c"
+  integrity sha512-xcwe9ELcuxYLUFqZZxL19Z6HVKcvNkIwhbHUz7L3us6u12yR+7uY89dSl570f/IqNthx8dAw3tojG7i4Ni4tDA==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4332,9 +4332,9 @@ npm-run-path@^4.0.1:
     path-key "^3.0.0"
 
 nwsapi@^2.2.0, nwsapi@^2.2.12:
-  version "2.2.20"
-  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.20.tgz#22e53253c61e7b0e7e93cef42c891154bcca11ef"
-  integrity sha512-/ieB+mDe4MrrKMT8z+mQL8klXydZWGR5Dowt4RAGKbJ3kIGEx3X4ljUo+6V73IXtUPWgfOlU5B9MlGxFO5T+cA==
+  version "2.2.21"
+  resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.21.tgz#8df7797079350adda208910d8c33fc4c2d7520c3"
+  integrity sha512-o6nIY3qwiSXl7/LuOU0Dmuctd34Yay0yeuZRLFmDPrrdHpXKFndPj3hM+YEPVHYC5fx2otBx4Ilc/gyYSAUaIA==
 
 object-inspect@^1.13.3, object-inspect@^1.13.4:
   version "1.13.4"
@@ -5583,9 +5583,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250724"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250724.tgz#7cd8735b1c33c2bcc18f636245aa7ffbcb660946"
-  integrity sha512-VXgMFQyznCBEVvkoYGKc+OpBmBQq3wvanw6JGS6vVThLa+8YsUNCw4CJRlxJXuDvgls3bNjEvPozFUgRKf7Z/A==
+  version "5.9.0-dev.20250725"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250725.tgz#ba5a18a65e003bd7c879dc47409b30f577af7cb9"
+  integrity sha512-iCfSsyPg1NMRP2ythXNvkljHbmMTppyUUZSnnD4DwGxKEn2GJwz0nBByLOJNbAeYggqo+/zgraMry9U+BZgJMw==
 
 typescript@~5.2:
   version "5.2.2"
