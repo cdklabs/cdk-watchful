@@ -30,19 +30,19 @@
     "@cdklabs/tskb" "^0.0.3"
 
 "@aws-cdk/integ-runner@latest":
-  version "2.189.1"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.189.1.tgz#aa099f6506bea7e7c2234e4a4c384101bb5c3371"
-  integrity sha512-mt5Hbx62fMYR7sFVrYW+U9Z5FywZ9ZOD8hCXoVpL6nVckwUwsKku7gP6QnHdxqOe7TfLK8i5+wdDjmKMN0CwkQ==
+  version "2.189.2"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-runner/-/integ-runner-2.189.2.tgz#4dd7e65b11c2d5cd4efe32d5d10ecd47584a33bd"
+  integrity sha512-B+w87KOvOflSQYYxGGzYDYuUt7GSlk9VH/Vb0kCg86H+GTUhn2wRhKYzbeSEeIYBiRlWyAjxTTQ1Mw9aWZ9Erg==
   dependencies:
     "@aws-cdk/aws-service-spec" "0.1.87"
-    aws-cdk "2.1022.0"
+    aws-cdk "2.1023.0"
   optionalDependencies:
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.207.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.207.0-alpha.0.tgz#8e09f5e849525eba6f3ba26d62b50ec9708d2077"
-  integrity sha512-B179skhmnz11vQBOiKrhK7bnS9/C6s0ndixfAjj27P99UXF7QOyltvwwatxnabyp1JblaIlS1f2t54Uo9PgnGQ==
+  version "2.208.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.208.0-alpha.0.tgz#69ef99eacfe91c6aeefe289c3902a5a3fee3ad01"
+  integrity sha512-p+54pVUGO5DnMSv66Rt0NZZIjCX14Am1y5KdEtwbV2Cz1sQbaFBpmGA/xRZsxwytoyTraOeYupJW3SQ8NMnaOQ==
 
 "@aws-cdk/service-spec-types@^0.0.153":
   version "0.0.153"
@@ -839,9 +839,9 @@
     undici-types "~7.8.0"
 
 "@types/node@^18":
-  version "18.19.120"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.120.tgz#07b3bd73875956d5281fa27e6d77a66415f7d455"
-  integrity sha512-WtCGHFXnVI8WHLxDAt5TbnCM4eSE+nI0QN2NJtwzcgMhht2eNz6V9evJrk+lwC8bCY8OWV5Ym8Jz7ZEyGnKnMA==
+  version "18.19.121"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.19.121.tgz#c50d353ea2d1fb1261a8bbd0bf2850306f5af2b3"
+  integrity sha512-bHOrbyztmyYIi4f1R0s17QsPs1uyyYnGcXeZoGEd227oZjry0q6XQBQxd82X1I57zEfwO8h9Xo+Kl5gX1d9MwQ==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1229,10 +1229,10 @@ aws-cdk-lib@2.0.0:
     semver "^7.3.5"
     yaml "1.10.2"
 
-aws-cdk@2.1022.0:
-  version "2.1022.0"
-  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1022.0.tgz#61221c72c8eedd19dc41f966e657c931037a88af"
-  integrity sha512-GHCu+tDtYMqCiElCl7Fad2/Bt2GmtXEV3dynudoAsV9PlL5ETeLmEN7jflDQxhmr7KhKpQeZJo/PM0DoWCvoHw==
+aws-cdk@2.1023.0:
+  version "2.1023.0"
+  resolved "https://registry.yarnpkg.com/aws-cdk/-/aws-cdk-2.1023.0.tgz#bc82e4a919960c79fc0e11c3e831e83a99c0dc97"
+  integrity sha512-DWMA+IrAsBUNF2RvH7ujpDp7wSJkqTkRL8yfK4AYpEjoGY1KMaKIfxz3M3+Nk3ogM7VhZiW3OGWEOgyDF47HOQ==
   optionalDependencies:
     fsevents "2.3.2"
 
@@ -1442,9 +1442,9 @@ camelcase@^6.2.0, camelcase@^6.3.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001726:
-  version "1.0.30001727"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001727.tgz#22e9706422ad37aa50556af8c10e40e2d93a8b85"
-  integrity sha512-pB68nIHmbN6L/4C6MH1DokyR3bYqFwjaSs/sWDHGj4CTcFtQUQMuJftVwWkXq7mNWOybD3KhUv3oWHoGxgP14Q==
+  version "1.0.30001731"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001731.tgz#277c07416ea4613ec564e5b0ffb47e7b60f32e2f"
+  integrity sha512-lDdp2/wrOmTRWuoB5DpfNkC0rJDU8DqRa6nYL6HK6sytw70QMopt/NIc/9SM7ylItlBWfACXk0tEn37UWM/+mg==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -5583,9 +5583,9 @@ typescript@^5.2.2, typescript@~5.8:
   integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 typescript@next:
-  version "5.9.0-dev.20250728"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250728.tgz#72dd10a1b4a751f4e01ac1f22c94ba26d87e7b83"
-  integrity sha512-+fJjHucw7t3WfY6SoCVVaSzJRpCDxu2g81wOEm0mPxyuJjs/4k1VoXIS+7SN/jEBpymlFAzxQJoK1CpIKY9OYQ==
+  version "5.9.0-dev.20250729"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.0-dev.20250729.tgz#cb234225de58a98729e7677fde8531884282ec4f"
+  integrity sha512-+tqV9F9lsLD6c/vZ+ZqJim/uVsEPmwmgE+Ib9VFyoR9Ibw0uDWx6rDN4hO5PaL6MJP/8eVJTfags7B4BdbW7Dg==
 
 typescript@~5.2:
   version "5.2.2"
