@@ -40,9 +40,9 @@
     fsevents "2.3.2"
 
 "@aws-cdk/integ-tests-alpha@latest":
-  version "2.208.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.208.0-alpha.0.tgz#69ef99eacfe91c6aeefe289c3902a5a3fee3ad01"
-  integrity sha512-p+54pVUGO5DnMSv66Rt0NZZIjCX14Am1y5KdEtwbV2Cz1sQbaFBpmGA/xRZsxwytoyTraOeYupJW3SQ8NMnaOQ==
+  version "2.209.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.209.0-alpha.0.tgz#ae8cc1cc5e511f3daee67318e95f70a1d3aa7a8e"
+  integrity sha512-3Z8Yqa7KDdBBs60wusCXEtv3GeUovSxxkNIvxVP6+D+35fshj8L3aZ7Od5mrxhDpicYnej2bQ6IGOC9rt7Moww==
 
 "@aws-cdk/service-spec-types@^0.0.153":
   version "0.0.153"
@@ -5583,9 +5583,9 @@ typescript@^5.2.2:
   integrity sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==
 
 typescript@next:
-  version "6.0.0-dev.20250804"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20250804.tgz#3a19a4b69cb9f9410911ad99d3be53e670094819"
-  integrity sha512-QP/xA28rbUM9RUY01tyYKdrTej/Wh+RR3qDn5ppGCG4E0mXJhYLWAvX0Sl01ChsR0Yl/DtfE9mL1xjf+XUZmpw==
+  version "6.0.0-dev.20250805"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-6.0.0-dev.20250805.tgz#fb94018402775b1377190fb381c2b7f853c72e18"
+  integrity sha512-O7Z/O+uwdZomxOooF8MxAqGnmqoLzgw+q++pkytNQMDN60ZrvN8tmR+LggSJPpqZqeSeu5YP4w5sPMkAQ6DDaQ==
 
 typescript@~5.2:
   version "5.2.2"
@@ -5988,9 +5988,9 @@ yaml@^2.2.2, yaml@^2.5.1:
   integrity sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==
 
 yaml@^2.6.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.8.0.tgz#15f8c9866211bdc2d3781a0890e44d4fa1a5fff6"
-  integrity sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.8.1.tgz#1870aa02b631f7e8328b93f8bc574fac5d6c4d79"
+  integrity sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==
 
 yargs-parser@20.x, yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.9"
