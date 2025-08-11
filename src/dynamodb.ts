@@ -21,7 +21,7 @@ export interface WatchDynamoTableOptions {
   readonly writeCapacityThresholdPercent?: number;
 }
 
-export interface WatchDynamoTableProps extends WatchDynamoTableOptions{
+export interface WatchDynamoTableProps extends WatchDynamoTableOptions {
   readonly title: string;
   readonly watchful: IWatchful;
   readonly table: dynamodb.Table;

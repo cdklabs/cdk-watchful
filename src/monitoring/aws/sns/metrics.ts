@@ -5,7 +5,7 @@ const enum Metrics {
   NumberOfMessagesPublished = 'NumberOfMessagesPublished',
   NumberOfNotificationsDelivered = 'NumberOfNotificationsDelivered',
   NumberOfNotificationsFailed = 'NumberOfNotificationsFailed',
-  PublishSize = 'PublishSize'
+  PublishSize = 'PublishSize',
 }
 
 const Namespace = 'AWS/SNS';

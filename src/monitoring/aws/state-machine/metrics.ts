@@ -7,7 +7,7 @@ const enum Metrics {
   ExecutionsFailed = 'ExecutionsFailed',
   ExecutionsAborted = 'ExecutionsAborted',
   ExecutionThrottled ='ExecutionThrottled',
-  ExecutionsTimedOut = 'ExecutionsTimedOut'
+  ExecutionsTimedOut = 'ExecutionsTimedOut',
 }
 
 const Namespace = 'AWS/States';

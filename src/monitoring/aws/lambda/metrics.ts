@@ -5,7 +5,7 @@ const enum Metrics {
   Invocations = 'Invocations',
   Duration = 'Duration',
   Errors = 'Errors',
-  Throttles = 'Throttles'
+  Throttles = 'Throttles',
 }
 
 const Namespace = 'AWS/Lambda';
