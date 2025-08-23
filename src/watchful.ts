@@ -27,6 +27,7 @@ export interface WatchfulProps {
   readonly alarmEmail?: string;
   readonly alarmSqs?: sqs.IQueue;
   readonly alarmSns?: sns.ITopic;
+  readonly alarmRollbar?: string;
   readonly autoResolveEvents?: boolean;
   readonly dashboardName?: string;
 }
@@ -56,6 +57,14 @@ export class Watchful extends Construct implements IWatchful {
           // sqs.Queue.fromQueueArn(this, 'AlarmQueue', props.alarmSqs)
           props.alarmSqs,
         ),
+      );
+    }
+
+    if (props.alarmRollbar && this.alarmTopic) {
+      this.alarmTopic.addSubscription(
+        new sns_subscriptions.UrlSubscription(props.alarmRollbar, {
+          protocol: sns.SubscriptionProtocol.HTTPS,
+        }),
       );
     }
 
