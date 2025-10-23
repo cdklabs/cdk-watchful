@@ -50,6 +50,7 @@ tsconfig.json
 !/API.md
 .jsii.tabl.json
 !/rosetta/default.ts-fixture
+!/.github/workflows/retry-automerge.yml
 !/.github/workflows/auto-queue.yml
 !/.github/workflows/upgrade-cdklabs-projen-project-types-main.yml
 !/.github/workflows/upgrade-main.yml
