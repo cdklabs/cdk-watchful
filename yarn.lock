@@ -2325,9 +2325,9 @@ fast-glob@^3.3.3:
     micromatch "^4.0.8"
 
 fast-json-patch@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/fast-json-patch/-/fast-json-patch-3.1.1.tgz#85064ea1b1ebf97a3f7ad01e23f9337e72c66947"
-  integrity sha512-vf6IHUX2SBcA+5/+4883dsIjpBTqmfBjmYiWK1savxQmFk4JfBMLa7ynTYOs1Rolp/T1betJxHiGD3g1Mn8lUQ==
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/fast-json-patch/-/fast-json-patch-3.1.2.tgz#e6f745258f970186cc016f0212319d6794e8fa72"
+  integrity sha512-Dhr5mVii8hIvjkp0Xdrun9B3GlXe3j+L4Ymv8J0h3Di996xoBi8qSDQ/sqSNKZd1NEqx55ZfcseG1MphW7MkHg==
 
 fast-json-stable-stringify@2.x, fast-json-stable-stringify@^2.0.0:
   version "2.1.0"
@@ -4199,10 +4199,10 @@ pretty-format@^27.0.0, pretty-format@^27.5.1:
     ansi-styles "^5.0.0"
     react-is "^17.0.1"
 
-projen@^0.105.6:
-  version "0.105.6"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.105.6.tgz#456ef6146f21b239411282f121a455ea829848ce"
-  integrity sha512-GChhH8h8xxNNfPKXlKJMhRiPpsJ9AyW4KYvQ21Z9R7VIKkvSU7SjaOz4X/qjq449sgwuXHWZoDAEQf0TgA9HNA==
+projen@^0.105.7:
+  version "0.105.7"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.105.7.tgz#314ee8f5c992d69f0795c9cf54f97ff08049d764"
+  integrity sha512-+c5gggJq7lbv613359vMJhAJyoLNBkwTfVhrx82O6uUvCTaaj8k3SGzpfDeqXoSzSGayOkPqE088F4TBzHIi/w==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
